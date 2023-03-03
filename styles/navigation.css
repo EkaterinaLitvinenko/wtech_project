@@ -2,8 +2,8 @@ nav {
     background-color: #FFBB52;
 }
 
-#logo-nav {
-    width: 30%;
+nav .navbar-brand img, nav .navbar-brand{
+    width: 100px;
 }
 
 nav .hideable {
@@ -30,6 +30,7 @@ nav #search-form input {
 
 nav #search-form button {
     border-radius: 0px 100px 100px 0px;
+    background-color: #FFBB52;
 }
 
 
@@ -47,14 +48,14 @@ nav .hideable {
         top: 100%;
         left: 50%;
         padding: 20px 10px 5px 10px;
-        background-color: red;
+        background-color: #977037;
         transform: translate(-50%, 0);
         clip-path: polygon(50% 0%, 60% 25%, 100% 25%, 100% 100%, 0 100%, 0 25%, 40% 25%);
 }
 
 #search-go-back{
     display: none;
-    background-color: white;
+    background-color: #FFBB52;
     border: 0px;
 }
 
@@ -78,8 +79,12 @@ nav .hideable {
     display: block;
 }
 
+#search-form {
+    display: flex;
+}
+
 #search-form.show {
-    display: block;
+    display: flex;
     z-index: 1000;
 }
 
@@ -106,5 +111,22 @@ nav .hideable {
         width: 100%;
         position: absolute;
         left: 0;
+        background-color: #FFBB52;
     }
+}
+
+@media (min-width:327px) {
+    #search-form{
+        height: 100%;
+    }
+}
+@media (max-width:326px) {
+    nav .navigation-actions{
+        flex-flow: row-reverse;
+    }
+}
+
+.input-group {
+    height: fit-content;
+    align-self: center;
 }
