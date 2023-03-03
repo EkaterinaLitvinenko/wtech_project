@@ -8,8 +8,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
         <link rel="stylesheet" href="./styles/navigation.css">
+        <link rel="stylesheet" href="./styles/footer.css">
     </head>
     <body>
+        <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img alt="Read me" title="logo of read me"></a>
           
@@ -30,7 +32,7 @@
               </ul>
             </div>
             <div class="navigation-actions">
-            <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" id="profile"></span></a>
+            <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
             <form  id="search-form">
                 <div class="input-group ">
                     <div class="input-group-prepend">
@@ -43,9 +45,9 @@
                 </div>
               </form>
               <div class="profile-group">
-                <a href="#"><span class="fa-sharp fa-solid fa-circle-user clickable" title="profile button" id="profile"></span></a>
+                <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
                 <form class="hideable">
-                    <button>odhlasit sa<span class="fa-sharp fa-solid fa-arrow-right-from-bracket"></span></button>
+                    <button class="btn" id="logout">odhlasiť sa </button>
                 </form>
                </div>
                <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
@@ -54,6 +56,7 @@
               </button>
             </div>
         </nav>
+    </header>
         <main>
             <!--Obsah-->
         </main>
@@ -91,7 +94,7 @@
                       </div>
                       
                       <!-- ikony  -->
-                      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="social-media">
                           <h6 class="text-uppercase fw-bold mb-4">Sleduj nás</h6>
                           <span class="fa-brands fa-square-instagram"></span>
                           <span class="fa-brands fa-square-facebook"></span>
