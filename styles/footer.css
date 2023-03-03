@@ -1,2 +1,26 @@
+#logo-col {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 #social-media {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+#icons {
+    font-size: 45px;
+    padding: 5px;
+}
+
+footer {
+    background-color: #FFBB52;
+}
+
+footer > .container {
+    padding-top: 10px;
+}
+
+#logo {
+    width: 100%;
 }
