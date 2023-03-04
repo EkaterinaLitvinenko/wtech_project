@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+        <link rel="stylesheet" href="./styles/navigation.css">
+        <link rel="stylesheet" href="./styles/footer.css">
+        <link rel="stylesheet" href="./styles/progressbar.css">
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+          
+            <div class="collapse navbar-collapse" id="navbar-collapsible">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Knihy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Bestsellery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">eKnihy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Audioknihy</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="navigation-actions">
+            <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+            <form  id="search-form">
+                <div class="input-group ">
+                    <div class="input-group-prepend">
+                        <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                    </div>
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                    </div>
+                </div>
+              </form>
+              <div class="profile-group">
+                <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                <form class="hideable">
+                    <button class="btn" id="logout">odhlasiť sa </button>
+                </form>
+               </div>
+               <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+        </nav>
+        </header>
+        <main clas="container">
+            <!--Obsah-->
+            <div class="row">
+                <ul id="progressbar">
+                    <li class="active">Košík</li>
+                    <li>Doprava</li>
+                    <li>Platba</li>
+                </ul>
+            </div>
+        </main>
+        <footer class="text-center text-lg-start">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <!-- logo + copyright  -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
+                <img src="./res/logo.png" alt="logo" id = "logo">
+                <p>
+                  <small>&copy; Copyright 2023, WTECH streda tím 3</small>
+                </p>
+              </div>  
+              <!-- prvý stĺpec  -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <p> Obchodné podmnieky </p>
+                  <p> Platba </p>
+                  <p> Doprava </p>
+                  <p> Reklamácia </p>
+                  <p> Najčastejšie otázky </p>
+              </div>
+              <!-- druhý stĺpec  -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <p> O nás </p>
+                  <p> Naša vízia </p>
+                  <p> Kariéra </p>
+                  <p> Kontakt </p>
+                  <p> Kamenné predajne </p>
+              </div>
+              <!-- ikony  -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
+                  <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
+                  <span class="fa-brands fa-2xl fa-square-facebook" id = "icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-instagram" id = "icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-reddit" id = "icons"></span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <script src="./js/navigation.js"></script>
+    </body>
+</html>
