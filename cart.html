@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="SK">
     <head>
+        <title>Read Me - Košík</title>
         <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
+        <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/navigation.css">
         <link rel="stylesheet" href="./styles/footer.css">
         <link rel="stylesheet" href="./styles/progressbar.css">
+        <link rel="stylesheet" href="./styles/cart.css">
     </head>
     <body>
         <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+            <a class="navbar-brand" href="#"><img src="./res/logo.png" alt="Read me" title="logo of read me"></a>
           
             <div class="collapse navbar-collapse" id="navbar-collapsible">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -58,7 +61,7 @@
             </div>
         </nav>
         </header>
-        <main clas="container">
+        <main class="container-fluid">
             <!--Obsah-->
             <div class="row">
                 <ul id="progressbar">
@@ -67,6 +70,83 @@
                     <li>Platba</li>
                 </ul>
             </div>
+            <section class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12" id="cart">
+                    <header>
+                        <h1>Váš košík</h1>
+                    </header>
+                    <form id="cart-form">
+                        <article>
+                            <img src="" width="50" height="70">
+                            <div class="item-info">
+                            <header>
+                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
+                            </header>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" title="remove item">-</span>
+                                </div>
+                                <input class="form-control" type="number" value="1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" title="add item">+</span>
+                                </div>
+                                <button class="btn" title="delete"><span class="fa-solid fa-trash"></span></button>
+                            </div>                     
+                        </div>
+                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
+                        </article>
+                        <article>
+                            <img src="" width="50" height="70">
+                            <div class="item-info">
+                            <header>
+                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
+                            </header>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" title="remove item">-</span>
+                                </div>
+                                <input class="form-control" type="number" value="1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" title="add item">+</span>
+                                </div>
+                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
+                            </div>                     
+                        </div>
+                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
+                        </article>
+                        <article>
+                            <img src="" width="50" height="70">
+                            <div class="item-info">
+                            <header>
+                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
+                            </header>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" title="remove item">-</span>
+                                </div>
+                                <input class="form-control" type="number" value="1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" title="add item">+</span>
+                                </div>
+                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
+                            </div>                     
+                        </div>
+                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
+                        </article>
+                        <footer>
+                            <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
+                            <a href="#" class="btn">Spät na knihy</a> 
+                            <div id="controls">
+                                <button class="btn">Uložiť košík</button>
+                                <button class="btn">Pokračovať</button>
+                            </div>
+                        </footer>
+                    </form>
+                </div>
+            </section>
         </main>
         <footer class="text-center text-lg-start">
           <div class="container text-center text-md-start mt-5">
@@ -97,9 +177,9 @@
               <!-- ikony  -->
               <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
                   <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
-                  <span class="fa-brands fa-2xl fa-square-facebook" id = "icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-instagram" id = "icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-reddit" id = "icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
               </div>
             </div>
           </div>
