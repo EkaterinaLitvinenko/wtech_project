@@ -1,0 +1,136 @@
+h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+hr {
+    border-top: 3px solid black;
+}
+
+.main-content {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+.top-books-cover {
+    width: 139px;
+    height: 219px;
+}
+
+.top-books-title {
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.top-books-author {
+    font-size: 13px;
+    margin-bottom: 0px;
+}
+
+.rating-decimal {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgb(224, 223, 223);
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    box-shadow: inset;
+}
+
+.rating-decimal > p {
+    margin-bottom: 0px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fa-star, .fa-star-half-stroke {
+    color:  #FFBB52;;
+}
+
+.rating-price {
+    display: inline-flex;
+    align-items: center;
+}
+
+.rating-price > p {
+    margin-bottom: 0px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.main-book {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: lightgray;
+    text-align: center;
+    width: 357px;
+    height: 666px;
+}
+
+.main-book > img {
+    width: 245px;
+    height: 386px;
+}
+
+.main-book > h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.main-book > p {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.rating-inline {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.book-wrapper {
+    display: flex;
+}
+
+.card-img-top {
+    width: 135px;
+    height: 213px;
+}
+
+.card {
+    width: 150px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+    align-items: center;
+    border-width: 0px;
+    border-radius: 0px solid;
+}
+
+.card-body {
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    color: black;
+}
+
+.first-row {
+    margin-bottom: 20px;
+}
