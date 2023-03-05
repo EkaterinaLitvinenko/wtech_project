@@ -99,7 +99,7 @@ nav .hideable {
 }
 
 
-@media (max-width: 526px){
+@media (max-width: 535px){
     #search-go-back{
         align-self: center;
         display: block;

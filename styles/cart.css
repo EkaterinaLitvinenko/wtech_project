@@ -44,6 +44,10 @@
     font-size: 2rem;
 }
 
+main.container-fluid {
+    max-width: 1600px;
+}
+
 #cart footer .btn {
     margin-bottom: 10px;
     height: fit-content;
