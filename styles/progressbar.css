@@ -46,9 +46,9 @@
 }
 
 #progressbar li.active::after{
-    background-color: green;
+    background-color: #5296FF;
 }
 
 #progressbar li.active::before {
-    background-color: green;
+    background-color: #5296FF;
 }

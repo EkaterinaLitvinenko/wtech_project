@@ -8,7 +8,9 @@
     margin-right: 0px;
 }
 
-#cart-form > article {
+#cart-form > article,
+#prehlad-objednavky article
+ {
     display: grid;
     align-items: center;
     border-style:solid;
@@ -17,6 +19,7 @@
     padding: 10px 5px 20px 5px;
     background-color: #e5e9ee;
 }
+
 #cart-form > article button {
     border-radius: 5px;
     padding-left: 11px;
@@ -58,7 +61,9 @@ main.container-fluid {
 }
 
 #cart-form > article  header > h2,
-#cart-form > article  header > p {
+#cart-form > article  header > p,
+#prehlad-objednavky h2 
+ {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -136,4 +141,123 @@ main.container-fluid {
         grid-column: 1;
         grid-row: 2;
     }
+}
+
+#prehlad-objednavky article {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+@media (max-width:320px){
+    #prehlad-objednavky article {
+        display: inline-block;
+    }
+}
+
+
+#prehlad-objednavky h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#prehlad-objednavky footer {
+    text-align: end;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    /*position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;*/
+    background-color: transparent;
+}
+#prehlad-objednavky footer p {
+    font-size: 1.3rem;
+    margin-bottom: 0px;
+}
+
+#prehlad-objednavky div {
+    height: 590px;
+    overflow-y: scroll;
+}
+
+.radio-group {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+.radio-group:last-child {
+    border-bottom: 0px;
+}
+
+#prehlad-objednavky h2 {
+    font-size: 1rem;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#prehlad-objednavky .amount {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: end;
+    margin-bottom: 0px;
+}
+
+#prehlad-objednavky .priceUnit {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: end;
+    margin-bottom: 0px;
+}
+
+
+#prehlad-objednavky .price {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: end;
+    margin-bottom: 0px;
+}
+@media (max-width:575.99px) {
+    .delivery {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+}
+
+.form-footer {
+    background-color: transparent;
+}
+
+.form-footer button {
+    float: right;
+}
+
+.form-part {
+    background-color: lightgray;
+    border-radius: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+legend {
+    padding-top: 10px;
+}
+
+label {
+    margin-bottom: 2px;
+}
+
+input.form-control {
+    padding: 0.275rem 0.75rem;
 }
