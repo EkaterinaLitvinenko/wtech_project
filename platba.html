@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+        <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/navigation.css">
+        <link rel="stylesheet" href="./styles/footer.css">
+        <link rel="stylesheet" href="./styles/progressbar.css">
+        <link rel="stylesheet" href="./styles/cart.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+              
+                <div class="collapse navbar-collapse" id="navbar-collapsible">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Knihy</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Bestsellery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">eKnihy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Audioknihy</a>
+                      </li>
+                  </ul>
+                </div>
+                <div class="navigation-actions">
+                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+                <form  id="search-form">
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                        </div>
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                        </div>
+                    </div>
+                  </form>
+                  <div class="profile-group">
+                    <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                    <form class="hideable">
+                        <button class="btn" id="logout">odhlasiť sa </button>
+                    </form>
+                  </div>
+                  <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+            </nav>
+        </header>
+        <main class="container-fluid">
+                <header class="row">
+                    <ul id="progressbar">
+                        <li class="active">Košík</li>
+                        <li class="active">Doprava</li>
+                        <li class="active">Platba</li>
+                    </ul>
+                </header>
+                <section class="row justify-content-center">
+                    <div class="col-lg-4 col-md-7 col-sm-12 col-12 delivery">
+                        <form id="payment-form">
+
+                        <div class="form-part">
+                            <article>
+                                <h1>Osobné údaje</h1>
+                                <p>Meno Priezvisko</p>
+                                <p>email@email.com</p>
+                                <p>+421 123 123 123</p>
+                            </article>
+                            <article>
+                                <h1>Dodacia adresa</h1>
+                                <p>Ulica a číslo domu</p>
+                                <p>000 00 Obec</p>
+                            </article>
+                            <article>
+                                <h1>Spôsob doručenia</h1>
+                                <p>Doručenie na adresu kurierom</p>
+                            </article>
+                        </div>
+                        <div class="form-part">
+                        <fieldset>
+                            <legend>Spôsob platby</legend>
+                            <div class="radio-group">
+                                <input type="radio" id="karta" name="sposob-platby" value="karta">
+                                <label for="karta">Kartou online</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="dobierka" name="sposob-platby" value="dobierka">
+                                <label for="dobierka">Na dobierku</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="gp" name="sposob-platby" value="Google-pay">
+                                <label for="gp">Google pay</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="prevod" name="sposob-platby" value="prevod">
+                                <label for="prevod">Bankovým prevodom</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                        </form>
+                    </div>
+                    <aside class="col-lg-4 col-md-4 col-sm-12 form-part" id="prehlad-objednavky">
+                        <h1>Prehľad objednávky</h1>
+                        <div>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            
+                                <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                                <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
+                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
+                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        </div>
+                        <footer>
+                            <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
+                        </footer>
+                    </aside>
+                </section>
+                <footer class="row justify-content-center form-footer">
+                    <div class="col-md-8 col-12">
+                    <a href="#" class="btn">Spät do košíka</a>
+                    <button class="btn" form="payment-form">Pokračovať</button>
+                    </div>
+                </footer>
+        </main>
+        <footer class="text-center text-lg-start">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <!-- logo + copyright  -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
+                <img src="./res/logo.png" alt="logo" id = "logo">
+                <p>
+                  <small>&copy; Copyright 2023, WTECH streda tím 3</small>
+                </p>
+              </div>  
+              <!-- prvý stĺpec  -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <p> Obchodné podmnieky </p>
+                  <p> Platba </p>
+                  <p> Doprava </p>
+                  <p> Reklamácia </p>
+                  <p> Najčastejšie otázky </p>
+              </div>
+              <!-- druhý stĺpec  -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <p> O nás </p>
+                  <p> Naša vízia </p>
+                  <p> Kariéra </p>
+                  <p> Kontakt </p>
+                  <p> Kamenné predajne </p>
+              </div>
+              <!-- ikony  -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
+                  <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
+                  <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
+                  <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <script src="./js/navigation.js"></script>
+    </body>
+</html>
