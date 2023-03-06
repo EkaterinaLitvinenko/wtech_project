@@ -149,10 +149,14 @@ main.container-fluid {
     border-radius: 10px;
     margin-bottom: 5px;
 }
-@media (max-width:320px){
+@media (max-width:494px) or ((min-width:768px) and (max-width:1422px)){
     #prehlad-objednavky article {
-        display: inline-block;
+        display: block;
     }
+    #prehlad-objednavky .priceUnit {
+        display: none;
+    }
+    
 }
 
 #payment-form .form-part:first-child {
@@ -191,8 +195,23 @@ main.container-fluid {
     background-color: transparent;
 }
 #prehlad-objednavky footer p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0px;
+}
+
+#prehlad-objednavky footer p strong{
+    font-size: 1.3rem;
+}
+
+@media (max-width:892px) and (min-width:768px) {
+    #prehlad-objednavky footer p {
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+    
+    #prehlad-objednavky footer p strong{
+        font-size: 1rem;
+    }
 }
 
 #prehlad-objednavky div {
@@ -275,4 +294,60 @@ label {
 
 input.form-control {
     padding: 0.275rem 0.75rem;
+}
+
+
+#progressbar {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+@media (max-width:700px) {
+    #progressbar {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+#progressbar li {
+    list-style: none;
+    float: left;
+    position: relative;
+    width:33.3333333%
+}
+#progressbar li::before {
+    content: "";
+    width: 100%;
+    height: 12px;
+    background: #eaf0f4;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: 10px;
+}
+
+
+#progressbar li::after {
+    content: "";
+    background-color: #eaf0f4;
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progressbar li.active::after{
+    background-color: #5296FF;
+}
+
+#progressbar li.active::before {
+    background-color: #5296FF;
 }
