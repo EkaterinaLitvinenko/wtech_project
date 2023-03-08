@@ -1,27 +1,17 @@
 
-$(document).ready(()=>{
-
-$('#profile').click((e)=>{
-    e.preventDefault()
-    console.log('here')
-    if($('#profile').next().hasClass('show'))
-        $('#profile').next().removeClass('show')
-    else
-    $('#profile').next().addClass('show')
-})
-
-$('#open-search-sm').click((e)=>{
+document.getElementById('profile').onclick = (e) => {
     e.preventDefault()
     console.log('hre')
-    $('#search-form').addClass('show')
-    $('.collapse.show').removeClass('show')
-    $('.profile-group form').removeClass('show')
+    document.getElementById('profile').nextElementSibling.classList.toggle('show')
+        
+}
 
-})
-
-$('#search-go-back').click((e)=>{
+document.getElementById('search-go-back').onclick = document.getElementById('open-search-sm').onclick = (e) => {
     e.preventDefault()
-    $('#search-form').removeClass('show')
-})
-
-})
+    document.getElementById('search-form').classList.toggle('show')
+    Array.from(document.getElementsByClassName('collapse show')).forEach(element => {
+        console.log('here')
+        element.classList.remove('show')
+    })
+    document.getElementById('profile').nextElementSibling.classList.remove('show')
+}
