@@ -25,3 +25,16 @@ $('#search-go-back').click((e)=>{
 })
 
 })
+
+function changeMainBook(img, title, author, about) {
+  const main_cover = document.getElementById("main-book-cover");
+  const main_title = document.getElementById("main-book-title");
+  const main_author = document.getElementById("main-book-author");
+  const main_about = document.getElementById("main-book-about");
+  console.log(main_cover)
+  main_cover.src = img;
+  main_title.innerHTML = title;
+  main_author.innerHTML = author;
+  main_about.innerHTML = about;
+  console.log(main_cover.src, main_title.innerHTML)
+}

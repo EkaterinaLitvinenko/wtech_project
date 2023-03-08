@@ -82,7 +82,7 @@ hr {
     font-weight: bold;
 }
 
-.main-book {
+#main-book {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 60px;
@@ -93,16 +93,36 @@ hr {
     height: 100%;
 }
 
-.main-book > img {
+#main-book-cover {
     width: 80%;
     object-fit: fill;
     border-radius: calc(0.25rem - 1px);
 }
 
-.main-book-title {
+#main-book-title {
     font-size: 20px;
     margin-bottom: 0px;
     margin-top: 10px;
+}
+
+
+#main-book-about { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+}
+        
+#main-book-author, #main-book-about {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.rating-inline {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .top-books-author, .top-books-title, .main-book-title, .main-book-author, .card-title { 
@@ -112,25 +132,6 @@ hr {
    -webkit-line-clamp: 1;
            line-clamp: 1;
    -webkit-box-orient: vertical;
-}
-
-.main-book-about { 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-            line-clamp: 4;
-    -webkit-box-orient: vertical;
- }
-
-.main-book-author, .main-book-about {
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-
-.rating-inline {
-    font-size: 20px;
-    margin-bottom: 10px;
 }
 
 /*--------------------------------------

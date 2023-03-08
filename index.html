@@ -382,10 +382,10 @@
               <h1>TOP 6 kníh podľa našich zákazníkov...</h1>
               <div class="grid-container">
                 <div class = "grid-item grid-item-1">
-                  <article class="col main-book">
-                    <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia">
-                    <h2 class = "main-book-title">Dobré znamenia</h2>
-                    <p class = "main-book-author">Neil Gaiman, Terry Pratchett</p>
+                  <article id="main-book">
+                    <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" id = "main-book-cover">
+                    <h2 id = "main-book-title">Dobré znamenia</h2>
+                    <p id = "main-book-author">Neil Gaiman, Terry Pratchett</p>
                     <div class = "rating-inline">
                         <span class="fa-solid fa-star"></span>
                         <span class="fa-solid fa-star"></span>
@@ -393,7 +393,7 @@
                         <span class="fa-solid fa-star"></span>
                         <span class="fa-solid fa-star-half-stroke"></span>
                     </div>
-                    <p class = "main-book-about">
+                    <p id = "main-book-about">
                         Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
                     </p>
                   </article>
@@ -410,7 +410,9 @@
                        <p>16.95€</p>
                    </div>
                 </div>
-                <div class = "grid-item grid-item-3">
+                <div class = "grid-item grid-item-3" 
+                onmouseover="changeMainBook('./res/knihy/bitunok.jpg','Bitúnok č.5', 'Kurt Vonnegut', 'Kurt Vonnegut je pokračovateľom veľkých satirikov ako Jonathan Swift alebo Samuel Butler. Spolu s Rayom Bradburym patrí k spisovateľom, pre ktorých je žáner science-fiction predovšetkým príležitosťou odhaľovať pravdu o našom živote a konaní. S postupujúcim vekom sa u Vonneguta čoraz výraznejšie dostávajú do popredia prvky reflexívne a autobiografické. Ako iní veľkí tvorcovia, aj on stiera rozdiel medzi vlastným súkromím a údelom svojho epického hrdinu, voľne splieta obe vetvy rozprávania a dosahuje tak osobitný účinok. V románe Bitúnok č. 5 opísal jeden z kľúčových zážitkov svojho života – bombardovanie Drážďan v roku 1945. Tak vzniká jedno z najoriginálnejších protivojnových diel, v ktorom hlavnú postavu predstavuje Billy Pilgrim, mladý Američan s nemeckými koreňmi, ktorý sa dostáva do nemeckého zajatia.')" 
+                onmouseleave="changeMainBook('./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
                   <img src="./res/knihy/bitunok.jpg" alt="Kniha Bitúnok č. 5" class = "card-img-top">
                   <h3 class = "top-books-title">Bitúnok č. 5</h3>
                   <p class = "top-books-author">Kurt Vonnegut</p>
@@ -422,8 +424,10 @@
                       <p>11.95€</p>
                   </div>
                 </div>
-                <div class = "grid-item grid-item-4">
-                  <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "card-img-top">
+                <div class = "grid-item grid-item-4"
+                onmouseover="changeMainBook('./res/knihy/catch22.png','Hlava XXII', 'Joseph Heller', 'Hlava XXII sa nepodobá žiadnej knihe, ktorú ste čítali. Má svoj štýl, svoju logiku, svoj výnimočný charakter a rukopis. Neustále balansuje medzi komikou a hororom. Je výstredne zábavná a pôsobivá. Je originálna. Majster satiry, irónie i čierneho humoru, Joseph Heller, kriticky vnímal modernú spoločnosť a jej plyv na jednotlivca, nezmyselnosť a hrôzy vojny, byrokraciu, ale aj politiku, ktorá nás ovláda v mene zdravého rozumu a všeobecného blaha.')" 
+                onmouseleave="changeMainBook('./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "card-img-top hover-book3">
                   <h3 class = "top-books-title">Hlava XXII</h3>
                   <p class = "top-books-author">Joseph Heller</p>
                   <div class = "rating-price">
@@ -434,8 +438,10 @@
                       <p>13.95€</p>
                   </div>
                 </div>
-                <div class = "grid-item grid-item-5">
-                  <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "card-img-top">
+                <div class = "grid-item grid-item-5"
+                  onmouseover="changeMainBook('./res/knihy/panprstenov3.jpg','Pán prsteňov: Návrat kráľa', 'J.R.R. Tolien', 'Pán prsteňov je rozprávkovou históriou Vojny o prsteň, rozprávaním o boji slobodných národov Stredozeme proti Tieňu a o putovaní Hobita Froda, ktorý sa vyberie zachrániť svet. Po rozbití Spoločenstva prsteňa a príchode Veľkej tmy začína Vojna o prsteň, ktorá má rozhodnúť o všetkom...')" 
+                  onmouseleave="changeMainBook('./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "card-img-top hover-book4">
                   <h3 class = "top-books-title">Pán prsteňov: Návrat kráľa</h3>
                   <p class = "top-books-author">J.R.R. Tolkien</p>
                   <div class = "rating-price">
@@ -446,8 +452,10 @@
                       <p>11.95€</p>
                   </div>
                 </div>
-                <div class = "grid-item grid-item-6">
-                  <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "card-img-top">
+                <div class = "grid-item grid-item-6"
+                  onmouseover="changeMainBook('./res/knihy/thursdayclub.jpg','The Thursday Murder Club', 'Richard Osman', 'In a peaceful retirement village, four unlikely friends meet up once a week to investigate unsolved murders. But when a brutal killing takes place on their very doorstep, the Thursday Murder Club find themselves in the middle of their first live case. Elizabeth, Joyce, Ibrahim and Ron might be pushing eighty but they still have a few tricks up their sleeves. Can our unorthodox but brilliant gang catch the killer before its too late?')" 
+                  onmouseleave="changeMainBook('./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "card-img-top hover-book5">
                   <h3 class = "top-books-title">The Thursday Murder Club</h3>
                   <p class = "top-books-author">Richard Osman, Jožko Mrkvička, Pavol Pavlový</p>
                   <div class = "rating-price">
@@ -458,8 +466,10 @@
                       <p>11 000.50€</p>
                   </div>
                 </div>
-                <div class = "grid-item grid-item-7">
-                  <img src="./res/knihy/mackaapes.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class = "card-img-top">
+                <div class = "grid-item grid-item-7" 
+                  onmouseover="changeMainBook('./res/knihy/mackaapes.jpg','Rozprávky o psíčkovi a mačičke', 'Josef Čapek', 'Obľúbené rozprávky o psíčkovi a mačičke, ako spolu gazdovali v malom domčeku pod lesom, ako si v ňom spolu nažívali a chceli robiť všetko tak, ako robia veľkí ľudia a ešte o všelijakých iných veciach pre deti, napísal a nakreslil Josef Čapek.')" 
+                  onmouseleave="changeMainBook('./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/mackaapes.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class = "card-img-top hover-book6">
                   <h3 class = "top-books-title">Rozprávky o psíčkovi a mačičke</h3>
                   <p class = "top-books-author">Josef Čapek</p>
                   <div class = "rating-price">
@@ -516,6 +526,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
-        <script src="./js/navigation.js"></script>
+        <script src="./js/main.js"></script>
+
+
+
+
     </body>
 </html>
