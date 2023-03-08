@@ -13,9 +13,27 @@ hr {
     margin-top: 50px;
 }
 
-.top-books-cover {
-    width: 139px;
-    height: 219px;
+/*------ top knihy --------*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 15% 15% 15%;
+    grid-gap: 20px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.grid-item {
+    display: inline-grid;
+    justify-items: center;
+}
+
+.grid-item-1 {
+    grid-row: span 2;
+}
+
+.grid-item-2, .grid-item-3, .grid-item-4, .grid-item-5, .grid-item-6, .grid-item-7 {
+    grid-column: span 1;
 }
 
 .top-books-title {
@@ -69,24 +87,43 @@ hr {
     padding-bottom: 20px;
     padding-left: 60px;
     padding-right: 60px;
-    background-color: lightgray;
+    background-color: rgb(241, 241, 241);
     text-align: center;
-    width: 357px;
-    height: 666px;
+    width: 80%;
+    height: 100%;
 }
 
 .main-book > img {
-    width: 245px;
-    height: 386px;
+    width: 80%;
+    object-fit: fill;
+    border-radius: calc(0.25rem - 1px);
 }
 
-.main-book > h2 {
+.main-book-title {
     font-size: 20px;
     margin-bottom: 0px;
     margin-top: 10px;
 }
 
-.main-book > p {
+.top-books-author, .top-books-title, .main-book-title, .main-book-author, .card-title { 
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+           line-clamp: 1;
+   -webkit-box-orient: vertical;
+}
+
+.main-book-about { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+            line-clamp: 4;
+    -webkit-box-orient: vertical;
+ }
+
+.main-book-author, .main-book-about {
     font-size: 16px;
     margin-bottom: 0px;
 }
@@ -96,6 +133,9 @@ hr {
     margin-bottom: 10px;
 }
 
+/*--------------------------------------
+---------- corousel --------------------*/
+
 .book-wrapper {
     display: flex;
 }
@@ -103,10 +143,12 @@ hr {
 .card-img-top {
     width: 135px;
     height: 213px;
+    object-fit: fill;
+    border-radius: calc(0.25rem - 1px);
 }
 
 .card {
-    width: 150px;
+    width: 100%;
     margin-left: 25px;
     margin-right: 25px;
     text-align: center;
@@ -127,10 +169,100 @@ hr {
     margin-bottom: 0px;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    color: black;
+/*-----responzivita------------------*/ 
+@media (min-width: 1250px) and (max-width: 1439px){
+    .main-book-about { 
+        -webkit-line-clamp: 5;
+                line-clamp: 5;
+    }
 }
 
-.first-row {
-    margin-bottom: 20px;
+@media (max-width: 1250px){
+    .card:not(:nth-child(-n + 5)) {
+        display: none;
+    }
+
+    .main-book-about { 
+        -webkit-line-clamp: 7;
+                line-clamp: 7;
+    }
+}
+
+@media (max-width: 1050px){
+    .main-content {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .card:not(:nth-child(-n + 4)) {
+        display: none;
+    }
+
+    .main-book-about { 
+        -webkit-line-clamp: 8;
+                line-clamp: 8;
+     }
+}
+
+@media (max-width: 1023px){
+    .main-book {
+        display: none;
+    }
+
+    .grid-item-1 {
+        display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 50% 50%;
+        grid-row: auto;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 680px){
+    .card:not(:nth-child(-n + 3)) {
+        display: none;
+    }
+}
+
+@media (max-width: 570px){
+    .card:not(:nth-child(-n + 2)) {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 33% 33% 33%;
+        grid-row: auto;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px){
+    .main-content {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .card:not(:first-child) {
+        display: none;
+    }
+}
+
+@media (max-width: 362px){
+    .grid-container {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, calc(100%/6));
+        grid-row: auto;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
 }
