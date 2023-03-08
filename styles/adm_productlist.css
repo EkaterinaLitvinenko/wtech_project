@@ -1,0 +1,42 @@
+.adm-navigation-actions{
+    display: flex;
+    justify-content: right;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prodlist-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.adm-prodlist-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.adm-tools{
+    display: flex;
+}
+
+#search-form input {
+    border-radius: 100px 0px 0px 100px;
+}
+
+#add-btn {
+    margin-left: 1rem;
+}
+
+
+.adm-book-cover{
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+}
