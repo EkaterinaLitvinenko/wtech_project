@@ -1,18 +1,3 @@
-h1 {
-    font-size: 25px;
-    margin-bottom: 25px;
-}
-
-hr {
-    border-top: 3px solid black;
-}
-
-.main-content {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 50px;
-}
-
 /*------ top knihy --------*/
 
 .grid-container {
@@ -20,7 +5,7 @@ hr {
     grid-template-columns: 50% 15% 15% 15%;
     grid-gap: 20px;
     padding: 20px;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .grid-item {
@@ -44,7 +29,7 @@ hr {
 
 .top-books-author {
     font-size: 13px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .rating-decimal {
@@ -55,11 +40,11 @@ hr {
     padding: 2px;
     margin-bottom: 5px;
     margin-top: 5px;
-    box-shadow: inset;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 1px 4px;
 }
 
 .rating-decimal > p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-size: 15px;
     padding-left: 5px;
     padding-right: 5px;
@@ -74,8 +59,8 @@ hr {
     align-items: center;
 }
 
-.rating-price > p {
-    margin-bottom: 0px;
+.price {
+    margin-bottom: 0;
     font-size: 15px;
     padding-left: 5px;
     padding-right: 5px;
@@ -87,16 +72,18 @@ hr {
     padding-bottom: 20px;
     padding-left: 60px;
     padding-right: 60px;
-    background-color: rgb(241, 241, 241);
+    background-color: #BFAFFF;
     text-align: center;
     width: 80%;
     height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 #main-book-cover {
-    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 245px;
+    height: 386px;
     object-fit: fill;
-    border-radius: calc(0.25rem - 1px);
 }
 
 #main-book-title {
@@ -117,15 +104,20 @@ hr {
         
 #main-book-author, #main-book-about {
     font-size: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
-.rating-inline {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
+.rating {
+    font-size: 30px;
+    color: orange;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .rating::before { 
+    content: "★ ★ ★ ★ ★" 
+  }
 
-.top-books-author, .top-books-title, .main-book-title, .main-book-author, .card-title { 
+.top-books-author, .top-books-title, #main-book-title, #main-book-author, .card-title { 
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
@@ -146,6 +138,7 @@ hr {
     height: 213px;
     object-fit: fill;
     border-radius: calc(0.25rem - 1px);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .card {
@@ -154,25 +147,25 @@ hr {
     margin-right: 25px;
     text-align: center;
     align-items: center;
-    border-width: 0px;
-    border-radius: 0px solid;
+    border-width: 0;
+    border-radius: 0 solid;
 }
 
 .card-body {
     padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 .card-title {
     font-size: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 /*-----responzivita------------------*/ 
 @media (min-width: 1250px) and (max-width: 1439px){
-    .main-book-about { 
+    #main-book-about { 
         -webkit-line-clamp: 5;
                 line-clamp: 5;
     }
@@ -183,9 +176,22 @@ hr {
         display: none;
     }
 
-    .main-book-about { 
+    #main-book-about { 
         -webkit-line-clamp: 7;
                 line-clamp: 7;
+    }
+}
+
+@media (max-width: 1199px){
+    .grid-container {
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 50% 50%;
+        grid-row: auto;
+        justify-content: center;
+    }
+    
+    .grid-item-1 {
+        display: none;
     }
 }
 
@@ -198,30 +204,13 @@ hr {
     .card:not(:nth-child(-n + 4)) {
         display: none;
     }
-
-    .main-book-about { 
+    
+    #main-book-about { 
         -webkit-line-clamp: 8;
-                line-clamp: 8;
-     }
+        line-clamp: 8;
+    }
 }
 
-@media (max-width: 1023px){
-    .main-book {
-        display: none;
-    }
-
-    .grid-item-1 {
-        display: none;
-    }
-
-    .grid-container {
-        grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 50% 50%;
-        grid-row: auto;
-        justify-content: center;
-    }
-
-}
 
 @media (max-width: 680px){
     .card:not(:nth-child(-n + 3)) {

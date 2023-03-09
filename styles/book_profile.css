@@ -1,0 +1,41 @@
+.book-info1 {
+    display: grid;
+    background-color: #8fbc8f;
+    grid-template-columns: 25% 75%;
+    grid-gap: 20px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.book-info2 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-gap: 50px;
+    padding: 20px;
+}
+
+#main-cover {
+    text-align: center;
+}
+
+#main-cover > img {
+    width: 206px;
+    height: 326px;
+    object-fit: fill;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#main-info1 {
+    padding: 10px;
+}
+
+#main-info1 > h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+#main-info1 > h2 {
+    font-size: 22px;
+    font-weight: 400;
+}

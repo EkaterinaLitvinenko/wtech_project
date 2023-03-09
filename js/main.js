@@ -14,13 +14,36 @@ document.getElementById('search-go-back').onclick = document.getElementById('ope
     document.getElementById('profile').nextElementSibling.classList.remove('show')
 }   
 
-function changeMainBook(img, title, author, about) {
+function changeMainBook(stars,color, img, title, author, about) {
+  const main_book = document.getElementById("main-book");
   const main_cover = document.getElementById("main-book-cover");
   const main_title = document.getElementById("main-book-title");
   const main_author = document.getElementById("main-book-author");
   const main_about = document.getElementById("main-book-about");
+  const rating = document.getElementById("rating-inline");
+
+  main_book.style.backgroundColor = color;
   main_cover.src = img;
   main_title.innerHTML = title;
   main_author.innerHTML = author;
   main_about.innerHTML = about;
+
+    if(stars <= 3.0) {
+        rating.style.content = "★★★☆☆";
+    }
+    else if(stars > 3 && stars <= 4.0) {
+        rating.style.content = attr("★★★☆");
+    }
+    else if(stars > 4 && stars <= 4.5) {
+        rating.style.content = attr("★★★☆");
+    }
+}
+
+function countLines() {
+    var el = document.getElementByClass('price');
+    var divHeight = el.offsetHeight;
+    var lineHeight = parseInt(el.style.lineHeight);
+    var lines = divHeight / lineHeight;
+    console.log(lines)
+    alert("Lines: " + lines);
 }

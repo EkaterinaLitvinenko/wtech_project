@@ -37,7 +37,8 @@ nav #search-form .btn {
 
 nav .clickable {
     padding: 10px;
-    font-size: 20px;
+    font-size: 25px;
+    color: rgb(33, 33, 33);
 }
 nav input {
     padding-top: 0px;
@@ -60,9 +61,10 @@ nav #search-form input {
 
 nav #search-form button {
     border-radius: 0px 100px 100px 0px;
-    background-color: #FFBB52;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-left-width: 0px;
 }
-
 
 nav .navigation-actions {
     display: flex;
@@ -72,6 +74,7 @@ nav .navigation-actions {
 nav .profile-group {
         position: relative;
 }
+
 nav .hideable {
         position: absolute;
         width: max-content;
@@ -87,6 +90,12 @@ nav .hideable {
     display: none;
     background-color: #FFBB52;
     border: 0px;
+}
+
+.input-group-append > .btn-outline-success {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-left-width: 0px;
 }
 
 @media (max-width: 991px){
@@ -186,4 +195,19 @@ footer > .container {
 
 #logo {
     width: 100%;
+}
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+hr {
+    border-top: 3px solid black;
+}
+
+.main-content {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
 }

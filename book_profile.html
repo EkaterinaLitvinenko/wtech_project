@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="SK">
+<html>
     <head>
-        <title>Read Me - Košík</title>
         <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
         <meta charset="utf-8">
         <title>ReadMe BookShop</title>
@@ -10,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
         <link rel="stylesheet" href="./styles/global.css">
-        <link rel="stylesheet" href="./styles/cart.css">
+        <link rel="stylesheet" href="./styles/book_profile.css">
     </head>
     <body>
         <header>
@@ -59,28 +58,17 @@
                   </nav>
             </nav>
         </header>
-        <main class="container-fluid">
-            <!--Obsah-->
-            <header class="row">
-                <ul id="progressbar">
-                    <li class="active">Košík</li>
-                    <li>Doprava</li>
-                    <li>Platba</li>
-                </ul>
-            </header>
-            <section class="row justify-content-center">
-                <div class="col-lg-8 col-md-10 col-sm-12" id="cart">
-                    <header>
-                        <h1>Váš košík</h1>
-                    </header>
-                    <form id="cart-form">
-                        <article>
-                            <img src="./res/knihy/catch22.png" width="50" height="70">
-                            <div class="item-info">
-                            <header>
-                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
-                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
-                            </header>
+        <main>
+            <article class = "main-content">
+                <section class = "book-info1">
+                    <div  id = "main-cover">
+                        <img src = "./res/knihy/arianddante.jpg">
+                    </div>  
+                    <div id = "main-info1">
+                        <h1>Aristotle and Dante Discover the Secrets of the Universe</h1>
+                        <h2>Benjamin Alíre Sáenz,Janko Mrkvička, Marienka Levicka, Isodor Pankrác, Filomena Ruzena Podmanicka</h2>
+                        <span id="rating-inline" class="rating"></span>
+                        <span>
                             <div class="input-group">
                                 <div class="input-group-append">
                                     <span class="input-group-text" title="remove item">-</span>
@@ -89,63 +77,57 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" title="add item">+</span>
                                 </div>
-                                <button class="btn" title="delete"><span class="fa-solid fa-trash"></span></button>
-                            </div>                     
-                        </div>
-                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
-                        </article>
-                        <article>
-                            <img src="" width="50" height="70">
-                            <div class="item-info">
-                            <header>
-                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
-                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
-                            </header>
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" title="remove item">-</span>
-                                </div>
-                                <input class="form-control" type="number" value="1">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" title="add item">+</span>
-                                </div>
-                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
-                            </div>                     
-                        </div>
-                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
-                        </article>
-                        <article>
-                            <img src="" width="50" height="70">
-                            <div class="item-info">
-                            <header>
-                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
-                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
-                            </header>
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" title="remove item">-</span>
-                                </div>
-                                <input class="form-control" type="number" value="1">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" title="add item">+</span>
-                                </div>
-                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
-                            </div>                     
-                        </div>
-                            <p>99 000.00 <abbr title="EUR">€</abbr></p>
-                        </article>
-                        <footer>
-                            <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
-                            <a href="#" class="btn">Spät na knihy</a> 
-                            <div id="controls">
-                                <button class="btn">Uložiť košík</button>
-                                <button class="btn">Pokračovať</button>
-                            </div>
-                        </footer>
-                    </form>
-                </div>
-            </section>
+                            </div>    
+                            <button class="btn">Vložiť do košíka</button>
+                        </span>
+                    </div>
+                </section>
+                <section class = "book-info2">
+                    <div  id = "main-table">
+                        <table class="table">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Počet strán</th>
+                                <td>99 999</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Žáner</th>
+                                <td>Young Adult</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Jazyk</th>
+                                <td>anglický</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Rok vydania</th>
+                                <td>2021</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Typ väzby</th>
+                                <td>brožovaná</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">ISBN</th>
+                                <td>9788055656496</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>  
+                    <div id = "main-about">
+                        <h1>O knihe</h1>
+                        <p>
+                            Aristotle is an angry teen with a brother in prison. Dante is a know-it-all who has a unique perspective on life.<br>
+                            <br>
+                            When the two meet at the swimming pool, they seem to have nothing in common. But as the loners start spending time together, they develop a special friendship - the kind that changes lives and lasts a lifetime. And it is through this friendship that Ari and Dante will learn the most important truths about the universe, themselves and the kind of people they want to be.<br>
+                            <br>
+                            This incredibly moving and powerful Printz Honor Book follows two teen boys learning to open themselves up to love, despite the world being against them.
+                        </p>
+                    </div>
+                </section>
+            </article>
         </main>
+
+
         <footer class="text-center text-lg-start">
           <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
@@ -182,10 +164,11 @@
             </div>
           </div>
         </footer>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
-        <script src="./js/main.js"></script>
+        <script src="./js/navigation.js"></script>
     </body>
 </html>
