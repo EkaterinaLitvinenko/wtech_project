@@ -15,7 +15,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
               
-                <div class="collapse navbar-collapse" id="navbar-collapsible">
+                <nav class="collapse navbar-collapse" id="navbar-collapsible">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                       <a class="nav-link" href="#">Knihy</a>
@@ -30,43 +30,44 @@
                         <a class="nav-link" href="#">Audioknihy</a>
                       </li>
                   </ul>
-                </div>
-                <div class="navigation-actions">
-                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-                <form  id="search-form">
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
-                        </div>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
-                        </div>
-                    </div>
-                  </form>
-                  <div class="profile-group">
-                    <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                    <form class="hideable">
-                        <button class="btn" id="logout">odhlasiť sa </button>
+                </nav>
+                <nav class="navigation-actions">
+                  <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+                  <form  id="search-form">
+                      <div class="input-group ">
+                          <div class="input-group-prepend">
+                              <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                          </div>
+                          <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                          <div class="input-group-append">
+                              <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                          </div>
+                      </div>
                     </form>
-                  </div>
-                  <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </div>
+                    <div class="profile-group">
+                      <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                      <form class="hideable">
+                          <button class="btn" id="logout">odhlasiť sa </button>
+                      </form>
+                    </div>
+                    <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </nav>
             </nav>
         </header>
         <main class="container-fluid">
-                <header class="row">
+                <nav class="row">
                     <ul id="progressbar">
                         <li class="active">Košík</li>
                         <li class="active">Doprava</li>
                         <li class="active">Platba</li>
                     </ul>
-                </header>
-                <section class="row justify-content-center">
-                    <div class="col-lg-4 col-md-7 col-sm-12 col-12 delivery">
+                </nav>
+                <div class="row justify-content-center">
+                   
+                    <section class="col-lg-5 col-md-7 col-sm-12 col-12 delivery">
                         <form id="payment-form">
 
                         <div class="form-part">
@@ -90,7 +91,7 @@
                         <fieldset>
                             <legend>Spôsob platby</legend>
                             <div class="radio-group">
-                                <input type="radio" id="karta" name="sposob-platby" value="karta">
+                                <input type="radio" id="karta" name="sposob-platby" value="karta" required>
                                 <label for="karta">Kartou online</label>
                             </div>
                             <div class="radio-group">
@@ -108,70 +109,61 @@
                         </fieldset>
                     </div>
                         </form>
-                    </div>
-                    <aside class="col-lg-4 col-md-4 col-sm-12 form-part" id="prehlad-objednavky">
+                    </section>
+                    <section class="col-xl-3 col-lg-4 col-md-5 form-part" id="prehlad-objednavky">
                         <h1>Prehľad objednávky</h1>
                         <div>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             
                                 <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                                <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
-                            
+                                <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
+                        </article>
+                        <article>
+                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
-                            <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
-                        </article>
-                        <article>
-                            <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
-                            <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         <article>
                             <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                             <p class="amount">1 000 000 000 <abbr title="kusov">ks</abbr></p>
-                            <p class="priceUnit">99 000,00 <abbr title="EUR">€</abbr></p>
                             <p class="price"><strong>99 000 000 000 000 <abbr title="EUR">€</abbr></strong></p>
                         </article>
                         </div>
                         <footer>
                             <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
                         </footer>
-                    </aside>
-                </section>
+                    </section>
+                </div>
                 <footer class="row justify-content-center form-footer">
                     <div class="col-md-8 col-12">
-                    <a href="#" class="btn">Spät do košíka</a>
-                    <button class="btn" form="payment-form">Pokračovať</button>
+                    <a href="./doprava.html" class="btn cancel">Spät na dopravu</a>
+                    <button class="btn continue" form="payment-form">Pokračovať</button>
                     </div>
                 </footer>
         </main>

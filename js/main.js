@@ -14,8 +14,11 @@ document.getElementById('search-go-back').onclick = document.getElementById('ope
     document.getElementById('profile').nextElementSibling.classList.remove('show')
 }   
 
+document.getElementById('prehlad-objednavky').firstElementChild.onclick = (e)=>{
+    document.getElementById('prehlad-objednavky').classList.toggle('show')
+}
+
 function changeMainBook(stars,color, img, title, author, about) {
-  const main_book = document.getElementById("main-book");
   const main_cover = document.getElementById("main-book-cover");
   const main_title = document.getElementById("main-book-title");
   const main_author = document.getElementById("main-book-author");
