@@ -8,6 +8,12 @@
     margin-right: 0px;
 }
 
+#cart-form input[type=number]::-webkit-inner-spin-button, 
+#cart-form input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 #cart-form > article,
 #prehlad-objednavky article
  {
@@ -18,7 +24,7 @@
     border-color: #ced4da;
     padding: 10px 5px 20px 5px;
     /*background-color: #e5e9ee;*/
-    grid-template-columns: 50px 2fr 0.4fr;
+    grid-template-columns: 50px 1fr auto 0.4fr;
 }
 
 #cart-form > article button {
@@ -95,7 +101,8 @@ main.container-fluid {
 #cart-form .input-group {
     width: fit-content;
     justify-content: center;
-    grid-column: 2;
+    grid-column: 3;
+    justify-self: end;
 }
 
 #cart-form .input-group input{
@@ -117,7 +124,7 @@ main.container-fluid {
 
 
 #cart-form > article > p {
-    grid-column: 3;
+    grid-column: 4;
     margin: 0;
     flex-grow: 1;
     text-align: end;
@@ -152,8 +159,22 @@ main.container-fluid {
     #cart-form .input-group {
         width: fit-content;
         justify-content: center;
-        grid-column: 1;
+        grid-column-start: 2;
+        grid-column-end: 5;
         grid-row: 2;
+        justify-self: start;
+        margin-left: 20px;
+    }
+
+}
+
+@media (max-width: 404px){
+    #cart-form article {
+        grid-template-columns: 50px 0.8fr auto 0.6fr;
+    }
+    #cart-form article > p {
+        grid-column-start: 3;
+        grid-column-end: 5;
     }
 }
 
@@ -299,8 +320,8 @@ input.form-control {
     margin-right: auto;
     padding: 0;
 
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 @media (max-width:700px) {
     #progressbar {
@@ -314,7 +335,10 @@ input.form-control {
     list-style: none;
     float: left;
     position: relative;
-    width:33.3333333%
+    width:33.3333333%;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #ababab;
 }
 #progressbar li::before {
     content: "";
@@ -338,6 +362,14 @@ input.form-control {
     margin-left: auto;
     margin-right: auto;
 }
+#progressbar li.active {
+    color: black;
+}
+
+#progressbar li.active:last-child {
+    text-shadow: 2px red;
+}
+
 
 #progressbar li.active::after{
     background-color: #5296FF;
