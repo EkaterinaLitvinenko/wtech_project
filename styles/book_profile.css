@@ -53,8 +53,7 @@
     transition: 0.3s;
 }
 
-.carousel {
-    width: fit-content;
+.carousel, .owl-carousel {
     margin-top: 5px;
 }
 
