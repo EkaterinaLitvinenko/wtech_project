@@ -1,8 +1,16 @@
+#banner {
+    text-align: center;
+}
+
+#banner > img {
+    width: 100%;
+}
+
 /*------ top knihy --------*/
 
 .grid-container {
     display: grid;
-    grid-template-columns: 50% 15% 15% 15%;
+    grid-template-columns: 5fr 1.6fr 1.6fr 1.6fr;
     grid-gap: 20px;
     padding: 20px;
     padding-top: 0;
@@ -23,7 +31,7 @@
 
 .top-books-title {
     font-size: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 5px;
 }
 
@@ -38,16 +46,13 @@
     border: 1px solid rgb(224, 223, 223);
     border-radius: 5px;
     padding: 2px;
-    margin-bottom: 5px;
-    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.06) 0 1px 4px;
 }
 
 .rating-decimal > p {
     margin-bottom: 0;
     font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-inline: 5px;
 }
 
 .fa-star, .fa-star-half-stroke {
@@ -62,21 +67,18 @@
 .price {
     margin-bottom: 0;
     font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-inline: 5px;
     font-weight: bold;
 }
 
 #main-book {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 20px 60px 20px 60px;
     background-color: #BFAFFF;
     text-align: center;
     width: 80%;
     height: 100%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: background-color 0.4s linear;
 }
 
 #main-book-cover {
@@ -92,7 +94,6 @@
     margin-top: 10px;
 }
 
-
 #main-book-about { 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -106,16 +107,6 @@
     font-size: 16px;
     margin-bottom: 0;
 }
-
-.rating {
-    font-size: 30px;
-    color: orange;
-    display: inline-block;
-    overflow: hidden;
-  }
-  .rating::before { 
-    content: "★ ★ ★ ★ ★" 
-  }
 
 .top-books-author, .top-books-title, #main-book-title, #main-book-author, .card-title { 
    overflow: hidden;
@@ -143,8 +134,7 @@
 
 .card {
     width: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-inline: 25px;
     text-align: center;
     align-items: center;
     border-width: 0;
@@ -152,10 +142,7 @@
 }
 
 .card-body {
-    padding-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding: 10px 0 0 0;
 }
 
 .card-title {
@@ -175,10 +162,14 @@
     .card:not(:nth-child(-n + 5)) {
         display: none;
     }
-
+    
     #main-book-about { 
         -webkit-line-clamp: 7;
-                line-clamp: 7;
+        line-clamp: 7;
+    }
+    
+    #banner > img {
+        content: url("../res/banner2.png");
     }
 }
 
@@ -196,11 +187,6 @@
 }
 
 @media (max-width: 1050px){
-    .main-content {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-    
     .card:not(:nth-child(-n + 4)) {
         display: none;
     }
@@ -208,6 +194,12 @@
     #main-book-about { 
         -webkit-line-clamp: 8;
         line-clamp: 8;
+    }
+}
+
+@media (max-width: 768px){
+    #banner > img {
+        content: url("../res/banner.png");
     }
 }
 
@@ -233,15 +225,13 @@
         grid-row: auto;
         justify-content: center;
     }
+    
+    #banner > img {
+        display: none;
+    }
 }
 
-@media (max-width: 400px){
-    .main-content {
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-top: 5px;
-    }
-    
+@media (max-width: 400px){ 
     .card:not(:first-child) {
         display: none;
     }
