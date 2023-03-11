@@ -1,10 +1,24 @@
-/*.btn {
+.btn {
     background-color: #acaeb1;
     border-radius: 20px;
     padding-left: 30px;
     padding-right: 30px;
     color:black;
-}*/
+}
+
+.btn.cancel {
+    background-color: transparent;
+    border-width: 1px;
+    border-color: black;
+}
+
+.btn.continue:hover {
+    background-color: #B2D19B;
+}
+
+.btn.cancel:hover{
+    background-color: #FF2222;
+}
 
 @media (max-width:320px){
     .btn {
@@ -18,64 +32,64 @@ p abbr[title] {
 }
 
 
-nav {
+nav.navbar {
     background-color: #FFBB52;
 }
 
-nav .navbar-brand img, nav .navbar-brand{
+nav.navbar .navbar-brand img, nav.navbar .navbar-brand{
     width: 100px;
 }
 
-nav .hideable {
+nav.navbar .hideable {
     display: none;
 }
 
-nav #search-form .btn {
+nav.navbar #search-form .btn {
     padding-left: 12px;
     padding-right: 12px;
 }
 
-nav .clickable {
+nav.navbar .clickable {
     padding: 10px;
     font-size: 25px;
     color: rgb(33, 33, 33);
 }
-nav input {
+nav.navbar input {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
 @media (max-width:327px) {
-    nav .clickable {
+    nav.navbar .clickable {
         padding: 7px;
     }
 }
 @media (max-width:308px) {
-    nav .clickable {
+    nav.navbar .clickable {
         padding: 5px;
     }
 }
-nav #search-form input {
+nav.navbar #search-form input {
     border-radius: 100px 0px 0px 100px;
 }
 
-nav #search-form button {
+nav.navbar #search-form button {
     border-radius: 0px 100px 100px 0px;
     background-color: white;
     border: 1px solid #ced4da;
     border-left-width: 0px;
 }
 
-nav .navigation-actions {
+
+nav.navbar .navigation-actions {
     display: flex;
     align-items: center;
 }
 
-nav .profile-group {
+nav.navbar .profile-group {
         position: relative;
 }
-
-nav .hideable {
+nav.navbar .hideable {
         position: absolute;
         width: max-content;
         top: 100%;
@@ -103,10 +117,10 @@ nav .hideable {
         order:3;
     }
 
-    nav .navigation-actions{
+    nav.navbar .navigation-actions{
         order:2;
     }
-    nav .navbar-brand {
+    nav.navbar .navbar-brand {
     flex-grow: 1;
 }
 }
@@ -160,15 +174,15 @@ nav .hideable {
     }
 }
 @media (max-width:326px) {
-    nav .navigation-actions{
+    nav.navbar .navigation-actions{
         flex-flow: row-reverse;
     }
 }
 
-/*.input-group {
+.input-group {
     height: fit-content;
     align-self: center;
-}*/
+}
 
 #logo-col {
     padding-top: 20px;

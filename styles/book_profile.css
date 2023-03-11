@@ -16,6 +16,8 @@
 #upper-info {
     background-color: #B2D19B;
     align-items: start;
+    display: grid;
+    grid-template-columns: 25% 75%;
 }
 
 #main-cover {
