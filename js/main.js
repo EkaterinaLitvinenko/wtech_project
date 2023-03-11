@@ -13,9 +13,12 @@ document.getElementById('search-go-back').onclick = document.getElementById('ope
     })
     document.getElementById('profile').nextElementSibling.classList.remove('show')
 }   
+if(document.getElementById('prehlad-objednavky'))
+    document.getElementById('prehlad-objednavky').firstElementChild.onclick = (e)=>{
+    document.getElementById('prehlad-objednavky').classList.toggle('show')
+}
 
 function changeMainBook(stars,color, img, title, author, about) {
-  const main_book = document.getElementById("main-book");
   const main_cover = document.getElementById("main-book-cover");
   const main_title = document.getElementById("main-book-title");
   const main_author = document.getElementById("main-book-author");
@@ -47,3 +50,29 @@ function countLines() {
     console.log(lines)
     alert("Lines: " + lines);
 }
+
+
+
+Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
+    var changeHandeler = () =>{
+        // asynchronne volanie na ulozenie zmeny kosika
+        console.log('changed')
+    }
+
+    //input
+    const input = element.children[1]
+    input.oninput =  changeHandeler
+    //decrement button
+    element.children[0].children[0].onclick = (e)=>{
+        e.preventDefault()
+        if(input.value == 0) return;
+        input.value--;
+        changeHandeler()
+    }
+    //increment button
+    element.children[2].children[0].onclick = (e)=>{
+        e.preventDefault()
+        input.value++;
+        changeHandeler()
+    }
+})

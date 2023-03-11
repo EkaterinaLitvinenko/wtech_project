@@ -52,7 +52,7 @@
                           <button class="btn" id="logout">odhlasiť sa </button>
                       </form>
                     </div>
-                    <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                    <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -61,85 +61,96 @@
         </header>
         <main class="container-fluid">
             <!--Obsah-->
-            <header class="row">
+            <nav class="row">
                 <ul id="progressbar">
                     <li class="active">Košík</li>
                     <li>Doprava</li>
                     <li>Platba</li>
                 </ul>
-            </header>
+            </nav>
             <section class="row justify-content-center">
                 <div class="col-lg-8 col-md-10 col-sm-12" id="cart">
                     <header>
                         <h1>Váš košík</h1>
                     </header>
-                    <form id="cart-form">
+                    <form id="cart-form" action="./doprava.html" method="GET">
                         <article>
                             <img src="./res/knihy/catch22.png" width="50" height="70">
-                            <div class="item-info">
-                            <header>
+                            <header class="item-info">
                                 <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
                                 <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
                             </header>
-                            <div class="input-group">
+                            <div class="input-group amount-input">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" title="remove item">-</span>
+                                    <button class="btn input-group-text" title="odobrať produkt">-</button>
                                 </div>
                                 <input class="form-control" type="number" value="1">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" title="add item">+</span>
+                                    <button class="btn" title="pridať produkt">+</button>
                                 </div>
-                                <button class="btn" title="delete"><span class="fa-solid fa-trash"></span></button>
+                                <button class="btn" title="odstranit z košika"><span class="fa-solid fa-trash"></span></button>
                             </div>                     
-                        </div>
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <article>
-                            <img src="" width="50" height="70">
-                            <div class="item-info">
-                            <header>
+                            <img src="./res/knihy/dobreznamenia.jpg" width="50" height="70">
+                            <header class="item-info">
                                 <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
-                                <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
+                                <p>fero Ferguson, </p>
                             </header>
-                            <div class="input-group">
+                            <div class="input-group amount-input">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" title="remove item">-</span>
+                                    <button class="btn input-group-text" title="odobrať produkt">-</button>
                                 </div>
                                 <input class="form-control" type="number" value="1">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" title="add item">+</span>
+                                    <button class="btn" title="pridať produkt">+</button>
                                 </div>
-                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
+                                <button class="btn" title="odstranit z košika"><span class="fa-solid fa-trash"></span></button>
                             </div>                     
-                        </div>
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <article>
-                            <img src="" width="50" height="70">
-                            <div class="item-info">
-                            <header>
-                                <h2>Velmi dlhy nazov knihy, ktory si jakziv neviem zapamatat, ach jaj som to ale ja za nemehlo, uz by som sa mal naucit pamat si blbosti ako je tato</h2>
+                            <img src="./res/knihy/panprstenov3.jpg" width="50" height="70">
+                            <header class="item-info">
+                                <h2>Velmi</h2>
                                 <p>fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv petrista laster, Miki Hric esteban kulica, isodor Navratil</p>
                             </header>
-                            <div class="input-group">
+                            <div class="input-group amount-input">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" title="remove item">-</span>
+                                    <button class="btn input-group-text" title="odobrať produkt">-</button>
                                 </div>
                                 <input class="form-control" type="number" value="1">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" title="add item">+</span>
+                                    <button class="btn" title="pridať produkt">+</button>
                                 </div>
-                                <button class="btn"><span class="fa-solid fa-trash"></span></button>
+                                <button class="btn" title="odstranit z košika"><span class="fa-solid fa-trash"></span></button>
                             </div>                     
-                        </div>
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
+                        </article>
+                        <article>
+                            <img src="./res/knihy/panprstenov3.jpg" width="50" height="70">
+                            <header class="item-info">
+                                <h2>Velmi</h2>
+                                <p>fero Ferguson</p>
+                            </header>
+                            <div class="input-group amount-input">
+                                <div class="input-group-append">
+                                    <button class="btn input-group-text" title="odobrať produkt">-</button>
+                                </div>
+                                <input class="form-control" type="number" value="1">
+                                <div class="input-group-prepend">
+                                    <button class="btn" title="pridať produkt">+</button>
+                                </div>
+                                <button class="btn" title="odstranit z košika"><span class="fa-solid fa-trash"></span></button>                   
+                        </div>
+                            <p>99.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <footer>
                             <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
-                            <a href="#" class="btn">Spät na knihy</a> 
+                            <a href="./index.html" class="btn cancel">Spät na knihy</a> 
                             <div id="controls">
-                                <button class="btn">Uložiť košík</button>
-                                <button class="btn">Pokračovať</button>
+                                <button class="btn continue">Pokračovať</button>
                             </div>
                         </footer>
                     </form>
