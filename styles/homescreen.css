@@ -6,6 +6,16 @@
     width: 100%;
 }
 
+.zoom {
+    transition: transform .5s; 
+}
+  .zoom:hover {
+    transform: scale(1.05); 
+}
+  .zoom:hover > p {
+    font-weight: 500;
+  }
+
 /*------ top knihy --------*/
 
 .grid-container {
@@ -86,6 +96,7 @@
     width: 245px;
     height: 386px;
     object-fit: fill;
+    border-radius: calc(0.25rem - 1px);
 }
 
 #main-book-title {
@@ -120,6 +131,18 @@
 /*--------------------------------------
 ---------- corousel --------------------*/
 
+.carousel-control-next, .carousel-control-prev {
+    width: 4%;
+}
+
+.carousel .carousel-control-prev-icon {
+       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFBB52' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+   }
+   
+.carousel .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFBB52' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
 .book-wrapper {
     display: flex;
 }
@@ -130,6 +153,9 @@
     object-fit: fill;
     border-radius: calc(0.25rem - 1px);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card-img-top:hover {
+    opacity: 80%;
 }
 
 .card {
@@ -149,6 +175,7 @@
     font-size: 16px;
     margin-bottom: 0;
 }
+
 
 /*-----responzivita------------------*/ 
 @media (min-width: 1250px) and (max-width: 1439px){
