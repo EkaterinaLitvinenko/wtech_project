@@ -68,68 +68,82 @@
                             <span class="close">&times;</span>
                             <img class="modal-content" id="img01">
                           </div>
+                          <div id="carouselExampleControls" class="vertical carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class = "product-images d-flex justify-content-center">
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')">
+                                  </div>
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')">
+                                  </div>
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class = "product-images d-flex justify-content-center"">
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')">
+                                  </div>
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')">
+                                  </div>
+                                  <div class="card">
+                                    <img class="d-block product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
                       </div>  
-                      <div id = "main-info1">
-                          <h1>Aristotle and Dante Discover the Secrets of the Universe</h1>
-                          <h2>Benjamin Alíre Sáenz,Janko Mrkvička, Marienka Levicka, Isodor Pankrác, Filomena Ruzena Podmanicka</h2>
-                          <span id = "inline-rating-decimal">
-                              <span id="rating-inline" class="rating" style="--stars-width: 108px;" ></span>
-                              <p id = "rating-number">4.4</p>
-                          </span>
-                          <h3>99 999,99 €</h3>
-                          <span id = "quantity-cart">
-                            <span class="input-group w-auto justify-content-start align-items-center">
-                              <input type="button" value="-" class="button-minus icon-shape icon-sm " data-field="quantity">
-                              <input type="number" step="1" max="99999" value="1" name="quantity" class="quantity-field border-0 text-center">
-                              <input type="button" value="+" class="button-plus icon-shape icon-sm " data-field="quantity">
-                            </span>
-                            <button type="button" class="btn btn-lg do-kosika">
-                              Pridať do košíka
-                              <span class="fa-solid fa-basket-shopping" title="shopping cart"></span>
-                            </button>
-                          </span>
+                      <header>
+                        <h1>Aristotle and Dante Discover the Secrets of the Universe</h1>
+                        <h2>Benjamin Alíre Sáenz,Janko Mrkvička, Marienka Levicka, Isodor Pankrác, Filomena Ruzena Podmanicka</h2>
+                      </header>
+                      
+                      <div>
+                        <span id = "inline-rating-decimal">
+                          <span id="rating-inline" class="rating" style="--stars-width: 108px;" ></span>
+                          <p id = "rating-number">4.4</p>
+                        </span>
+                        
+                        <p id = "mini-about">
+                          Aristotle is an angry teen with a brother in prison. Dante is a know-it-all who has a unique perspective on life.
+                          When the two meet at the swimming pool, they seem to have nothing in common. But as the loners start spending time together, they develop a special friendship - the kind that changes lives and lasts a lifetime. And it is through this friendship that Ari and Dante will learn the most important truths about the universe, themselves and the kind of people they want to be.
+                          This incredibly moving and powerful Printz Honor Book follows two teen boys learning to open themselves up to love, despite the world being against them. 
+                        </p>
+                        <a href="#main-about"><button id="read-more">Čítať viac<span class="fa-solid fa-arrow-down"></span></button></a>
+
+                      </div>
+                          
+                      <form id = "quantity-cart">
+                        <p>99 999,99<abbr title="EUR">€</abbr><p>
+                        <div class="input-group amount-input">
+                          <div class="input-group-append">
+                              <button class="btn input-group-text" title="odobrať produkt">-</button>
+                          </div>
+                          <input class="form-control" type="number" value="1">
+                          <div class="input-group-prepend">
+                              <button class="btn" title="pridať produkt">+</button>
+                          </div>
+                        </div>     
+                        <button type="button" class="btn btn-lg do-kosika">
+                          Pridať do košíka
+                        </button>
+                      </form>
                       </div>
                     </div>  
-                    <div>
-                      <div id="carouselExampleControls" class="carousel" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <div class = "product-images">
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')">
-                              </div>
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')">
-                              </div>
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <div class = "product-images">
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')">
-                              </div>
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')">
-                              </div>
-                              <div class="card">
-                                <img class="d-block w-100 product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    </div>
                 </section>
                 <section class = "book-info2">
                     <div  id = "main-table">

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
 }
@@ -171,7 +175,7 @@ nav.navbar .hideable {
 }
 
 
-@media (max-width: 535px){
+@media (max-width: 542px){
     #search-go-back{
         align-self: center;
         display: block;
@@ -290,3 +294,29 @@ hr {
         margin-right: 5px 20px 0 20px;
     }
 }
+
+.input-group.amount-input {
+    width: fit-content;
+    justify-content: center;
+    justify-self: end;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(149, 157, 165, .1);
+}
+
+.input-group.amount-input input {
+    width: 50px;
+    flex: 0;
+    border-width: 0;
+    text-align: center;
+    background-color: transparent;
+}
+ 
+.input-group.amount-input button{
+    margin-left: 0px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-width: 0;  
+    padding-left: 11px;
+    padding-right: 11px;
+  }

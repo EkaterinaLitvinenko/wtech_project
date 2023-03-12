@@ -21,9 +21,14 @@
 .grid-container {
     display: grid;
     grid-template-columns: 5fr 1.6fr 1.6fr 1.6fr;
+    grid-row: 1rem;
     grid-gap: 20px;
     padding: 20px;
     padding-top: 0;
+}
+
+.grid-container > a {
+    display: grid;
 }
 
 .grid-item {
@@ -126,6 +131,7 @@
    -webkit-line-clamp: 1;
            line-clamp: 1;
    -webkit-box-orient: vertical;
+   height: fit-content;
 }
 
 /*--------------------------------------
@@ -143,7 +149,7 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFBB52' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
-.book-wrapper {
+.book-wrapper, .book-wrapper > a {
     display: flex;
 }
 
