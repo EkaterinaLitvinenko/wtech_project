@@ -1,9 +1,51 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #ADADAD;
+    text-decoration: none;
+}
+
 .btn {
     background-color: #acaeb1;
     border-radius: 20px;
     padding-left: 30px;
     padding-right: 30px;
     color:black;
+}
+
+.btn:focus, .btn:active, input {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+.btn.cancel, .btn.continue {
+    background-color: transparent;
+}
+
+.btn.continue:hover {
+    color: #82B45C;
+}
+
+.btn.cancel:hover{
+    color: #5296FF;
+}
+
+.fa-arrow-left {
+    margin-right: 5px;
+}
+
+.fa-arrow-right {
+    margin-left: 5px;
 }
 
 @media (max-width:320px){
@@ -18,61 +60,64 @@ p abbr[title] {
 }
 
 
-nav {
+nav.navbar {
     background-color: #FFBB52;
 }
 
-nav .navbar-brand img, nav .navbar-brand{
+nav.navbar .navbar-brand img, nav.navbar .navbar-brand{
     width: 100px;
 }
 
-nav .hideable {
+nav.navbar .hideable {
     display: none;
 }
 
-nav #search-form .btn {
+nav.navbar #search-form .btn {
     padding-left: 12px;
     padding-right: 12px;
 }
 
-nav .clickable {
+nav.navbar .clickable {
     padding: 10px;
-    font-size: 20px;
+    font-size: 25px;
+    color: rgb(33, 33, 33);
 }
-nav input {
+nav.navbar input {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
 @media (max-width:327px) {
-    nav .clickable {
+    nav.navbar .clickable {
         padding: 7px;
     }
 }
 @media (max-width:308px) {
-    nav .clickable {
+    nav.navbar .clickable {
         padding: 5px;
     }
 }
-nav #search-form input {
+nav.navbar #search-form input {
     border-radius: 100px 0px 0px 100px;
 }
 
-nav #search-form button {
+nav.navbar #search-form button {
     border-radius: 0px 100px 100px 0px;
-    background-color: #FFBB52;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-left-width: 0px;
 }
 
 
-nav .navigation-actions {
+nav.navbar .navigation-actions {
     display: flex;
     align-items: center;
 }
 
-nav .profile-group {
+nav.navbar .profile-group {
         position: relative;
 }
-nav .hideable {
+nav.navbar .hideable {
         position: absolute;
         width: max-content;
         top: 100%;
@@ -89,15 +134,21 @@ nav .hideable {
     border: 0px;
 }
 
+.input-group-append > .btn-outline-success {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-left-width: 0px;
+}
+
 @media (max-width: 991px){
     #navbar-collapsible {
         order:3;
     }
 
-    nav .navigation-actions{
+    nav.navbar .navigation-actions{
         order:2;
     }
-    nav .navbar-brand {
+    nav.navbar .navbar-brand {
     flex-grow: 1;
 }
 }
@@ -124,7 +175,7 @@ nav .hideable {
 }
 
 
-@media (max-width: 535px){
+@media (max-width: 542px){
     #search-go-back{
         align-self: center;
         display: block;
@@ -151,7 +202,7 @@ nav .hideable {
     }
 }
 @media (max-width:326px) {
-    nav .navigation-actions{
+    nav.navbar .navigation-actions{
         flex-flow: row-reverse;
     }
 }
@@ -187,3 +238,85 @@ footer > .container {
 #logo {
     width: 100%;
 }
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+hr {
+    border-top: 3px solid black;
+}
+
+.main-content {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+.rating {
+    font-size: 30px;
+    color: #FFBB52;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .rating::before { 
+    content: "★★★★★" ;
+    position: absolute;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-color: #FFBB52;
+    background-size: 100% 40px;
+    height: 40px;
+    width: var(--stars-width);
+    max-width: 123px;
+    min-height: 0;
+  }
+
+  .rating::after {
+    content: "★★★★★" ;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-color: white;
+  }
+
+
+@media (max-width: 1050px){
+    .main-content {
+        margin-inline: 50px;
+    }
+}
+
+@media (max-width: 400px){
+    .main-content {
+        margin-right: 5px 20px 0 20px;
+    }
+}
+
+.input-group.amount-input {
+    width: fit-content;
+    justify-content: center;
+    justify-self: end;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(149, 157, 165, .1);
+}
+
+.input-group.amount-input input {
+    width: 50px;
+    flex: 0;
+    border-width: 0;
+    text-align: center;
+    background-color: transparent;
+}
+ 
+.input-group.amount-input button{
+    margin-left: 0px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-width: 0;  
+    padding-left: 11px;
+    padding-right: 11px;
+  }

@@ -3,6 +3,7 @@
     <head>
         <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
         <meta charset="utf-8">
+        <title>ReadMe BookShop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -11,55 +12,56 @@
         <link rel="stylesheet" href="./styles/homescreen.css">
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
-            
-                <div class="collapse navbar-collapse" id="navbar-collapsible">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Knihy</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Bestsellery</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">eKnihy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Audioknihy</a>
-                    </li>
-                </ul>
-                </div>
-                <div class="navigation-actions">
-                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-                <form  id="search-form">
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
-                        </div>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
-                        </div>
-                    </div>
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+          
+            <nav class="collapse navbar-collapse" id="navbar-collapsible">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Knihy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Bestsellery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">eKnihy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Audioknihy</a>
+                  </li>
+              </ul>
+            </nav>
+            <nav class="navigation-actions">
+              <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+              <form  id="search-form">
+                  <div class="input-group ">
+                      <div class="input-group-prepend">
+                          <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                      </div>
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                      <div class="input-group-append">
+                          <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                      </div>
+                  </div>
                 </form>
                 <div class="profile-group">
-                    <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                    <form class="hideable">
-                        <button class="btn" id="logout">odhlasiť sa </button>
-                    </form>
+                  <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                  <form class="hideable">
+                      <button class="btn" id="logout">odhlasiť sa </button>
+                  </form>
                 </div>
-                <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                </div>
-            </nav>
-        </header>
-
+              </nav>
+        </nav>
+    </header>
         <main>
-            <!--banner-->
+            <header id = "banner" class = "main-content">
+              <img src = "./res/banner3.png">
+            </header> 
             <!--odporučame - corousel-->
             <section class = "main-content">
                 <h1>Odporúčame Vám...</h1>
@@ -67,7 +69,7 @@
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <div class = "book-wrapper">
-                            <div class="card">
+                            <a href = "book_profile.html"><div class="card">
                               <img class="card-img-top" src="./res/knihy/bitunok.jpg" alt="Kniha bitunok c. 5">
                               <div class="card-body">
                                   <h2 class="card-title">Bitúnok č. 5</h2>
@@ -77,11 +79,11 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.0</p>
                                         </div>
-                                        <p>11 000.95€</p>
+                                        <p class = "price">11 000.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card">
+                              </div></a>
+                              <a href = "book_profile.html"><div class="card">
                                 <img class="card-img-top" src="./res/knihy/thursdayclub.jpg" alt="Kniha thursday murder club">
                                 <div class="card-body">
                                   <h2 class="card-title">The Thursday Murder Club</h2>
@@ -91,11 +93,11 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>3.8</p>
                                         </div>
-                                        <p>11.50€</p>
+                                        <p class = "price">11.50<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card">
+                              </div></a>
+                              <a href = "book_profile.html"><div class="card">
                                 <img class="card-img-top" src="./res/knihy/catch22.png" alt="Kniha hlava 22">
                                 <div class="card-body">
                                   <h2 class="card-title">Hlava XXII</h2>
@@ -105,11 +107,11 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.4</p>
                                         </div>
-                                        <p>13.95€</p>
+                                        <p class = "price">13.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card">
+                              </div></a>
+                              <a href = "book_profile.html"><div class="card">
                                 <img class="card-img-top" src="./res/knihy/dobreznamenia.jpg" alt="kniha dobre znamenia">
                                 <div class="card-body">
                                   <h2 class="card-title">Dobré znamenia</h2>
@@ -119,11 +121,11 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.4</p>
                                         </div>
-                                        <p>16.95€</p>
+                                        <p class = "price">16.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card">
+                              </div></a>
+                              <a href = "book_profile.html"><div class="card">
                                 <img class="card-img-top" src="./res/knihy/panprstenov3.jpg" alt="kniha pan prstenov 3">
                                 <div class="card-body">
                                   <h2 class="card-title">Pán prsteňov: Návrat kráľa</h2>
@@ -133,11 +135,11 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.7</p>
                                         </div>
-                                        <p>11.95€</p>
+                                        <p class = "price">11.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card">
+                              </div></a>
+                              <a href = "book_profile.html"><div class="card">
                                 <img class="card-img-top" src="./res/knihy/mackaapes.jpg" alt="kniha rozpravky o psickovi a macicke">
                                 <div class="card-body">
                                   <h2 class="card-title">Rozprávky o psíčkovi a mačičke</h2>
@@ -147,12 +149,13 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.8</p>
                                         </div>
-                                        <p>6.95€</p>
+                                        <p class = "price">6.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
-                              </div>
+                              </div></a>
                         </div>
                       </div>
+                    
                       <div class="carousel-item">
                         <div class = "book-wrapper">
                           <div class="card">
@@ -165,7 +168,7 @@
                                       <span class="fa-solid fa-star"></span>
                                       <p>3.8</p>
                                     </div>
-                                        <p>11.50€</p>
+                                        <p class = "price">11.50<abbr title="EUR">€</abbr></p>
                                       </div>
                                     </div>
                                   </div>
@@ -179,7 +182,7 @@
                                                   <span class="fa-solid fa-star"></span>
                                                   <p>4.0</p>
                                               </div>
-                                              <p>11 000.95€</p>
+                                              <p class = "price">11 000.95<abbr title="EUR">€</abbr></p>
                                           </div>
                                       </div>
                                     </div>
@@ -193,7 +196,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.4</p>
                                         </div>
-                                        <p>13.95€</p>
+                                        <p class = "price">13.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -207,7 +210,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.4</p>
                                         </div>
-                                        <p>16.95€</p>
+                                        <p class = "price">16.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -221,7 +224,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.7</p>
                                         </div>
-                                        <p>11.95€</p>
+                                        <p class = "price">11.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -235,7 +238,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.8</p>
                                         </div>
-                                        <p>6.95€</p>
+                                        <p class = "price">6.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -253,7 +256,7 @@
                                         <span class="fa-solid fa-star"></span>
                                         <p>4.4</p>
                                     </div>
-                                    <p>13.95€</p>
+                                    <p class = "price">13.95<abbr title="EUR">€</abbr></p>
                                 </div>
                             </div>
                           </div>
@@ -267,7 +270,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.0</p>
                                         </div>
-                                        <p>11 000.95€</p>
+                                        <p class = "price">11 000.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -281,7 +284,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>3.8</p>
                                         </div>
-                                        <p>11.50€</p>
+                                        <p class = "price">11.50<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -295,7 +298,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.4</p>
                                         </div>
-                                        <p>16.95€</p>
+                                        <p class = "price">16.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -309,7 +312,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.7</p>
                                         </div>
-                                        <p>11.95€</p>
+                                        <p class = "price">11.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -323,7 +326,7 @@
                                             <span class="fa-solid fa-star"></span>
                                             <p>4.8</p>
                                         </div>
-                                        <p>6.95€</p>
+                                        <p class = "price">6.95<abbr title="EUR">€</abbr></p>
                                     </div>
                                 </div>
                               </div>
@@ -348,28 +351,28 @@
                 <h1>Objavte Váš obľúbený žáner...</h1>
                 <div class="container">
                     <div class="row align-items-center text-center">
-                      <div class="col">
-                        <img src="./res/detective.svg" alt="detektívky" class = "genres-images">
+                      <div class="col zoom">
+                        <img src="./res/detective.svg" alt="detektívky"">
                         <p>Detektívky</p>
                       </div>
-                      <div class="col">
-                        <img src="./res/horor.svg" alt="horory"  class = "genres-images">
-                        <p>Horory</p>
+                      <div class="col zoom">
+                        <img src="./res/horor.svg" alt="horory"">
+                        <p>Trilery a Horory</p>
                       </div>
-                      <div class="col">
-                        <img src="./res/scifi.svg" alt="sci-fi"  class = "genres-images">
+                      <div class="col zoom">
+                        <img src="./res/scifi.svg" alt="sci-fi">
                         <p>Sci-fi</p>
                       </div>
-                      <div class="col">
-                        <img src="./res/fantasy.svg" alt="fantasy"  class = "genres-images">
+                      <div class="col zoom">
+                        <img src="./res/fantasy.svg" alt="fantasy">
                         <p>Fantasy</p>
                       </div>
-                      <div class="col">
-                        <img src="./res/romantic.svg" alt="romantické knihy"  class = "genres-images">
+                      <div class="col zoom">
+                        <img src="./res/romantic.svg" alt="romantické knihy">
                         <p>Romantika</p>
                       </div>
-                      <div class="col">
-                        <img src="./res/kids.svg" alt="knihy pre deti"  class = "genres-images">
+                      <div class="col zoom">
+                        <img src="./res/kids.svg" alt="knihy pre deti">
                         <p>Knihy pre deti</p>
                       </div>
                     </div>
@@ -382,35 +385,31 @@
               <h1>TOP 6 kníh podľa našich zákazníkov...</h1>
               <div class="grid-container">
                 <div class = "grid-item grid-item-1">
-                  <article class="col main-book">
-                    <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia">
-                    <h2 class = "main-book-title">Dobré znamenia</h2>
-                    <p class = "main-book-author">Neil Gaiman, Terry Pratchett</p>
-                    <div class = "rating-inline">
-                        <span class="fa-solid fa-star"></span>
-                        <span class="fa-solid fa-star"></span>
-                        <span class="fa-solid fa-star"></span>
-                        <span class="fa-solid fa-star"></span>
-                        <span class="fa-solid fa-star-half-stroke"></span>
-                    </div>
-                    <p class = "main-book-about">
+                  <article id="main-book">
+                    <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" id = "main-book-cover">
+                    <h2 id = "main-book-title">Dobré znamenia</h2>
+                    <p id = "main-book-author">Neil Gaiman, Terry Pratchett</p>
+                    <span id="rating-inline" class="rating" onload="getRating(4.4)"></span>
+                    <p id = "main-book-about">
                         Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
                     </p>
                   </article>
                 </div>
-                <div class = "grid-item grid-item-2">
+                <a href = "book_profile.html"><div class = "grid-item grid-item-2">
                   <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class = "card-img-top">
                    <h3 class = "top-books-title">Dobré znamenia</h3>
                    <p class = "top-books-author">Neil Gaiman, Terry Pratchett</p>
-                   <div class = "rating-price">
-                       <div class = "rating-decimal">
+                   <span class = "rating-price">
+                       <span class = "rating-decimal">
                            <span class="fa-solid fa-star"></span>
                            <p>4.4</p>
-                       </div>
-                       <p>16.95€</p>
-                   </div>
-                </div>
-                <div class = "grid-item grid-item-3">
+                       </span>
+                       <p class = "price">16.95<abbr title="EUR">€</abbr></p>
+                    </span>
+                </div></a>
+                <a href = "book_profile.html"><div class = "grid-item grid-item-3" 
+                onmouseover="changeMainBook(4.0,'#90A9FF','./res/knihy/bitunok.jpg','Bitúnok č.5', 'Kurt Vonnegut', 'Kurt Vonnegut je pokračovateľom veľkých satirikov ako Jonathan Swift alebo Samuel Butler. Spolu s Rayom Bradburym patrí k spisovateľom, pre ktorých je žáner science-fiction predovšetkým príležitosťou odhaľovať pravdu o našom živote a konaní. S postupujúcim vekom sa u Vonneguta čoraz výraznejšie dostávajú do popredia prvky reflexívne a autobiografické. Ako iní veľkí tvorcovia, aj on stiera rozdiel medzi vlastným súkromím a údelom svojho epického hrdinu, voľne splieta obe vetvy rozprávania a dosahuje tak osobitný účinok. V románe Bitúnok č. 5 opísal jeden z kľúčových zážitkov svojho života – bombardovanie Drážďan v roku 1945. Tak vzniká jedno z najoriginálnejších protivojnových diel, v ktorom hlavnú postavu predstavuje Billy Pilgrim, mladý Američan s nemeckými koreňmi, ktorý sa dostáva do nemeckého zajatia.')" 
+                onmouseleave="changeMainBook(4.4,'#BFAFFF','./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
                   <img src="./res/knihy/bitunok.jpg" alt="Kniha Bitúnok č. 5" class = "card-img-top">
                   <h3 class = "top-books-title">Bitúnok č. 5</h3>
                   <p class = "top-books-author">Kurt Vonnegut</p>
@@ -419,47 +418,55 @@
                           <span class="fa-solid fa-star"></span>
                           <p>4.0</p>
                       </div>
-                      <p>11.95€</p>
+                      <p class = "price">11.95<abbr title="EUR">€</abbr></p>
                   </div>
-                </div>
-                <div class = "grid-item grid-item-4">
-                  <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "card-img-top">
+                </div></a>
+                <a href = "book_profile.html"><div class = "grid-item grid-item-4"
+                onmouseover="changeMainBook(2.4,'#FFE08F','./res/knihy/catch22.png','Hlava XXII', 'Joseph Heller', 'Hlava XXII sa nepodobá žiadnej knihe, ktorú ste čítali. Má svoj štýl, svoju logiku, svoj výnimočný charakter a rukopis. Neustále balansuje medzi komikou a hororom. Je výstredne zábavná a pôsobivá. Je originálna. Majster satiry, irónie i čierneho humoru, Joseph Heller, kriticky vnímal modernú spoločnosť a jej plyv na jednotlivca, nezmyselnosť a hrôzy vojny, byrokraciu, ale aj politiku, ktorá nás ovláda v mene zdravého rozumu a všeobecného blaha.')" 
+                onmouseleave="changeMainBook(4.4,'#BFAFFF','./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "card-img-top hover-book3">
                   <h3 class = "top-books-title">Hlava XXII</h3>
                   <p class = "top-books-author">Joseph Heller</p>
                   <div class = "rating-price">
                       <div class = "rating-decimal">
                           <span class="fa-solid fa-star"></span>
-                          <p>4.4</p>
+                          <p>2.4</p>
                       </div>
-                      <p>13.95€</p>
+                      <p class = "price">13.95<abbr title="EUR">€</abbr></p>
                   </div>
-                </div>
-                <div class = "grid-item grid-item-5">
-                  <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "card-img-top">
+                </div></a>
+                <a href = "book_profile.html"><div class = "grid-item grid-item-5"
+                  onmouseover="changeMainBook(1.7,'#BFAFFF;','./res/knihy/panprstenov3.jpg','Pán prsteňov: Návrat kráľa', 'J.R.R. Tolien', 'Pán prsteňov je rozprávkovou históriou Vojny o prsteň, rozprávaním o boji slobodných národov Stredozeme proti Tieňu a o putovaní Hobita Froda, ktorý sa vyberie zachrániť svet. Po rozbití Spoločenstva prsteňa a príchode Veľkej tmy začína Vojna o prsteň, ktorá má rozhodnúť o všetkom...')" 
+                  onmouseleave="changeMainBook(4.4,'#BFAFFF','./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "card-img-top hover-book4">
                   <h3 class = "top-books-title">Pán prsteňov: Návrat kráľa</h3>
                   <p class = "top-books-author">J.R.R. Tolkien</p>
                   <div class = "rating-price">
                       <div class = "rating-decimal">
                           <span class="fa-solid fa-star"></span>
-                          <p>4.7</p>
+                          <p>1.7</p>
                       </div>
-                      <p>11.95€</p>
+                      <p class = "price">11.95<abbr title="EUR">€</abbr></p>
                   </div>
-                </div>
-                <div class = "grid-item grid-item-6">
-                  <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "card-img-top">
+                </div></a>
+                <a href = "book_profile.html"><div class = "grid-item grid-item-6"
+                  onmouseover="changeMainBook(0.4,'#FF6D5F','./res/knihy/thursdayclub.jpg','The Thursday Murder Club', 'Richard Osman', 'In a peaceful retirement village, four unlikely friends meet up once a week to investigate unsolved murders. But when a brutal killing takes place on their very doorstep, the Thursday Murder Club find themselves in the middle of their first live case. Elizabeth, Joyce, Ibrahim and Ron might be pushing eighty but they still have a few tricks up their sleeves. Can our unorthodox but brilliant gang catch the killer before its too late?')" 
+                  onmouseleave="changeMainBook(4.4,'#BFAFFF','./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "card-img-top hover-book5">
                   <h3 class = "top-books-title">The Thursday Murder Club</h3>
                   <p class = "top-books-author">Richard Osman, Jožko Mrkvička, Pavol Pavlový</p>
-                  <div class = "rating-price">
-                      <div class = "rating-decimal">
-                          <span class="fa-solid fa-star"></span>
-                          <p>3.8</p>
-                      </div>
-                      <p>11 000.50€</p>
-                  </div>
-                </div>
-                <div class = "grid-item grid-item-7">
-                  <img src="./res/knihy/mackaapes.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class = "card-img-top">
+                  <span class = "rating-price">
+                    <span class = "rating-decimal">
+                        <span class="fa-solid fa-star"></span>
+                        <p>0.4</p>
+                    </span>
+                    <p class = "price">16 000.95<abbr title="EUR">€</abbr></p>
+                  </span>
+                </div></a>
+                <a href = "book_profile.html"><div class = "grid-item grid-item-7" 
+                  onmouseover="changeMainBook(4.8,'#B3F4FF','./res/knihy/mackaapes.jpg','Rozprávky o psíčkovi a mačičke', 'Josef Čapek', 'Obľúbené rozprávky o psíčkovi a mačičke, ako spolu gazdovali v malom domčeku pod lesom, ako si v ňom spolu nažívali a chceli robiť všetko tak, ako robia veľkí ľudia a ešte o všelijakých iných veciach pre deti, napísal a nakreslil Josef Čapek.')" 
+                  onmouseleave="changeMainBook(4.4,'#BFAFFF','./res/knihy/dobreznamenia.jpg', 'Dobré znamenia', 'Neil Gaiman, Terry Pratchett', 'Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.')">
+                  <img src="./res/knihy/mackaapes.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class = "card-img-top hover-book6">
                   <h3 class = "top-books-title">Rozprávky o psíčkovi a mačičke</h3>
                   <p class = "top-books-author">Josef Čapek</p>
                   <div class = "rating-price">
@@ -467,9 +474,9 @@
                           <span class="fa-solid fa-star"></span>
                           <p>4.8</p>
                       </div>
-                      <p>6.95€</p>
+                      <p class = "price" onload = "countLines()">6.95<abbr title="EUR">€</abbr></p>
                   </div>
-                </div>
+                </div></a>
               </div>
           </section>
         </main>
@@ -516,6 +523,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
-        <script src="./js/navigation.js"></script>
+        <script src="./js/main.js"></script>
+
     </body>
 </html>
