@@ -1,0 +1,9 @@
+.agreement-row {
+    flex-direction: column;
+    justify-content: left;
+}
+
+.agreement-item{
+    display: flex;
+    flex-direction: row;
+}

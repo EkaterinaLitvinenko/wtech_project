@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
         <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/register.css">
     </head>
     <body>
         <header>
@@ -59,26 +60,55 @@
         <main>
             <!--Obsah-->
             <section class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-12 col-12 delivery">
-                    <form id="delivery-form">
+                <div class="col-lg-4 col-md-7 col-sm-12 col-12 register">
+                    <form id="register-form">
 
                         <div class="form-part">
                         <fieldset>
                             <legend>Registrácia</legend>
-                            </div>
+                            <header class="row">
+                              <ul id="register-bar">
+                                  <li class="active">Prihláste sa</li>
+                                  <li class="active">Zaregistrujte sa</li>
+                              </ul>
+                            </header>
+  
                             <div class="form-group">
                                 <label for="email">E-mail</label>
                                 <input class="form-control" type="text" name="email">
                             </div>
                             <div class="form-row">
-                            <div class="form-group col">
-                                <label for="first-name">Meno</label>
-                                <input class="form-control" type="text" name="first-name">
+                              <div class="form-group col">
+                                  <label for="first-name">Meno</label>
+                                  <input class="form-control" type="text" name="first-name">
+                              </div>
+                              <div class="form-group col">
+                                  <label for="last-name">Priezvisko</label>
+                                  <input class="form-control" type="text" name="last-name">
+                              </div>
                             </div>
-                            <div class="form-group col">
-                                <label for="last-name">Priezvisko</label>
-                                <input class="form-control" type="text" name="last-name">
+                            <div class="form-group">
+                              <label for="heslo">Heslo</label>
+                              <input class="form-control" type="text" name="password">
                             </div>
+                            <div class="form-group">
+                              <label for="heslo">Potvrdenie hesla</label>
+                              <input class="form-control" type="text" name="password">
+                            </div>
+                            <div class="form-group agreement-row">
+                              <div class="agreement-item">
+                                <input class="form-control" type="checkbox" id="podmienky">
+                                <label for="podmienky">Súhlasím s obchodnými podmienkami</label>
+                              </div>
+                              <div class="form-group">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br></div>
+                              <div>
+                                <label for="spracovanie">Súhlasím so spracovaním osobných údajov</label>
+                                <input type="checkbox" id="spracovanie">
+                              </div>
+                            </div>
+                            <button class="btn" form="register-form">Registrovať</button>
                         </fieldset>
                         </div>
                     </form>
