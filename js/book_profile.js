@@ -26,7 +26,6 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
+  $(".owl-carousel.book-photos").owlCarousel();
 });

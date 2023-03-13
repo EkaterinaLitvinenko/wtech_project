@@ -124,7 +124,9 @@
     display: flex;
 }
 
-.card-img-top {
+.owl-carousel.homescreen .card img.card-img-top,
+.card-img-top
+ {
     width: 135px;
     height: 213px;
     object-fit: fill;
@@ -133,7 +135,7 @@
 }
 
 .card {
-    width: 100%;
+    /*width: 100%;*/
     margin-inline: 25px;
     text-align: center;
     align-items: center;

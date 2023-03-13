@@ -263,7 +263,7 @@ hr {
 
 @media (max-width: 400px){
     .main-content {
-        margin-right: 5px 20px 0 20px;
+        margin-inline: 0;
     }
 }
 
