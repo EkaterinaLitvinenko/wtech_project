@@ -27,172 +27,215 @@
         </header>
 
         <main>
-            <div class="adm-prodlist">
-            <!----------table header -->
-                    <div class="adm-prodlist-header">
-                        <h3>Zoznam produktov</h3>
-                        <div class="adm-tools">
-                            <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-                            <form  id="search-form">
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
-                                    </div>
-                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
-                                    </div>
-                                </div>
-                            </form>
+            <div class="adm-sidebar">
 
-                            <button type="button" class="btn btn-dark" id="add-btn">Pridať</button>
+            
+            </div>
+            <div class="container">
+                <div class="adm-prodlist">
+                <!----------table header -->
+                        <div class="adm-prodlist-header">
+                            <h3>Zoznam produktov</h3>
+                            <div class="adm-tools">
+                                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+                                <form  id="search-form">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                                        </div>
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <button type="button" class="btn btn-dark" id="add-btn">Pridať</button>
+                            </div>
+                        
                         </div>
                     
-                    </div>
-                
 
-            <!----------table body -->
-                    <div class="adm-prodlist-body">
-                        <table class="prodlist-table">
-                            <thead class="prodlist-table-head">
-                                <tr>
-                                    <th>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </th>
-                                    <th>Názov</th>
-                                    <th>ID</th>
-                                    <th>Cena</th>
-                                    <th>Žáner</th>
-                                    <th>Možnosti</th>
-                                </tr>
-                            </thead>
+                <!----------table body -->
+                        <div class="adm-prodlist-body">
+                            <table class="prodlist-table">
+                                <thead class="prodlist-table-head">
+                                    <tr>
+                                        <th>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                            </div>
+                                        </th>
+                                        <th id="adm-table-name">Názov</th>
+                                        <th>ID</th>
+                                        <th>Cena</th>
+                                        <th>Žáner</th>
+                                        <th>Možnosti</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <tr class="product-item">
-                                    <td>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </td>
-                                    <td>
-                                        <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
-                                        I'll Be Watching You: Inside The Police, 1980-83
-                                        Andy Summers</td>
-                                    <td>55813384</td>
-                                    <td>80,00€</td>
-                                    <td>Fantasy</td>
-                                    <td>
-                                        <div class="action-btn">
-                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                        </div>  
-                                    </td>   
-                                </tr>
-                                <tr class="product-item">
-                                    <td>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </td>
-                                    <td>
-                                        <img src="./res/knihy/bitunok.jpg" alt="Kniha Bitúnok č. 5" class = "adm-book-cover">
-                                        I'll Be Watching You: Inside The Police, 1980-83
-                                        Andy Summers</td>
-                                    <td>55813384</td>
-                                    <td>80,00€</td>
-                                    <td>Fantasy</td>
-                                    <td>
-                                        <div class="action-btn">
-                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                        </div>  
-                                    </td>  
-                                </tr>
-                                <tr class="product-item">
-                                    <td>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </td>
-                                    <td>
-                                        <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "adm-book-cover">
-                                        I'll Be Watching You: Inside The Police, 1980-83
-                                        Andy Summers</td>
-                                    <td>55813384</td>
-                                    <td>80,00€</td>
-                                    <td>Fantasy</td>
-                                    <td>
-                                        <div class="action-btn">
-                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                        </div>  
-                                    </td>  
-                                </tr>
-                                <tr class="product-item">
-                                    <td>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </td>
-                                    <td>
-                                        <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "adm-book-cover">
-                                        I'll Be Watching You: Inside The Police, 1980-83
-                                        Andy Summers</td>
-                                    <td>55813384</td>
-                                    <td>80,00€</td>
-                                    <td>Fantasy</td>
-                                    <td>
-                                        <div class="action-btn">
-                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                        </div>  
-                                    </td>  
-                                </tr>
-                                <tr class="product-item">
-                                    <td>
-                                        <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                    </td>
-                                    
-                                    <td>
-                                        <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "adm-book-cover">
-                                        I'll Be Watching You: Inside The Police, 1980-83
-                                        Andy Summers</td>
-                                    <td>55813384</td>
-                                    <td>80,00€</td>
-                                    <td>Fantasy</td>
-                                    <td>
-                                        <div class="action-btn">
-                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                        </div>  
-                                    </td>  
-                                </tr>
-                            </tbody>
-                        </table>
+                                <tbody>
+                                    <tr class="product-item">
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                        </td>
+                                        <td>
+                                            <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                           <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers </span> </td>
+                                        <td> <span class="adm-book-id">55813384</span> </td>
+                                        <td> <span class="adm-book-price">80,00€</span></td>
+                                        <td> <span class="adm-book-genre">Fantasy</span></td>
+                                        <td>
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                            </div>  
+                                        </td>   
+                                    </tr>
+                                    <tr class="product-item">
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                        </td>
+                                        <td>
+                                            <img src="./res/knihy/bitunok.jpg" alt="Kniha Bitúnok č. 5" class = "adm-book-cover">
+                                            I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers</td>
+                                        <td>55813384</td>
+                                        <td>80,00€</td>
+                                        <td>Fantasy</td>
+                                        <td>
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                            </div>  
+                                        </td>  
+                                    </tr>
+                                    <tr class="product-item">
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                        </td>
+                                        <td>
+                                            <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "adm-book-cover">
+                                            I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers</td>
+                                        <td>55813384</td>
+                                        <td>80,00€</td>
+                                        <td>Fantasy</td>
+                                        <td>
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                            </div>  
+                                        </td>  
+                                    </tr>
+                                    <tr class="product-item">
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                        </td>
+                                        <td>
+                                            <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "adm-book-cover">
+                                            I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers</td>
+                                        <td>55813384</td>
+                                        <td>80,00€</td>
+                                        <td>Fantasy</td>
+                                        <td>
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                            </div>  
+                                        </td>  
+                                    </tr>
+                                    <tr class="product-item">
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                        </td>
+                                        
+                                        <td>
+                                            <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "adm-book-cover">
+                                            I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers</td>
+                                        <td>55813384</td>
+                                        <td>80,00€</td>
+                                        <td>Fantasy</td>
+                                        <td>
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                                            </div>  
+                                        </td>  
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                    </div>
+                        </div>
 
 
-            <!----------table footer -->
+                <!----------table footer -->
                     <div class="adm-prodlist-footer">
-                        <button class="btn"><i class="fa-solid fa-arrow-down"></i>Ďalšie produkty</button>    
-
-                    </div>
+                        
+                        
+                        <nav class="adm-pagination" aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="items-count">
+                            <span class="items-count-txt">
+                                Položiek na stránke
+                            </span>
+        
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                10
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">20</a>
+                                <a class="dropdown-item" href="#">30</a>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>                
+                </div>
             </div>
         </main>
 

@@ -3,6 +3,15 @@
     justify-content: right;
 }
 
+/* .container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+} */
+
+.adm-sidebar {
+    float: left
+}
 
 .navbar {
     display: flex;
@@ -39,4 +48,36 @@
     width: 100%;
     max-width: 80px;
     height: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
+
+
+.adm-book-name, .adm-book-id, .adm-book-price, .adm-book-genre {
+    margin-right: 2rem;
+}
+
+
+.adm-prodlist-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 20px 40px;
+}
+
+.adm-pagination{
+    background: none;
+}
+
+.page-link {
+    color: #000;
+}
+
+.adm-prodlist-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items-count-txt, .dropdown {
+    display: inline-block;
+}
+
