@@ -249,9 +249,16 @@ hr {
 }
 
 .main-content {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-inline: 150px;
     margin-top: 50px;
+    max-width: 1440px;
+
+}
+@media (min-width:1440px){
+    .main-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .rating {
@@ -289,11 +296,14 @@ hr {
     }
 }
 
+
+
 @media (max-width: 400px){
     .main-content {
-        margin-right: 5px 20px 0 20px;
+        margin-inline: 5px;
     }
 }
+
 
 .input-group.amount-input {
     width: fit-content;

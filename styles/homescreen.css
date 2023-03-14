@@ -2,7 +2,8 @@
     text-align: center;
 }
 
-#banner > img {
+#banner >picture,
+#banner >picture > * {
     width: 100%;
 }
 
@@ -200,10 +201,6 @@
         -webkit-line-clamp: 7;
         line-clamp: 7;
     }
-    
-    #banner > img {
-        content: url("../res/banner2.png");
-    }
 }
 
 @media (max-width: 1199px){
@@ -230,13 +227,6 @@
     }
 }
 
-@media (max-width: 768px){
-    #banner > img {
-        content: url("../res/banner.png");
-    }
-}
-
-
 @media (max-width: 680px){
     .card:not(:nth-child(-n + 3)) {
         display: none;
@@ -259,9 +249,9 @@
         justify-content: center;
     }
     
-    #banner > img {
+    /*#banner > img {
         display: none;
-    }
+    }*/
 }
 
 @media (max-width: 400px){ 
