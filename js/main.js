@@ -60,3 +60,30 @@ Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
         changeHandeler()
     }
 })
+
+
+$(document).ready(function(){
+    $(".owl-carousel.homescreen").owlCarousel({
+        stagePadding: 50,
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600: {
+                items:2
+            },
+            804:{
+                items:4
+            },
+            1169:{
+                items:5
+            }
+        },
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
+    })
+  });

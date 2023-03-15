@@ -25,3 +25,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+$(document).ready(function(){
+  $(".owl-carousel.book-photos").owlCarousel();
+});
