@@ -115,7 +115,7 @@
     margin-bottom: 10px;
 }
 
-header > p  {
+header > h2  {
     font-size: 18px;
     font-weight: 400;
 }
@@ -138,13 +138,15 @@ header > p  {
     height: 28px;
     border-width: 2px solid black;
 }
-#quantity-cart h3 {
+#quantity-cart p {
     grid-area: a;
+    font-size: 30px;
+    font-weight: 600;
 }
 #quantity-cart {
     display: grid;
-    grid-column-gap:20px;
-    /* justify-content: end; */
+    grid-column-gap: 20px;
+    /*justify-content: end;*/
     grid-template-areas:
         "a a a a"
         ". . c d";
@@ -206,6 +208,28 @@ header > p  {
 }
 
 
+#mini-about { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+            line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    margin-top: 20px;
+    margin-bottom: 0;
+ }
+ 
+ #read-more {
+    background-color: transparent;
+    border-width: 0;
+    color: #5296FF;
+    font-weight: 500;
+ }
+
+ .fa-arrow-down {
+    margin-left: 5px;
+ }
 
 
 /* responzivita */
@@ -217,7 +241,18 @@ header > p  {
     h2 {
         font-size: 18px;
     }
+
+    #mini-about, #read-more {
+        display: none;
+    }
 }
+
+@media (max-width:768px) and (min-width:464py) {
+   #mini-about, #read-more {
+       display: flex;
+   }
+}
+
 
 @media (max-width:665px) {
 
@@ -232,11 +267,14 @@ header > p  {
     #main-about {
         margin: 20px;
     }
+
+    table.table {
+        margin-left: 0;
+    }
 }
 
 @media (max-width:548px) {
     #upper-info {
-      
         grid-template-columns: 206px auto;
         grid-template-rows: auto 1fr auto auto;
         grid-template-areas: 
@@ -246,7 +284,6 @@ header > p  {
     
         ;
     }
-
 
     #main-info1 > h1 {
         font-size: 20px;
@@ -278,11 +315,24 @@ header > p  {
     .book-info1 {
         grid-template-columns: 25% 75%;
     }
-    table.table {
-        margin-left: 0;
+
+    #upper-info > header > h1  {
+        font-size: 28px;
     }
 
+    #upper-info > header > h2  {
+        font-size: 18px;
+    }
+
+    #mini-about {
+        font-size: 15px;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+    }
+
+
 }
+
 @media (max-width:464px) {
     #upper-info {
       
@@ -298,6 +348,59 @@ header > p  {
         ;
     }
     .product-image {
-        height: 200px;
+        height: 150px;
+    }
+    
+    #mini-about, #read-more {
+        display: none;
+    }
+
+    #main-cover {
+        width: 212px;
+        height: 325px;
+    }
+
+    .main-content {
+        margin-top: 0;
+    }
+
+    #upper-info #carouselExampleControls {
+        margin: auto;
+    }
+
+    #upper-info {
+        text-align: center;
+    }
+
+    #upper-info > header  {
+        text-align: start;
+    }
+
+    #upper-info > header > h1  {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    #upper-info > header > h2  {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:320px) {
+    .product-image {
+        height: 92px;
+    }
+    
+    #main-cover {
+        width: 200px;
+        height: 313px;
+    }
+
+    #upper-info > header > h1  {
+        font-size: 22px;
+    }
+    #quantity-cart > p {
+        font-size: 25px;
     }
 }

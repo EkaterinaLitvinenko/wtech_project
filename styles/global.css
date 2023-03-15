@@ -1,3 +1,20 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #ADADAD;
+    text-decoration: none;
+}
+
 .btn {
     background-color: #acaeb1;
     border-radius: 20px;
@@ -6,18 +23,29 @@
     color:black;
 }
 
-.btn.cancel {
+.btn:focus, .btn:active, input {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+.btn.cancel, .btn.continue {
     background-color: transparent;
-    border-width: 1px;
-    border-color: black;
 }
 
 .btn.continue:hover {
-    background-color: #B2D19B;
+    color: #82B45C;
 }
 
 .btn.cancel:hover{
-    background-color: #FF2222;
+    color: #5296FF;
+}
+
+.fa-arrow-left {
+    margin-right: 5px;
+}
+
+.fa-arrow-right {
+    margin-left: 5px;
 }
 
 @media (max-width:320px){
@@ -147,7 +175,7 @@ nav.navbar .hideable {
 }
 
 
-@media (max-width: 535px){
+@media (max-width: 542px){
     #search-go-back{
         align-self: center;
         display: block;
@@ -221,14 +249,21 @@ hr {
 }
 
 .main-content {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-inline: 150px;
     margin-top: 50px;
+    max-width: 1440px;
+
+}
+@media (min-width:1440px){
+    .main-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .rating {
     font-size: 30px;
-    color: orange;
+    color: #FFBB52;
     display: inline-block;
     overflow: hidden;
   }
@@ -261,11 +296,14 @@ hr {
     }
 }
 
+
+
 @media (max-width: 400px){
     .main-content {
         margin-inline: 0;
     }
 }
+
 
 .input-group.amount-input {
     width: fit-content;
