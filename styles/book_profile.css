@@ -1,21 +1,19 @@
-@media (min-width:1200px){
-.main-content {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-}
-
-.book-info1 {
+/*horna cast stranky - farebna cast*/
+#book-info1 {
     display: grid;
     grid-gap: 20px;
 }
 
-.book-info2 {
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-    grid-gap: 50px;
-    padding: 20px;
+#upper-info > div:first-child {
+    grid-area: im;
+}
+
+#upper-info hgroup {
+    grid-area: hd;
+}
+
+.input-group.amount-input {
+    grid-area: c;
 }
 
 #upper-info {
@@ -30,88 +28,10 @@
     grid-template-areas: 
         "im hd hd hd hd"
         "im rt rt .  ."
-        "im qt qt qt qt"
-
-    ;
+        "im qt qt qt qt";
 }
 
-#upper-info > div:first-child {
-    grid-area: im;
-}
-
-#upper-info hgroup {
-    grid-area: hd;
-}
-
-#main-cover {
-    text-align: center;
-    width: 206px;
-    height: 326px;
-    object-fit: cover;
-    align-items: center;
-    border-radius: calc(0.3rem - 1px);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: 0.3s;
-}
-
-.carousel, .owl-carousel {
-    margin-top: 5px;
-}
-
-#main-cover:hover {opacity: 0.7;}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-    z-index: 1000;
-  }
-
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 25%;
-    max-width: 700px;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-
-  @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-  }
-
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
-  }
-
+/*info vedla fotky*/
 #upper-info hgroup > h1 {
     font-size: 36px;
     margin-bottom: 10px;
@@ -129,86 +49,11 @@
     grid-area: rt;
 }
 
-#rating-number {
+#inline-rating-decimal > p {
     margin-bottom: 0;
     font-size: 20px;
     margin-left: 5px;
 }
-
-.quantity-field {
-    width: 10%;
-    height: 28px;
-    border-width: 2px solid black;
-}
-#quantity-cart p {
-    grid-area: a;
-    font-size: 30px;
-    font-weight: 600;
-}
-#quantity-cart {
-    display: grid;
-    grid-column-gap: 20px;
-    /*justify-content: end;*/
-    grid-template-areas:
-        "a a a a"
-        ". . c d";
-
-        grid-area: qt;
-}
-
-.do-kosika {
-    background-color:#FFBB52;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    width: fit-content;
-    grid-area: d;
-    /*justify-self: end;*/
-}
-
-.input-group.amount-input {
-    grid-area: c;
-
-}
-@media (max-width: 796px) {
-    #quantity-cart {
-        grid-row-gap: 5px;
-        grid-template-areas:
-                 "a a a c"
-                ". . d d";
-    }
-    .do-kosika {
-         justify-self: end;
-    }
-}
-
-.product-images {
-    display: flex;
-}
-
-.product-image {
-    width: 100%;
-    height: 100px;
-    object-fit: contain;
-}
-
-.card {
-    border-radius: 0;
-}
-
-.table {
-    margin: 20px;
-}
-
-.button-plus, .button-minus {
-    margin: 0;
-    width: 30px;
-    height: 30px;
-}
-
-.do-kosika::after {
-    content: "\f291";
-    font: normal normal normal 1.5rem FontAwesome;
-}
-
 
 #mini-about { 
     overflow: hidden;
@@ -222,19 +67,157 @@
     margin-bottom: 0;
  }
  
- #read-more {
+#read-more {
     background-color: transparent;
     border-width: 0;
     color: #5296FF;
     font-weight: 500;
- }
+}
+#read-more:hover {
+    color: #83b4ff;
+}
 
- .fa-arrow-down {
+.fa-arrow-down {
     margin-left: 5px;
- }
+}
+
+/*do kosika*/
+#quantity-cart {
+    display: grid;
+    grid-column-gap: 20px;
+    /*justify-content: end;*/
+    grid-template-areas:
+        "a a a a"
+        ". . c d";
+    grid-area: qt;
+}
+
+#quantity-cart p {
+    grid-area: a;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.do-kosika {
+    background-color:#FFBB52;
+    width: fit-content;
+    grid-area: d;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.do-kosika:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/*obalky knihy*/
+#main-cover {
+    text-align: center;
+    width: 206px;
+    height: 326px;
+    object-fit: cover;
+    align-items: center;
+    border-radius: calc(0.3rem - 1px);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: 0.3s;
+}
+
+#main-cover:hover {
+    opacity: 0.7;
+}
+
+.owl-carousel {
+    margin-top: 5px;
+}
+
+.owl-carousel .owl-item img {
+    height: 100px;
+    object-fit: contain;
+}
+
+.owl-carousel .owl-item img:hover {
+    opacity: 70%;
+    transition: 0.3s;
+}
+
+/*modal - otvorenie obrazka na celu obrazovku*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  height: 90%;
+  width: auto;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*druha cast stranky - tabulka + o knie*/
+#book-info2 {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-gap: 50px;
+    padding: 20px;
+}
+
+.table {
+    margin: 20px;
+}
 
 
 /* responzivita */
+@media (min-width:1200px){
+    .main-content {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 796px) {
+    #quantity-cart {
+        grid-row-gap: 5px;
+        grid-template-areas:
+                 "a a a c"
+                ". . d d";
+    }
+
+    .do-kosika {
+         justify-self: end;
+    }
+}
+
 @media (max-width:768px) {
     #upper-info hgroup > h1 {
         font-size: 25px;
@@ -243,25 +226,15 @@
     #upper-info hgroup > h2 {
         font-size: 18px;
     }
-
-    #mini-about, #read-more {
-        display: none;
-    }
 }
-
-@media (max-width:768px) and (min-width:464py) {
-   #mini-about, #read-more {
-       display: flex;
-   }
-}
-
 
 @media (max-width:665px) {
-
     .main-content {
+        margin-top: 0;
         margin-inline: 0;
     }
-    .book-info2, .book-info1 {
+
+    #book-info2, #book-info1 {
         display: block;
         padding: 0;
     }
@@ -273,13 +246,14 @@
     table.table {
         margin-left: 0;
     }
-
-    .main-content {
-        margin-top: 0;
-    }
 }
 
 @media (max-width:548px) {
+    .modal-content {
+      height: 80%;
+      width: auto;
+    }
+
     #upper-info {
         grid-template-columns: 206px auto;
         grid-template-rows: auto 1fr auto auto;
@@ -287,7 +261,6 @@
             "im hd hd hd hd"
             "im rt rt .  ."
             "qt qt qt qt qt"
-    
         ;
     }
 
@@ -305,7 +278,7 @@
         margin-bottom: 10px;
     }
 
-    .book-info1 {
+    #book-info1 {
         grid-template-columns: 25% 75%;
     }
 
@@ -319,18 +292,14 @@
 
     #mini-about {
         font-size: 15px;
-        -webkit-line-clamp: 5;
-        line-clamp: 5;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
     }
 }
 
 @media (max-width:464px) {
     #upper-info {
         display: block;
-    }
-
-    .product-image {
-        height: 150px;
     }
     
     #mini-about, #read-more {
@@ -340,10 +309,6 @@
     #main-cover {
         width: 212px;
         height: 325px;
-    }
-
-    #upper-info #carouselExampleControls {
-        margin: auto;
     }
 
     #upper-info {
@@ -366,10 +331,6 @@
 
 
 @media (max-width:320px) {
-    .product-image {
-        height: 92px;
-    }
-    
     #main-cover {
         width: 200px;
         height: 313px;

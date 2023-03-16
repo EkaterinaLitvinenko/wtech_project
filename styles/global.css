@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Yeseva+One&display=swap');
+
 html {
     scroll-behavior: smooth;
+}
+
+.fa-star, .fa-star-half-stroke {
+    color:  #FFBB52;;
 }
 
 .foot-item {
@@ -17,6 +23,7 @@ a:link, a:visited {
 a:hover {
     color: #ADADAD;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn {
@@ -25,6 +32,7 @@ a:hover {
     padding-left: 30px;
     padding-right: 30px;
     color:black;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn:focus, .btn:active, input {
@@ -233,6 +241,10 @@ nav.navbar .hideable {
 
 footer {
     background-color: #FFBB52;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer > .container {
@@ -246,6 +258,16 @@ footer > .container {
 h1 {
     font-size: 25px;
     margin-bottom: 25px;
+    font-family: 'Yeseva One', cursive;;
+}
+
+h2, th {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p, td {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 350;
 }
 
 hr {

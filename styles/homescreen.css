@@ -1,31 +1,108 @@
+/*banner*/
 #banner {
     text-align: center;
 }
 
-#banner >picture,
-#banner >picture > * {
+#banner > picture,
+#banner > picture > * {
     width: 100%;
 }
 
-.zoom {
-    transition: transform .5s; 
+/*komponent kniha - obrazok, nazov, autor, cena, hodnotenie*/
+.book-component {
+    margin-inline: 25px;
+    text-align: center;
+    align-items: center;
+    border-width: 0;
+    width: 135px;
 }
-  .zoom:hover {
+
+.owl-carousel.homescreen .book-component img.book-img,
+.book-img
+ {
+    width: 135px;
+    height: 213px;
+    object-fit: fill;
+    border-radius: calc(0.25rem - 1px);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.book-img:hover {
+    opacity: 70%;
+    transition: 0.3s;
+}
+
+.book-title {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.book-author {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.book-author, .book-title, #main-book-title, #main-book-author { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+            line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height: fit-content;
+ }
+
+.rating-decimal {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgb(224, 223, 223);
+    border-radius: 5px;
+    padding: 2px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 1px 4px;
+    margin: 2px;
+}
+
+.rating-decimal > p {
+    margin-bottom: 0;
+    font-size: 15px;
+    padding-inline: 5px;
+}
+
+.price {
+    margin-bottom: 0;
+    font-size: 15px;
+    padding-inline: 5px;
+    font-weight: 500;
+}
+
+
+/*žánre*/
+.zoom {
+    transition: transform .5s;
+    text-align: center;
+}
+
+.zoom > h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.zoom:hover {
     transform: scale(1.05); 
 }
-  .zoom:hover > p {
-    font-weight: 500;
-  }
 
-/*------ top knihy --------*/
+.zoom:hover > h2 {
+    font-weight: 600;
+}
+
+/*rozlozenie top knih*/
 
 .grid-container {
     display: grid;
     grid-template-columns: 5fr 1.6fr 1.6fr 1.6fr;
     grid-row: 1rem;
     grid-gap: 20px;
-    padding: 20px;
-    padding-top: 0;
+    padding: 0 20px 20px 20px;
 }
 
 .grid-container > a {
@@ -35,6 +112,7 @@
 .grid-item {
     display: inline-grid;
     justify-items: center;
+    text-align: center;
 }
 
 .grid-item-1 {
@@ -45,42 +123,7 @@
     grid-column: span 1;
 }
 
-.top-books-title {
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-top: 5px;
-}
-
-.top-books-author {
-    font-size: 13px;
-    margin-bottom: 0;
-}
-
-.rating-decimal {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid rgb(224, 223, 223);
-    border-radius: 5px;
-    padding: 2px;
-    box-shadow: rgba(0, 0, 0, 0.06) 0 1px 4px;
-}
-
-.rating-decimal > p {
-    margin-bottom: 0;
-    font-size: 15px;
-    padding-inline: 5px;
-}
-
-.fa-star, .fa-star-half-stroke {
-    color:  #FFBB52;;
-}
-
-.price {
-    margin-bottom: 0;
-    font-size: 15px;
-    padding-inline: 5px;
-    font-weight: bold;
-}
+/*hlavna zobrazovana knihy vybrata z top knih*/
 
 #main-book {
     padding: 20px 60px 20px 60px;
@@ -120,66 +163,6 @@
     margin-bottom: 0;
 }
 
-.top-books-author, .top-books-title, #main-book-title, #main-book-author, .card-title { 
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 1;
-           line-clamp: 1;
-   -webkit-box-orient: vertical;
-   height: fit-content;
-}
-
-/*--------------------------------------
----------- corousel --------------------*/
-
-.carousel-control-next, .carousel-control-prev {
-    width: 4%;
-}
-
-.carousel .carousel-control-prev-icon {
-       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFBB52' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-   }
-   
-.carousel .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFBB52' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-}
-
-.book-wrapper, .book-wrapper > a {
-    display: flex;
-}
-
-.owl-carousel.homescreen .card img.card-img-top,
-.card-img-top
- {
-    width: 135px;
-    height: 213px;
-    object-fit: fill;
-    border-radius: calc(0.25rem - 1px);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-.card-img-top:hover {
-    opacity: 80%;
-}
-
-.card {
-    /*width: 100%;*/
-    margin-inline: 25px;
-    text-align: center;
-    align-items: center;
-    border-width: 0;
-    border-radius: 0 solid;
-}
-
-.card-body {
-    padding: 10px 0 0 0;
-}
-
-.card-title {
-    font-size: 16px;
-    margin-bottom: 0;
-}
-
 
 /*-----responzivita------------------*/ 
 @media (min-width: 1250px) and (max-width: 1439px){
@@ -190,10 +173,6 @@
 }
 
 @media (max-width: 1250px){
-    .card:not(:nth-child(-n + 5)) {
-        display: none;
-    }
-    
     #main-book-about { 
         -webkit-line-clamp: 7;
         line-clamp: 7;
@@ -214,28 +193,14 @@
 }
 
 @media (max-width: 1050px){
-    .card:not(:nth-child(-n + 4)) {
-        display: none;
-    }
-    
     #main-book-about { 
         -webkit-line-clamp: 8;
         line-clamp: 8;
     }
 }
 
-@media (max-width: 680px){
-    .card:not(:nth-child(-n + 3)) {
-        display: none;
-    }
-}
-
 @media (max-width: 570px){
-    .card:not(:nth-child(-n + 2)) {
-        display: none;
-    }
-    
-    h1 {
+    .main-content > h1 {
         font-size: 20px;
     }
 
@@ -244,16 +209,6 @@
         grid-template-rows: 33% 33% 33%;
         grid-row: auto;
         justify-content: center;
-    }
-    
-    /*#banner > img {
-        display: none;
-    }*/
-}
-
-@media (max-width: 400px){ 
-    .card:not(:first-child) {
-        display: none;
     }
 }
 
