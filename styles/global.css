@@ -2,6 +2,35 @@ html {
     scroll-behavior: smooth;
 }
 
+.main-content {
+    margin-inline: 150px;
+    margin-top: 50px;
+    max-width: 1440px;
+
+}
+@media (min-width:1440px){
+    .main-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1050px){
+    .main-content {
+        margin-inline: 50px;
+    }
+}
+
+@media (max-width: 400px){
+    .main-content {
+        margin-inline: 0;
+    }
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -15,12 +44,25 @@ a:hover {
     text-decoration: none;
 }
 
+.input-group {
+    height: fit-content;
+    align-self: center;
+}
+
+
 .btn {
     background-color: #acaeb1;
     border-radius: 20px;
     padding-left: 30px;
     padding-right: 30px;
     color:black;
+}
+
+@media (max-width:420px) {
+    .btn {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 .btn:focus, .btn:active, input {
@@ -40,26 +82,13 @@ a:hover {
     color: #5296FF;
 }
 
-.fa-arrow-left {
-    margin-right: 5px;
-}
-
-.fa-arrow-right {
-    margin-left: 5px;
-}
-
 @media (max-width:320px){
     .btn {
     padding-left: 10px;
     padding-right: 10px;
     }
 }
-
-p abbr[title] {
-    text-decoration: none;
-}
-
-
+/*navigacia*/
 nav.navbar {
     background-color: #FFBB52;
 }
@@ -70,33 +99,16 @@ nav.navbar .navbar-brand img, nav.navbar .navbar-brand{
 
 nav.navbar .hideable {
     display: none;
+    position: absolute;
+    width: max-content;
+    top: 100%;
+    left: 50%;
+    padding: 20px 10px 5px 10px;
+    background-color: #977037;
+    transform: translate(-50%, 0);
+    clip-path: polygon(50% 0%, 60% 25%, 100% 25%, 100% 100%, 0 100%, 0 25%, 40% 25%);
 }
 
-nav.navbar #search-form .btn {
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
-nav.navbar .clickable {
-    padding: 10px;
-    font-size: 25px;
-    color: rgb(33, 33, 33);
-}
-nav.navbar input {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-@media (max-width:327px) {
-    nav.navbar .clickable {
-        padding: 7px;
-    }
-}
-@media (max-width:308px) {
-    nav.navbar .clickable {
-        padding: 5px;
-    }
-}
 nav.navbar #search-form input {
     border-radius: 100px 0px 0px 100px;
 }
@@ -106,8 +118,20 @@ nav.navbar #search-form button {
     background-color: white;
     border: 1px solid #ced4da;
     border-left-width: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
+nav.navbar .clickable {
+    padding: 10px;
+    font-size: 25px;
+    color: rgb(33, 33, 33);
+}
+
+nav.navbar input {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
 nav.navbar .navigation-actions {
     display: flex;
@@ -115,17 +139,7 @@ nav.navbar .navigation-actions {
 }
 
 nav.navbar .profile-group {
-        position: relative;
-}
-nav.navbar .hideable {
-        position: absolute;
-        width: max-content;
-        top: 100%;
-        left: 50%;
-        padding: 20px 10px 5px 10px;
-        background-color: #977037;
-        transform: translate(-50%, 0);
-        clip-path: polygon(50% 0%, 60% 25%, 100% 25%, 100% 100%, 0 100%, 0 25%, 40% 25%);
+    position: relative;
 }
 
 #search-go-back{
@@ -140,6 +154,33 @@ nav.navbar .hideable {
     border-left-width: 0px;
 }
 
+#open-search-sm{
+    display: none;
+}
+
+.profile-group form.show {
+    display: block;
+}
+
+#search-form {
+    display: flex;
+}
+
+#logout::before{
+    padding-right: 10px;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f08b";
+}
+@media (max-width:327px) {
+    nav.navbar .clickable {
+        padding: 7px;
+    }
+}
+@media (max-width:308px) {
+    nav.navbar .clickable {
+        padding: 5px;
+    }
+}
+
 @media (max-width: 991px){
     #navbar-collapsible {
         order:3;
@@ -149,29 +190,8 @@ nav.navbar .hideable {
         order:2;
     }
     nav.navbar .navbar-brand {
-    flex-grow: 1;
-}
-}
-
-#open-search-sm{
-    display: none;
-}
-.profile-group form.show {
-    display: block;
-}
-
-#search-form {
-    display: flex;
-}
-
-#search-form.show {
-    display: flex;
-    z-index: 1000;
-}
-
-#logout::before{
-    padding-right: 10px;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f08b";
+        flex-grow: 1;
+    }
 }
 
 
@@ -194,6 +214,10 @@ nav.navbar .hideable {
         left: 0;
         background-color: #FFBB52;
     }
+    #search-form.show {
+        display: flex;
+        z-index: 1000;
+    }
 }
 
 @media (min-width:327px) {
@@ -207,11 +231,7 @@ nav.navbar .hideable {
     }
 }
 
-.input-group {
-    height: fit-content;
-    align-self: center;
-}
-
+/* footer*/
 #logo-col {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -248,26 +268,15 @@ hr {
     border-top: 3px solid black;
 }
 
-.main-content {
-    margin-inline: 150px;
-    margin-top: 50px;
-    max-width: 1440px;
 
-}
-@media (min-width:1440px){
-    .main-content {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
+/* komponent hodnotenia knihy*/
 .rating {
     font-size: 30px;
     color: #FFBB52;
     display: inline-block;
     overflow: hidden;
   }
-  .rating::before { 
+.rating::before { 
     content: "★★★★★" ;
     position: absolute;
     color: transparent;
@@ -281,7 +290,7 @@ hr {
     min-height: 0;
   }
 
-  .rating::after {
+.rating::after {
     content: "★★★★★" ;
     color: transparent;
     background-clip: text;
@@ -289,22 +298,7 @@ hr {
     background-color: white;
   }
 
-
-@media (max-width: 1050px){
-    .main-content {
-        margin-inline: 50px;
-    }
-}
-
-
-
-@media (max-width: 400px){
-    .main-content {
-        margin-inline: 0;
-    }
-}
-
-
+/* komponent na inkrementaciu polozky*/
 .input-group.amount-input {
     width: fit-content;
     justify-content: center;
