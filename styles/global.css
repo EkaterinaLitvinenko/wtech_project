@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.foot-item {
+    margin-bottom: 10px;
+}
+
 a {
     text-decoration: none;
 }
@@ -162,6 +166,7 @@ nav.navbar .hideable {
 
 #search-form {
     display: flex;
+    width:400px
 }
 
 #search-form.show {
@@ -174,8 +179,7 @@ nav.navbar .hideable {
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f08b";
 }
 
-
-@media (max-width: 542px){
+@media (max-width: 700px){
     #search-go-back{
         align-self: center;
         display: block;
@@ -254,7 +258,7 @@ hr {
     max-width: 1440px;
 
 }
-@media (min-width:1440px){
+@media (min-width:1537px){
     .main-content {
         margin-left: auto;
         margin-right: auto;
@@ -289,19 +293,29 @@ hr {
     background-color: white;
   }
 
+@media (max-width: 1180px){
+    .main-content {
+        margin-inline: 60px;
+    }
+}
 
-@media (max-width: 1050px){
+@media (max-width: 1076px){
     .main-content {
         margin-inline: 50px;
     }
 }
 
-
-
 @media (max-width: 400px){
     .main-content {
         margin-inline: 0;
     }
+}
+
+@media (max-width: 767px){
+    footer #logo-col #logo {
+        width: 50%;
+        height: auto;
+    } 
 }
 
 

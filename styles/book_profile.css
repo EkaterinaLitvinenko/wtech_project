@@ -39,7 +39,7 @@
     grid-area: im;
 }
 
-#upper-info > header {
+#upper-info hgroup {
     grid-area: hd;
 }
 
@@ -49,6 +49,7 @@
     height: 326px;
     object-fit: cover;
     align-items: center;
+    border-radius: calc(0.3rem - 1px);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     transition: 0.3s;
 }
@@ -70,6 +71,7 @@
     height: 100%;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
   }
 
   .modal-content {
@@ -110,12 +112,12 @@
     }
   }
 
- header > h1 {
+#upper-info hgroup > h1 {
     font-size: 36px;
     margin-bottom: 10px;
 }
 
-header > h2  {
+#upper-info hgroup > h2 {
     font-size: 18px;
     font-weight: 400;
 }
@@ -234,11 +236,11 @@ header > h2  {
 
 /* responzivita */
 @media (max-width:768px) {
-     h1 {
+    #upper-info hgroup > h1 {
         font-size: 25px;
     }
     
-    h2 {
+    #upper-info hgroup > h2 {
         font-size: 18px;
     }
 
@@ -271,6 +273,10 @@ header > h2  {
     table.table {
         margin-left: 0;
     }
+
+    .main-content {
+        margin-top: 0;
+    }
 }
 
 @media (max-width:548px) {
@@ -285,22 +291,9 @@ header > h2  {
         ;
     }
 
-    #main-info1 > h1 {
-        font-size: 20px;
-    }
-    
-    #main-info1 > h2 {
-        font-size: 15px;
-    }
-
     #main-cover {
         width: 100%;
         height: auto;
-    }
-
-    #main-info1 {
-        background-color:  #B2D19B;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     #main-about > p, .table {
@@ -316,11 +309,11 @@ header > h2  {
         grid-template-columns: 25% 75%;
     }
 
-    #upper-info > header > h1  {
+    #upper-info hgroup > h1  {
         font-size: 28px;
     }
 
-    #upper-info > header > h2  {
+    #upper-info hgroup > h2  {
         font-size: 18px;
     }
 
@@ -329,24 +322,13 @@ header > h2  {
         -webkit-line-clamp: 5;
         line-clamp: 5;
     }
-
-
 }
 
 @media (max-width:464px) {
     #upper-info {
-      
-        grid-template-columns: 206px auto;
-        grid-template-rows: auto 1fr auto auto;
-        grid-template-areas: 
-            "im im im"
-            "im im im"
-            "hd hd hd"
-            "rt rt rt"
-            "qt qt qt"
-    
-        ;
+        display: block;
     }
+
     .product-image {
         height: 150px;
     }
@@ -360,10 +342,6 @@ header > h2  {
         height: 325px;
     }
 
-    .main-content {
-        margin-top: 0;
-    }
-
     #upper-info #carouselExampleControls {
         margin: auto;
     }
@@ -372,16 +350,16 @@ header > h2  {
         text-align: center;
     }
 
-    #upper-info > header  {
+    #upper-info hgroup  {
         text-align: start;
     }
 
-    #upper-info > header > h1  {
+    #upper-info hgroup > h1  {
         font-size: 25px;
         margin-top: 10px;
     }
 
-    #upper-info > header > h2  {
+    #upper-info hgroup > h2 {
         font-size: 15px;
     }
 }
@@ -397,7 +375,7 @@ header > h2  {
         height: 313px;
     }
 
-    #upper-info > header > h1  {
+    #upper-info hgroup > h1  {
         font-size: 22px;
     }
     #quantity-cart > p {

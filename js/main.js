@@ -67,20 +67,26 @@ $(document).ready(function(){
         stagePadding: 50,
         loop:true,
         margin:10,
-        nav:true,
         responsive:{
             0:{
                 items:1
             },
-            600: {
+            505: {
                 items:2
             },
-            804:{
+            663: {
+                items:3
+            },
+            830:{
                 items:4
             },
-            1169:{
+            1000:{
                 items:5
-            }
+            },
+            1370:{
+                items:6
+            },
+
         },
         autoplay:true,
         autoplayTimeout:5000,

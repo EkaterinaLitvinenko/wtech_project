@@ -14,7 +14,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+                <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
               
                 <nav class="collapse navbar-collapse" id="navbar-collapsible">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -39,7 +39,7 @@
                           <div class="input-group-prepend">
                               <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
                           </div>
-                          <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                          <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
                           <div class="input-group-append">
                               <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
                           </div>
@@ -187,40 +187,44 @@
                 </footer>
         </main>
         <footer class="text-center text-lg-start">
-          <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-              <!-- logo + copyright  -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
-                <img src="./res/logo.png" alt="logo" id = "logo">
-                <p>
-                  <small>&copy; Copyright 2023, WTECH streda tím 3</small>
-                </p>
-              </div>  
-              <!-- prvý stĺpec  -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> Obchodné podmnieky </p>
-                  <p> Platba </p>
-                  <p> Doprava </p>
-                  <p> Reklamácia </p>
-                  <p> Najčastejšie otázky </p>
-              </div>
-              <!-- druhý stĺpec  -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> O nás </p>
-                  <p> Naša vízia </p>
-                  <p> Kariéra </p>
-                  <p> Kontakt </p>
-                  <p> Kamenné predajne </p>
-              </div>
-              <!-- ikony  -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
-                  <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
-                  <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
+            <div class="container text-center text-md-start mt-5">
+              <div class="row mt-3">
+                <!-- logo + copyright  -->
+                <nav class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
+                  <img src="./res/logo.png" alt="logo" id = "logo">
+                  <p>
+                    <small>&copy; Copyright 2023, WTECH streda tím 3</small>
+                  </p>
+                </nav>  
+                <!-- prvý stĺpec  -->
+                <nav class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="foot-item"> Obchodné podmnieky </li>
+                    <li class="foot-item"> Platba </li>
+                    <li class="foot-item"> Doprava </li>
+                    <li class="foot-item"> Reklamácia </li>
+                    <li class="foot-item"> Najčastejšie otázky </li>
+                  </ul>
+                </nav>
+                <!-- druhý stĺpec  -->
+                <nav class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <ul  class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="foot-item"> O nás </li>
+                    <li class="foot-item"> Naša vízia </li>
+                    <li class="foot-item"> Kariéra </li>
+                    <li class="foot-item"> Kontakt </li>
+                    <li class="foot-item"> Kamenné predajne </li>
+                  </ul>
+                </nav>
+                <!-- ikony  -->
+                <nav class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
+                    <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
+                    <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
+                    <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
+                    <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
+                </nav>
               </div>
             </div>
-          </div>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.theme.default.min.css">
     
+        <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.theme.default.min.css">
+
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/book_profile.css">
 
@@ -18,7 +21,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+                <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
               
                 <nav class="collapse navbar-collapse" id="navbar-collapsible">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -43,7 +46,7 @@
                           <div class="input-group-prepend">
                               <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
                           </div>
-                          <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                          <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
                           <div class="input-group-append">
                               <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
                           </div>
@@ -67,7 +70,7 @@
                 <section class = "book-info1">
                     <div id = "upper-info">
                       <div>
-                          <img src = "./res/knihy/arianddante.jpg" id = "main-cover">
+                          <img src = "./res/knihy/arianddante.jpg" id = "main-cover" alt="Obálka knihy Aristotle and Dante Discover The Secrets Of The Universe">
                           <div id="myModal" class="modal">
                             <span class="close">&times;</span>
                             <img class="modal-content" id="img01">
@@ -76,17 +79,13 @@
                               <div><img class="d-block product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')"></div>
                               <div><img class="d-block product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')"></div>
                               <div><img class="d-block product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')"></div>
-                              <div><img class="d-block product-image" src="./res/knihy/arianddante.jpg" onclick="changeImage('./res/knihy/arianddante.jpg')"></div>
-                              <div><img class="d-block product-image" src="./res/knihy/arianddante_back.jpg" onclick="changeImage('./res/knihy/arianddante_back.jpg')"></div>
-                              <div><img class="d-block product-image" src="./res/knihy/arianddante_box.jpg" onclick="changeImage('./res/knihy/arianddante_box.jpg')"></div>
                           </div>
                       </div>  
-                      <header>
+
+                      <hgroup>
                         <h1>Aristotle and Dante Discover the Secrets of the Universe</h1>
                         <h2>Benjamin Alíre Sáenz,Janko Mrkvička, Marienka Levicka, Isodor Pankrác, Filomena Ruzena Podmanicka</h2>
-                      </header>
                       
-                      <div>
                         <span id = "inline-rating-decimal">
                           <span id="rating-inline" class="rating" style="--stars-width: 108px;" ></span>
                           <p id = "rating-number">4.4</p>
@@ -98,8 +97,7 @@
                           This incredibly moving and powerful Printz Honor Book follows two teen boys learning to open themselves up to love, despite the world being against them. 
                         </p>
                         <a href="#main-about"><button id="read-more">Čítať viac<span class="fa-solid fa-arrow-down"></span></button></a>
-
-                      </div>
+                      </hgroup>
                           
                       <form id = "quantity-cart">
                         <p>99 999,99<abbr title="EUR">€</abbr><p>
@@ -112,13 +110,11 @@
                               <button class="btn" title="pridať produkt">+</button>
                           </div>
                         </div>     
-                        <button type="button" class="btn btn-lg do-kosika">
-                          Pridať do košíka
-                        </button>
+                        <button type="button" class="btn btn-lg do-kosika">Pridať do košíka  </button>
                       </form>
-                      </div>
-                    </div>  
+                    </div>
                 </section>
+
                 <section class = "book-info2">
                     <div  id = "main-table">
                         <table class="table">
@@ -150,7 +146,7 @@
                             </tbody>
                           </table>
                     </div>  
-                    <div id = "main-about">
+                    <section id = "main-about">
                         <h1>O knihe</h1>
                         <p>
                             Aristotle is an angry teen with a brother in prison. Dante is a know-it-all who has a unique perspective on life.<br>
@@ -159,7 +155,7 @@
                             <br>
                             This incredibly moving and powerful Printz Honor Book follows two teen boys learning to open themselves up to love, despite the world being against them.
                         </p>
-                    </div>
+                      </section>
                 </section>
             </article>
         </main>
@@ -169,35 +165,39 @@
           <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
               <!-- logo + copyright  -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
+              <nav class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
                 <img src="./res/logo.png" alt="logo" id = "logo">
                 <p>
                   <small>&copy; Copyright 2023, WTECH streda tím 3</small>
                 </p>
-              </div>  
+              </nav>  
               <!-- prvý stĺpec  -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> Obchodné podmnieky </p>
-                  <p> Platba </p>
-                  <p> Doprava </p>
-                  <p> Reklamácia </p>
-                  <p> Najčastejšie otázky </p>
-              </div>
+              <nav class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="foot-item"> Obchodné podmnieky </li>
+                  <li class="foot-item"> Platba </li>
+                  <li class="foot-item"> Doprava </li>
+                  <li class="foot-item"> Reklamácia </li>
+                  <li class="foot-item"> Najčastejšie otázky </li>
+                </ul>
+              </nav>
               <!-- druhý stĺpec  -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> O nás </p>
-                  <p> Naša vízia </p>
-                  <p> Kariéra </p>
-                  <p> Kontakt </p>
-                  <p> Kamenné predajne </p>
-              </div>
+              <nav class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <ul  class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="foot-item"> O nás </li>
+                  <li class="foot-item"> Naša vízia </li>
+                  <li class="foot-item"> Kariéra </li>
+                  <li class="foot-item"> Kontakt </li>
+                  <li class="foot-item"> Kamenné predajne </li>
+                </ul>
+              </nav>
               <!-- ikony  -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
+              <nav class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
                   <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
                   <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
                   <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
                   <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
-              </div>
+              </nav>
             </div>
           </div>
         </footer>
