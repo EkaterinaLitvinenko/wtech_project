@@ -1,17 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content-container {
+    padding-left: 300px;
+}
+
+aside{
+    position: static;
+    top: 70px;
+    left: 0;
+    width: 250px;
+    padding: 20px;
+    height: 100%;
+    background-color:#FFBB52;
+}
+
+#apply-btn, #cancel-btn {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+
+.side-menu li{
+    list-style: none;
+    /* overflow: hidden; */
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px auto;
+    transition: 0.5s;
+}
+
+.sub-item {
+    position: relative;
+    height: 30px;
+}
+
+.sub-menu {
+    width: 80%;
+    margin-right: 20px;
+    transition: 0,5s;
+}
+
+.sub-menu li {
+    height: 25px;
+    padding: 5px 10px;
+    margin: 4px auto;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.nav-item-title {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    /* overflow: hidden; */
+    height: 25px;
+    transition: 0,5s;
+}
+
+
 .adm-navigation-actions{
     display: flex;
     justify-content: right;
 }
 
-/* .container{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-} */
-
 .adm-sidebar {
     float: left
 }
+
+label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:hover {
+cursor: pointer;
+} 
+
+label:hover{
+    cursor: pointer;
+}
+
 
 .navbar {
     display: flex;
@@ -20,7 +92,7 @@
 
 .prodlist-table{
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
 }
 
 .adm-prodlist-header{
@@ -80,4 +152,16 @@
 .items-count-txt, .dropdown {
     display: inline-block;
 }
+
+.detail-btn, .edit-btn, .delete-btn {
+    margin-right: 10px;
+    color: rgb(85, 85, 85);
+    background-color: #fff;
+    border: none;
+    
+}
+
+
+
+
 
