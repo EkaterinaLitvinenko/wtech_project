@@ -87,7 +87,7 @@ main.container-fluid {
     grid-column: 3;
 }
 
-/* vymazat polozku z kosika */
+/* tlacidlo vymazat polozku z kosika */
 #cart-form > article > .controls > button {
     padding-left: 11px;
     padding-right: 11px;
@@ -95,7 +95,7 @@ main.container-fluid {
     background-color: transparent;
     border-width: 0;
 }
-
+/* tlacidlo vymazat polozku z kosika */
 #cart-form > article > .controls > button:hover {
     background-color: #FF6D5F;
 }
@@ -203,7 +203,7 @@ main.container-fluid {
 
 
 #prehlad-objednavky div {
-    height: 590px;
+    height: 650px;
     overflow-y: scroll;
     margin-top: 20px;
 }
@@ -231,20 +231,20 @@ main.container-fluid {
 
 /* vyplenenie platobnych udajov*/
 
-#payment-form .form-part:first-child {
+#finish-form .form-part:first-child {
     padding: 20px;
 }
-#payment-form article {
+.form-part > article {
     margin-bottom: 20px;
 }
-#payment-form article:last-child {
+.form-part > article:last-child {
     margin-bottom: 0px;
 }
-#payment-form article h1 {
+.form-part >article h1 {
     font-size: 1rem;
     margin-bottom: 3px;
 }
-#payment-form article p{
+.form-part > article p{
     margin-bottom: 0px;
     font-size: 0.9rem;
 }
@@ -449,7 +449,7 @@ input.form-control {
         padding: 20px;
         padding-bottom: 50px;
     }
-    
+
     #prehlad-objednavky.show footer {
         position: fixed;
         width: 100%;

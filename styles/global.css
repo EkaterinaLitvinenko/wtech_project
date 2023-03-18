@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Yeseva+One&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
@@ -8,7 +10,7 @@ html {
     max-width: 1440px;
 
 }
-@media (min-width:1440px){
+@media (min-width:1537px){
     .main-content {
         margin-left: auto;
         margin-right: auto;
@@ -31,6 +33,14 @@ abbr[title] {
     text-decoration: none;
 }
 
+.fa-star, .fa-star-half-stroke {
+    color:  #FFBB52;;
+}
+
+.foot-item {
+    margin-bottom: 10px;
+}
+
 a {
     text-decoration: none;
 }
@@ -42,6 +52,7 @@ a:link, a:visited {
 a:hover {
     color: #ADADAD;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .input-group {
@@ -56,6 +67,7 @@ a:hover {
     padding-left: 30px;
     padding-right: 30px;
     color:black;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 @media (max-width:420px) {
@@ -164,18 +176,14 @@ nav.navbar .profile-group {
 
 #search-form {
     display: flex;
+    width: 400px;
 }
 
 #logout::before{
     padding-right: 10px;
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f08b";
 }
-@media (max-width:327px) {
-    nav.navbar .clickable {
-        padding: 7px;
-    }
-}
-@media (max-width:308px) {
+@media (max-width:345px) {
     nav.navbar .clickable {
         padding: 5px;
     }
@@ -194,8 +202,7 @@ nav.navbar .profile-group {
     }
 }
 
-
-@media (max-width: 542px){
+@media (max-width: 700px){
     #search-go-back{
         align-self: center;
         display: block;
@@ -249,6 +256,10 @@ nav.navbar .profile-group {
 
 footer {
     background-color: #FFBB52;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer > .container {
@@ -259,9 +270,22 @@ footer > .container {
     width: 100%;
 }
 
-h1 {
+h1,legend {
     font-size: 25px;
     margin-bottom: 25px;
+    font-family: 'Yeseva One', cursive;;
+}
+legend {
+    margin-bottom: 8px;
+}
+
+h2, th {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p, td, label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 350;
 }
 
 hr {
@@ -297,6 +321,13 @@ hr {
     -webkit-background-clip: text;
     background-color: white;
   }
+
+  @media (max-width: 767px){
+    footer #logo-col #logo {
+        width: 50%;
+        height: auto;
+    } 
+}
 
 /* komponent na inkrementaciu polozky*/
 .input-group.amount-input {
