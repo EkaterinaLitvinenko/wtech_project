@@ -184,6 +184,7 @@ main.container-fluid {
     border-bottom: 1px solid black;
     padding-bottom: 20px;
     margin-top: 15px;
+    font-weight: 600;
 }
 
 #prehlad-objednavky footer {
@@ -270,6 +271,10 @@ main.container-fluid {
 .form-part {
     padding-bottom: 20px;
     margin-bottom: 20px;
+}
+
+.form-part article > h1 {
+    font-weight: 600;
 }
 
 fieldset {

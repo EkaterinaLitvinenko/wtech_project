@@ -72,7 +72,6 @@
     margin-bottom: 0;
     font-size: 15px;
     padding-inline: 5px;
-    font-weight: 500;
 }
 
 
@@ -150,6 +149,8 @@
 }
 
 #main-book-about { 
+    font-size: 15px;
+    margin-bottom: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -158,7 +159,7 @@
             -webkit-box-orient: vertical;
 }
         
-#main-book-author, #main-book-about {
+#main-book-author {
     font-size: 16px;
     margin-bottom: 0;
 }

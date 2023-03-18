@@ -51,8 +51,9 @@
 
 #inline-rating-decimal > p {
     margin-bottom: 0;
-    font-size: 20px;
+    font-size: 17px;
     margin-left: 5px;
+    padding-top: 5px;
 }
 
 #mini-about { 
@@ -95,7 +96,6 @@
 #quantity-cart p {
     grid-area: a;
     font-size: 30px;
-    font-weight: 400;
 }
 
 .do-kosika {

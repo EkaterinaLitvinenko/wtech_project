@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700;800&family=PT+Sans:wght@400;700&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -25,7 +25,7 @@ html {
 
 @media (max-width: 400px){
     .main-content {
-        margin-inline: 0;
+        margin-inline: 5px;
     }
 }
 
@@ -118,7 +118,6 @@ nav.navbar .hideable {
     padding: 20px 10px 5px 10px;
     background-color: #977037;
     transform: translate(-50%, 0);
-    clip-path: polygon(50% 0%, 60% 25%, 100% 25%, 100% 100%, 0 100%, 0 25%, 40% 25%);
 }
 
 nav.navbar #search-form input {
@@ -151,7 +150,16 @@ nav.navbar .navigation-actions {
 }
 
 nav.navbar .profile-group {
-    position: relative;
+        position: relative;
+}
+nav.navbar .hideable {
+        position: absolute;
+        width: max-content;
+        top: 130%;
+        left: 50%;
+        padding: 20px 10px 5px 10px;
+        background-color: #ffcf88;
+        transform: translate(-50%, 0);
 }
 
 #search-go-back{
@@ -179,8 +187,15 @@ nav.navbar .profile-group {
     width: 400px;
 }
 
+#logout{
+    background: transparent;
+}
+
+#logout:hover{
+    color: #378e6f;
+}
+
 #logout::before{
-    padding-right: 10px;
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f08b";
 }
 @media (max-width:345px) {
@@ -273,25 +288,35 @@ footer > .container {
 h1,legend {
     font-size: 25px;
     margin-bottom: 25px;
-    font-family: 'Yeseva One', cursive;;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
 legend {
     margin-bottom: 8px;
 }
 
-h2, th {
-    font-family: 'Josefin Sans', sans-serif;
+legend {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
-p, td, label {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 350;
+h2, h3, h6, th, a, #progressbar {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+
+p, td, #search-input, .foot-item, .btn, label  {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 300;
 }
 
 hr {
     border-top: 3px solid black;
 }
 
+strong {
+    font-weight: 700;
+}
 
 /* komponent hodnotenia knihy*/
 .rating {
