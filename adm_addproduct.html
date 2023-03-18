@@ -30,9 +30,11 @@
             <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-sm-12 col-lg-6">
-                    <button type="button" class="btn btn-secondary">
+                    <a href="#" class="btn"><i class="fa-solid fa-chevron-left"></i> Späť do zoznamu</a>
+
+                    <!-- <button type="button" class="btn btn-secondary">
                         <i class="fa-solid fa-chevron-left"></i> Späť do zoznamu
-                    </button>
+                    </button> -->
                     <h3 class="mb-3">Pridať produkt</h3>
                     <form>
                         <div class="row">
@@ -94,41 +96,34 @@
                                 <label for="productPages">Počet strán:</label>
                                 <input type="number" class="form-control" id="productPages" placeholder="">
                             </div>
-                            <label for="productImage" class="col-sm-2 col-form-label">Pridať obrázky:</label>
+                            <label for="productImage" class="col-sm-4 col-form-label">Pridať obrázky:</label>
                             <div class="col-sm-12">
-                              <div class="custom-file drag-and-drop-zone">
-                                <input type="file" class="custom-file-input" id="productImage" name="productImage">
-                                <label class="custom-file-label" for="productImage"></label>
-                              </div>
+                                <div class="col-xl-3" id="dropzone">
+                                    <label for="file-input">
+                                      <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                      <p>Choose a file or drag it here</p>
+                                    </label>
+                                    <input id="file-input" type="file">
+                                  </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                  <div id="preview-container"></div>
+                                </div>
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-primary">Uložiť</button>
+                        <button type="button" class="btn btn-secondary">
+                           Uložiť
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
         </main>
 
-        <!-- <script>
-            var dropZone = document.querySelector('.drag-and-drop-zone');
-          
-            dropZone.addEventListener('dragover', function(e) {
-              e.preventDefault();
-              dropZone.classList.add('dragging');
-            });
-          
-            dropZone.addEventListener('dragleave', function(e) {
-              e.preventDefault();
-              dropZone.classList.remove('dragging');
-            });
-          
-            dropZone.addEventListener('drop', function(e) {
-              e.preventDefault();
-              dropZone.classList.remove('dragging');
-              var file = e.dataTransfer.files[0];
-            });
-          </script> -->
+        
+    <script src="js/dragndrop.js"></script>    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
