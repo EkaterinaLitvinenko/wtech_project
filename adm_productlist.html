@@ -176,16 +176,50 @@
                                                <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
                                                 Andy Summers </span> </td>
                                             <td> <span class="adm-book-id">55813384</span> </td>
-                                            <td> <span class="adm-book-price">80,00€</span></td>
+                                            <td> <span class="adm-book-price">13,00€</span></td>
                                             <td> <span class="adm-book-genre">Fantasy</span></td>
                                             <td>
                                                 <div class="action-btn">
                                                     <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                                                     <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
                                                 </div>  
                                             </td>   
                                         </tr>
+ <!-- collapsible div ------------------------------------------------->
+                                        <tr class="product-detail">
+                                            <td colspan="6">
+                                              <div class="collapse">
+                                                <div class="card card-body">
+                                                  <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class="product-image">
+                                                  <div class="product-info">
+                                                    <label for="product-title">Názov:</label>
+                                                    <span class="product-title">Dobré znamenia</span><br>
+                                                    <label for="product-autors">Autori:</label>
+                                                    <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                                    <label for="product-languages">Typ:</label>
+                                                    <span class="product-languages">Kniha, eKniha</span><br>
+                                                    <label for="product-languages">Jazyky:</label>
+                                                    <span class="product-languages">slovenčina</span><br>
+                                                    <label for="product-pages">Pocet strán:</label>
+                                                    <span class="product-pages">400</span><br>
+                                                    <label for="product-description">Popis:</label>
+                                                    <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                        Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                         dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                         podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                         a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                         len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                        
+                                                        Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                        v podobe rovnomenného seriálu.</p> 
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        
+
                                         <tr class="product-item">
                                             <td>
                                                 <div class="form-check">
@@ -203,7 +237,7 @@
                                             <td>
                                                 <div class="action-btn">
                                                     <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                                                     <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
                                                 </div>  
                                             </td>  
@@ -225,7 +259,7 @@
                                             <td>
                                                 <div class="action-btn">
                                                     <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                                                     <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
                                                 </div>  
                                             </td>  
@@ -247,7 +281,7 @@
                                             <td>
                                                 <div class="action-btn">
                                                     <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                                                     <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
                                                 </div>  
                                             </td>  
@@ -270,7 +304,7 @@
                                             <td>
                                                 <div class="action-btn">
                                                     <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                                                     <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
                                                 </div>  
                                             </td>  
@@ -326,6 +360,8 @@
                 </div>  
         </main>
 
+    <script src="js/product_detail.js"></script>
+    <script src="js/delete_item.js"></script>
     <script src="js/checkbox.js"></script> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
