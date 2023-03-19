@@ -75,10 +75,10 @@
     height: 26px;
     width: 26px;
     left: 4px;
-    bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+    margin-bottom: 3px;
   }
   
   input:checked + .slider {
@@ -97,7 +97,9 @@
   
   /* Rounded sliders */
   .slider.round {
+    scale: 70%;
     border-radius: 34px;
+    margin-bottom: 6px;
   }
   
   .slider.round:before {
