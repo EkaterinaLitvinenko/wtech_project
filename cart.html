@@ -15,7 +15,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+                <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
               
                 <nav class="collapse navbar-collapse" id="navbar-collapsible">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -40,7 +40,7 @@
                           <div class="input-group-prepend">
                               <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
                           </div>
-                          <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                          <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
                           <div class="input-group-append">
                               <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
                           </div>
@@ -49,8 +49,12 @@
                     <div class="profile-group">
                       <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
                       <form class="hideable">
-                          <button class="btn" id="logout">odhlasiť sa </button>
-                      </form>
+                        <p><strong>Vitajte, Meno!</strong></p>
+                        <p>Moje objednávky</p>
+                        <p>Moje reklamácie</p>
+                        <p>Moje osobné údaje</p>
+                        <button class="btn" id="logout">  Odhlásiť sa </button>
+                    </form>
                     </div>
                     <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,11 +79,11 @@
                     </header>
                     <form id="cart-form" action="./doprava.html" method="GET">
                         <article>
-                            <img src="./res/knihy/catch22.png" width="50" height="70">
-                            <header class="item-info">
+                            <img src="./res/knihy/hlavaXXII_1.jpg" width="50" height="70">
+                            <hgroup >
                                 <h2>Veľmi dlhý názov knihy, ktorý si jakživ neviem zapamätať, ach jaj som to ale ja za nemehlo, už by som sa mal naučit pamät si blbosti ako je tato</h2>
-                                <p>Fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv Petrista Laster, Miki Hric, Ssteban Kulica, Isodor Navrátil</p>
-                            </header>
+                                <h3>Fero Ferguson, Amalia Altenka Assimov, Sedliak Peter Nas, Serejevoviv Petrista Laster, Miki Hric, Ssteban Kulica, Isodor Navrátil</h3>
+                            </hgroup>
                             <div class="controls">
                                 <div class="input-group amount-input">
                                     <div class="input-group-append">
@@ -95,11 +99,11 @@
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <article>
-                            <img src="./res/knihy/dobreznamenia.jpg" width="50" height="70">
-                            <header class="item-info">
+                            <img src="./res/knihy/dobreznamenia_1.jpg" width="50" height="70">
+                            <hgroup >
                                 <h2>Veľmi dlhý názov knihy, ktorý si jakživ neviem zapamätať, ach jaj som to ale ja za nemehlo, už by som sa mal naučit pamät si blbosti ako je tato</h2>
-                                <p>Matilda Macejková</p>
-                            </header>
+                                <h3>Matilda Macejková</h3>
+                            </hgroup>
                             <div class="controls">
                                 <div class="input-group amount-input">
                                     <div class="input-group-append">
@@ -115,11 +119,11 @@
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <article>
-                            <img src="./res/knihy/panprstenov3.jpg" width="50" height="70">
-                            <header class="item-info">
+                            <img src="./res/knihy/panprstenov3_1.jpg" width="50" height="70">
+                            <hgroup>
                                 <h2>Pán prsteňov: Návrat kráľa</h2>
-                                <p>J.R.R. Tolkien</p>
-                            </header>
+                                <h3>J.R.R. Tolkien</h3>
+                            </hgroup>
                             <div class="controls">
                                 <div class="input-group amount-input">
                                     <div class="input-group-append">
@@ -135,11 +139,11 @@
                             <p>99 000.00 <abbr title="EUR">€</abbr></p>
                         </article>
                         <article>
-                            <img src="./res/knihy/thursdayclub.jpg" width="50" height="70">
-                            <header class="item-info">
+                            <img src="./res/knihy/thethursdaymurderclub_1.jpg" width="50" height="70">
+                            <hgroup>
                                 <h2>The Thursady Murder Club</h2>
-                                <p>Richard Osman</p>
-                            </header>
+                                <h3>Richard Osman</h3>
+                            </hgroup>
                             <div class="controls">
                                 <div class="input-group amount-input">
                                     <div class="input-group-append">
@@ -156,50 +160,52 @@
                         </article>
                         <footer>
                             <p>Spolu <strong>102 901 023 856,12 <abbr title="EUR">€</abbr></strong></p>
-                            <a href="./index.html" class="btn cancel"><span class="fa-solid fa-arrow-left"></span>Späť na knihy</a> 
-                            <div id="controls">
-                                <button class="btn continue">Pokračovať <span class="fa-solid fa-arrow-right"></span></button>
-                            </div>
+                            <a href="./index.html" class="btn cancel">Späť na knihy</a> 
+                            <button class="btn continue">Pokračovať</button>
                         </footer>
                     </form>
                 </div>
             </section>
         </main>
         <footer class="text-center text-lg-start">
-          <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-              <!-- logo + copyright  -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
-                <img src="./res/logo.png" alt="logo" id = "logo">
-                <p>
-                  <small>&copy; Copyright 2023, WTECH streda tím 3</small>
-                </p>
-              </div>  
-              <!-- prvý stĺpec  -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> Obchodné podmnieky </p>
-                  <p> Platba </p>
-                  <p> Doprava </p>
-                  <p> Reklamácia </p>
-                  <p> Najčastejšie otázky </p>
-              </div>
-              <!-- druhý stĺpec  -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <p> O nás </p>
-                  <p> Naša vízia </p>
-                  <p> Kariéra </p>
-                  <p> Kontakt </p>
-                  <p> Kamenné predajne </p>
-              </div>
-              <!-- ikony  -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
-                  <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
-                  <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
-                  <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
+            <div class="container text-center text-md-start mt-5">
+              <div class="row mt-3">
+                <!-- logo + copyright  -->
+                <nav class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
+                  <img src="./res/logo.png" alt="logo" id = "logo">
+                  <p>
+                    <small>&copy; Copyright 2023, WTECH streda tím 3</small>
+                  </p>
+                </nav>  
+                <!-- prvý stĺpec  -->
+                <nav class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="foot-item"> Obchodné podmnieky </li>
+                    <li class="foot-item"> Platba </li>
+                    <li class="foot-item"> Doprava </li>
+                    <li class="foot-item"> Reklamácia </li>
+                    <li class="foot-item"> Najčastejšie otázky </li>
+                  </ul>
+                </nav>
+                <!-- druhý stĺpec  -->
+                <nav class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <ul  class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="foot-item"> O nás </li>
+                    <li class="foot-item"> Naša vízia </li>
+                    <li class="foot-item"> Kariéra </li>
+                    <li class="foot-item"> Kontakt </li>
+                    <li class="foot-item"> Kamenné predajne </li>
+                  </ul>
+                </nav>
+                <!-- ikony  -->
+                <nav class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-icons-col" id = "social-media">
+                    <h6 class="text-uppercase fw-bold mb-4">Sleduj nás!</h6>
+                    <span class="fa-brands fa-2xl fa-square-facebook icons"></span>
+                    <span class="fa-brands fa-2xl fa-square-instagram icons"></span>
+                    <span class="fa-brands fa-2xl fa-square-reddit icons"></span>
+                </nav>
               </div>
             </div>
-          </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,4 +1,3 @@
-
 document.getElementById('profile').onclick = (e) => {
     e.preventDefault()
     document.getElementById('profile').nextElementSibling.classList.toggle('show')      
@@ -18,7 +17,7 @@ if(document.getElementById("prehlad-objednavky"))
     document.getElementById("prehlad-objednavky").classList.toggle("show")
   }
  
-/* HOVER FUNCTION */
+/* HOVER FUNCTION pri top knihach */
   function changeMainBook(stars,color, img, title, author, about) {
     const main_book = document.getElementById("main-book");
     const main_cover = document.getElementById("main-book-cover");
@@ -34,9 +33,10 @@ if(document.getElementById("prehlad-objednavky"))
     main_about.innerHTML = about;
   
     rating.style.setProperty('--stars-width', 123*(stars/5.0)+'px');
-  
-  }
+}
 
+
+/* pridavanie a znizovanie mnozstva produktu */
 Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
     var changeHandeler = () =>{
         // asynchronne volanie na ulozenie zmeny kosika
@@ -60,3 +60,35 @@ Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
         changeHandeler()
     }
 })
+
+/* corousel na hlavnej stranke */
+$(document).ready(function(){
+    $(".owl-carousel.homescreen").owlCarousel({
+        stagePadding: 50,
+        loop:true,
+        margin:10,
+        responsive:{
+            0:{
+                items:1
+            },
+            505: {
+                items:2
+            },
+            663: {
+                items:3
+            },
+            830:{
+                items:4
+            },
+            1000:{
+                items:5
+            },
+            1370:{
+                items:6
+            },
+        },
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
+    })
+  });

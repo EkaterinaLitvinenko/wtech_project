@@ -1,0 +1,69 @@
+.add_product{
+    max-width: 50%;
+    margin: auto;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+a {
+    text-decoration: none;
+}
+  
+.btn {
+    margin: 30px auto;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(95, 95, 95);
+}
+
+#dropzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+}
+  
+#dropzone label {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+}
+
+#preview-container {
+    margin-top: 20px; 
+}
+
+#dropzone i {
+    font-size: 32px;
+    display: block;
+    margin: 0 auto 20px;
+    color: rgb(95, 95, 95);
+}
+
+#file-input {
+    display: none;
+}
+
+#dropzone.dragover {
+border-color: #FFBB52;
+}
+
+
+
+#preview-container img {
+    max-width: 100px;
+  }
+  
