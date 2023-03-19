@@ -59,15 +59,32 @@
                                     </div>
                                 </div>
                              </div>
-                            <div class="form-group col-xl-6 col-sm-12">
-                                <label for="adm-product-type">Typ:</label>
-                                <select class="form-control" id="adm-product-type">
-                                    <option>---</option>
-                                    <option>Kniha</option>
-                                    <option>eKniha</option>
-                                    <option>Audiokniha</option>
-                                </select>
-                            </div>
+                             <div class="form-group col-xl-6 col-sm-12">
+                                <label for="type">Typ:</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="type[]" value="Kniha" id="kniha">
+                                  <label class="form-check-label" for="kniha">Kniha</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="type[]" value="eKniha" id="ekniha">
+                                  <label class="form-check-label" for="ekniha">eKniha</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="type[]" value="Audiokniha" id="audiokniha">
+                                  <label class="form-check-label" for="audiokniha">Audiokniha</label>
+                                </div>
+                              </div>
+                              <div class="col-xl-6 col-sm-12">
+                                <label for="languages">Jazyky:</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="languages[]" value="slovensky" id="slovensky">
+                                  <label class="form-check-label" for="slovensky">Slovenský</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="languages[]" value="anglicky" id="anglicky">
+                                  <label class="form-check-label" for="anglicky">Anglický</label>
+                                </div>
+                              </div>
                             <div class="form-group col-xl-6 col-sm-12">
                                 <label for="adm-product-genre">Žáner:</label>
                                 <select class="form-control" id="adm-product-genre">
@@ -77,7 +94,7 @@
                                     <option>Humorný</option>
                                     <option>Romantický</option>
                                     <option>Fantasy</option>
-                                    <option>Sci-fi</option>
+                                    <option>Sci-fi</option>  
                                     <option>Detektívy</option>
                                     <option>Triler a horor</option>
                                     <option>Young Adult</option>
@@ -85,16 +102,8 @@
                                 </select>
                             </div>
                             <div class="form-group col-xl-6 col-sm-12">
-                                <label for="productLanguage">Jazyk:</label>
-                                <select class="form-control" id="productLanguage">
-                                    <option>---</option>
-                                    <option>slovenský</option>
-                                    <option>anglický</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-xl-6 col-sm-12">
                                 <label for="productPages">Počet strán:</label>
-                                <input type="number" class="form-control" id="productPages" placeholder="">
+                                <input type="number" class="form-control" id="productPages" value="">
                             </div>
                             <label for="productImage" class="col-sm-4 col-form-label">Pridať obrázky:</label>
                             <div class="col-sm-12">
