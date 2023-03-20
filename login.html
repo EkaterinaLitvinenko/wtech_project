@@ -67,43 +67,51 @@
             <!--Obsah-->
             <section class="row justify-content-center">
                 <div class="col-lg-4 col-md-7 col-sm-12 col-12 register">
-                    <form id="register-form">
-                      <header>
-                        <button class="btn-choose btn-inactive" form="register-choose">Registrácia</button>
-                        <button class="btn-choose btn-active" form="login-choose">Prihlásenie</button>
-                      </header>
+                      <div class="input-group">
+                        <a class="nav-link" href="register.html">
+                          <button class="btn" form="register-choose">Registrácia</button>
+                        </a>
+                        <a class="nav-link" href="login.html">
+                          <button class="btn btn-inactive" form="login-choose">Prihlásenie</button>
+                        </a>
+                      </div>
 
-                        <div class="register-container">
-                          
+                        <div class="register-container container">
+                          <form>
                           <h1>Prihlásenie</h1>
-                          <label>Som zákazník</label>
-                          <label class="switch form-row">
-                            <input type="checkbox">
-                              <span class="slider round"></span>
-                              </label>
-                            <label>Som administrátor</label>
-                        <fieldset> 
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input class="form-control" type="text" name="email">
-                            </div>
-                            <div class="form-group">
-                              <label for="heslo">Heslo</label>
-                              <input class="form-control" type="password" id="passwordInput">
-                              <input type="checkbox" onclick="showPassword(passwordInput)"> Zobraz heslo
-                            </div>
-                            <div class="form-group agreement-row">
-                              <div class> 
-                                <input type="checkbox" id="zapametat">
-                                <label for="zapametat">Zapamätať prihlásenie</label>
+                          <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="admin">
+                            <label class="custom-control-label" for="admin">Som administrátor</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <!--<label class="form-label" for="admin">Som zákazník</label>--> 
+                            <input type="checkbox" id="admin" class="form-check-input"></input>
+                            <label class="form-check-label" for="admin">Som administrátor</label>
+                          </div>
+
+                          <fieldset> 
+                              <div class="form-group">
+                                  <label for="email">E-mail</label>
+                                  <input class="form-control" type="email" name="email">
                               </div>
-                            </div>
-                            <div class="btn-center">
-                              <button class="btn" form="register-form">Prihlásiť</button>
-                            </div>
-                        </fieldset>
+                              <div class="form-group">
+                                <label for="heslo">Heslo</label>
+                                <input class="form-control" type="password" id="passwordInput">
+                                <input id="show" type="checkbox" onclick="showPassword(passwordInput)"> 
+                                <label for="show">Zobraz heslo</label>
+                              </div>
+                              <div class="form-group agreement-row">
+                                <div class> 
+                                  <input type="checkbox" id="zapametat">
+                                  <label for="zapametat">Zapamätať prihlásenie</label>
+                                </div>
+                              </div>
+                              <div class="btn-center">
+                                <button class="btn" form="register-form">Prihlásiť</button>
+                              </div>
+                          </fieldset>
+                          </form>
                         </div>
-                    </form>
                 </div>
             </section>
         </main>
