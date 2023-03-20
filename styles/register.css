@@ -8,10 +8,6 @@
     flex-direction: row;
 }
 
-.btn-inactive{
-    background-color: lightgrey;
-}
-
 .register-container{
     background-color: lightgray;
     border-radius: 30px;
