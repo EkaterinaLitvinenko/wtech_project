@@ -1,21 +1,5 @@
-.sidenav {
-    width: 190px;
-    z-index: 1;
-    top: 73.5px;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-.sidenav-group{
-  padding: 20px;
-  margin-left: 20px;
+.flow {
+  float: left;
+  width: 160;
+  height: 250;
 }
-
-  .main {
-    margin-left: 190px; /* Same as the width of the sidenav */
-  }
