@@ -67,22 +67,14 @@
             <!--Obsah-->
             <section class="row justify-content-center">
                 <div class="col-lg-4 col-md-7 col-sm-12 col-12 register">
-                      <div class="input-group">
-                        <a class="nav-link" href="register.html">
-                          <button class="btn" form="register-choose">Registrácia</button>
-                        </a>
-                        <a class="nav-link" href="login.html">
-                          <button class="btn btn-inactive" form="login-choose">Prihlásenie</button>
-                        </a>
+                      <div class="container row">
+                        <a class="btn nav-link col btn-light" href="register.html">Registrácia</a>
+                        <a class="btn nav-link col disabled" href="login.html">Prihlásenie</a>
                       </div>
 
                         <div class="register-container container">
                           <form>
                           <h1>Prihlásenie</h1>
-                          <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="admin">
-                            <label class="custom-control-label" for="admin">Som administrátor</label>
-                          </div>
                           <div class="form-check form-switch">
                             <!--<label class="form-label" for="admin">Som zákazník</label>--> 
                             <input type="checkbox" id="admin" class="form-check-input"></input>
@@ -106,9 +98,9 @@
                                   <label for="zapametat">Zapamätať prihlásenie</label>
                                 </div>
                               </div>
-                              <div class="btn-center">
-                                <button class="btn" form="register-form">Prihlásiť</button>
-                              </div>
+                              
+                                <button class="btn btn-outline-secondary" form="register-form">Prihlásiť</button>
+                              
                           </fieldset>
                           </form>
                         </div>
