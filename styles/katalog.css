@@ -3,3 +3,21 @@
   width: 160;
   height: 250;
 }
+
+main {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+main > aside {
+  grid-column: 1;
+}
+
+main > section {
+  grid-column: 2;
+}
+
+main > section > nav > ul {
+  display: flex;
+  list-style: none;
+}

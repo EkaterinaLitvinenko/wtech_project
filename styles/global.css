@@ -381,3 +381,20 @@ strong {
     padding-left: 11px;
     padding-right: 11px;
   }
+
+
+  .rating-decimal {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgb(224, 223, 223);
+    border-radius: 5px;
+    padding: 2px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 1px 4px;
+    margin: 2px;
+}
+
+.rating-decimal > p {
+    margin-bottom: 0;
+    font-size: 15px;
+    padding-inline: 5px;
+}

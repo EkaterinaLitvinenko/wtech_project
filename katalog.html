@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
         <link rel="stylesheet" href="./styles/global.css">
-        <link rel="stylesheet" href="./styles/adm_productlist.css">
+        <link rel="stylesheet" href="./styles/sidebar.css">
         <link rel="stylesheet" href="./styles/katalog.css">
 
     </head>
@@ -65,175 +65,266 @@
 
         <main>
           <!----------filter ---------------------------------------------------------------->
-          <div class="adm-sidebar">
-            <aside>
-                <ul class="side-menu">
-                    <li class="nav-item">
-                        <span class="nav-item-title">Typ</span>
-                        <ul class="sub-menu">
-                            <li class="sub-item">
-                                <label for="type-kniha"><input type="checkbox" id="type-kniha">Kniha</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="type-ekniha"><input type="checkbox" id="type-ekniha">eKniha</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="type-audiokniha"><input type="checkbox" id="type-audiokniha">Audiokniha</label>
-                            </li>
-                        </ul>
+            <aside id="sidebar-filter">
+            <span id="sidebar-open" class="fa-solid fa-chevron-right"></span>
+            <form id="filter-form">
+            <fieldset class="side-menu">
+                <legend class="nav-item-title">Typ</legend>
+                <ul class="sub-menu">
+                    <li class="sub-item">
+                        <label for="type-kniha"><input type="checkbox" id="type-kniha">Kniha</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="type-ekniha"><input type="checkbox" id="type-ekniha">eKniha</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="type-audiokniha"><input type="checkbox" id="type-audiokniha">Audiokniha</label>
                     </li>
                 </ul>
-                         
-                <ul class="side-menu">
-                    <li class="nav-item">
-                        <span class="nav-item-title">Žáner</span>
-                        <ul class="sub-menu">
-                            <li class="sub-item">
-                                <label for="genre-his"><input type="checkbox" id="genre-his">Historický</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-bel"><input type="checkbox" id="genre-bel">Beletria</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-hum"><input type="checkbox" id="genre-hum">Humorný</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-ro"><input type="checkbox" id="genre-rom">Romantický</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-fan"><input type="checkbox" id="genre-fan">Fantasy</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-sci"><input type="checkbox" id="genre-sci">Sci-fi</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-det"><input type="checkbox" id="genre-det">Detektívy</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-tri"><input type="checkbox" id="genre-tri">Triler a horor</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-you"><input type="checkbox" id="genre-you">Young Adult</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="genre-pdet"><input type="checkbox" id="genre-pdet">Pre deti</label>
-                            </li>
-                        </ul>           
+            </fieldset>
+                     
+            <fieldset class="side-menu">
+                <legend class="nav-item-title">Žáner</legend>
+                <ul class="sub-menu">
+                    <li class="sub-item">
+                        <label for="genre-his"><input type="checkbox" id="genre-his">Historický</label>
                     </li>
-                </ul>             
-              
-                <ul class="side-menu">
-                    <li class="nav-item">
-                        <span class="nav-item-title">Jazyk</span>
-                        <ul class="sub-menu">        
-                            <li class="sub-item">
-                                <label for="lang-sk"><input type="checkbox" id="lang-sk">slovenský</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="lang-en"><input type="checkbox" id="lang-en">anglický</label>
-                            </li>
-                        </ul>
+                    <li class="sub-item">
+                        <label for="genre-bel"><input type="checkbox" id="genre-bel">Beletria</label>
                     </li>
-                </ul>
-              
-                <ul class="side-menu">
-                    <li class="nav-item">
-                        <span class="nav-item-title">Počet strán</span>
-                        <ul class="sub-menu">  
-                            <li class="sub-item">
-                                <label for="pocet-stran-1"><input type="checkbox" id="pocet-stran-1">do 100</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
-                            </li>
-                            <li class="sub-item">
-                                <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 200</label>
-                            </li>    
-                        </ul>   
+                    <li class="sub-item">
+                        <label for="genre-hum"><input type="checkbox" id="genre-hum">Humorný</label>
                     </li>
-                </ul>
-                <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
-                <button type="button" class="btn btn-dark" id="cancel-btn">Zrusiť parametre</button>     
-            </aside>                        
-        </div>
+                    <li class="sub-item">
+                        <label for="genre-ro"><input type="checkbox" id="genre-rom">Romantický</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-fan"><input type="checkbox" id="genre-fan">Fantasy</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-sci"><input type="checkbox" id="genre-sci">Sci-fi</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-det"><input type="checkbox" id="genre-det">Detektívy</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-tri"><input type="checkbox" id="genre-tri">Triler a horor</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-you"><input type="checkbox" id="genre-you">Young Adult</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="genre-pdet"><input type="checkbox" id="genre-pdet">Pre deti</label>
+                    </li>
+                </ul>           
+            </fieldset>             
+          
+            <fieldset class="side-menu">
+                    <legend class="nav-item-title">Jazyk</legend>
+                    <ul class="sub-menu">        
+                        <li class="sub-item">
+                            <label for="lang-sk"><input type="checkbox" id="lang-sk">slovenský</label>
+                        </li>
+                        <li class="sub-item">
+                            <label for="lang-en"><input type="checkbox" id="lang-en">anglický</label>
+                        </li>
+                    </ul>
+            </fieldset>
+          
+            <fieldset class="side-menu">
+                <legend class="nav-item-title">Počet strán</legend>
+                <ul class="sub-menu">  
+                    <li class="sub-item">
+                        <label for="pocet-stran-1"><input type="checkbox" id="pocet-stran-1">do 100</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 200</label>
+                    </li>    
+                </ul>   
+            </fieldset>
+            <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
+            <button type="button" class="btn btn-dark" id="cancel-btn">Zrusiť parametre</button>     
+            </form>
+                              
+            </aside>
             <!--top filtre-->
-            <div>
-              <nav class="container">
-                <ul class="container container-row row">
-                  <li class="nav-item">
-                    <a class="nav-link btn col-3" href="#">Novinky</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btn col-3" href="#">Bestsellery</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btn col-3" href="#">Najdrahšie</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btn col-3" href="#">Najlacnejšie</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <section>
+                <nav>
+                    <ul>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Novinky</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Bestsellery</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Najdrahšie</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Najlacnejšie</a>
+                      </li>
+                    </ul>
+                </nav>
 
-            <!--Knihy-->
-            <div class="container row">
+                <!--Knihy-->
+                <div class="container row">
                 <article class="col-6">
-                    <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-                    <hgroup class="container">
+                        <hgroup>
                         <h2>Dobré znamenia</h2>
                         <h3>Neil Gaiman, Terry Pratchet</h3>
-                        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+                        </hgroup>
+                        <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
                             reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                            unde quaerat incidunt a. Ipsa...</h4>
-                        <h2>9€</h2>
-                        <p>5*</p>
-                        <button class="btn">Do košíka</button>
-                    </hgroup>
+                            unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+                            odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+                            autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+                            quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+                            tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+                            a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+                            provident consequuntur neque vero ad!</p>
+                        <p>9€</p>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>4.0</p>
+                          </span>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn">Do košíka</button>
+                        </form>
                 </article>
                 <article class="col-6">
-                    <img src="./res/knihy/bitunokc5_1.jpg" class="flow" width="160" height="260">
                     <hgroup>
-                        <h2>Bitúnok č. 5</h2>
-                        <h3>Kirk Vonnegut</h3>
-                        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                            unde quaerat...</h4>
-                        <h2>6.69€</h2>
-                        <h2>5*</h2>
-                        <button class="btn">Do košíka</button>
+                    <h2>Dobré znamenia</h2>
+                    <h3>Neil Gaiman, Terry Pratchet</h3>
                     </hgroup>
-                </article>
-                <article class="col-6">
-                    <img src="./res/knihy/hlavaXXII_1.jpg" class="flow" width="160" height="260">
-                    <hgroup>
-                        <h2>hlava XXII</h2>
-                        <span>Joseph Heller</span>
-                        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                            unde quaerat ...</h4>
-                        <h2>9€</h2>
-                        <h2>5*</h2>border-bottom border-5 border-primary
+                    <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+                        reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
+                        unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+                        odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+                        autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+                        quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+                        tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+                        a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+                        provident consequuntur neque vero ad!</p>
+                    <p>9€</p>
+                    <span class="rating-decimal">
+                        <span class="fa-solid fa-star"></span>
+                        <p>4.0</p>
+                      </span>
+                    <form>
+                        <input type="hidden" name="bookId" value="32">
                         <button class="btn">Do košíka</button>
-                    </hgroup>
-                </article>
-                <article class="col-6">
-                    <img src="./res/knihy/panprstenov3_1.jpg" class="flow" width="160" height="260">
-                    <hgroup>
-                        <h2>Pán prsteňov</h2>
-                        <h3>J.R.R.Tolkien</h3>
-                        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                            unde quaerat incidun.,.</h4>
-                        <h2>9100000000000000000000000000000€</h2>
-                        <h2>5*</h2>
-                        <button class="btn">Do košíka</button>
-                    </hgroup>
-                </article>
-            </div>
+                    </form>
+            </article>
+            <article class="col-6">
+                <hgroup>
+                <h2>Dobré znamenia</h2>
+                <h3>Neil Gaiman, Terry Pratchet</h3>
+                </hgroup>
+                <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+                    reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
+                    unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+                    odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+                    autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+                    quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+                    tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+                    a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+                    provident consequuntur neque vero ad!</p>
+                <p>9€</p>
+                <span class="rating-decimal">
+                    <span class="fa-solid fa-star"></span>
+                    <p>4.0</p>
+                  </span>
+                <form>
+                    <input type="hidden" name="bookId" value="32">
+                    <button class="btn">Do košíka</button>
+                </form>
+        </article>
+        <article class="col-6">
+            <hgroup>
+            <h2>Dobré znamenia</h2>
+            <h3>Neil Gaiman, Terry Pratchet</h3>
+            </hgroup>
+            <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+                reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
+                unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+                odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+                autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+                quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+                tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+                a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+                provident consequuntur neque vero ad!</p>
+            <p>9€</p>
+            <span class="rating-decimal">
+                <span class="fa-solid fa-star"></span>
+                <p>4.0</p>
+              </span>
+            <form>
+                <input type="hidden" name="bookId" value="32">
+                <button class="btn">Do košíka</button>
+            </form>
+    </article>
+    <article class="col-6">
+        <hgroup>
+        <h2>Dobré znamenia</h2>
+        <h3>Neil Gaiman, Terry Pratchet</h3>
+        </hgroup>
+        <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
+            unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+            odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+            autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+            quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+            tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+            a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+            provident consequuntur neque vero ad!</p>
+        <p>9€</p>
+        <span class="rating-decimal">
+            <span class="fa-solid fa-star"></span>
+            <p>4.0</p>
+          </span>
+        <form>
+            <input type="hidden" name="bookId" value="32">
+            <button class="btn">Do košíka</button>
+        </form>
+</article>
+<article class="col-6">
+    <hgroup>
+    <h2>Dobré znamenia</h2>
+    <h3>Neil Gaiman, Terry Pratchet</h3>
+    </hgroup>
+    <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
+        reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
+        unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
+        odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
+        autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
+        quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
+        tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
+        a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
+        provident consequuntur neque vero ad!</p>
+    <p>9€</p>
+    <span class="rating-decimal">
+        <span class="fa-solid fa-star"></span>
+        <p>4.0</p>
+      </span>
+    <form>
+        <input type="hidden" name="bookId" value="32">
+        <button class="btn">Do košíka</button>
+    </form>
+</article>
+                </div>
 
-        <!--paging-->
-        <div>
+                <!--paging-->
+                <div>
             <ul class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
@@ -258,11 +349,9 @@
               </a>
               </li>
           </ul>
-        </div>
-
-
-        </div>
-        </main>
+                </div>
+            </section>
+    </main>
 
 
 
@@ -308,5 +397,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
         <script src="./js/navigation.js"></script>
+        <script src="./js/sidebar.js"></script>
     </body>
 </html>
