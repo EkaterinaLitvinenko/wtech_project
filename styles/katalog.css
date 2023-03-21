@@ -6,7 +6,7 @@
 
 main {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 250px auto;
 }
 
 main > aside {
@@ -19,7 +19,36 @@ main > section {
 
 main > section > nav > ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
+  padding: 0;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+  font-size: 1.2rem;
+}
+
+main > section > nav > ul .nav-link{
+  color: rgb(174, 174, 174);
+}
+
+main > section > nav > ul .active .nav-link{
+  color: black
+}
+
+
+@media (max-width: 1000px){
+  main {
+    display: grid;
+    grid-template-columns: 50px auto;
+  }
+  
+  main > aside {
+    grid-column: 1;
+  }
+  
+  main > section {
+    grid-column: 2;
+  }
 }
 
 .product-container {

@@ -30,6 +30,7 @@
     padding-bottom: 5px;
     border-bottom: solid 2px;
     font-size: 20px;
+    margin-bottom: 1rem;
 }
 
 .links-register-login a {
@@ -57,10 +58,13 @@
 
 .change-to-admin {
     display: inline-flex;
+    width: 100%;
+
 }
 
 .change-to-admin .form-check {
-    margin-left: 100px;
+    margin-left: auto;
+    
 }
 
 .password-container {
