@@ -3,23 +3,78 @@
     justify-content: left;
 }
 
-.agreement-item{
-    display: flex;
-    flex-direction: row;
-}
-
 .register-container{
-    background-color: lightgray;
+    background-color: #f0f0f0;
     border-radius: 30px;
     padding-bottom: 20px;
     padding: 30px;
     margin-bottom: 50px;
     margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.register-header{
-    font-size: larger;
-    margin: 20px;
+
+/*pridane nove*/
+.links-register-login {
     text-align: center;
-    text-shadow: 0cap;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    align-items: baseline;
+    justify-content: center;
+    padding-inline: 0;
+}
+
+.links-register-login a, .links-register-login p {
+    margin-inline: 10px;
+    padding-inline: 60px;
+    padding-bottom: 5px;
+    border-bottom: solid 2px;
+    font-size: 20px;
+}
+
+.links-register-login a {
+    color: rgb(174, 174, 174);
+}
+
+.links-register-login a:hover {
+    color: #FFBB52;
+}
+
+.btn-center {
+    text-align: center;
+}
+
+.btn-center > button {
+    background-color: #FFBB52;
+    transition: all 0.1s linear;
+}
+
+.btn-center > button:hover {
+    font-weight: bold;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #82B45C;
+}
+
+.change-to-admin {
+    display: inline-flex;
+}
+
+.change-to-admin .form-check {
+    margin-left: 100px;
+}
+
+.password-container {
+    position: relative;
+}
+
+#show-password { 
+    position: absolute; 
+    top: 60%;
+    right: 4%;
+    font-weight: bold;
+    color: grey;
+}
+
+
+@media (max-width:769px) {
 }

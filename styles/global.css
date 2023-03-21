@@ -67,7 +67,6 @@ a:hover {
     padding-left: 30px;
     padding-right: 30px;
     color:black;
-    font-family: 'Josefin Sans', sans-serif;
 }
 
 @media (max-width:420px) {
@@ -100,6 +99,7 @@ a:hover {
     padding-right: 10px;
     }
 }
+
 /*navigacia*/
 nav.navbar {
     background-color: #FFBB52;
@@ -114,7 +114,7 @@ nav.navbar .hideable {
     position: absolute;
     width: max-content;
     top: 100%;
-    left: 50%;
+    left: 5%;
     padding: 20px 10px 5px 10px;
     background-color: #977037;
     transform: translate(-50%, 0);
@@ -306,7 +306,7 @@ h2, h3, h6, th, a, #progressbar {
     font-weight: bold;
 }
 
-p, td, #search-input, .foot-item, .btn, label  {
+p, td, #search-input, .foot-item, .btn, label {
     font-family: 'PT Sans', sans-serif;
     font-weight: 300;
 }
