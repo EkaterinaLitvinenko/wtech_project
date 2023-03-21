@@ -141,12 +141,21 @@
                         <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
                     </li>
                     <li class="sub-item">
-                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 200</label>
+                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">200-300</label>
+                    </li>  
+                    <li class="sub-item">
+                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">300-400</label>
+                    </li>
+                    <li class="sub-item">
+                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">400-500</label>
+                    </li>  
+                    <li class="sub-item">
+                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 500</label>
                     </li>    
                 </ul>   
             </fieldset>
             <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
-            <button type="button" class="btn btn-dark" id="cancel-btn">Zrusiť parametre</button>     
+            <button type="button" class="btn btn-dark" id="cancel-btn">Zrušiť parametre</button>     
             </form>
                               
             </aside>
@@ -172,157 +181,121 @@
                 <!--Knihy-->
                 <div class="container row">
                 <article class="col-6">
+                    <div class="product-container">
+                        <img src="./res/knihy/dobreznamenia_1.jpg" class="product-img">
                         <hgroup>
-                        <h2>Dobré znamenia</h2>
-                        <h3>Neil Gaiman, Terry Pratchet</h3>
+                            <h2>Dobré znamenia</h2>
+                            <h3>Neil Gaiman, Terry Pratchet, Anton Hlavatý, Jozef Mrkvička, Marián Láskavý</h3>
+                            <p class="product-about">Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.</p>
                         </hgroup>
-                        <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                            unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-                            odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-                            autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-                            quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-                            tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-                            a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-                            provident consequuntur neque vero ad!</p>
-                        <p>9€</p>
                         <span class="rating-decimal">
                             <span class="fa-solid fa-star"></span>
                             <p>4.0</p>
-                          </span>
+                        </span>
+                        <p class="product-price"><strong>9.00<abbr title="EUR">€</abbr></strong></p>
                         <form>
                             <input type="hidden" name="bookId" value="32">
-                            <button class="btn">Do košíka</button>
+                            <button class="btn do-kosika">Do košíka</button>
                         </form>
+                    </div>
                 </article>
                 <article class="col-6">
-                    <hgroup>
-                    <h2>Dobré znamenia</h2>
-                    <h3>Neil Gaiman, Terry Pratchet</h3>
-                    </hgroup>
-                    <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                        reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                        unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-                        odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-                        autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-                        quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-                        tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-                        a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-                        provident consequuntur neque vero ad!</p>
-                    <p>9€</p>
-                    <span class="rating-decimal">
-                        <span class="fa-solid fa-star"></span>
-                        <p>4.0</p>
-                      </span>
-                    <form>
-                        <input type="hidden" name="bookId" value="32">
-                        <button class="btn">Do košíka</button>
-                    </form>
-            </article>
-            <article class="col-6">
-                <hgroup>
-                <h2>Dobré znamenia</h2>
-                <h3>Neil Gaiman, Terry Pratchet</h3>
-                </hgroup>
-                <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                    reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                    unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-                    odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-                    autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-                    quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-                    tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-                    a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-                    provident consequuntur neque vero ad!</p>
-                <p>9€</p>
-                <span class="rating-decimal">
-                    <span class="fa-solid fa-star"></span>
-                    <p>4.0</p>
-                  </span>
-                <form>
-                    <input type="hidden" name="bookId" value="32">
-                    <button class="btn">Do košíka</button>
-                </form>
-        </article>
-        <article class="col-6">
-            <hgroup>
-            <h2>Dobré znamenia</h2>
-            <h3>Neil Gaiman, Terry Pratchet</h3>
-            </hgroup>
-            <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-                reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-                unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-                odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-                autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-                quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-                tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-                a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-                provident consequuntur neque vero ad!</p>
-            <p>9€</p>
-            <span class="rating-decimal">
-                <span class="fa-solid fa-star"></span>
-                <p>4.0</p>
-              </span>
-            <form>
-                <input type="hidden" name="bookId" value="32">
-                <button class="btn">Do košíka</button>
-            </form>
-    </article>
-    <article class="col-6">
-        <hgroup>
-        <h2>Dobré znamenia</h2>
-        <h3>Neil Gaiman, Terry Pratchet</h3>
-        </hgroup>
-        <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-            reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-            unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-            odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-            autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-            quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-            tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-            a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-            provident consequuntur neque vero ad!</p>
-        <p>9€</p>
-        <span class="rating-decimal">
-            <span class="fa-solid fa-star"></span>
-            <p>4.0</p>
-          </span>
-        <form>
-            <input type="hidden" name="bookId" value="32">
-            <button class="btn">Do košíka</button>
-        </form>
-</article>
-<article class="col-6">
-    <hgroup>
-    <h2>Dobré znamenia</h2>
-    <h3>Neil Gaiman, Terry Pratchet</h3>
-    </hgroup>
-    <img src="./res/knihy/dobreznamenia_1.jpg" class="flow" width="160" height="260">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero cupiditate, 
-        reiciendis modi atque itaque facilis saepe dolores doloribus illum voluptatibus vero 
-        unde quaerat incidunt a. Ipsa soluta vero cum error reprehenderit odio enim similique 
-        odit, iure illum consectetur totam? Ipsa molestiae dolores quasi in itaque odio tenetur 
-        autem officia alias, blanditiis recusandae error corrupti nemo consequuntur voluptatibus 
-        quam laborum excepturi sequi, modi minima ex! Nobis ducimus, similique dolore voluptate 
-        tenetur veniam praesentium culpa soluta quas in omnis distinctio sapiente cumque sunt 
-        a assumenda. Distinctio rerum, minima ea porro tempora vitae enim corporis unde mollitia 
-        provident consequuntur neque vero ad!</p>
-    <p>9€</p>
-    <span class="rating-decimal">
-        <span class="fa-solid fa-star"></span>
-        <p>4.0</p>
-      </span>
-    <form>
-        <input type="hidden" name="bookId" value="32">
-        <button class="btn">Do košíka</button>
-    </form>
-</article>
-                </div>
+                    <div class="product-container">
+                        <img src="./res/knihy/hlavaXXII_1.jpg" alt="Kniha Hlava 22" class="product-img">
+                        <hgroup>
+                            <h2>Hlava XXII</h2>
+                            <h3>Joseph Heller</h3>
+                            <p class="product-about">Hlava XXII sa nepodobá žiadnej knihe, ktorú ste čítali. Má svoj štýl, svoju logiku, svoj výnimočný charakter a rukopis. Neustále balansuje medzi komikou a hororom. Je výstredne zábavná a pôsobivá. Je originálna. Majster satiry, irónie i čierneho humoru, Joseph Heller, kriticky vnímal modernú spoločnosť a jej plyv na jednotlivca, nezmyselnosť a hrôzy vojny, byrokraciu, ale aj politiku, ktorá nás ovláda v mene zdravého rozumu a všeobecného blaha.</p>
+                        </hgroup>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>2.4</p>
+                        </span>
+                        <p class="product-price"><strong>13.95<abbr title="EUR">€</abbr></strong></p>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn do-kosika">Do košíka</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="col-6">
+                    <div class="product-container">
+                        <img src="./res/knihy/panprstenov3_1.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class="product-img">
+                        <hgroup>
+                            <h2>Pán prsteňov: Návrat kráľa</h2>
+                            <h3>J.R.R. Tolkien</h3>
+                            <p class="product-about">Pán prsteňov je rozprávkovou históriou Vojny o prsteň, rozprávaním o boji slobodných národov Stredozeme proti Tieňu a o putovaní Hobita Froda, ktorý sa vyberie zachrániť svet. Po rozbití Spoločenstva prsteňa a príchode Veľkej tmy začína Vojna o prsteň, ktorá má rozhodnúť o všetkom...</p>
+                        </hgroup>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>1.7</p>
+                        </span>
+                        <p class="product-price"><strong>19.75<abbr title="EUR">€</abbr></strong></p>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn do-kosika">Do košíka</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="col-6">
+                    <div class="product-container">
+                        <img src="./res/knihy/thethursdaymurderclub_1.jpg" alt="Kniha Štvrtkový klub detektívov" class="product-img">
+                        <hgroup>
+                            <h2>The Thursday Murder Club</h2>
+                            <h3>Richard Osman, Jožko Mrkvička, Pavol Pavlový</h3>
+                            <p class="product-about">In a peaceful retirement village, four unlikely friends meet up once a week to investigate unsolved murders. But when a brutal killing takes place on their very doorstep, the Thursday Murder Club find themselves in the middle of their first live case. Elizabeth, Joyce, Ibrahim and Ron might be pushing eighty but they still have a few tricks up their sleeves. Can our unorthodox but brilliant gang catch the killer before its too late?</p>
+                        </hgroup>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>4.0</p>
+                        </span>
+                        <p class="product-price"><strong>16 000.95<abbr title="EUR">€</abbr></strong></p>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn do-kosika">Do košíka</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="col-6">
+                    <div class="product-container">
+                        <img src="./res/knihy/rozpravanieopsikoviamacicke_1.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class="product-img">
+                        <hgroup>
+                            <h2>Rozprávanie o psíkovi a mačičke  a možno aj o iných zvieratkách a jednorožcoch a o jazvecoch</h2>
+                            <h3>Josef Čapek</h3>
+                            <p class="product-about">Obľúbené rozprávky o psíčkovi a mačičke, ako spolu gazdovali v malom domčeku pod lesom, ako si v ňom spolu nažívali a chceli robiť všetko tak, ako robia veľkí ľudia a ešte o všelijakých iných veciach pre deti, napísal a nakreslil Josef Čapek.</p>
+                        </hgroup>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>4.4</p>
+                        </span>
+                        <p class="product-price"><strong>16.95<abbr title="EUR">€</abbr></strong></p>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn do-kosika">Do košíka</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="col-6">
+                    <div class="product-container">
+                        <img src="./res/knihy/bitunokc5_1.jpg" alt="Kniha Bitúnok č. 5" class="product-img">
+                        <hgroup>
+                            <h2>Bitúnok č. 5</h2>
+                            <h3>Kurt Vonnegut</h3>
+                            <p class="product-about">Kurt Vonnegut je pokračovateľom veľkých satirikov ako Jonathan Swift alebo Samuel Butler. Spolu s Rayom Bradburym patrí k spisovateľom, pre ktorých je žáner science-fiction predovšetkým príležitosťou odhaľovať pravdu o našom živote a konaní. S postupujúcim vekom sa u Vonneguta čoraz výraznejšie dostávajú do popredia prvky reflexívne a autobiografické. Ako iní veľkí tvorcovia, aj on stiera rozdiel medzi vlastným súkromím a údelom svojho epického hrdinu, voľne splieta obe vetvy rozprávania a dosahuje tak osobitný účinok. V románe Bitúnok č. 5 opísal jeden z kľúčových zážitkov svojho života – bombardovanie Drážďan v roku 1945. Tak vzniká jedno z najoriginálnejších protivojnových diel, v ktorom hlavnú postavu predstavuje Billy Pilgrim, mladý Američan s nemeckými koreňmi, ktorý sa dostáva do nemeckého zajatia.</p>
+                        </hgroup>
+                        <span class="rating-decimal">
+                            <span class="fa-solid fa-star"></span>
+                            <p>4.0</p>
+                        </span>
+                        <p class="product-price"><strong>11.95<abbr title="EUR">€</abbr></strong></p>
+                        <form>
+                            <input type="hidden" name="bookId" value="32">
+                            <button class="btn do-kosika">Do košíka</button>
+                        </form>
+                    </div>
+                </article>
 
+            
                 <!--paging-->
                 <div>
             <ul class="pagination justify-content-center">
