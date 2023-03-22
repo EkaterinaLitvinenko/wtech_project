@@ -29,65 +29,62 @@
         <main>
                  <!----------filter ---------------------------------------------------------------->
                  <div class="adm-sidebar">
-                    <aside>
-                        <ul class="side-menu">
-                            <li class="nav-item">
-                                <span class="nav-item-title">Typ</span>
-                                <ul class="sub-menu">
-                                    <li class="sub-item">
-                                        <label for="type-kniha"><input type="checkbox" id="type-kniha">Kniha</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="type-ekniha"><input type="checkbox" id="type-ekniha">eKniha</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="type-audiokniha"><input type="checkbox" id="type-audiokniha">Audiokniha</label>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <aside id="sidebar-filter">
+                        <span id="sidebar-open" class="fa-solid fa-chevron-right"></span>
+                        <form id="filter-form">
+                        <fieldset class="side-menu">
+                            <legend class="nav-item-title">Typ</legend>
+                            <ul class="sub-menu">
+                                <li class="sub-item">
+                                    <label for="type-kniha"><input type="checkbox" id="type-kniha">Kniha</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="type-ekniha"><input type="checkbox" id="type-ekniha">eKniha</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="type-audiokniha"><input type="checkbox" id="type-audiokniha">Audiokniha</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                                  
-                        <ul class="side-menu">
-                            <li class="nav-item">
-                                <span class="nav-item-title">Žáner</span>
-                                <ul class="sub-menu">
-                                    <li class="sub-item">
-                                        <label for="genre-his"><input type="checkbox" id="genre-his">Historický</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-bel"><input type="checkbox" id="genre-bel">Beletria</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-hum"><input type="checkbox" id="genre-hum">Humorný</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-ro"><input type="checkbox" id="genre-rom">Romantický</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-fan"><input type="checkbox" id="genre-fan">Fantasy</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-sci"><input type="checkbox" id="genre-sci">Sci-fi</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-det"><input type="checkbox" id="genre-det">Detektívy</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-tri"><input type="checkbox" id="genre-tri">Triler a horor</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-you"><input type="checkbox" id="genre-you">Young Adult</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="genre-pdet"><input type="checkbox" id="genre-pdet">Pre deti</label>
-                                    </li>
-                                </ul>           
-                            </li>
-                        </ul>             
+                        <fieldset class="side-menu">
+                            <legend class="nav-item-title">Žáner</legend>
+                            <ul class="sub-menu">
+                                <li class="sub-item">
+                                    <label for="genre-his"><input type="checkbox" id="genre-his">Historický</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-bel"><input type="checkbox" id="genre-bel">Beletria</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-hum"><input type="checkbox" id="genre-hum">Humorný</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-ro"><input type="checkbox" id="genre-rom">Romantický</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-fan"><input type="checkbox" id="genre-fan">Fantasy</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-sci"><input type="checkbox" id="genre-sci">Sci-fi</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-det"><input type="checkbox" id="genre-det">Detektívy</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-tri"><input type="checkbox" id="genre-tri">Triler a horor</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-you"><input type="checkbox" id="genre-you">Young Adult</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="genre-pdet"><input type="checkbox" id="genre-pdet">Pre deti</label>
+                                </li>
+                            </ul>           
+                        </fieldset>             
                       
-                        <ul class="side-menu">
-                            <li class="nav-item">
-                                <span class="nav-item-title">Jazyk</span>
+                        <fieldset class="side-menu">
+                                <legend class="nav-item-title">Jazyk</legend>
                                 <ul class="sub-menu">        
                                     <li class="sub-item">
                                         <label for="lang-sk"><input type="checkbox" id="lang-sk">slovenský</label>
@@ -96,28 +93,27 @@
                                         <label for="lang-en"><input type="checkbox" id="lang-en">anglický</label>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
+                        </fieldset>
                       
-                        <!-- <ul class="side-menu">
-                            <li class="nav-item">
-                                <span class="nav-item-title">Počet strán</span>
-                                <ul class="sub-menu">  
-                                    <li class="sub-item">
-                                        <label for="pocet-stran-1"><input type="checkbox" id="pocet-stran-1">do 100</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
-                                    </li>
-                                    <li class="sub-item">
-                                        <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 200</label>
-                                    </li>    
-                                </ul>   
-                            </li>
-                        </ul>   -->
+                        <fieldset class="side-menu">
+                            <legend class="nav-item-title">Počet strán</legend>
+                            <ul class="sub-menu">  
+                                <li class="sub-item">
+                                    <label for="pocet-stran-1"><input type="checkbox" id="pocet-stran-1">do 100</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
+                                </li>
+                                <li class="sub-item">
+                                    <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 200</label>
+                                </li>    
+                            </ul>   
+                        </fieldset>
                         <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
                         <button type="button" class="btn btn-dark" id="cancel-btn">Zrusiť parametre</button>     
-                    </aside>                        
+                        </form>
+                                          
+                    </aside>                       
                 </div>
                     
                 <div class="content-container">
@@ -146,172 +142,347 @@
     
                     <!----------table body -->
                             <div class="adm-prodlist-body">
-                                <table class="prodlist-table">
-                                    <thead class="prodlist-table-head">
-                                        <tr>
-                                            <th>
-                                                <div class="form-check">
+
+                                <!-- <div class="row">
+                                    <div class="col-xl-2 col-md-2">.col-6 .col-md-4</div>
+                                    <div class="col-xl-5 col-md-10">.col-6 .col-md-4</div>
+                                    <div class="col-xl-1 col-md-3">.col-6 .col-md-4</div>
+                                    <div class="col-xl-1 col-md-3">.col-6 .col-md-4</div>
+                                    <div class="col-xl-1 col-md-3">.col-6 .col-md-4</div>
+                                    <div class="col-xl-2 col-md-3">.col-6 .col-md-4</div>
+                                </div> -->
+
+                                <div class="prodlist-table">
+                                    <div class="row prodlist-table-head">
+                                        <div class="col-xl-2 col-md-2">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="check-all">
                                                 <label class="form-check-label" for="check-all"></label>
-                                                </div>
-                                            </th>
-                                            <th id="adm-table-name">Názov</th>
-                                            <th>ID</th>
-                                            <th>Cena</th>
-                                            <th>Žáner</th>
-                                            <th>Možnosti</th>
-                                        </tr>
-                                    </thead>
-    
-                                    <tbody>
-                                        <tr class="product-item">
-                                            <td>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1"></label>
-                                            </div>
-                                            </td>
-                                            <td>
-                                                <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
-                                               <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
-                                                Andy Summers </span> </td>
-                                            <td> <span class="adm-book-id">55813384</span> </td>
-                                            <td> <span class="adm-book-price">13,00€</span></td>
-                                            <td> <span class="adm-book-genre">Fantasy</span></td>
-                                            <td>
-                                                <div class="action-btn">
-                                                    <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
-                                                </div>  
-                                            </td>   
-                                        </tr>
- <!-- collapsible div ------------------------------------------------->
-                                        <tr class="product-detail">
-                                            <td colspan="6">
-                                              <div class="collapse">
-                                                <div class="card card-body">
-                                                  <img src="./res/knihy/dobreznamenia.jpg" alt="Kniha Dobré znamenia" class="product-image">
-                                                  <div class="product-info">
-                                                    <label for="product-title">Názov:</label>
-                                                    <span class="product-title">Dobré znamenia</span><br>
-                                                    <label for="product-autors">Autori:</label>
-                                                    <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
-                                                    <label for="product-languages">Typ:</label>
-                                                    <span class="product-languages">Kniha, eKniha</span><br>
-                                                    <label for="product-languages">Jazyky:</label>
-                                                    <span class="product-languages">slovenčina</span><br>
-                                                    <label for="product-pages">Pocet strán:</label>
-                                                    <span class="product-pages">400</span><br>
-                                                    <label for="product-description">Popis:</label>
-                                                    <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
-                                                        Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
-                                                         dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
-                                                         podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
-                                                         a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
-                                                         len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
-                                                        
-                                                        Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
-                                                        v podobe rovnomenného seriálu.</p> 
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </td>
-                                          </tr>
-                                        
-
-                                        <tr class="product-item">
-                                            <td>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1"></label>
-                                            </div>
-                                            </td>
-                                            <td>
-                                                <img src="./res/knihy/bitunok.jpg" alt="Kniha Bitúnok č. 5" class = "adm-book-cover">
-                                                I'll Be Watching You: Inside The Police, 1980-83
-                                                Andy Summers</td>
-                                            <td>55813384</td>
-                                            <td>80,00€</td>
-                                            <td>Fantasy</td>
-                                            <td>
-                                                <div class="action-btn">
-                                                    <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                                </div>  
-                                            </td>  
-                                        </tr>
-                                        <tr class="product-item">
-                                            <td>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1"></label>
-                                            </div>
-                                            </td>
-                                            <td>
-                                                <img src="./res/knihy/catch22.png" alt="Kniha Hlava 22" class = "adm-book-cover">
-                                                I'll Be Watching You: Inside The Police, 1980-83
-                                                Andy Summers</td>
-                                            <td>55813384</td>
-                                            <td>80,00€</td>
-                                            <td>Fantasy</td>
-                                            <td>
-                                                <div class="action-btn">
-                                                    <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                                </div>  
-                                            </td>  
-                                        </tr>
-                                        <tr class="product-item">
-                                            <td>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1"></label>
-                                            </div>
-                                            </td>
-                                            <td>
-                                                <img src="./res/knihy/panprstenov3.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class = "adm-book-cover">
-                                                I'll Be Watching You: Inside The Police, 1980-83
-                                                Andy Summers</td>
-                                            <td>55813384</td>
-                                            <td>80,00€</td>
-                                            <td>Fantasy</td>
-                                            <td>
-                                                <div class="action-btn">
-                                                    <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                                </div>  
-                                            </td>  
-                                        </tr>
-                                        <tr class="product-item">
-                                            <td>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1"></label>
-                                            </div>
-                                            </td>
+                                                <span id="adm-table-name">Názov</span>      
+                                            </div>  
+                                                
+                                        </div>
+                                        <div class="col-xl-5 col-md-10">
                                             
-                                            <td>
-                                                <img src="./res/knihy/thursdayclub.jpg" alt="Kniha Štvrtkový klub detektívov" class = "adm-book-cover">
-                                                I'll Be Watching You: Inside The Police, 1980-83
-                                                Andy Summers</td>
-                                            <td>55813384</td>
-                                            <td>80,00€</td>
-                                            <td>Fantasy</td>
-                                            <td>
-                                                <div class="action-btn">
-                                                    <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
-                                                    <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-                                                </div>  
-                                            </td>  
-                                        </tr>
-                                    </tbody>
-                                </table>
-    
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span>ID</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span>Cena</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span>Žáner</span>
+                                        </div>
+                                        <div class="col-xl-2 col-md-3">Možnosti</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row product-item">
+                                        <div class="col-xl-2 col-md-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1"></label>
+                                                <img src="res/knihy/dobreznamenia_1.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5 col-md-10">
+                                            <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                                Andy Summers </span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-id">55813384</span> </td>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-price">13,00€</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-genre">Fantasy</span>
+                                        </div>
+                                        <div class="col-xl-2 col-md-3">
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <!-- collapsible div ------------------------------------------------->
+                                    <div class="col-12 product-detail">
+                                          <div class="collapse">
+                                            <div class="card card-body">
+                                              <img src="res/knihy/dobreznamenia_1.jpg" alt="Kniha Dobré znamenia" class="product-image">
+                                              <div class="product-info">
+                                                <label for="product-title">Názov:</label>
+                                                <span class="product-title">Dobré znamenia</span><br>
+                                                <label for="product-autors">Autori:</label>
+                                                <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                                <label for="product-languages">Typ:</label>
+                                                <span class="product-languages">Kniha, eKniha</span><br>
+                                                <label for="product-languages">Jazyky:</label>
+                                                <span class="product-languages">slovenčina</span><br>
+                                                <label for="product-pages">Pocet strán:</label>
+                                                <span class="product-pages">400</span><br>
+                                                <label for="product-description">Popis:</label>
+                                                <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                    Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                     dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                     podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                     a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                     len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                    
+                                                    Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                    v podobe rovnomenného seriálu.</p> 
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+
+                                <div class="row product-item">
+                                    <div class="col-xl-2 col-md-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                            <img src="./res/knihy/bitunokc5_1.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-md-10">
+                                        <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                            Andy Summers </span>
+                                    </div>
+                                    <div class="col-xl-1 col-md-3">
+                                        <span class="adm-book-id">55813384</span> </td>
+                                    </div>
+                                    <div class="col-xl-1 col-md-3">
+                                        <span class="adm-book-price">13,00€</span>
+                                    </div>
+                                    <div class="col-xl-1 col-md-3">
+                                        <span class="adm-book-genre">Fantasy</span>
+                                    </div>
+                                    <div class="col-xl-2 col-md-3">
+                                        <div class="action-btn">
+                                            <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                            <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <!-- collapsible div ------------------------------------------------->
+                                <div class="col-12 product-detail">
+                                        <div class="collapse">
+                                        <div class="card card-body">
+                                            <img src="./res/knihy/bitunokc5_1.jpg" alt="Kniha Dobré znamenia" class="product-image">
+                                            <div class="product-info">
+                                            <label for="product-title">Názov:</label>
+                                            <span class="product-title">Dobré znamenia</span><br>
+                                            <label for="product-autors">Autori:</label>
+                                            <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                            <label for="product-languages">Typ:</label>
+                                            <span class="product-languages">Kniha, eKniha</span><br>
+                                            <label for="product-languages">Jazyky:</label>
+                                            <span class="product-languages">slovenčina</span><br>
+                                            <label for="product-pages">Pocet strán:</label>
+                                            <span class="product-pages">400</span><br>
+                                            <label for="product-description">Popis:</label>
+                                            <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                    dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                    podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                    a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                    len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                
+                                                Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                v podobe rovnomenného seriálu.</p> 
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row product-item">
+                                        <div class="col-xl-2 col-md-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1"></label>
+                                                <img src="./res/knihy/thethursdaymurderclub_1.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5 col-md-10">
+                                            <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                                Andy Summers </span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-id">55813384</span> </td>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-price">13,00€</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-genre">Fantasy</span>
+                                        </div>
+                                        <div class="col-xl-2 col-md-3">
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <!-- collapsible div ------------------------------------------------->
+                                    <div class="col-12 product-detail">
+                                            <div class="collapse">
+                                            <div class="card card-body">
+                                                <img src="./res/knihy/thethursdaymurderclub_1.jpg" alt="Kniha Dobré znamenia" class="product-image">
+                                                <div class="product-info">
+                                                <label for="product-title">Názov:</label>
+                                                <span class="product-title">Dobré znamenia</span><br>
+                                                <label for="product-autors">Autori:</label>
+                                                <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                                <label for="product-languages">Typ:</label>
+                                                <span class="product-languages">Kniha, eKniha</span><br>
+                                                <label for="product-languages">Jazyky:</label>
+                                                <span class="product-languages">slovenčina</span><br>
+                                                <label for="product-pages">Pocet strán:</label>
+                                                <span class="product-pages">400</span><br>
+                                                <label for="product-description">Popis:</label>
+                                                <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                    Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                        dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                        podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                        a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                        len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                    
+                                                    Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                    v podobe rovnomenného seriálu.</p> 
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+                                    <div class="row product-item">
+                                        <div class="col-xl-2 col-md-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1"></label>
+                                                <img src="./res/knihy/panprstenov3_1.jpg"  alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5 col-md-10">
+                                            <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                                Andy Summers </span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-id">55813384</span> </td>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-price">13,00€</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-genre">Fantasy</span>
+                                        </div>
+                                        <div class="col-xl-2 col-md-3">
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <!-- collapsible div ------------------------------------------------->
+                                    <div class="col-12 product-detail">
+                                            <div class="collapse">
+                                            <div class="card card-body">
+                                                <img src="./res/knihy/panprstenov3_1.jpg"  alt="Kniha Dobré znamenia" class="product-image">
+                                                <div class="product-info">
+                                                <label for="product-title">Názov:</label>
+                                                <span class="product-title">Dobré znamenia</span><br>
+                                                <label for="product-autors">Autori:</label>
+                                                <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                                <label for="product-languages">Typ:</label>
+                                                <span class="product-languages">Kniha, eKniha</span><br>
+                                                <label for="product-languages">Jazyky:</label>
+                                                <span class="product-languages">slovenčina</span><br>
+                                                <label for="product-pages">Pocet strán:</label>
+                                                <span class="product-pages">400</span><br>
+                                                <label for="product-description">Popis:</label>
+                                                <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                    Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                        dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                        podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                        a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                        len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                    
+                                                    Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                    v podobe rovnomenného seriálu.</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row product-item">
+                                        <div class="col-xl-2 col-md-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1"></label>
+                                                <img src="./res/knihy/rozpravanieopsikoviamacicke_1.jpg" alt="Kniha Dobré znamenia" class = "adm-book-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5 col-md-10">
+                                            <span class="adm-book-name">  I'll Be Watching You: Inside The Police, 1980-83
+                                                Andy Summers </span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-id">55813384</span> </td>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-price">13,00€</span>
+                                        </div>
+                                        <div class="col-xl-1 col-md-3">
+                                            <span class="adm-book-genre">Fantasy</span>
+                                        </div>
+                                        <div class="col-xl-2 col-md-3">
+                                            <div class="action-btn">
+                                                <button class="detail-btn"><i class="fa-solid fa-eye"></i></button>
+                                                <a href="#" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button></button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <!-- collapsible div ------------------------------------------------->
+                                    <div class="col-12 product-detail">
+                                            <div class="collapse">
+                                            <div class="card card-body">
+                                                <img src="./res/knihy/rozpravanieopsikoviamacicke_1.jpg" alt="Kniha Dobré znamenia" class="product-image">
+                                                <div class="product-info">
+                                                <label for="product-title">Názov:</label>
+                                                <span class="product-title">Dobré znamenia</span><br>
+                                                <label for="product-autors">Autori:</label>
+                                                <span class="product-autors">Neil Gaiman, Terry Pratchett</span><br>
+                                                <label for="product-languages">Typ:</label>
+                                                <span class="product-languages">Kniha, eKniha</span><br>
+                                                <label for="product-languages">Jazyky:</label>
+                                                <span class="product-languages">slovenčina</span><br>
+                                                <label for="product-pages">Pocet strán:</label>
+                                                <span class="product-pages">400</span><br>
+                                                <label for="product-description">Popis:</label>
+                                                <p class="product-description">Spoločný román dvoch majstrov literárnej fantastiky.
+                                                    Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa
+                                                        dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne 
+                                                        podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi medzi smrteľníkmi 
+                                                        a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, 
+                                                        len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
+                                                    
+                                                    Román Dobré zamenia prvý raz vyšiel v roku 1990 a v roku 2019 sa dočkal filmového spracovania 
+                                                    v podobe rovnomenného seriálu.</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
     
     
