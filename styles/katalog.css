@@ -80,7 +80,7 @@ main > section > nav > ul .active .nav-link{
 
 .product-container hgroup {
   grid-area: hg;
-}
+} 
 
 .rating-decimal {
   grid-area: st;
@@ -131,3 +131,28 @@ main > section > nav > ul .active .nav-link{
   -webkit-box-orient: vertical;
   height: fit-content;
 }
+
+@media (max-width: 1200px){
+  .product-container{
+    max-width: 400px;
+  }
+  .do-kosika{
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1100px){
+  .product-container{
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 1000px){
+  .product-container{
+    max-width: unset;
+  }
+  .do-kosika{
+    font-size: 1rem;
+  }
+}
+
