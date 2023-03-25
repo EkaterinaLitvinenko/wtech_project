@@ -3,15 +3,14 @@
     <head>
         <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
         <meta charset="utf-8">
-        <title>Katalog produktov</title>
+        <title>Katalóg produktov</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/sidebar.css">
-        <link rel="stylesheet" href="./styles/katalog.css">
-
+        <link rel="stylesheet" href="./styles/katalog2.css">
     </head>
     <body>
         <header>
@@ -60,8 +59,6 @@
                   </nav>
             </nav>
         </header>
-
-
 
         <main>
           <!----------filter ---------------------------------------------------------------->
@@ -160,7 +157,8 @@
                               
             </aside>
             <!--top filtre-->
-            <section>
+            <section id="main-catalog">
+                <h1>Všetky knihy</h1>
                 <nav>
                     <ul>
                       <li class="nav-item active">
@@ -179,151 +177,152 @@
                 </nav>
 
                 <!--Knihy-->
-                <div class="container row">
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/dobreznamenia_1.jpg" class="product-img">
-                        <hgroup>
-                            <h2>Dobré znamenia</h2>
-                            <h3>Neil Gaiman, Terry Pratchet, Anton Hlavatý, Jozef Mrkvička, Marián Láskavý</h3>
-                            <p class="product-about">Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>4.0</p>
-                        </span>
-                        <p class="product-price"><strong>9.00<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/hlavaXXII_1.jpg" alt="Kniha Hlava 22" class="product-img">
-                        <hgroup>
-                            <h2>Hlava XXII</h2>
-                            <h3>Joseph Heller</h3>
-                            <p class="product-about">Hlava XXII sa nepodobá žiadnej knihe, ktorú ste čítali. Má svoj štýl, svoju logiku, svoj výnimočný charakter a rukopis. Neustále balansuje medzi komikou a hororom. Je výstredne zábavná a pôsobivá. Je originálna. Majster satiry, irónie i čierneho humoru, Joseph Heller, kriticky vnímal modernú spoločnosť a jej plyv na jednotlivca, nezmyselnosť a hrôzy vojny, byrokraciu, ale aj politiku, ktorá nás ovláda v mene zdravého rozumu a všeobecného blaha.</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>2.4</p>
-                        </span>
-                        <p class="product-price"><strong>13.95<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/panprstenov3_1.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class="product-img">
-                        <hgroup>
-                            <h2>Pán prsteňov: Návrat kráľa</h2>
-                            <h3>J.R.R. Tolkien</h3>
-                            <p class="product-about">Pán prsteňov je rozprávkovou históriou Vojny o prsteň, rozprávaním o boji slobodných národov Stredozeme proti Tieňu a o putovaní Hobita Froda, ktorý sa vyberie zachrániť svet. Po rozbití Spoločenstva prsteňa a príchode Veľkej tmy začína Vojna o prsteň, ktorá má rozhodnúť o všetkom...</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>1.7</p>
-                        </span>
-                        <p class="product-price"><strong>19.75<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/thethursdaymurderclub_1.jpg" alt="Kniha Štvrtkový klub detektívov" class="product-img">
-                        <hgroup>
-                            <h2>The Thursday Murder Club</h2>
-                            <h3>Richard Osman, Jožko Mrkvička, Pavol Pavlový</h3>
-                            <p class="product-about">In a peaceful retirement village, four unlikely friends meet up once a week to investigate unsolved murders. But when a brutal killing takes place on their very doorstep, the Thursday Murder Club find themselves in the middle of their first live case. Elizabeth, Joyce, Ibrahim and Ron might be pushing eighty but they still have a few tricks up their sleeves. Can our unorthodox but brilliant gang catch the killer before its too late?</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>4.0</p>
-                        </span>
-                        <p class="product-price"><strong>16 000.95<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/rozpravanieopsikoviamacicke_1.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class="product-img">
-                        <hgroup>
-                            <h2>Rozprávanie o psíkovi a mačičke  a možno aj o iných zvieratkách a jednorožcoch a o jazvecoch</h2>
-                            <h3>Josef Čapek</h3>
-                            <p class="product-about">Obľúbené rozprávky o psíčkovi a mačičke, ako spolu gazdovali v malom domčeku pod lesom, ako si v ňom spolu nažívali a chceli robiť všetko tak, ako robia veľkí ľudia a ešte o všelijakých iných veciach pre deti, napísal a nakreslil Josef Čapek.</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>4.4</p>
-                        </span>
-                        <p class="product-price"><strong>16.95<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
-                <article class="col-6">
-                    <div class="product-container">
-                        <img src="./res/knihy/bitunokc5_1.jpg" alt="Kniha Bitúnok č. 5" class="product-img">
-                        <hgroup>
-                            <h2>Bitúnok č. 5</h2>
-                            <h3>Kurt Vonnegut</h3>
-                            <p class="product-about">Kurt Vonnegut je pokračovateľom veľkých satirikov ako Jonathan Swift alebo Samuel Butler. Spolu s Rayom Bradburym patrí k spisovateľom, pre ktorých je žáner science-fiction predovšetkým príležitosťou odhaľovať pravdu o našom živote a konaní. S postupujúcim vekom sa u Vonneguta čoraz výraznejšie dostávajú do popredia prvky reflexívne a autobiografické. Ako iní veľkí tvorcovia, aj on stiera rozdiel medzi vlastným súkromím a údelom svojho epického hrdinu, voľne splieta obe vetvy rozprávania a dosahuje tak osobitný účinok. V románe Bitúnok č. 5 opísal jeden z kľúčových zážitkov svojho života – bombardovanie Drážďan v roku 1945. Tak vzniká jedno z najoriginálnejších protivojnových diel, v ktorom hlavnú postavu predstavuje Billy Pilgrim, mladý Američan s nemeckými koreňmi, ktorý sa dostáva do nemeckého zajatia.</p>
-                        </hgroup>
-                        <span class="rating-decimal">
-                            <span class="fa-solid fa-star"></span>
-                            <p>4.0</p>
-                        </span>
-                        <p class="product-price"><strong>11.95<abbr title="EUR">€</abbr></strong></p>
-                        <form>
-                            <input type="hidden" name="bookId" value="32">
-                            <button class="btn do-kosika">Do košíka</button>
-                        </form>
-                    </div>
-                </article>
+                <div class="row">
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/dobreznamenia_1.jpg" class="product-img">
+                            <hgroup>
+                                <h2>Dobré znamenia</h2>
+                                <h3>Neil Gaiman, Terry Pratchet, Anton Hlavatý, Jozef Mrkvička, Marián Láskavý</h3>
+                                <p class="product-about">Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>4.0</p>
+                            </span>
+                            <p class="product-price"><strong>9.00<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/hlavaXXII_1.jpg" alt="Kniha Hlava 22" class="product-img">
+                            <hgroup>
+                                <h2>Hlava XXII</h2>
+                                <h3>Joseph Heller</h3>
+                                <p class="product-about">Hlava XXII sa nepodobá žiadnej knihe, ktorú ste čítali. Má svoj štýl, svoju logiku, svoj výnimočný charakter a rukopis. Neustále balansuje medzi komikou a hororom. Je výstredne zábavná a pôsobivá. Je originálna. Majster satiry, irónie i čierneho humoru, Joseph Heller, kriticky vnímal modernú spoločnosť a jej plyv na jednotlivca, nezmyselnosť a hrôzy vojny, byrokraciu, ale aj politiku, ktorá nás ovláda v mene zdravého rozumu a všeobecného blaha.</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>2.4</p>
+                            </span>
+                            <p class="product-price"><strong>13.95<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/panprstenov3_1.jpg" alt="Kniha Pán prsteňov: Návrat kráľa" class="product-img">
+                            <hgroup>
+                                <h2>Pán prsteňov: Návrat kráľa</h2>
+                                <h3>J.R.R. Tolkien</h3>
+                                <p class="product-about">Pán prsteňov je rozprávkovou históriou Vojny o prsteň, rozprávaním o boji slobodných národov Stredozeme proti Tieňu a o putovaní Hobita Froda, ktorý sa vyberie zachrániť svet. Po rozbití Spoločenstva prsteňa a príchode Veľkej tmy začína Vojna o prsteň, ktorá má rozhodnúť o všetkom...</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>1.7</p>
+                            </span>
+                            <p class="product-price"><strong>19.75<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/thethursdaymurderclub_1.jpg" alt="Kniha Štvrtkový klub detektívov" class="product-img">
+                            <hgroup>
+                                <h2>The Thursday Murder Club</h2>
+                                <h3>Richard Osman, Jožko Mrkvička, Pavol Pavlový</h3>
+                                <p class="product-about">In a peaceful retirement village, four unlikely friends meet up once a week to investigate unsolved murders. But when a brutal killing takes place on their very doorstep, the Thursday Murder Club find themselves in the middle of their first live case. Elizabeth, Joyce, Ibrahim and Ron might be pushing eighty but they still have a few tricks up their sleeves. Can our unorthodox but brilliant gang catch the killer before its too late?</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>4.0</p>
+                            </span>
+                            <p class="product-price"><strong>16 000.95<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/rozpravanieopsikoviamacicke_1.jpg" alt="Kniha Rozprávky o psíčkovi a mačičke" class="product-img">
+                            <hgroup>
+                                <h2>Rozprávanie o psíkovi a mačičke  a možno aj o iných zvieratkách a jednorožcoch a o jazvecoch</h2>
+                                <h3>Josef Čapek</h3>
+                                <p class="product-about">Obľúbené rozprávky o psíčkovi a mačičke, ako spolu gazdovali v malom domčeku pod lesom, ako si v ňom spolu nažívali a chceli robiť všetko tak, ako robia veľkí ľudia a ešte o všelijakých iných veciach pre deti, napísal a nakreslil Josef Čapek.</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>4.4</p>
+                            </span>
+                            <p class="product-price"><strong>16.95<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="col-md-6 col-sm-12">
+                        <div class="product-container">
+                            <img src="./res/knihy/bitunokc5_1.jpg" alt="Kniha Bitúnok č. 5" class="product-img">
+                            <hgroup>
+                                <h2>Bitúnok č. 5</h2>
+                                <h3>Kurt Vonnegut</h3>
+                                <p class="product-about">Kurt Vonnegut je pokračovateľom veľkých satirikov ako Jonathan Swift alebo Samuel Butler. Spolu s Rayom Bradburym patrí k spisovateľom, pre ktorých je žáner science-fiction predovšetkým príležitosťou odhaľovať pravdu o našom živote a konaní. S postupujúcim vekom sa u Vonneguta čoraz výraznejšie dostávajú do popredia prvky reflexívne a autobiografické. Ako iní veľkí tvorcovia, aj on stiera rozdiel medzi vlastným súkromím a údelom svojho epického hrdinu, voľne splieta obe vetvy rozprávania a dosahuje tak osobitný účinok. V románe Bitúnok č. 5 opísal jeden z kľúčových zážitkov svojho života – bombardovanie Drážďan v roku 1945. Tak vzniká jedno z najoriginálnejších protivojnových diel, v ktorom hlavnú postavu predstavuje Billy Pilgrim, mladý Američan s nemeckými koreňmi, ktorý sa dostáva do nemeckého zajatia.</p>
+                            </hgroup>
+                            <span class="rating-decimal">
+                                <span class="fa-solid fa-star"></span>
+                                <p>4.0</p>
+                            </span>
+                            <p class="product-price"><strong>11.95<abbr title="EUR">€</abbr></strong></p>
+                            <form>
+                                <input type="hidden" name="bookId" value="32">
+                                <button class="btn do-kosika">Do košíka</button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
 
             
                 <!--paging-->
-                <div>
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">...</a></li>
-              <li class="page-item"><a class="page-link" href="#">61</a></li>
-              <li class="page-item"><a class="page-link" href="#">62</a></li>
-              <li class="page-item"><a class="page-link" href="#">63</a></li>
-              <li class="page-item"><a class="page-link" href="#">64</a></li>
-              <li class="page-item"><a class="page-link" href="#">65</a></li>
-              <li class="page-item"><a class="page-link" href="#">66</a></li>
-              <li class="page-item"><a class="page-link" href="#">...</a></li>
-              <li class="page-item"><a class="page-link" href="#">999</a></li>
-              <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-              </a>
-              </li>
-          </ul>
-                </div>
-            </section>
+            <footer id="paging">
+                <ul class="pagination middle justify-content-center">
+                    <li class="page-item control">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item first"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <li class="page-item"><a class="page-link" href="#">61</a></li>
+                    <li class="page-item"><a class="page-link" href="#">62</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">63</a></li>
+                    <li class="page-item"><a class="page-link" href="#">64</a></li>
+                    <li class="page-item"><a class="page-link" href="#">65</a></li>
+                    <li class="page-item"><a class="page-link" href="#">66</a></li>
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <li class="page-item last"><a class="page-link" href="#">999</a></li>
+                    <li class="page-item control">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </section>
     </main>
 
 
