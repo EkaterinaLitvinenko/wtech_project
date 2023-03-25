@@ -10,59 +10,61 @@
 
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/objednavka.css">
+
+        <link rel="icon" href="./res/book_icon/favicon.ico">
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
-              
-                <nav class="collapse navbar-collapse" id="navbar-collapsible">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Knihy</a>
+          <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+            
+              <nav class="collapse navbar-collapse" id="navbar-collapsible">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="./katalog.html">Knihy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./katalog.html">Bestsellery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./katalog.html">eKnihy</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./katalog.html">Audioknihy</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Bestsellery</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">eKnihy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Audioknihy</a>
-                      </li>
-                  </ul>
-                </nav>
-                <nav class="navigation-actions">
-                  <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-                  <form  id="search-form">
-                      <div class="input-group ">
-                          <div class="input-group-prepend">
-                              <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
-                          </div>
-                          <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
-                          <div class="input-group-append">
-                              <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
-                          </div>
-                      </div>
-                    </form>
-                    <div class="profile-group">
-                      <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                      <form class="hideable">
+                </ul>
+              </nav>
+              <nav class="navigation-actions">
+                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+                <form  id="search-form">
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                        </div>
+                        <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                        </div>
+                    </div>
+                  </form>
+                  <div class="profile-group">
+                    <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                    <form class="hideable">
                         <p><strong>Vitajte, Meno!</strong></p>
                         <p>Moje objednávky</p>
                         <p>Moje reklamácie</p>
                         <p>Moje osobné údaje</p>
                         <button class="btn" id="logout">  Odhlásiť sa </button>
                     </form>
-                    </div>
-                    <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                  </nav>
-            </nav>
+                  </div>
+                  <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </nav>
+          </nav>
         </header>
-        <main class="main-content" id="objednavka">
+        <main class="main-content" id="order">
             <h1>Vaša objednávka č. 20230312345 bola úspešne vytvorená!</h1>
             <p>Na Vašej objednávke začíname pracovať. O jej stave Vás budeme informovať e-mialom.</p>
             <a href="./index.html">Prejsť na hlavnú stránku</a>
@@ -115,5 +117,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
         <script src="./js/navigation.js"></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>

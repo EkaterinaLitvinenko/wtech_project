@@ -7,6 +7,11 @@ main {
   background-color: transparent;
 }
 
+.page-item.active .page-link {
+  background-color: #65AA92;
+  border-color: #65AA92;
+}
+
 main > aside {
   grid-column: 1;
 }
@@ -79,7 +84,7 @@ main > aside {
   align-self: center;
 }
 
-.do-kosika {
+.to-cart {
   grid-area: bt;
 }
 
@@ -176,7 +181,7 @@ main > aside {
       font-size: 16px;
   }
 
-  .product-container hgroup h3, .do-kosika, .product-price {
+  .product-container hgroup h3, .to-cart, .product-price {
       font-size: 13px;
   }
 

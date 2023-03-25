@@ -3,7 +3,7 @@
     <head>
         <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
         <meta charset="utf-8">
-        <title>ReadMe BookShop</title>
+        <title>Kniha: Aristotle and Dante Discover The Secrets Of The Universe</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -14,57 +14,58 @@
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/book_profile.css">
 
+        <link rel="icon" href="./res/book_icon/favicon.ico">
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
-              
-                <nav class="collapse navbar-collapse" id="navbar-collapsible">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Knihy</a>
+          <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+            
+              <nav class="collapse navbar-collapse" id="navbar-collapsible">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="./katalog.html">Knihy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./katalog.html">Bestsellery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./katalog.html">eKnihy</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./katalog.html">Audioknihy</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Bestsellery</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">eKnihy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Audioknihy</a>
-                      </li>
-                  </ul>
-                </nav>
-                <nav class="navigation-actions">
-                  <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-                  <form  id="search-form">
-                      <div class="input-group ">
-                          <div class="input-group-prepend">
-                              <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
-                          </div>
-                          <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
-                          <div class="input-group-append">
-                              <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
-                          </div>
-                      </div>
-                    </form>
-                    <div class="profile-group">
-                      <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                      <form class="hideable">
+                </ul>
+              </nav>
+              <nav class="navigation-actions">
+                <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
+                <form  id="search-form">
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
+                        </div>
+                        <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
+                        </div>
+                    </div>
+                  </form>
+                  <div class="profile-group">
+                    <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                    <form class="hideable">
                         <p><strong>Vitajte, Meno!</strong></p>
                         <p>Moje objednávky</p>
                         <p>Moje reklamácie</p>
                         <p>Moje osobné údaje</p>
                         <button class="btn" id="logout">  Odhlásiť sa </button>
                     </form>
-                    </div>
-                    <a href="#" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                  </nav>
-            </nav>
+                  </div>
+                  <a href="./cart.html" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </nav>
+          </nav>
         </header>
         <main>
             <article class="main-content">
@@ -110,7 +111,7 @@
                               <button class="btn" title="pridať produkt">+</button>
                           </div>
                         </div>     
-                        <button type="button" class="btn btn-lg do-kosika">Pridať do košíka  </button>
+                        <button type="button" class="btn btn-lg to-cart">Pridať do košíka  </button>
                       </form>
                     </div>
                 </section>

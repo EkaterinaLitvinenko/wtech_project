@@ -11,16 +11,16 @@
     margin-right:auto;
 }
 
-#objednavka > h1 {
+#order > h1 {
     font-size: 40px;
 }
 
-#objednavka > p {
+#order > p {
     font-size: 20px;
     margin-bottom: 50px;
 }
 
-#objednavka > a {
+#order > a {
     font-size: 20px;
     background-color:#65AA92;
     width: fit-content;
@@ -29,17 +29,17 @@
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-#objednavka > a:hover {
+#order > a:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     color: black;
 }
 
 @media (max-width:769px) {
-    #objednavka > h1 {
+    #order > h1 {
         font-size: 30px;
     }
     
-    #objednavka > p, #objednavka > a {
+    #order > p, #order > a {
         font-size: 17px;
     }
 }

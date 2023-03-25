@@ -1,3 +1,4 @@
+/* zobrazenie panela kde je button na odhlasenie */
 document.getElementById('profile').onclick = (e) => {
     e.preventDefault()
     document.getElementById('profile').nextElementSibling.classList.toggle('show')      
@@ -12,9 +13,10 @@ document.getElementById('search-go-back').onclick = document.getElementById('ope
     document.getElementById('profile').nextElementSibling.classList.remove('show')
 }
 
-if(document.getElementById("prehlad-objednavky"))
-    document.getElementById("prehlad-objednavky").firstElementChild.onclick = (e) => {
-    document.getElementById("prehlad-objednavky").classList.toggle("show")
+/* prehlad objednavky - otvaranie na malych zariadeniach dohora */
+if(document.getElementById("order-review"))
+    document.getElementById("order-review").firstElementChild.onclick = (e) => {
+    document.getElementById("order-review").classList.toggle("show")
   }
  
 /* HOVER FUNCTION pri top knihach */
