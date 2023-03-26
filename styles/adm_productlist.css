@@ -7,11 +7,14 @@
     padding-left: 300px;
 }
 
-
+.adm-sidebar {
+    left: 0;
+    width: 250px;
+}
 
 #sidebar-filter{
     float: left;
-    
+    height: 100%;
     left: 0;
     width: 250px;
     padding: 20px;
@@ -119,6 +122,15 @@ label input[type="checkbox"]:hover {
 
     #sidebar-filter.show #sidebar-open {
         transform: rotate(180deg);
+    }
+
+    .action-btn {
+        display: grid;
+        justify-content: center;
+    }
+
+    .detail-btn, .edit-btn {
+        margin-bottom: 10px;
     }
 
 }
