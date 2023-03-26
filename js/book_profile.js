@@ -4,7 +4,7 @@ function changeImage(path){
     main_cover.src = path;
 }
 
-/* OPEN PRODUCT IMAGE */
+/* OPEN PRODUCT IMAGE + aby sa nescrollovalo ked je modal otvoreny */
 var modal = document.getElementById("myModal");
 var img = document.getElementById("main-cover");
 var modalImg = document.getElementById("img01");

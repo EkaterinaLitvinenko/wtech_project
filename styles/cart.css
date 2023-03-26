@@ -71,7 +71,7 @@ main.container-fluid {
 }
 
 #cart-form > article,
-#prehlad-objednavky article
+#order-review article
  {
     display: grid;
     align-items: center;
@@ -121,7 +121,7 @@ main.container-fluid {
 }
 
 #cart-form > article > hgroup > *,
-#prehlad-objednavky h2 
+#order-review h2 
  {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -163,12 +163,12 @@ main.container-fluid {
     text-align: end;
 }
 /* prehlad objednavky*/
-#prehlad-objednavky {
+#order-review {
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-#prehlad-objednavky article {
+#order-review article {
     grid-template-columns: 1.5fr 1fr 1fr;
     padding: 10px;
     border-radius: 10px;
@@ -177,7 +177,7 @@ main.container-fluid {
     background: linear-gradient(0deg, rgba(241,241,241,1) 0%, rgba(255,255,255,1) 29%);
 }
 
-#prehlad-objednavky h1
+#order-review h1
  {
     text-align: center;
     font-size: 1.5rem;
@@ -187,43 +187,43 @@ main.container-fluid {
     font-weight: 600;
 }
 
-#prehlad-objednavky footer {
+#order-review footer {
     text-align: end;
     border-top: 1px solid black;
     padding-top: 10px;
     background-color: transparent;
 }
-#prehlad-objednavky footer p {
+#order-review footer p {
     font-size: 1.1rem;
     margin-bottom: 0px;
 }
 
-#prehlad-objednavky footer p strong{
+#order-review footer p strong{
     font-size: 1.3rem;
 }
 
 
-#prehlad-objednavky div {
+#order-review div {
     height: 650px;
     overflow-y: scroll;
     margin-top: 20px;
 }
 
-#prehlad-objednavky h2 {
+#order-review h2 {
     font-size: 1rem;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row: 1;
 }
 
-#prehlad-objednavky .amount {
+#order-review .amount {
     grid-column: 1;
     grid-row: 2;
     text-align: start;
     margin-bottom: 0px;
 }
 
-#prehlad-objednavky .price {
+#order-review .price {
     grid-column-start: 2;
     grid-column-end: 4;
     text-align: end;
@@ -384,7 +384,7 @@ input.form-control {
 }
 
 @media (max-height:438px) and (max-width:768px){
-    #prehlad-objednavky.show div{
+    #order-review.show div{
         max-height: 70vh;
     }
 }
@@ -398,17 +398,17 @@ input.form-control {
 }
 
 @media (max-width:494px) or ((min-width:768px) and (max-width:1422px)){
-    #prehlad-objednavky article {
+    #order-review article {
         display: block;
     }
-    #prehlad-objednavky .amount {
+    #order-review .amount {
         text-align: end;
     }
     
 }
 
 @media (max-width:768px) {
-    #prehlad-objednavky {
+    #order-review {
         position: fixed;
         bottom: 0px;
         margin-bottom: 0px;
@@ -422,18 +422,18 @@ input.form-control {
         border-top: 1px solid black;
         background-color: #FFBB52;
     }
-    #prehlad-objednavky > div {
+    #order-review > div {
         background-color: white;
         max-height: 0px;
         margin-top: 0px;
         transition: all 1s;
     }
-    #prehlad-objednavky h1 {
+    #order-review h1 {
         margin-bottom: 0px;
         padding-bottom: 10px;
         font-size: 1.3rem;
     }
-    #prehlad-objednavky h1::before{
+    #order-review h1::before{
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f106";
@@ -443,11 +443,11 @@ input.form-control {
         transition: all 1s;
     }
 
-    #prehlad-objednavky.show h1::before{
+    #order-review.show h1::before{
         transform: rotateZ(180deg);
     }
 
-    #prehlad-objednavky.show div{
+    #order-review.show div{
         height: 100vh;
         max-height: 80vh;
         margin-top: 20px;
@@ -455,7 +455,7 @@ input.form-control {
         padding-bottom: 50px;
     }
 
-    #prehlad-objednavky.show footer {
+    #order-review.show footer {
         position: fixed;
         width: 100%;
         bottom: 0px;
@@ -464,7 +464,7 @@ input.form-control {
         background-color: #FFBB52;
     }
 
-    #prehlad-objednavky footer {
+    #order-review footer {
         padding-right: 20px;
     }
 
