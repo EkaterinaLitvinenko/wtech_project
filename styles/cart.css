@@ -137,25 +137,6 @@ main.container-fluid {
     grid-column: 1;
 }
 
-#cart-form .input-group input{
-    width: 50px;
-    flex: 0;
-    border-width: 0;
-    text-align: center;
-    border-top: 1px solid rgba(149, 157, 165, .1);
-    border-bottom: 1px solid rgba(149, 157, 165, .1);
-}
-
-#cart-form .input-group button{
-    margin-left: 0px;
-    border-radius: 0px;
-    background-color: white;
-    border-width: 0;
-  margin-left: 10px;
-  background-color: transparent;
-  font-size: 20px;
-}
-
 #cart-form > article > p {
     grid-column: 4;
     margin: 0;
@@ -248,6 +229,10 @@ main.container-fluid {
 .form-part > article p{
     margin-bottom: 0px;
     font-size: 0.9rem;
+}
+
+.form-part .rpw {
+    align-items: baseline;
 }
 
 .radio-group {
@@ -371,6 +356,35 @@ input.form-control {
         margin-left: 20px;
     }
 
+}
+
+@media (max-width:320px) {
+    #cart-form > article > .controls {
+        grid-column-start: 1;
+        margin-left: 0;
+    }
+    .form-footer { 
+        text-align: center;
+        margin-inline: 0;
+    }
+
+    .form-footer  button,
+    #cart-form > footer > button {
+        margin-top: 20px;
+    }
+
+    .form-footer  button{ 
+        text-align: center;
+        float: none;
+    }
+
+}
+
+@media (max-width:270px)  {
+    #cart footer {
+        display: block;
+        text-align: center;
+        }
 }
 
 @media (max-width: 404px){
