@@ -443,6 +443,14 @@ input.form-control {
         transition: all 1s;
     }
 
+    body:has(#order-review.show) {
+        overflow: hidden;
+    }
+
+    #order-review.show{
+        overflow: hidden;
+    }
+
     #order-review.show h1::before{
         transform: rotateZ(180deg);
     }
