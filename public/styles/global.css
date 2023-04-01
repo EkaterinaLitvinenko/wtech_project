@@ -76,7 +76,7 @@ a:hover {
     }
 }
 
-.btn:focus, .btn:active, input {
+.btn:focus, .btn:active, input, a:focus, a:active {
     outline: none !important;
     box-shadow: none !important;
   }

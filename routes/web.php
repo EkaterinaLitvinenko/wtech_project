@@ -18,8 +18,14 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('homepage', [
-        'books'=>Book::paginate(10),
+        'books'=>Book::inRandomOrder()->limit(10)->get(),
         'topBooks'=>Book::inRandomOrder()->limit(6)->get()
+    ]);
+});
+Route::get('/catalog', function () {
+    return view('catalog', [
+        //'books'=>Book::inRandomOrder()->limit(6)->get()
+        'books'=>Book::paginate(6)
     ]);
 });
 
