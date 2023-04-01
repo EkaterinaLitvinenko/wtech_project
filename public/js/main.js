@@ -1,4 +1,5 @@
 /* zobrazenie panela kde je button na odhlasenie */
+if(document.getElementById("profile"))
 document.getElementById('profile').onclick = (e) => {
     e.preventDefault()
     document.getElementById('profile').nextElementSibling.classList.toggle('show')      
@@ -35,6 +36,12 @@ if(document.getElementById("order-review"))
     main_about.innerHTML = about;
   
     rating.style.setProperty('--stars-width', 123*(stars/5.0)+'px');
+}
+
+
+if(document.getElementById('topBooks')){
+    const book =document.getElementsByClassName('onMouse')[0]
+    book.onmouseover()
 }
 
 

@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Book;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage', [
+        'books'=>Book::paginate(10),
+        'topBooks'=>Book::inRandomOrder()->limit(6)->get()
+    ]);
 });
+
+
+Route::resource('users',UserController::class);
