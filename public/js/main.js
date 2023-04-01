@@ -101,3 +101,11 @@ $(document).ready(function(){
         autoplayHoverPause:true
     })
   });
+
+  /*menenie aktivneho linku v katalogu*/
+  $(function(){
+    $('#order-by li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+    $('#order-by li a').click(function(){
+        $(this).parent().addClass('active').siblings().removeClass('active')    
+    })
+})

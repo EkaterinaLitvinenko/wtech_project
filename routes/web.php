@@ -5,6 +5,8 @@ use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +24,23 @@ Route::get('/', function () {
         'topBooks'=>Book::inRandomOrder()->limit(6)->get()
     ]);
 });
+
 Route::get('/catalog', function () {
-    return view('catalog', [
-        //'books'=>Book::inRandomOrder()->limit(6)->get()
-        'books'=>Book::paginate(6)
-    ]);
-});
+    $sort = request('sort');
+
+    if ($sort == 'low-to-high') {
+        $books = Book::orderBy('price')->paginate(6);
+    } elseif ($sort == 'high-to-low') {
+        $books = Book::orderByDesc('price')->paginate(6);
+    } elseif ($sort == 'bestsellers') {
+        $books = Book::orderBy('title')->paginate(6);
+    } else {
+        $books = Book::paginate(6);
+    }
+    
+    return view('catalog', ['books' => $books, 'sort' => $sort]);
+})->name("catalog");
+
 
 
 Route::resource('users',UserController::class);

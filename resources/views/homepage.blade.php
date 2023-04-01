@@ -47,8 +47,10 @@
                 <div class="container">
                     <div class="row">
                       <div class="col zoom">
-                        <img src="./res/detective.svg" alt="obrázok lupy s odtlačkom prsta reprezentujúci žáner detektívky"">
-                        <h2>Detektívky</h2>
+                        <a href="{{ route('catalog', ['genre' => 'Detektívky']) }}">
+                          <img src="./res/detective.svg" alt="obrázok lupy s odtlačkom prsta reprezentujúci žáner detektívky"">
+                          <h2>Detektívky</h2>
+                        </a>
                       </div>
                       <div class="col zoom">
                         <img src="./res/horor.svg" alt="obrázok ducha reprezentujúci žáner trilery a horory"">

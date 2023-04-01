@@ -8,6 +8,7 @@ foreach ($book->authors as $author) {
     $author_str = $author_str . $author->first_name . ' ' . $author->last_name . ', '; 
 }
 $author_str=rtrim($author_str,', ');
+
 @endphp
 
 <article class="col-md-6 col-sm-12">

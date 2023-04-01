@@ -109,6 +109,10 @@
 
 /*hlavna zobrazovana knihy vybrata z top knih*/
 
+#topBooks {
+    margin-bottom: 50px;
+}
+
 #main-book {
     padding: 20px 60px 20px 60px;
     background-color: #BFAFFF;

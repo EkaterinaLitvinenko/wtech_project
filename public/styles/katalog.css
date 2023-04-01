@@ -43,6 +43,10 @@ main > aside {
   color: rgb(174, 174, 174);
 }
 
+#main-catalog > #order-by > ul .nav-link:hover{
+  color: #65AA92;
+}
+
 #main-catalog > #order-by > ul .active .nav-link{
   color: black
 }
@@ -61,7 +65,7 @@ main > aside {
           "im pr"
           "st bt";
   margin-bottom: 30px;
-  height: 300px;
+  height: 290px;
 }
 
 .product-img {
