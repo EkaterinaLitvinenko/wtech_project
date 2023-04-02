@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Models\Book;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,10 @@ Route::get('/', function () {
         'topBooks'=>Book::inRandomOrder()->limit(6)->get()
     ]);
 });
+
+
+Route::get('/cart',[CartController::class,'show']);
+Route::post('/cart/handle',[CartController::class,'handle']);
 
 
 Route::resource('users',UserController::class);

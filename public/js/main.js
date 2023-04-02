@@ -1,3 +1,6 @@
+if(localStorage.getItem("cart")==null)
+    localStorage.setItem("cart",JSON.stringify(Array()))
+
 /* zobrazenie panela kde je button na odhlasenie */
 if(document.getElementById("profile"))
 document.getElementById('profile').onclick = (e) => {
@@ -47,28 +50,30 @@ if(document.getElementById('topBooks')){
 
 /* pridavanie a znizovanie mnozstva produktu */
 Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
-    var changeHandeler = () =>{
-        // asynchronne volanie na ulozenie zmeny kosika
-        console.log('changed')
-    }
 
     //input
     const input = element.children[1]
-    input.oninput =  changeHandeler
     //decrement button
     element.children[0].children[0].onclick = (e)=>{
         e.preventDefault()
-        if(input.value == 0) return;
+        if(input.value == 1) return;
         input.value--;
-        changeHandeler()
+        input.onchange()
     }
     //increment button
     element.children[2].children[0].onclick = (e)=>{
         e.preventDefault()
         input.value++;
-        changeHandeler()
+        input.onchange()
     }
 })
+
+Array.from(document.getElementsByClassName('cart-delete')).forEach(element => {
+    console.log('neviem')
+    element.onclick = (e)=>{
+        e.preventDefualt();
+    }
+});
 
 /* corousel na hlavnej stranke */
 $(document).ready(function(){

@@ -415,8 +415,20 @@ strong {
     justify-self: center;
 }
 
+/* vypnutie vstavaneho sposobu inkerementacie inputu */
+#cart-form input[type=number]::-webkit-inner-spin-button, 
+#cart-form input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
 .rating-decimal > p {
     margin-bottom: 0;
     font-size: 15px;
     padding-inline: 5px;
 }
+

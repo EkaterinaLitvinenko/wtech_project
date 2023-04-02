@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Author;
 use App\Models\Genre;
 use App\Models\Photo;
+use App\Models\Order;
+use App\Models\Cart;
 
 class Book extends Model
 {
@@ -29,5 +31,15 @@ class Book extends Model
     public function photos(): HasMany
     {
         return $this->hasMany(Photo::class);
+    }
+
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+    public function carts(): BelongsToMany
+    {
+        return $this->belongsToMany(Cart::class);
     }
 }

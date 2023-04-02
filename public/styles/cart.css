@@ -63,12 +63,6 @@ main.container-fluid {
     justify-self: left;
 }
 
-/* vypnutie vstavaneho sposobu inkerementacie inputu */
-#cart-form input[type=number]::-webkit-inner-spin-button, 
-#cart-form input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
 
 #cart-form > article,
 #order-review article

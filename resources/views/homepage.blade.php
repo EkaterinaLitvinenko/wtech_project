@@ -1,3 +1,10 @@
+@php
+auth()->attempt([
+  "email"=>'xdickens@example.com',
+  "password"=>'password'
+])
+@endphp
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -82,12 +89,10 @@
                 <div class="grid-item grid-item-1">
                   <article id="main-book">
                     <img src="./res/knihy/dobreznamenia_1.jpg" alt="Kniha Dobré znamenia" id="main-book-cover">
-                    <h2 id="main-book-title">Dobré znamenia</h2>
-                    <p id="main-book-author">Neil Gaiman, Terry Pratchett</p>
+                    <h2 id="main-book-title"></h2>
+                    <p id="main-book-author"></p>
                     <span id="rating-inline" class="rating"></span>
-                    <p id="main-book-about">
-                        Koniec sveta sa nezadržateľne blíži. Zhromažďujú sa armády dobra a zla, z hlbín sa dvíha Atlantída, z neba padajú žaby, naplno horia vášne. Zdá sa, že všetko ide presne podľa Božieho plánu. Démon Crowley a anjel Azirafal už dlho žijú na zemi a celkom si tu zvykli. Ak si chcú zachovať svoj pohodlný životný štýl, neostáva im nič iné, len odvrátiť hroziaci armagedon. Najprv však budú musieť nájsť nezvestného Antikrista.
-                    </p>
+                    <p id="main-book-about"></p>
                   </article>
                 </div>
                 @foreach($topBooks as $book)
