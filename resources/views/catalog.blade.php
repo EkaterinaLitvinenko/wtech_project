@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!--Bootstrap 4 docs: https://getbootstrap.com/docs/4.0/getting-started/introduction/-->
-        <meta charset="utf-8">
-        <title>Katalóg produktov</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+@extends ("layouts.layout")
 
-        <link rel="stylesheet" href="./styles/global.css">
-        <link rel="stylesheet" href="./styles/sidebar.css">
-        <link rel="stylesheet" href="./styles/katalog.css">
+@section("head-content")
+    <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/katalog.css">
+    <title>Katalóg produktov</title>
+@endsection
 
-        <link rel="icon" href="./res/book_icon/favicon.ico">
-    </head>
-    <body>
-        <x-navigation :loggedin="false"/>
-
-        <main>
-          <!----------filter ---------------------------------------------------------------->
-            <aside id="sidebar-filter">
+@section("content")
+    <main>
+        <!--filter-->
+        <aside id="sidebar-filter">
                 <span id="sidebar-open" class="fa-solid fa-chevron-right"></span>
                 <form id="filter-form">
                 <fieldset class="side-menu">
@@ -111,12 +101,11 @@
                 <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
                 <button type="button" class="btn btn-dark" id="cancel-btn">Zrušiť parametre</button>     
                 </form>
-            </aside>
-
-            <!--top filtre-->
-            <section id="main-catalog">
-                <h1>Všetky knihy</h1>
-                <nav id="order-by">
+        </aside>
+        <section id="main-catalog">
+            <h1>Všetky knihy</h1>
+            <!--zoradovacie filtre-->
+            <nav id="order-by">
                     <ul>
                       <li class="nav-item active">
                         <a class="nav-link" href="{{ route('catalog') }}">Novinky</a>
@@ -131,32 +120,21 @@
                         <a class="nav-link" href="{{ route('catalog', ['sort' => 'high-to-low']) }}">Najdrahšie</a>
                       </li>
                     </ul>
-                </nav>
-
-                <!--Knihy-->
-                <div class="row">
-                    @foreach($books as $book)
-                        <x-bookCatalog :book="$book"/>
-                    @endforeach
-                </div>
-
-                <!--paging-->
-                <nav class="d-flex justify-content-center">
-                    {!! $books->appends(['sort' => $sort])->links() !!}
-                </nav>
-
+            </nav>
+            <!--knihy-->
+            <div class="row">
+                @foreach($books as $book)
+                    <x-bookCatalog :book="$book"/>
+                @endforeach
+            </div>
+            <!--paging-->
+            <nav class="d-flex justify-content-center">
+                {!! $books->appends(['sort' => $sort])->links() !!}
+            </nav>
         </section>
     </main>
+@endsection
 
-    <x-footer />
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-        <script src="./js/navigation.js"></script>
-        <script src="./js/sidebar.js"></script>
-        <script src="./js/main.js"></script>
-        
-    </body>
-</html>
+@section("scripts-content")
+    <script src="./js/sidebar.js"></script>
+@endsection

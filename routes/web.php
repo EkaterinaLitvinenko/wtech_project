@@ -4,6 +4,8 @@ use App\Models\Book;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\HomepageController;
 
 
 
@@ -18,29 +20,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage', [
-        'books'=>Book::inRandomOrder()->limit(10)->get(),
-        'topBooks'=>Book::inRandomOrder()->limit(6)->get()
-    ]);
-});
+Route::get('/', [HomepageController::class, 'index'] );
 
-Route::get('/catalog', function () {
-    $sort = request('sort');
-
-    if ($sort == 'low-to-high') {
-        $books = Book::orderBy('price')->paginate(6);
-    } elseif ($sort == 'high-to-low') {
-        $books = Book::orderByDesc('price')->paginate(6);
-    } elseif ($sort == 'bestsellers') {
-        $books = Book::orderBy('title')->paginate(6);
-    } else {
-        $books = Book::paginate(6);
-    }
-    
-    return view('catalog', ['books' => $books, 'sort' => $sort]);
-})->name("catalog");
+Route::get('/katalog', [CatalogController::class, 'index'])->name("catalog");
+/*Route::post("/katalog", "CatalogController@store");*/
 
 
-
-Route::resource('users',UserController::class);
+Route::resource('users', UserController::class);

@@ -26,7 +26,7 @@ $author_str=rtrim($author_str,', ');
             </span>
             <p class="product-price"><strong>{{$book->price}}<abbr title="EUR">€</abbr></strong></p>
             <form>
-                <input type="hidden" name="bookId" value="{{$book->price}}">
+                <input type="hidden" name="{{$book->id}}" value="{{$book->price}}">
                 <button class="btn to-cart">Do košíka</button>
             </form>
         </div>
