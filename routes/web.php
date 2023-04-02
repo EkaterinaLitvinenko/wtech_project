@@ -5,6 +5,10 @@ use App\Models\Book;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\HomepageController;
+
+
 
 
 /*
@@ -18,12 +22,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage', [
-        'books'=>Book::paginate(10),
-        'topBooks'=>Book::inRandomOrder()->limit(6)->get()
-    ]);
-});
+Route::get('/', [HomepageController::class, 'index'] );
+
+Route::get('/katalog', [CatalogController::class, 'index'])->name("catalog");
+/*Route::post("/katalog", "CatalogController@store");*/
 
 
 Route::get('/cart',[CartController::class,'show']);
