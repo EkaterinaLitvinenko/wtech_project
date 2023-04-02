@@ -37,5 +37,5 @@ $author_str=rtrim($author_str,', ');
             value="delete,{{$book->id}}"
             ><span class="fa-solid fa-trash"></span></button>  
     </div>                 
-    <p>{{$book->price}} <abbr title="EUR">€</abbr></p>
+    <p data-price="{{$book->price}}">{{$book->price}} <abbr title="EUR">€</abbr></p>
 </article>

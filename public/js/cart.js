@@ -1,5 +1,9 @@
 
 function updateAmount(base_url,c_id,id,value){
+    console.log('dispatched')
+    const sum = document.getElementById('sum');
+    const event = new Event("build");
+    sum.dispatchEvent(event);
     if(value < 1){
         console.log(value)
         return;

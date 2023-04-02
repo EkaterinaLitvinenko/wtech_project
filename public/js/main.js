@@ -47,12 +47,29 @@ if(document.getElementById('topBooks')){
     book.onmouseover()
 }
 
+if(document.getElementById('sum')){
+ const sum = document.getElementById('sum');
+ const event = new Event("build");
+ sum.addEventListener('build',(e)=>{
+    total = 0;
+    Array.from(document.getElementById('cart-form').getElementsByTagName('article')).forEach(
+        item =>{
+            total+= item.getElementsByTagName('input')[0].value *item.lastElementChild.getAttribute('data-price');
+        }
+    )
+
+    sum.innerHTML=total;
+ })
+ sum.dispatchEvent(event)
+}
 
 /* pridavanie a znizovanie mnozstva produktu */
 Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
 
     //input
     const input = element.children[1]
+    const sum = document.getElementById('sum');
+
     //decrement button
     element.children[0].children[0].onclick = (e)=>{
         e.preventDefault()
@@ -68,12 +85,7 @@ Array.from(document.getElementsByClassName('amount-input')).forEach((element)=>{
     }
 })
 
-Array.from(document.getElementsByClassName('cart-delete')).forEach(element => {
-    console.log('neviem')
-    element.onclick = (e)=>{
-        e.preventDefualt();
-    }
-});
+
 
 /* corousel na hlavnej stranke */
 $(document).ready(function(){
