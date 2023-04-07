@@ -66,16 +66,20 @@
     text-align: center;
 }
 
-.zoom > h2 {
+.zoom > a > h2 {
     font-size: 16px;
     font-weight: 400;
+}
+
+.zoom > a:hover {
+    color: black;
 }
 
 .zoom:hover {
     transform: scale(1.05); 
 }
 
-.zoom:hover > h2 {
+.zoom:hover > a > h2 {
     font-weight: 600;
 }
 

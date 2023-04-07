@@ -1,8 +1,8 @@
 @extends ("layouts.layout")
 
 @section("head-content")
-    <link rel="stylesheet" href="./styles/sidebar.css">
-    <link rel="stylesheet" href="./styles/katalog.css">
+    <link rel="stylesheet" href="{{ asset('styles/sidebar.css')}}">
+    <link rel="stylesheet" href="{{ asset('styles/katalog.css')}}">
     <title>Katalóg produktov</title>
 @endsection
 
@@ -111,13 +111,13 @@
                         <a class="nav-link" href="{{ route('catalog') }}">Novinky</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['sort' => 'bestsellers']) }}">Bestsellery</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'bestsellers']) }}">Bestsellery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['sort' => 'low-to-high']) }}">Najlacnejšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['sort' => 'high-to-low']) }}">Najdrahšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
                       </li>
                     </ul>
             </nav>
@@ -128,13 +128,11 @@
                 @endforeach
             </div>
             <!--paging-->
-            <nav class="d-flex justify-content-center">
-                {!! $books->appends(['sort' => $sort])->links() !!}
-            </nav>
+            
         </section>
     </main>
 @endsection
 
 @section("scripts-content")
-    <script src="./js/sidebar.js"></script>
+    <script src="{{ asset('js/sidebar.js') }}"></script>
 @endsection

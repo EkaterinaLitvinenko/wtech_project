@@ -25,11 +25,15 @@ use App\Http\Controllers\HomepageController;
 Route::get('/', [HomepageController::class, 'index'] );
 
 Route::get('/katalog', [CatalogController::class, 'index'])->name("catalog");
-/*Route::post("/katalog", "CatalogController@store");*/
+Route::post("/katalog", [CatalogController::class, 'store']);
 
+<<<<<<< Updated upstream
 
 Route::get('/cart',[CartController::class,'show']);
 Route::post('/cart/handle',[CartController::class,'handle']);
 
 
 Route::resource('users',UserController::class);
+=======
+Route::get("/kniha/{id}", [CatalogController::class, 'show']);
+>>>>>>> Stashed changes

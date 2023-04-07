@@ -9,7 +9,7 @@ foreach ($book->authors as $author) {
 }
 $author_str=rtrim($author_str,', ');
 @endphp
-<a href="book_profile.html/{{$book->id}}">
+<a href="kniha/{{$book->id}}">
     @if($hover==true)
     <article class = "grid-item grid-item-3 onMouse" 
         onmouseover="changeMainBook({{$rating}},
@@ -22,7 +22,7 @@ $author_str=rtrim($author_str,', ');
     @else 
     <article class="book-component">
     @endif
-      <img src="{{$image}}" alt="Kniha {{$book->title}}" class="book-img">
+      <img src="{{asset("$image")}}" alt="Kniha {{$book->title}}" class="book-img">
       <h3 class="book-title">{{$book->title}}</h3>
       <p class="book-author">{{$author_str}}</p>
           <span class="rating-decimal">

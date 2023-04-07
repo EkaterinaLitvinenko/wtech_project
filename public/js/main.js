@@ -43,7 +43,7 @@ if(document.getElementById("order-review"))
 
 
 if(document.getElementById('topBooks')){
-    const book =document.getElementsByClassName('onMouse')[0]
+    const book = document.getElementsByClassName('onMouse')[0]
     book.onmouseover()
 }
 

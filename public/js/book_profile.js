@@ -1,7 +1,7 @@
 /* CHANGE PRODUCT IMAGE FUNCTION */
-function changeImage(path){
-    const main_cover = document.getElementById("main-cover");
-    main_cover.src = path;
+function changeImage(image) {
+  var displayImage = document.getElementById("main-cover");
+  displayImage.src = image.src;
 }
 
 /* OPEN PRODUCT IMAGE + aby sa nescrollovalo ked je modal otvoreny */
@@ -24,5 +24,11 @@ span.onclick = function() {
 
 /* carousel produktov */
 $(document).ready(function(){
-  $(".owl-carousel.book-photos").owlCarousel();
+  $(".owl-carousel.book-photos").owlCarousel(
+    {
+      autoplay:true,
+      autoplayTimeout:5000,
+      autoplayHoverPause:true
+    }
+  );
 });

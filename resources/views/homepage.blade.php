@@ -9,9 +9,9 @@ auth()->attempt([
 
 @section("head-content")
   <title>ReadMe BookShop</title>
-  <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="./extern/owlcarousel/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="./styles/homescreen.css">
+  <link rel="stylesheet" href="{{ asset('extern/owlcarousel/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('extern/owlcarousel/assets/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/homescreen.css')}}">
 @endsection
         
 
@@ -49,24 +49,34 @@ auth()->attempt([
                     </a>
                   </div>
                   <div class="col zoom">
-                    <img src="./res/horor.svg" alt="obrázok ducha reprezentujúci žáner trilery a horory"">
-                    <h2>Trilery a Horory</h2>
+                    <a href="{{ route('catalog', ['genre' => 'TrilerAHoror']) }}">
+                      <img src="./res/horor.svg" alt="obrázok ducha reprezentujúci žáner trilery a horory"">
+                      <h2>Trilery a Horory</h2>
+                    </a>
                   </div>
                   <div class="col zoom">
-                    <img src="./res/scifi.svg" alt="obrázok ufa reprezentujúci žáner sci-fi">
-                    <h2>Sci-fi</h2>
+                    <a href="{{ route('catalog', ['genre' => 'Sci-fi']) }}">
+                      <img src="./res/scifi.svg" alt="obrázok ufa reprezentujúci žáner sci-fi">
+                      <h2>Sci-fi</h2>
+                    </a>
                   </div>
                   <div class="col zoom">
-                    <img src="./res/fantasy.svg" alt="obrázok kúzelníckého klobúku reprezentujúci žáner fantasy">
-                    <h2>Fantasy</h2>
+                    <a href="{{ route('catalog', ['genre' => 'Fantasy']) }}">
+                      <img src="./res/fantasy.svg" alt="obrázok kúzelníckého klobúku reprezentujúci žáner fantasy">
+                      <h2>Fantasy</h2>
+                    </a>
                   </div>
                   <div class="col zoom">
-                    <img src="./res/romantic.svg" alt="obrázok ruže reprezentujúci žáner romantické knihy">
-                    <h2>Romantika</h2>
+                    <a href="{{ route('catalog', ['genre' => 'Romantický']) }}">
+                      <img src="./res/romantic.svg" alt="obrázok ruže reprezentujúci žáner romantické knihy">
+                      <h2>Romantika</h2>
+                    </a>
                   </div>
                   <div class="col zoom">
-                    <img src="./res/kids.svg" alt="obrázok medvedíka reprezentujúci knihy pre deti">
-                    <h2>Knihy pre deti</h2>
+                    <a href="{{ route('catalog', ['genre' => 'PreDeti']) }}">
+                      <img src="./res/kids.svg" alt="obrázok medvedíka reprezentujúci knihy pre deti">
+                      <h2>Knihy pre deti</h2>
+                    </a>
                   </div>
                 </div>
             </div>
@@ -96,5 +106,5 @@ auth()->attempt([
 @endsection
 
 @section("scripts-content")
-  <script src="./extern/owlcarousel/owl.carousel.min.js"></script>
+  <script src="{{ asset('extern/owlcarousel/owl.carousel.min.js') }}"></script>
 @endsection

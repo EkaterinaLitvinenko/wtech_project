@@ -3,7 +3,7 @@
       <div class="row mt-3">
         <!-- logo + copyright  -->
         <nav class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id = "logo-col">
-          <img src="./res/logo.png" alt="logo" id = "logo">
+          <img src="{{ asset('res/logo.png') }}" alt="logo" id = "logo">
           <p>
             <small>&copy; Copyright 2023, WTECH streda tím 3</small>
           </p>

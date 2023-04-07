@@ -12,9 +12,9 @@ $author_str=rtrim($author_str,', ');
 @endphp
 
 <article class="col-md-6 col-sm-12">
-    <a href="book_profile.html/{{$book->id}}">
+    <a href="kniha/{{$book->id}}">
         <div class="product-container">
-            <img src="{{$image}}" alt="Kniha {{$book->title}}" class="product-img">
+            <img src="{{asset("$image")}}" alt="Kniha {{$book->title}}" class="product-img">
             <hgroup>
                 <h2>{{$book->title}}</h2>
                 <h3>{{$author_str}}</h3>
@@ -25,8 +25,9 @@ $author_str=rtrim($author_str,', ');
                 <p>{{$rating}}</p>
             </span>
             <p class="product-price"><strong>{{$book->price}}<abbr title="EUR">€</abbr></strong></p>
-            <form>
-                <input type="hidden" name="{{$book->id}}" value="{{$book->price}}">
+            <form action="/katalog" method="POST">
+                @csrf
+                <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
                 <button class="btn to-cart">Do košíka</button>
             </form>
         </div>

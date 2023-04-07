@@ -1,15 +1,15 @@
 @props(['loggedin'])
 <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="./index.html"><img src="./res/logo.png"alt="Read me" title="logo of read me"></a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('res/logo.png') }}" alt="Read me" title="logo of read me"></a>
           
             <nav class="collapse navbar-collapse" id="navbar-collapsible">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                  <a class="nav-link" href="./katalog.html">Knihy</a>
+                  <a class="nav-link" href="/katalog">Knihy</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./katalog.html">Bestsellery</a>
+                  <a class="nav-link" href="{{ route('catalog', ['sort' => 'bestsellers']) }}">Bestsellery</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./katalog.html">eKnihy</a>
