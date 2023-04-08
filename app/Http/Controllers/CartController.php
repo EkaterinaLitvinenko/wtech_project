@@ -24,7 +24,7 @@ class CartController extends Controller
             $cart = auth()->user()->cart()->firstOrCreate();
         }
         else{
-           $cart = Cart::create();
+            $cart = Cart::create();
         }
 
         session(['cart_id'=> $cart->id]);
@@ -40,7 +40,7 @@ class CartController extends Controller
                 Cart::find(session('cart_id'))->books()->detach($action[1]);
                 return redirect('/cart');
             case 'save':
-                return redirect('/');
+                return redirect('/order/delivery');
         }
     }
 }

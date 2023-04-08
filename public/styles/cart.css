@@ -1,6 +1,10 @@
 main.container-fluid {
     max-width: 1600px;
 }
+
+main {
+    margin-bottom: 30px;
+}
 /* sipky pri tlacidlach*/
 .btn.continue::after {
     content: '\f061';
