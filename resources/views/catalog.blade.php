@@ -108,26 +108,34 @@
             <nav id="order-by">
                     <ul>
                       <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('catalog') }}">Novinky</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'novinky', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Novinky</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'bestsellers']) }}">Bestsellery</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'bestsellers', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Bestsellery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'low-to-high', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Najlacnejšie</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'high-to-low', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Najdrahšie</a>
                       </li>
                     </ul>
             </nav>
             <!--knihy-->
             <div class="row">
+            @if($books->isEmpty())
+                <p id="no-result">Neboli nájdené žiadne výsledky.</p>
+            @else
                 @foreach($books as $book)
                     <x-bookCatalog :book="$book"/>
                 @endforeach
+            @endif
             </div>
             <!--paging-->
+            
+            <nav class="d-flex justify-content-center">
+                {!! $books->appends(['genre' => $genre, 'sort' => $sort, 'language' => $language, 'pages' => $pages, 'type' => $type])->links() !!}
+            </nav>
             
         </section>
     </main>

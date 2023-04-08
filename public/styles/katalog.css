@@ -18,6 +18,10 @@ main {
   color: forestgreen;
 }
 
+#no-result {
+  width: 100%;
+  text-align: center;
+}
 
 main > aside {
   grid-column: 1;
