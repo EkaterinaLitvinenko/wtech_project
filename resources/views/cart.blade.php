@@ -28,7 +28,7 @@
                         @endif
                         <footer>
                             <p>Spolu <strong><span id="sum">0</span> <abbr title="EUR">€</abbr></strong></p>
-                            <a href="./index.html" class="btn cancel">Späť na knihy</a> 
+                            <a href="/" class="btn cancel">Späť na knihy</a> 
                             <button 
                             class="btn continue"
                             name="action"

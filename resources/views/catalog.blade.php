@@ -10,117 +10,135 @@
     <main>
         <!--filter-->
         <aside id="sidebar-filter">
-                <span id="sidebar-open" class="fa-solid fa-chevron-right"></span>
-                <form id="filter-form">
+            <span id="sidebar-open" class="fa-solid fa-chevron-right"></span>
+            <form id="filter-form" method="GET" action="/katalog">
                 <fieldset class="side-menu">
                     <legend class="nav-item-title">Typ</legend>
                     <ul class="sub-menu">
                         <li class="sub-item">
-                            <label for="type-kniha"><input type="checkbox" id="type-kniha">Kniha</label>
+                            <input type="checkbox" id="type-kniha" name="type[]" value="kniha">
+                            <label for="type-kniha">Kniha</label>
                         </li>
                         <li class="sub-item">
-                            <label for="type-ekniha"><input type="checkbox" id="type-ekniha">eKniha</label>
+                            <input type="checkbox" id="type-ekniha" name="type[]" value="ekniha">
+                            <label for="type-ekniha" >eKniha</label>
                         </li>
                         <li class="sub-item">
-                            <label for="type-audiokniha"><input type="checkbox" id="type-audiokniha">Audiokniha</label>
+                            <input type="checkbox" id="type-audiokniha" name="type[]" value="audiokniha">
+                            <label for="type-audiokniha">Audiokniha</label>
                         </li>
                     </ul>
                 </fieldset>
-
                 <fieldset class="side-menu">
                     <legend class="nav-item-title">Žáner</legend>
                     <ul class="sub-menu">
                         <li class="sub-item">
-                            <label for="genre-his"><input type="checkbox" id="genre-his">Historický</label>
+                            <input type="checkbox" id="genre-his" name="genre[]" value="Historický">
+                            <label for="genre-his">Historický</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-bel"><input type="checkbox" id="genre-bel">Beletria</label>
+                            <input type="checkbox" id="genre-bel" name="genre[]" value="Beletria">
+                            <label for="genre-bel">Beletria</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-hum"><input type="checkbox" id="genre-hum">Humorný</label>
+                            <input type="checkbox" id="genre-hum" name="genre[]" value="Humorný">
+                            <label for="genre-hum">Humorný</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-ro"><input type="checkbox" id="genre-rom">Romantický</label>
+                            <input type="checkbox" id="genre-ro" name="genre[]" value="Romantický">
+                            <label for="genre-ro">Romantický</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-fan"><input type="checkbox" id="genre-fan">Fantasy</label>
+                            <input type="checkbox" id="genre-fan" name="genre[]" value="Fantasy">
+                            <label for="genre-fan">Fantasy</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-sci"><input type="checkbox" id="genre-sci">Sci-fi</label>
+                            <input type="checkbox" id="genre-sci" name="genre[]" value="Sci-fi">
+                            <label for="genre-sci">Sci-fi</label>
+                        <li class="sub-item">
+                            <input type="checkbox" id="genre-det" name="genre[]" value="Detektívky">
+                            <label for="genre-det">Detektívky</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-det"><input type="checkbox" id="genre-det">Detektívy</label>
+                            <input type="checkbox" id="genre-th" name="genre[]" value="TrilerAHoror">
+                            <label for="genre-th">Triler a horor</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-tri"><input type="checkbox" id="genre-tri">Triler a horor</label>
+                            <input type="checkbox" id="genre-ya" name="genre[]" value="YoungAdult">
+                            <label for="genre-ya">Young Adult</label>
                         </li>
                         <li class="sub-item">
-                            <label for="genre-you"><input type="checkbox" id="genre-you">Young Adult</label>
-                        </li>
-                        <li class="sub-item">
-                            <label for="genre-pdet"><input type="checkbox" id="genre-pdet">Pre deti</label>
+                            <input type="checkbox" id="genre-pdet" name="genre[]" value="PreDeti">
+                            <label for="genre-pdet">Pre deti</label>
                         </li>
                     </ul>           
                 </fieldset>             
-
                 <fieldset class="side-menu">
                         <legend class="nav-item-title">Jazyk</legend>
                         <ul class="sub-menu">        
                             <li class="sub-item">
-                                <label for="lang-sk"><input type="checkbox" id="lang-sk">slovenský</label>
+                                <input type="checkbox" id="lang-sk" name="lang[]" value="slovensky">
+                                <label for="lang-sk">slovenský</label>
                             </li>
                             <li class="sub-item">
-                                <label for="lang-en"><input type="checkbox" id="lang-en">anglický</label>
+                                <input type="checkbox" id="lang-en" name=lang[] value="anglicky">
+                                <label for="lang-en">anglický</label>
                             </li>
                         </ul>
                 </fieldset>
-
                 <fieldset class="side-menu">
                     <legend class="nav-item-title">Počet strán</legend>
                     <ul class="sub-menu">  
                         <li class="sub-item">
-                            <label for="pocet-stran-1"><input type="checkbox" id="pocet-stran-1">do 100</label>
+                            <input type="checkbox" id="pocet-stran-1" name="pages[]" value="0-100">
+                            <label for="pocet-stran-1">do 100</label>
                         </li>
                         <li class="sub-item">
-                            <label for="pocet-stran-2"><input type="checkbox" id="pocet-stran-2">100-200</label>
+                            <input type="checkbox" id="pocet-stran-2" name="pages[]" value="100-200">
+                            <label for="pocet-stran-2">100-200</label>
                         </li>
                         <li class="sub-item">
-                            <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">200-300</label>
+                            <input type="checkbox" id="pocet-stran-3" name="pages[]" value="200-300">
+                            <label for="pocet-stran-3">200-300</label>
                         </li>  
                         <li class="sub-item">
-                            <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">300-400</label>
+                            <input type="checkbox" id="pocet-stran-4" name="pages[]" value="300-400">
+                            <label for="pocet-stran-4">300-400</label>
                         </li>
                         <li class="sub-item">
-                            <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">400-500</label>
+                            <input type="checkbox" id="pocet-stran-5" name="pages[]" value="400-500">
+                            <label for="pocet-stran-5">400-500</label>
                         </li>  
                         <li class="sub-item">
-                            <label for="pocet-stran-3"><input type="checkbox" id="pocet-stran-3">od 500</label>
+                            <input type="checkbox" id="pocet-stran-6" name="pages[]" value="500-1000">
+                            <label for="pocet-stran-6">od 500</label>
                         </li>    
                     </ul>   
                 </fieldset>
                 <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
                 <button type="button" class="btn btn-dark" id="cancel-btn">Zrušiť parametre</button>     
-                </form>
+            </form>
         </aside>
+        
         <section id="main-catalog">
-            <h1>Všetky knihy</h1>
             <!--zoradovacie filtre-->
             <nav id="order-by">
                     <ul>
                       <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'novinky', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Novinky</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'novinky']) }}">Novinky</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'bestsellers', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Bestsellery</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'bestsellers']) }}">Bestsellery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'low-to-high', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Najlacnejšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['genre' => $genre, 'sort' => 'high-to-low', 'language' => $language, 'pages' => $pages, 'type' => $type]) }}">Najdrahšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
                       </li>
                     </ul>
             </nav>
+
             <!--knihy-->
             <div class="row">
             @if($books->isEmpty())
@@ -131,11 +149,13 @@
                 @endforeach
             @endif
             </div>
+
             <!--paging-->
-            
+            @if(!$books->isEmpty())
             <nav class="d-flex justify-content-center">
-                {!! $books->appends(['genre' => $genre, 'sort' => $sort, 'language' => $language, 'pages' => $pages, 'type' => $type])->links() !!}
+                {!! $books->appends(['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort])->links() !!}
             </nav>
+            @endif
             
         </section>
     </main>

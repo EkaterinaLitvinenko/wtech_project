@@ -5,43 +5,60 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 
-class CatalogController extends Controller
-{
+class CatalogController extends Controller {
     public function index() {
         $books = Book::query();
 
         //filtrovanie podla typu (ekniha/kniha/audiokniha)
         $type = request("type");
         if($type) {
-            if($type === "kniha") {
-                $books = $books->where(function ($query) {
-                    $query->where('type', 'pevna')
-                        ->orWhere('type', 'brozovana');
-                });
-            } else {
-                $books = $books->where('type', $type);
-            }
+            $types = explode(',', $type);
+            $books = $books->where(function ($query) use ($types) {
+                foreach ($types as $type) {
+                    switch ($type) {
+                        case 'kniha':
+                            $query->orWhere(function($subQuery) {
+                                $subQuery->where('type', 'pevna')
+                                    ->orWhere('type', 'brozovana');
+                            });
+                            break;
+                        case 'audiokniha':
+                        case 'ekniha':
+                            $query->orWhere('type', $type);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
         }
         
         //filtrovanie podla zanru
         $genre = request("genre");
         if($genre) {
-            $books = Book::whereHas('genre', function($query) use ($genre) {
-                $query->where('name', $genre);
+            $books = $books->whereHas('genre', function($query) use ($genre) {
+                $genre = explode(',', $genre);
+                $query->whereIn('name', $genre);
             });
         }
 
         //filtrovanie podla jazyka
-        $language = request("language");
-        if($language) {
-            $books = $books->where('language', $language);
+        $lang = request("lang");
+        if($lang) {
+            $lang = explode(",", $lang);
+            $books = $books->whereIn('language', $lang);
         }
 
         //filtrovanie podla poctu stran
         $pages = request('pages');
         if ($pages) {
-            list($min, $max) = explode('-', $pages);
-            $books = $books->whereBetween('page_count', [$min, $max]);
+            $pageRanges = explode(',', $pages);
+            $books = $books->where(function($query) use ($pageRanges) {
+                foreach ($pageRanges as $range) {
+                    list($min, $max) = explode('-', $range);
+                    $query->orWhereBetween('page_count', [$min, $max]);
+                }
+            });
         }
 
         //sortovacie metody
@@ -53,24 +70,11 @@ class CatalogController extends Controller
         } elseif ($sort === 'low-to-high') {
             $books->orderBy('price');
         } elseif ($sort === 'novinky') {
-            $books->inRandomOrder();
+            $books->orderBy('created_at', "desc");
         } 
 
         $books = $books->paginate(6);
 
-        return view('catalog', ['books' => $books, 'sort' => $sort, 'genre' => $genre, 'language' => $language, 'pages' => $pages, 'type' => $type]);
-    }
-
-    public function store() {
-        #$cartItem = new Cart();
-        #$cartItem->book_id = request("book_id");
-
-        error_log(request("book_id"));
-        return redirect("/katalog");
-    }
-
-    public function show($id) {
-        $book = Book::findorFail($id);
-        return view('bookProfile', ['book' => $book]);
+        return view('catalog', ['books' => $books, 'type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort]);
     }
 }
