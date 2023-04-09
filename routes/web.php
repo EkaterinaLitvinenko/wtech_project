@@ -44,3 +44,9 @@ Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
 
 Route::post('/order/handle',[OrderController::class,'handle']);
 
+
+
+Route::get('/admin/product',function(Request $request){
+    return view('product');
+});
+

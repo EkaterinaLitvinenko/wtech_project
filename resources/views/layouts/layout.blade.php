@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <x-headComponent/>
-        @yield("head-content")
-    </head>
-    <body>
-        <x-navigation :loggedin="false"/>
-        @yield("content")
-        <x-footer />
+@extends ("layouts.baseLayout")
 
-        <x-scripts />
-        @yield("scripts-content")
-    </body>
-</html>
+@section('body-content')
+<x-navigation/>
+@yield("content")
+<x-footer />
+@endsection
