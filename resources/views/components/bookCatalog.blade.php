@@ -25,9 +25,10 @@ $author_str=rtrim($author_str,', ');
                 <p>{{$rating}}</p>
             </span>
             <p class="product-price"><strong>{{$book->price}}<abbr title="EUR">€</abbr></strong></p>
-            <form action="/katalog" method="POST">
+            <form action="/cart/add" method="POST">
                 @csrf
                 <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
+                <input type="hidden" name="amount" value="1">
                 <button class="btn to-cart">Do košíka</button>
             </form>
         </div>

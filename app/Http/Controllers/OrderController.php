@@ -2,35 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Core\Number;
 use Illuminate\Http\Request;
 
 use App\Models\Book;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Http\Controllers\CartController;
 
 class OrderController extends Controller
 {
     public function showDelivery(Request $request){
-        if(auth()->check()){
-            $cart = auth()->user()->cart()->firstOrCreate();
-        }
-        $cart = $cart->books;
+    
+        $cart = CartController::getCart()->books;
         return view('delivery', ["cart"=> $cart]);
     }
 
 
     public function showPayment(Request $request){
-        if(auth()->check()){
-            $cart = auth()->user()->cart()->firstOrCreate();
-        }
-        $cart = $cart->books;
+        $cart = CartController::getCart()->books;
 
         $delivery = session('order_delivery');
         return view('payment', ["cart"=> $cart, "orderDelivery" => $delivery]);
     }
 
-    public function showComplete(Request $request){
-        return view('orderComplete');
+    public function showComplete(Request $request, $id){
+        return view('orderComplete',["id"=>$id,]);
     }
 
 
@@ -74,10 +71,17 @@ class OrderController extends Controller
                 if(auth()->check()){
                     auth()->user()->orders()->save($order);
                 }
+                $ids=[];
                 foreach($cart as $book){
                     $order->books()->attach($book,['quantity'=>$book->pivot->quantity]);
+                    array_push($ids,$book->id);
                 }
-                return redirect('/order/{id}/completed');
+
+                Cart::find(session('cart_id'))->books()->detach($ids);
+
+                session()->forget('order_delivery');
+                
+                return redirect('/order/'.$order->id.'/completed');
         }
     }
 }

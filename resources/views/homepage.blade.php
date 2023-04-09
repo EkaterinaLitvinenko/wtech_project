@@ -1,10 +1,16 @@
 @extends ("layouts.layout")
 
 @php
+/*
 auth()->attempt([
   "email"=>'xdickens@example.com',
   "password"=>'password'
-])
+]);
+*/
+if(auth()->check()){
+  auth()->logout();
+  session()->flush();
+}
 @endphp
 
 @section("head-content")

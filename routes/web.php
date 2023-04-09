@@ -31,6 +31,7 @@ Route::post("/katalog", [CatalogController::class, 'store']);
 
 Route::get('/cart', [CartController::class,'show']);
 Route::post('/cart/handle',[CartController::class,'handle']);
+Route::post('/cart/add',[CartController::class,'addProduct']);
 
 
 Route::resource('users',UserController::class);
@@ -42,3 +43,4 @@ Route::get('/order/payment',[OrderController::class,'showPayment']);
 Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
 
 Route::post('/order/handle',[OrderController::class,'handle']);
+

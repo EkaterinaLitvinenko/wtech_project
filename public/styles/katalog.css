@@ -188,7 +188,8 @@ main > aside {
     display: none;
   }
 
-  .pagination li.control,
+  .pagination li:first-child,
+  .pagination li:last-child,
   .pagination li.disabled,
   .pagination li.active,
   .pagination li.active + li

@@ -47,18 +47,20 @@ foreach ($photos as $photo) {
               <a href="#main-about" id="read-more">Čítať viac<span class="fa-solid fa-arrow-down"></span></a>
             </hgroup>
                           
-            <form id="quantity-cart">
+            <form id="quantity-cart" action="/cart/add" method="POST">
                 <p><strong>{{$book->price}}<abbr title="EUR">€</abbr></strong><p>
                 <div class="input-group amount-input">
                     <div class="input-group-append">
                         <button class="btn input-group-text" title="odobrať produkt">-</button>
                     </div>
-                    <input class="form-control" type="number" value="1">
+                    <input class="form-control" type="number" name="amount" value="1">
                     <div class="input-group-prepend">
                         <button class="btn" title="pridať produkt">+</button>
                     </div>
-                </div>     
-                <button type="button" class="btn btn-lg to-cart">Pridať do košíka  </button>
+                </div>
+                <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
+                @csrf
+                <button type="submit" form="quantity-cart" class="btn btn-lg to-cart">Pridať do košíka  </button>
             </form>
         </div>
     </section>

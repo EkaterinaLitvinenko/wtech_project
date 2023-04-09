@@ -416,13 +416,13 @@ strong {
 }
 
 /* vypnutie vstavaneho sposobu inkerementacie inputu */
-#cart-form input[type=number]::-webkit-inner-spin-button, 
-#cart-form input[type=number]::-webkit-outer-spin-button { 
+.input-group.amount-input input[type=number]::-webkit-inner-spin-button, 
+.input-group.amount-input input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
 }
 
-input[type=number] {
+.input-group.amount-input input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 

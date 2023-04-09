@@ -57,8 +57,8 @@ if(document.getElementById('sum')){
             total+= item.getElementsByTagName('input')[0].value *item.lastElementChild.getAttribute('data-price');
         }
     )
-
-    sum.innerHTML=total;
+    console.log(total)
+    sum.innerHTML=(total.toFixed(2));
  })
  sum.dispatchEvent(event)
 }
