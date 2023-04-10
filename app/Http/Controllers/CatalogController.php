@@ -4,10 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Author;
 
 class CatalogController extends Controller {
     public function index() {
         $books = Book::query();
+
+        $q = request("q");
+        if ($q) {
+            $books = $books->authors()
+                    ->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
+                    ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%'])
+                    ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
+                    ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($q) . '%'])
+                    ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($q) . '%'])
+                    ->distinct();
+        }
 
         //filtrovanie podla typu (ekniha/kniha/audiokniha)
         $type = request("type");
@@ -45,8 +57,8 @@ class CatalogController extends Controller {
         //filtrovanie podla jazyka
         $lang = request("lang");
         if($lang) {
-            $lang = explode(",", $lang);
-            $books = $books->whereIn('language', $lang);
+            $lang_ = explode(",", $lang);
+            $books = $books->whereIn('language', $lang_);
         }
 
         //filtrovanie podla poctu stran
@@ -75,6 +87,11 @@ class CatalogController extends Controller {
 
         $books = $books->paginate(6);
 
-        return view('catalog', ['books' => $books, 'type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort]);
+        return view('catalog', ['books' => $books, 'q' => $q, 'type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort]);
+    }
+
+    public function show($id) {
+        $book = Book::findorFail($id);
+        return view('bookProfile', ['book' => $book]);
     }
 }

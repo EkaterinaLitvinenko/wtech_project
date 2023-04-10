@@ -25,25 +25,19 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomepageController::class, 'index'] );
 
-Route::get('/katalog', [CatalogController::class, 'index'])->name("catalog");
-Route::post("/katalog", [CatalogController::class, 'store']);
+Route::resource('users',UserController::class);
 
+Route::get('/katalog', [CatalogController::class, 'index'])->name("catalog");
+Route::get("/kniha/{id}", [CatalogController::class, 'show']);
 
 Route::get('/cart', [CartController::class,'show']);
 Route::post('/cart/handle',[CartController::class,'handle']);
 Route::post('/cart/add',[CartController::class,'addProduct']);
 
-
-Route::resource('users',UserController::class);
-Route::get("/kniha/{id}", [CatalogController::class, 'show']);
-
-
 Route::get('/order/delivery',[OrderController::class,'showDelivery']);
 Route::get('/order/payment',[OrderController::class,'showPayment']);
 Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
-
 Route::post('/order/handle',[OrderController::class,'handle']);
-
 
 
 Route::get('/admin/product',function(Request $request){

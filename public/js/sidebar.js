@@ -1,7 +1,8 @@
 /*
     PROBLEMY NA VYRIESENIE ALE UZ NEVLADZEM LEBO JE JEDNA HODINA V NOCI:
-        - jazyky su nejako divne, sa pridava pred = ciarka
         - checkboxy sa odklikavaju ked sa dvakrat klikne na apply filters - ked nie je riadok 26-27, tak sa to nerobi
+
+       - pridat text - vsetky knihy alebo to co user zadal
 */
 
 //otvaranie sidebaru na malych rozliseniach
@@ -23,9 +24,9 @@ for (let i = 0; i < checkboxes.length; i++) {
   });
 }
 
-if (window.location.pathname === '/katalog') {
+if (window.location.search == "") {
     localStorage.clear();
-  }
+}
 
 //aplikovanie filtrov
 document.getElementById('apply-btn').addEventListener('click', function() {
@@ -89,10 +90,3 @@ document.getElementById('cancel-btn').addEventListener('click', function() {
 
     localStorage.clear();
 });
-
-
-const url = new URL(window.location.href);
-let lang = url.searchParams.get('lang');
-if (Array.isArray(lang)) {
-  lang = lang.join(',');
-}

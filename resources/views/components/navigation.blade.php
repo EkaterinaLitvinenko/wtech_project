@@ -21,12 +21,12 @@
             </nav>
             <nav class="navigation-actions">
               <a href="#" id="open-search-sm"><span class="fa-solid fa-magnifying-glass clickable" title="open search" ></span></a>
-              <form  id="search-form">
+                <form  id="search-form"  method="GET" action="{{ url('/katalog') }}">
                   <div class="input-group ">
                       <div class="input-group-prepend">
                           <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
                       </div>
-                      <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input">
+                      <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input" name="q">
                       <div class="input-group-append">
                           <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
                       </div>

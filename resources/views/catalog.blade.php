@@ -81,7 +81,7 @@
                                 <label for="lang-sk">slovenský</label>
                             </li>
                             <li class="sub-item">
-                                <input type="checkbox" id="lang-en" name=lang[] value="anglicky">
+                                <input type="checkbox" id="lang-en" name="lang[]" value="anglicky">
                                 <label for="lang-en">anglický</label>
                             </li>
                         </ul>
@@ -125,16 +125,16 @@
             <nav id="order-by">
                     <ul>
                       <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'novinky']) }}">Novinky</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'novinky']) }}">Novinky</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'bestsellers']) }}">Bestsellery</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'bestsellers']) }}">Bestsellery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
                       </li>
                     </ul>
             </nav>
@@ -144,7 +144,8 @@
             @if($books->isEmpty())
                 <p id="no-result">Neboli nájdené žiadne výsledky.</p>
             @else
-                @foreach($books as $book)
+            @foreach($books as $book)
+                    dd($book);
                     <x-bookCatalog :book="$book"/>
                 @endforeach
             @endif
@@ -153,7 +154,8 @@
             <!--paging-->
             @if(!$books->isEmpty())
             <nav class="d-flex justify-content-center">
-                {!! $books->appends(['type' => $type, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort])->links() !!}
+            
+                {!! $books->appends(['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort])->links() !!}
             </nav>
             @endif
             
