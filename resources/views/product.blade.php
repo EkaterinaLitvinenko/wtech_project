@@ -111,5 +111,4 @@
 
 @section('scripts-content')
 <script src="{{asset('js//dragndrop.js')}}"></script>    
-
 @endsection

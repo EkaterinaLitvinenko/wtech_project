@@ -145,7 +145,6 @@
                 <p id="no-result">Neboli nájdené žiadne výsledky.</p>
             @else
             @foreach($books as $book)
-                    dd($book);
                     <x-bookCatalog :book="$book"/>
                 @endforeach
             @endif

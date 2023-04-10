@@ -12,13 +12,14 @@ class CatalogController extends Controller {
 
         $q = request("q");
         if ($q) {
-            $books = $books->authors()
-                    ->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
-                    ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%'])
-                    ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
-                    ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($q) . '%'])
-                    ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($q) . '%'])
-                    ->distinct();
+            $books = $books->whereHas('authors', function ($query) use ($q) {
+                $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
+                ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%']);
+            })
+            ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
+            ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($q) . '%'])
+            ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($q) . '%'])
+            ->distinct();
         }
 
         //filtrovanie podla typu (ekniha/kniha/audiokniha)
