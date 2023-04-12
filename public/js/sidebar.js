@@ -9,7 +9,7 @@
 document.getElementById('sidebar-open').onclick = (e)=>{
     document.getElementById('sidebar-filter').classList.toggle('show')
 }
-
+/*
 //ulozenie zakliknuteho stavu checkboxu do local storage, aby zostali zakliknute po aplikovani filtrov
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 for (let i = 0; i < checkboxes.length; i++) {
@@ -26,7 +26,7 @@ for (let i = 0; i < checkboxes.length; i++) {
 
 if (window.location.search == "") {
     localStorage.clear();
-}
+}*/
 
 //aplikovanie filtrov
 document.getElementById('apply-btn').addEventListener('click', function() {
@@ -88,5 +88,5 @@ document.getElementById('cancel-btn').addEventListener('click', function() {
     url.search = params.toString();
     window.location.href = url.href;
 
-    localStorage.clear();
+    //localStorage.clear();
 });

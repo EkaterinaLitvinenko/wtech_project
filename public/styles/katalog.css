@@ -144,8 +144,13 @@ main > aside {
 /* responzivita */
 @media (min-width:1537px){
   #main-catalog {
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
+  }
+  #main-catalog > .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

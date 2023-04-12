@@ -12,10 +12,10 @@
                   <a class="nav-link" href="{{ route('catalog', ['sort' => 'bestsellers']) }}">Bestsellery</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('catalog', ['type' => 'eknihy']) }}">eKnihy</a>
+                  <a class="nav-link" href="{{ route('catalog', ['type' => 'ekniha']) }}">eKnihy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('catalog', ['type' => 'audioknihy']) }}">Audioknihy</a>
+                    <a class="nav-link" href="{{ route('catalog', ['type' => 'audiokniha']) }}">Audioknihy</a>
                   </li>
               </ul>
             </nav>
