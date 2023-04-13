@@ -1,32 +1,8 @@
-/*
-    PROBLEMY NA VYRIESENIE ALE UZ NEVLADZEM LEBO JE JEDNA HODINA V NOCI:
-        - checkboxy sa odklikavaju ked sa dvakrat klikne na apply filters - ked nie je riadok 26-27, tak sa to nerobi
-
-       - pridat text - vsetky knihy alebo to co user zadal
-*/
 
 //otvaranie sidebaru na malych rozliseniach
 document.getElementById('sidebar-open').onclick = (e)=>{
     document.getElementById('sidebar-filter').classList.toggle('show')
 }
-/*
-//ulozenie zakliknuteho stavu checkboxu do local storage, aby zostali zakliknute po aplikovani filtrov
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-for (let i = 0; i < checkboxes.length; i++) {
-  const value = localStorage.getItem(checkboxes[i].id);
-  if (value === 'true') {
-    checkboxes[i].checked = true;
-  }
-}
-for (let i = 0; i < checkboxes.length; i++) {
-  checkboxes[i].addEventListener('click', function() {
-    localStorage.setItem(checkboxes[i].id, checkboxes[i].checked);
-  });
-}
-
-if (window.location.search == "") {
-    localStorage.clear();
-}*/
 
 //aplikovanie filtrov
 document.getElementById('apply-btn').addEventListener('click', function() {
@@ -87,6 +63,4 @@ document.getElementById('cancel-btn').addEventListener('click', function() {
     
     url.search = params.toString();
     window.location.href = url.href;
-
-    //localStorage.clear();
 });

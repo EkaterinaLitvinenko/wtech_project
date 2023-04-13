@@ -25,9 +25,11 @@ return new class extends Migration
             $table->string('postal_code', 5);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('modified_at')->nullable();
+            $table->enum('payment',['dobierka', 'karta', 'prevod', 'googlepay']);
+            $table->enum('delivery',['postou', 'kurierom', 'osobne']);
         });
-        DB::statement("ALTER TABLE orders ADD payment payment_options DEFAULT NULL");
-        DB::statement("ALTER TABLE orders ADD delivery delivery_options DEFAULT NULL");
+        //DB::statement("ALTER TABLE orders ADD payment ENUM('dobierka', 'karta', 'prevod', 'googlepay' )  DEFAULT NULL");
+        //DB::statement("ALTER TABLE orders ADD delivery ENUM('postou', 'kurierom', 'osobne')  DEFAULT NULL");
     }
 
     /**

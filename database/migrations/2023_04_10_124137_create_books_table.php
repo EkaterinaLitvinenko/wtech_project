@@ -24,9 +24,11 @@ return new class extends Migration
             $table->bigInteger('genre_id')->nullable();
             $table->timestamp('created_at')->nullable()->useCurrent();
             $table->timestamp('modified_at')->nullable();
+            $table->enum('language',['slovensky', 'anglicky']);
+            $table->enum('type',['brozovana', 'pevna', 'ekniha', 'audiokniha']);
         });
-        DB::statement("ALTER TABLE books ADD language languages DEFAULT NULL");
-        DB::statement("ALTER TABLE books ADD type types DEFAULT NULL");
+       // DB::statement("ALTER TABLE books ADD language ENUM ('slovensky', 'anglicky')  DEFAULT NULL");
+       // DB::statement("ALTER TABLE books ADD type ENUM('brozovana', 'pevna', 'ekniha', 'audiokniha' )  DEFAULT NULL");
     }
 
     /**

@@ -140,7 +140,7 @@
                     </ul>   
                 </fieldset>
                 <button type="button" class="btn btn-dark" id="apply-btn">Aplikovať parametre</button>
-                <button type="button" class="btn btn-dark" id="cancel-btn">Zrušiť parametre</button>     
+                <button type="button" class="btn btn-dark" id="cancel-btn">Zrušiť parametre</button>
             </form>
         </aside>
         
@@ -168,7 +168,7 @@
             @if($books->isEmpty())
                 <p id="no-result">Neboli nájdené žiadne výsledky.</p>
             @else
-            @foreach($books as $book)
+                @foreach($books as $book)
                     <x-bookCatalog :book="$book"/>
                 @endforeach
             @endif
@@ -177,7 +177,6 @@
             <!--paging-->
             @if(!$books->isEmpty())
             <nav class="d-flex justify-content-center">
-            
                 {!! $books->appends(['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort])->links() !!}
             </nav>
             @endif
