@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrationController;
 
 
 
@@ -24,6 +26,8 @@ use App\Http\Controllers\OrderController;
 */
 
 Route::get('/', [HomepageController::class, 'index'] );
+Route::get('/login', [LoginController::class, 'index'] );
+Route::get('/register', [RegistrationController::class, 'index'] );
 
 Route::resource('users',UserController::class);
 
