@@ -17,7 +17,7 @@
             
         <div class="register-container">
             <h1>Registrácia</h1>
-        <form action="{{ route('register')}}" method="POST" novalidate id="register-form container">
+        <form action="{{ route('register')}}" method="POST" id="register-form container">
                     @csrf
                     <div class="form-group">
                         <label for="email">E-mail</label>
@@ -40,16 +40,16 @@
                   </div>
                     <div class="form-group agreement-row">
                       <div>
-                          <input type="checkbox" id="podmienky" required>
+                          <input type="checkbox" id="terms" name="terms" required>
                           <label for="podmienky">Súhlasím s obchodnými podmienkami</label>
                       </div>
                       <div class> 
-                          <input type="checkbox" id="spracovanie" required>
+                          <input type="checkbox" id="consent" name="consent" required>
                           <label for="spracovanie">Súhlasím so spracovaním osobných údajov</label>
                       </div>
                     </div>
                     <div class="btn-center">
-                      <button class="btn" form="register-form" type="submit">Registrovať sa</button>
+                      <input class="form-submit btn" type="submit" value="Zaregistrovať sa">
                     </div>
             </form>
           </div>

@@ -45,12 +45,12 @@
     text-align: center;
 }
 
-.btn-center > button {
+.btn-center > input {
     background-color: #FFBB52;
     transition: all 0.1s linear;
 }
 
-.btn-center > button:hover {
+.btn-center > input:hover {
     font-weight: bold;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: #82B45C;
@@ -79,6 +79,9 @@
     color: grey;
 }
 
+#terms:hover , #consent:hover {
+    cursor:pointer;
+}
 
 @media (max-width:769px) {
 }

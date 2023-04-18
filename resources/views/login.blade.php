@@ -27,7 +27,8 @@
                     <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
                 </div>
                 <div class="btn-center">
-                    <button class="btn" form="register-form">Prihlásiť sa</button>
+                    <input class="form-submit btn" type="submit" value="Prihlásiť sa">
+                    {{-- <button class="btn" form="register-form">Prihlásiť sa</button> --}}
                 </div>
             </form>
       </div>
