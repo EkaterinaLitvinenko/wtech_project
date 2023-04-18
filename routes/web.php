@@ -10,6 +10,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\LogoutController;
 
 
 
@@ -27,7 +28,11 @@ use App\Http\Controllers\RegistrationController;
 
 Route::get('/', [HomepageController::class, 'index'] );
 Route::get('/login', [LoginController::class, 'index'] );
-Route::get('/register', [RegistrationController::class, 'index'] );
+
+Route::get('/register', [RegistrationController::class, 'index'] )->name('register');
+Route::post('/register', [RegistrationController::class, 'register'])->name('register');;
+
+Route::get('/logout', [LogoutController::class, 'index'] );
 
 Route::resource('users',UserController::class);
 

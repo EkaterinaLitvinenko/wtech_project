@@ -40,11 +40,14 @@
                       <p>Moje objednávky</p>
                       <p>Moje reklamácie</p>
                       <p>Moje osobné údaje</p>
-                      <button class="btn" id="logout">  Odhlásiť sa </button>
+                      <a href="{{asset('logout')}}"> 
+                        <button class="btn" id="logout"> Odhlásiť sa </button>
+                      </a>
+                      
                   </form>
                 @endauth
                 @guest
-                  <a href="./login.html" id="" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                  <a href="{{asset('login')}}" id="" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
                 @endguest
                 </div>
                 <a href="/cart" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>

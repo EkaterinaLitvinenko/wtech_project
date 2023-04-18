@@ -17,7 +17,8 @@
             
         <div class="register-container">
             <h1>Registrácia</h1>
-            <form id="register-form container">
+        <form action="{{ route('register')}}" method="POST" novalidate id="register-form container">
+                    @csrf
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input class="form-control" type="text" name="email" placeholder="Zadajte e-mail..." required>
@@ -48,7 +49,7 @@
                       </div>
                     </div>
                     <div class="btn-center">
-                      <button class="btn" form="register-form">Registrovať sa</button>
+                      <button class="btn" form="register-form" type="submit">Registrovať sa</button>
                     </div>
             </form>
           </div>
