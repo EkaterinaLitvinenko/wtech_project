@@ -122,21 +122,11 @@ a:hover {
 /*navigacia*/
 nav.navbar {
     background-color: #FFBB52;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 nav.navbar .navbar-brand img, nav.navbar .navbar-brand{
     width: 100px;
-}
-
-nav.navbar .hideable {
-    display: none;
-    position: absolute;
-    width: max-content;
-    top: 100%;
-    left: 5%;
-    padding: 20px 10px 5px 10px;
-    background-color: #977037;
-    transform: translate(-50%, 0);
 }
 
 nav.navbar #search-form input {
@@ -171,15 +161,17 @@ nav.navbar .navigation-actions {
 nav.navbar .profile-group {
         position: relative;
 }
+
 nav.navbar .hideable {
-        position: absolute;
-        width: max-content;
-        top: 130%;
-        left: 50%;
-        padding: 20px 10px 5px 10px;
-        background-color: #ffcf88;
-        transform: translate(-50%, 0);
-        z-index: 100;
+    position: absolute;
+    width: max-content;
+    top: 130%;
+    left: 30%;
+    padding: 20px 10px 5px 10px;
+    background-color: #ffcf88;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #search-go-back{

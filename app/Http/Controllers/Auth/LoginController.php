@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Cart;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
 
+        $request->session()->forget('cart_id');
         $request->authenticate();
         $request->session()->regenerate();
 
@@ -39,6 +41,7 @@ class LoginController extends Controller
         Log::info('LoginController@logout');
         Auth::guard('web')->logout();
 
+        $request->session()->forget('cart_id');
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -39,6 +40,12 @@ class RegistrationController extends Controller
 
         Auth::login($user);
         Log::info(Auth::user()->id);
+
+        if(session()->has('cart_id')){
+            $cart = Cart::find(session('cart_id'));
+            $cart->user_id = Auth::user()->id;
+            $cart->save();
+        }
 
         return redirect()->intended('/');
     }
