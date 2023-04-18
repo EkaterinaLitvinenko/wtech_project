@@ -24,7 +24,11 @@ class LoginController extends Controller
     {
         $request->validate([
             'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', function ($attribute, $value, $fail) use ($request) {
+                if (!Auth::attempt(['email' => $request->email, 'password' => $value])) {
+                    return $fail(__('Heslo je nesprávne'));
+                }
+            }],
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -48,4 +52,6 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+
 }

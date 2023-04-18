@@ -73,7 +73,7 @@
 
 #show-password { 
     position: absolute; 
-    top: 60%;
+    top: 44px;
     right: 4%;
     font-weight: bold;
     color: grey;
@@ -81,6 +81,15 @@
 
 #terms:hover , #consent:hover {
     cursor:pointer;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+  
+
+.invalid-feedback {
+    color: #dc3545;
 }
 
 @media (max-width:769px) {
