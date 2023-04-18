@@ -1,19 +1,12 @@
 <?php
 
 use App\Http\Controllers\CartController;
-use App\Models\Book;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegistrationController;
-use App\Http\Controllers\LogoutController;
-
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +20,6 @@ use App\Http\Controllers\LogoutController;
 */
 
 Route::get('/', [HomepageController::class, 'index'] );
-Route::get('/login', [LoginController::class, 'index'] );
-
-Route::get('/register', [RegistrationController::class, 'index'] )->name('register');
-Route::post('/register', [RegistrationController::class, 'register'])->name('register');;
-
-Route::get('/logout', [LogoutController::class, 'index'] );
 
 Route::resource('users',UserController::class);
 
@@ -48,8 +35,8 @@ Route::get('/order/payment',[OrderController::class,'showPayment']);
 Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
 Route::post('/order/handle',[OrderController::class,'handle']);
 
-
 Route::get('/admin/product',function(Request $request){
     return view('product');
 });
 
+require __DIR__.'/auth.php';

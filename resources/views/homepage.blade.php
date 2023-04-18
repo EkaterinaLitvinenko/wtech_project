@@ -1,18 +1,5 @@
 @extends ("layouts.layout")
 
-@php
-/*
-auth()->attempt([
-  "email"=>'xdickens@example.com',
-  "password"=>'password'
-]);
-*/
-if(auth()->check()){
-  auth()->logout();
-  session()->flush();
-}
-@endphp
-
 @section("head-content")
   <title>ReadMe BookShop</title>
   <link rel="stylesheet" href="{{ asset('extern/owlcarousel/assets/owl.carousel.min.css') }}">

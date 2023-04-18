@@ -26,26 +26,26 @@
                     <div class="form-row">
                       <div class="form-group col">
                           <label for="first-name">Meno</label>
-                          <input class="form-control" type="text" name="first-name" placeholder="Zadajte meno..." required>
+                          <input class="form-control" type="text" name="first_name" placeholder="Zadajte meno..." required>
                       </div>
                       <div class="form-group col">
                           <label for="last-name">Priezvisko</label>
-                          <input class="form-control" type="text" name="last-name" placeholder="Zadajte priezvisko..." required>
+                          <input class="form-control" type="text" name="last_name" placeholder="Zadajte priezvisko..." required>
                       </div>
                     </div>
                     <div class="form-group password-container">
                       <label for="heslo">Heslo</label>
-                      <input class="form-control" type="password" id="passwordInput" placeholder="Zadajte heslo..." required>
+                      <input class="form-control" type="password" name="password" for="password" id="passwordInput" placeholder="Zadajte heslo..." required>
                       <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
                   </div>
                     <div class="form-group agreement-row">
                       <div>
-                          <input type="checkbox" id="terms" name="terms" required>
-                          <label for="podmienky">Súhlasím s obchodnými podmienkami</label>
+                          <input type="checkbox" id="terms" name="terms" checked required>
+                          <label for="terms">Súhlasím s obchodnými podmienkami</label>
                       </div>
                       <div class> 
-                          <input type="checkbox" id="consent" name="consent" required>
-                          <label for="spracovanie">Súhlasím so spracovaním osobných údajov</label>
+                          <input type="checkbox" id="consent" name="consent" checked required>
+                          <label for="consent">Súhlasím so spracovaním osobných údajov</label>
                       </div>
                     </div>
                     <div class="btn-center">

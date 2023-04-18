@@ -16,14 +16,15 @@
       </nav>
       <div class="register-container">
             <h1>Prihlásenie</h1>
-            <form>
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input class="form-control" type="email" name="email" placeholder="Zadajte e-mail..." required>
                 </div>
                 <div class="form-group password-container">
                     <label for="heslo">Heslo</label>
-                    <input class="form-control" type="password" id="passwordInput" placeholder="Zadajte heslo..." required>
+                    <input class="form-control" type="password" name="password" id="passwordInput" placeholder="Zadajte heslo..." required>
                     <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
                 </div>
                 <div class="btn-center">
