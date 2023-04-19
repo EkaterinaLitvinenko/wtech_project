@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\Cart;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,12 +24,17 @@ class LoginController extends Controller
     public function check(LoginRequest $request)
     {
         $request->validate([
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string', function ($attribute, $value, $fail) use ($request) {
-                if (!Auth::attempt(['email' => $request->email, 'password' => $value])) {
-                    return $fail(__('Heslo je nesprávne'));
+            'email' => ['required', 'string', 'email', function ($attribute, $value, $fail) {
+                if (!User::where('email', $value)->exists()) {
+                    return $fail(__('E-mail nie je zaregistrovaný'));
                 }
             }],
+
+            'password' => ['required', 'string', function ($attribute, $value, $fail) use ($request) {
+                if (!Auth::attempt(['email' => $request->email, 'password' => $value], true)) {
+                    return $fail(__('Heslo je nesprávne'));
+                }
+            },],
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -39,6 +45,7 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
 
     public function logout(Request $request)
     {

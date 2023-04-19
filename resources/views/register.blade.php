@@ -40,11 +40,11 @@
                   </div>
                     <div class="form-group agreement-row">
                       <div>
-                          <input type="checkbox" id="terms" name="terms" checked required>
+                          <input type="checkbox" id="terms" name="terms" required>
                           <label for="terms">Súhlasím s obchodnými podmienkami</label>
                       </div>
                       <div class> 
-                          <input type="checkbox" id="consent" name="consent" checked required>
+                          <input type="checkbox" id="consent" name="consent" required>
                           <label for="consent">Súhlasím so spracovaním osobných údajov</label>
                       </div>
                     </div>

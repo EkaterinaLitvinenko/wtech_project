@@ -23,6 +23,7 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable()->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->enum('role',['admin', 'user'])->default('user');
+            $table->string('remember_token')->default('');
         });
         //DB::statement("ALTER TABLE users ADD role ENUM('admin', 'user')  NOT NULL");
     }

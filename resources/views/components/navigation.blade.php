@@ -33,20 +33,20 @@
                   </div>
                 </form>
                 <div class="profile-group">
-                @auth
-                <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                <form class="hideable" action="logout" method="POST">
-                @csrf
-                    <p><strong>Vitajte, {{auth()->user()->first_name}}!</strong></p>
-                    <p>Moje objednávky</p>
-                    <p>Moje reklamácie</p>
-                    <p>Moje osobné údaje</p>
-                    <button class="btn" id="logout" type="submit"> Odhlásiť sa </button>
-                </form>
-                @endauth
-                @guest
-                  <a href="/login" id="" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
-                @endguest
+                      @auth
+                      <a href="#" id="profile" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                      <form class="hideable" action="logout" method="POST">
+                      @csrf
+                          <p><strong>Vitajte, {{auth()->user()->first_name}}!</strong></p>
+                          <p>Moje objednávky</p>
+                          <p>Moje reklamácie</p>
+                          <p>Moje osobné údaje</p>
+                          <button class="btn" id="logout" type="submit"> Odhlásiť sa </button>
+                      </form>
+                     @endauth
+                     @guest
+                      <a href="/login" id="" title="profile button"><span class="fa-sharp fa-solid fa-circle-user clickable" ></span></a>
+                    @endguest
                 </div>
                 <a href="/cart" class="clickable"><span class="fa-solid fa-basket-shopping" title="shopping cart"></span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">

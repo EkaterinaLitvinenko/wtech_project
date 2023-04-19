@@ -20,7 +20,12 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input class="form-control" type="email" name="email" placeholder="Zadajte e-mail..." required>
+                    <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Zadajte e-mail..." required>
+                    @error('email')
+                        <div class="invalid-feedback">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
                 </div>
                 <div class="form-group password-container">
                     <label for="heslo">Heslo</label>
