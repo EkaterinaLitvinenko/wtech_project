@@ -163,6 +163,7 @@ nav.navbar .profile-group {
 }
 
 nav.navbar .hideable {
+    display: none;
     position: absolute;
     width: max-content;
     top: 130%;
