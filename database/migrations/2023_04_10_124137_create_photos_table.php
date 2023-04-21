@@ -17,8 +17,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('book_id')->nullable();
             $table->string('filename')->nullable();
+            $table->boolean('is_cover')->default(false);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('modified_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

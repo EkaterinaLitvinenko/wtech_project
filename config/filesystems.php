@@ -43,6 +43,11 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'uploads'=>[
+            'driver' => 'local',
+            'root'   => public_path(),
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

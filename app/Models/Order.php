@@ -26,8 +26,6 @@ class Order extends Model
         'postal_code'
     ];
 
-    const UPDATED_AT = 'modified_at';
-
     public function books(): BelongsToMany
     {
         return $this->belongsToMany(Book::class);

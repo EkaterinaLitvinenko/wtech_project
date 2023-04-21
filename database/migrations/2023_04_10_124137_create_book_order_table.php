@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('book_id');
             $table->bigInteger('quantity');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('modified_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

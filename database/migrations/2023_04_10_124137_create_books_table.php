@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('page_count')->nullable();
             $table->bigInteger('genre_id')->nullable();
             $table->timestamp('created_at')->nullable()->useCurrent();
-            $table->timestamp('modified_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->enum('language',['slovensky', 'anglicky']);
             $table->enum('type',['brozovana', 'pevna', 'ekniha', 'audiokniha']);
         });

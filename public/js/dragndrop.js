@@ -2,6 +2,13 @@ const dropzone = document.getElementById("dropzone");
 const fileInput = document.getElementById("file-input");
 const previewArea = document.getElementById("preview-container");
 
+const dialogClose = document.getElementById("dialog-close");
+
+dialogClose.addEventListener("click", () => {
+  const dialog = document.getElementById("dialog");
+  dialog.classList.add("hide");
+});
+
 fileInput.addEventListener("change", handleFileSelect);
 dropzone.addEventListener("dragover", handleDragOver);
 dropzone.addEventListener("dragleave", handleDragLeave);

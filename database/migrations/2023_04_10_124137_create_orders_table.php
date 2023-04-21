@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('street');
             $table->string('postal_code', 5);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('modified_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->enum('payment',['dobierka', 'karta', 'prevod', 'googlepay']);
             $table->enum('delivery',['postou', 'kurierom', 'osobne']);
         });

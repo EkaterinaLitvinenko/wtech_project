@@ -17,6 +17,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

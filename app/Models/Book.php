@@ -18,6 +18,16 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'isbn',
+        'description',
+        'price',
+        'type',
+        'language',
+        'page_count',
+    ];
+
     public function authors(): BelongsToMany
     {
         return $this->belongsToMany(Author::class);

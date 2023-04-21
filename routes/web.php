@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CatalogController;
@@ -35,8 +36,9 @@ Route::get('/order/payment',[OrderController::class,'showPayment']);
 Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
 Route::post('/order/handle',[OrderController::class,'handle']);
 
-Route::get('/admin/product',function(Request $request){
-    return view('product');
-});
+
+Route::get('/admin/list',[ProductController::class,'index']);
+Route::get('/admin/product',[ProductController::class,'showCreateForm']);
+Route::post('/admin/handle',[ProductController::class,'handle']);
 
 require __DIR__.'/auth.php';
