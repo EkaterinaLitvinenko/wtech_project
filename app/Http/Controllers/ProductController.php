@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         }
         
-        $coverName = $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
+        $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
         $book->photos()->create([
@@ -81,7 +81,7 @@ class ProductController extends Controller
         ]);
 
         foreach(request()->file('images') as $image){
-            $imageName = $data['title'] . "_" . Str::random(8) . '.'.$image->extension();
+            $imageName = "gen_".$data['title'] . "_" . Str::random(8) . '.'.$image->extension();
             $image->storeAs('res/knihy/', $imageName,'uploads');
             $book->photos()->create([
                 'filename' => $imageName,
