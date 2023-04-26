@@ -37,8 +37,23 @@ class CartController extends Controller
     }
     public function show(Request $request){
         $cart =  CartController::getCart()->books;
+        $cart_books = [];
 
-        return view('cart', ["cart"=> $cart]);
+        foreach($cart as $book){
+            $image = config('constants.IMAGE_DIR') . $book->photos->first()->filename;
+            $author_str = '';
+            foreach ($book->authors as $author) {
+                $author_str = $author_str . $author->first_name . ' ' . $author->last_name . ', ';
+            }
+            $author_str=rtrim($author_str,', ');
+
+            array_push($cart_books, (object)[
+                "book" => $book,
+                "authors" => $author_str,
+                "image" => $image,
+            ]);
+        }
+        return view('cart', ["cart"=> $cart_books]);
     }
 
     public function handle(Request $request){

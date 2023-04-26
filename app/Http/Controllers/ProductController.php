@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Genre;
 use App\Models\Author;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -16,6 +15,18 @@ class ProductController extends Controller
     public function showCreateForm()
     {
         return view('admin.product',['genres' => Genre::all()]);
+    }
+
+    public function showEditForm($id)
+    {
+        $book = Book::findorFail($id);
+        $authors = '';
+        foreach ($book->authors as $author) {
+            $authors = $authors . $author->first_name . ' ' . $author->last_name . ', ';
+        }
+        $authors = rtrim($authors,', ');
+
+        return view('admin.editproduct',['book' => $book, 'authors' => $authors, 'genres' => Genre::all()]);
     }
 
     public function handle(){
@@ -71,7 +82,7 @@ class ProductController extends Controller
             $book->authors()->attach($author);
 
         }
-        
+
         $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 

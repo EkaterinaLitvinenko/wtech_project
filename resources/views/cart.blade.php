@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('./styles/cart.css')}}">
     <title>Váš košík</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        
+
     <script src="./js/cart.js"></script>
 @endsection
 
@@ -20,7 +20,7 @@
                     <form id="cart-form" action="/cart/handle" method="POST">
                         @csrf
                         @if(count($cart) != 0)
-                        @foreach($cart as $book) 
+                        @foreach($cart as $book)
                             <x-cartItem :book="$book"/>
                         @endforeach
                         @else
@@ -28,8 +28,8 @@
                         @endif
                         <footer>
                             <p>Spolu <strong><span id="sum">0</span> <abbr title="EUR">€</abbr></strong></p>
-                            <a href="/" class="btn cancel">Späť na knihy</a> 
-                            <button 
+                            <a href="/" class="btn cancel">Späť na knihy</a>
+                            <button
                             class="btn continue"
                             name="action"
                             value="save"

@@ -3,17 +3,15 @@
     margin: auto;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
 }
 
-
 a {
     text-decoration: none;
 }
-  
+
 .btn {
     margin: 30px auto;
 }
@@ -23,11 +21,15 @@ a {
     background-color: rgb(95, 95, 95);
 }
 
-legend {
+legend, label {
     font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
     font-family: 'PT Sans', sans-serif;
+}
+
+.form-check-label {
+    font-weight: 500;
 }
 
 @keyframes slideIn {
@@ -70,47 +72,19 @@ legend {
     animation: 1s ease-out 0s 1 slideOut forwards;
 }
 
-#dropzone {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-}
-  
-#dropzone label {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100%;
-width: 100%;
-}
-
 #preview-container {
-    margin-top: 20px; 
-}
-
-#dropzone i {
-    font-size: 32px;
-    display: block;
-    margin: 0 auto 20px;
-    color: rgb(95, 95, 95);
+    margin-top: 20px;
 }
 
 #file-input {
     display: none;
 }
 
-#dropzone.dragover {
-border-color: #FFBB52;
+#adm-product-description {
+    min-height: 200px;
 }
-
-
 
 #preview-container img {
     max-width: 100px;
   }
-  
+

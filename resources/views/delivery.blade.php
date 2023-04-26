@@ -1,6 +1,5 @@
 @extends ("layouts.orderLayout")
 
-
 @section("head-content")
   <link rel="stylesheet" href="{{ asset('styles/cart.css')}}">
   <title>Doprava - ReadMe BookShop</title>

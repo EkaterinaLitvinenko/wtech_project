@@ -1,7 +1,5 @@
 @extends ("layouts.layout")
 
-
-
 @section("content")
 <main class="container-fluid">
     @yield('progressbar')
@@ -17,7 +15,7 @@
             @csrf
             </form>
         </section>
-        <x-orderReview :cart="$cart"/>
+        <x-orderReview :cart="$cart" :price="$price"/>
     </div>
     <footer class="row justify-content-center form-footer">
         <div class="col-md-8 col-12">

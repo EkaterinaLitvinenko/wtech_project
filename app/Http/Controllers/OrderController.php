@@ -1,11 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Faker\Core\Number;
 use Illuminate\Http\Request;
-
-use App\Models\Book;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Http\Controllers\CartController;
@@ -13,17 +9,25 @@ use App\Http\Controllers\CartController;
 class OrderController extends Controller
 {
     public function showDelivery(Request $request){
-    
         $cart = CartController::getCart()->books;
-        return view('delivery', ["cart"=> $cart]);
+        $price = 0;
+        foreach ($cart as $book) {
+            $price += $book->price * $book->pivot->quantity;
+        }
+
+        return view('delivery', ["cart" => $cart, "price" => $price]);
     }
 
 
     public function showPayment(Request $request){
         $cart = CartController::getCart()->books;
-
         $delivery = session('order_delivery');
-        return view('payment', ["cart"=> $cart, "orderDelivery" => $delivery]);
+        $price = 0;
+        foreach ($cart as $book) {
+            $price += $book->price * $book->pivot->quantity;
+        }
+
+        return view('payment', ["cart" => $cart, "orderDelivery" => $delivery, "price" => $price]);
     }
 
     public function showComplete(Request $request, $id){
@@ -55,7 +59,7 @@ class OrderController extends Controller
                 $cart=  Cart::find(session('cart_id'))->books;
                 $delivery = session("order_delivery");
                 $payment =  $request->input("payment-option");
-                
+
                 $order = Order::create(
                     [
                         'first_name'=>$delivery->first_name,
@@ -80,7 +84,7 @@ class OrderController extends Controller
                 Cart::find(session('cart_id'))->books()->detach($ids);
 
                 session()->forget('order_delivery');
-                
+
                 return redirect('/order/'.$order->id.'/completed');
         }
     }

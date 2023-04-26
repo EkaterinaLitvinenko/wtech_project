@@ -1,11 +1,10 @@
 
 #sidebar-filter{
-    /*float: left;*/
-    
     left: 0;
     width: 250px;
     padding: 20px;
     background-color:#FFBB52;
+    z-index: 10;
 }
 
 #apply-btn, #cancel-btn {
@@ -55,7 +54,7 @@
     justify-content: right;
 }
 
-#sidebar-open { 
+#sidebar-open {
     display: none;
 }
 
@@ -69,7 +68,7 @@ label input[type="checkbox"] {
 }
 label input[type="checkbox"]:hover {
     cursor: pointer;
-    } 
+    }
 
 @media (max-width:1000px){
     #sidebar-open {
@@ -98,7 +97,7 @@ label input[type="checkbox"]:hover {
     #sidebar-filter.show form {
         visibility: visible;
         width: 100%;
-        
+
     }
 
     #sidebar-filter.show #sidebar-open {
