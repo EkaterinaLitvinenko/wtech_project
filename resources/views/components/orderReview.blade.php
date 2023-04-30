@@ -1,4 +1,4 @@
-@props(['cart', 'price']);
+@props(['cart', 'price'])
 
 <section class="col-xl-3 col-lg-4 col-md-5 form-part" id="order-review">
     <h1>Prehľad objednávky</h1>

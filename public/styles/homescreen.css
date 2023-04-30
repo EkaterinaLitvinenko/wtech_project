@@ -42,7 +42,7 @@
     margin-bottom: 0;
 }
 
-.book-author, .book-title, #main-book-title, #main-book-author { 
+.book-author, .book-title, #main-book-title, #main-book-author {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -76,7 +76,7 @@
 }
 
 .zoom:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .zoom:hover > a > h2 {
@@ -131,7 +131,7 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     width: 245px;
     height: 386px;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: calc(0.25rem - 1px);
 }
 
@@ -141,7 +141,7 @@
     margin-top: 10px;
 }
 
-#main-book-about { 
+#main-book-about {
     font-size: 15px;
     margin-bottom: 0;
     overflow: hidden;
@@ -151,23 +151,23 @@
             line-clamp: 4;
             -webkit-box-orient: vertical;
 }
-        
+
 #main-book-author {
     font-size: 16px;
     margin-bottom: 0;
 }
 
 
-/*-----responzivita------------------*/ 
+/*-----responzivita------------------*/
 @media (min-width: 1250px) and (max-width: 1439px){
-    #main-book-about { 
+    #main-book-about {
         -webkit-line-clamp: 5;
                 line-clamp: 5;
     }
 }
 
 @media (max-width: 1250px){
-    #main-book-about { 
+    #main-book-about {
         -webkit-line-clamp: 7;
         line-clamp: 7;
     }
@@ -180,14 +180,14 @@
         grid-row: auto;
         justify-content: center;
     }
-    
+
     .grid-item-1 {
         display: none;
     }
 }
 
 @media (max-width: 1050px){
-    #main-book-about { 
+    #main-book-about {
         -webkit-line-clamp: 8;
         line-clamp: 8;
     }

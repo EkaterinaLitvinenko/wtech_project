@@ -86,5 +86,22 @@ legend, label {
 
 #preview-container img {
     max-width: 100px;
-  }
+}
+
+.edit-cover {
+    width: 135px;
+    height: 213px;
+    object-fit: cover;
+    border-radius: calc(0.25rem - 1px);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 10px;
+}
+
+.delete-img {
+    position: relative;
+    right: 40px;
+    bottom: 80px;
+    width: 15px;
+    height: 15px;
+}
 

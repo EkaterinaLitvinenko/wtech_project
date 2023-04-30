@@ -26,6 +26,7 @@
             @endif
 
             <form class="create-update" method="POST" action="handle" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <div class="form-group col-12">
                         <label for="adm-product-name">Názov*:</label>
@@ -125,13 +126,28 @@
                     </div>
 
                     <label for="productCover" class="col-sm-4 col-form-label">Pridať obálku*:</label>
-                    <input id="productCover" class="form-control" type="file" name='cover' accept="image/png, image/jpeg" required>
+                    <input id="productCover" class="form-control" type="file" name='cover' accept="image/png, image/jpeg">
+                    <div class="col-12 text-center">
+                        <img src="{{ asset('res/knihy/' . $cover) }}" class="edit-cover" alt="Obálka knihy: {{$book->title}}">
+                    </div>
+
                     <label for="productImage" class="col-sm-4 col-form-label">Pridať obrázky*:</label>
-                    <input id="productImage" class="form-control" type="file" name='images[]' accept="image/png, image/jpeg" multiple required>
+                    <input id="productImage" class="form-control" type="file" name='images[]' accept="image/png, image/jpeg" multiple>
+                    <div class="col-12 text-center">
+                        @foreach($filenames as $photo)
+                            <label for='{{$photo}}'> <img src="{{ asset('res/knihy/' . $photo) }}" class="edit-cover" alt="Obrázok knihy: {{$book->title}}">
+                            <input type="checkbox" name = "deleteImgs[]" class="delete-img" id="{{$photo}}" value={{$photo}}>
+                        @endforeach
+                    </div>
                 </div>
-                @csrf
+
                 <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-secondary" name='action' value="create">
+                    <button type="submit"
+                            class="btn btn-secondary"
+                            name='action'
+                            title="odstranit z košika"
+                            value="update,{{$book->id}}"
+                    >
                     Uložiť
                     </button>
                 </div>
@@ -139,7 +155,6 @@
         </div>
     </div>
 @endsection
-
 
 @section('scripts-content')
     <script src="{{asset('js//dragndrop.js')}}"></script>

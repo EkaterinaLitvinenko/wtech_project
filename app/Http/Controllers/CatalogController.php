@@ -78,7 +78,7 @@ class CatalogController extends Controller {
         } elseif ($sort === 'low-to-high') {
             $books->orderBy('price');
         } elseif ($sort === 'novinky') {
-            $books->orderBy('created_at', "desc");
+            $books->orderBy('created_at');
         }
 
         $q = request("q");
@@ -104,11 +104,11 @@ class CatalogController extends Controller {
             $rating=round(mt_rand()/mt_getrandmax() * 5,2);
             $author_str = '';
             $description= str_replace(["\n","\r"], " ",$book->description );
-            $image = config('constants.IMAGE_DIR') . $book->photos->first()->filename;
             foreach ($book->authors as $author) {
                 $author_str = $author_str . $author->first_name . ' ' . $author->last_name . ', ';
             }
             $author_str=rtrim($author_str,', ');
+            $image = config('constants.IMAGE_DIR') . $book->photos->where('is_cover', true)->first()->filename;
 
             array_push($books_transform, (object)[
                 "book" => $book,
@@ -141,7 +141,8 @@ class CatalogController extends Controller {
         foreach ($photos as $photo) {
             $filenames[] = $photo->filename;
         }
+        $cover = $book->photos->where('is_cover', true)->first()->filename;
 
-        return view('bookProfile', ['book' => $book, 'rating' => $rating, 'description' => $description, 'authors' => $author_str, 'filenames' => $filenames ]);
+        return view('bookProfile', ['book' => $book, 'cover' => $cover, 'rating' => $rating, 'description' => $description, 'authors' => $author_str, 'filenames' => $filenames ]);
     }
 }

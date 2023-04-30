@@ -14,7 +14,7 @@
         <section id="book-info1">
             <div id="upper-info" style="background-color: {{$book->genre->color}};">
                 <div>
-                    <img src="{{ asset('res/knihy/' . $book->photos->first()->filename) }}" id="main-cover" alt="Obálka knihy: {{$book->title}}">
+                    <img src="{{ asset('res/knihy/' . $cover) }}" id="main-cover" alt="Obálka knihy: {{$book->title}}">
                     <div id="myModal" class="modal">
                       <span class="close">&times;</span>
                       <img class="modal-content" id="img01">

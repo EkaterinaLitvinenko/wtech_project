@@ -40,6 +40,7 @@ Route::post('/order/handle',[OrderController::class,'handle']);
 Route::get('/admin/list',[ProductController::class,'index']);
 Route::get('/admin/product',[ProductController::class,'showCreateForm']);
 Route::post('/admin/handle',[ProductController::class,'handle']);
+Route::post('/admin/edit/handle',[ProductController::class,'handle']);
 Route::get('/admin/edit/{id}',[ProductController::class,'showEditForm']);
 
 require __DIR__.'/auth.php';
