@@ -58,44 +58,47 @@ class ProductController extends Controller
     private function create($data){
         $validate = request()->validate([
             'title' => ['required', 'max:255'],
-            'isbn' => ['required', 'max:13','min:10','regex:/^[0-9]+$/'],
+            'isbn' => ['nullable','max:13','min:10','regex:/^[0-9]+$/'],
             'description' => ['required', 'max:2048'],
-            'price' => ['required', 'numeric'],
-            'type' => ['required'],
-            'genre' => ['required'],
-            'language' => ['required'],
-            'authors' => ['required', 'regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
-            'pages' => ['required', 'numeric'],
+            'price' => ['nullable','numeric'],
+            'type' => [],
+            'genre' => [],
+            'language' => [],
+            'authors' => [ 'nullable','regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
+            'pages' => ['nullable', 'numeric'],
             'cover' => 'required|mimes:jpeg,jpg,png,JPG,PNG,JPEG',
             'images' => 'required',
             'images.*' => 'mimes:jpeg,jpg,png,JPG,PNG,JPEG'
         ]);
 
+
+
         $book = Book::create([
             'title' => $data['title'],
-            'isbn' => $data['isbn'],
+            'isbn' => $data['isbn'] ?? '0000000000000',
             'description' => $data['description'],
-            'price' => $data['price'],
-            'type' => $data['type'],
-            'language' => $data['language'],
-            'page_count' => $data['pages'],
+            'price' => $data['price'] ?? 0,
+            'type' => $data['type'] ?? 'pevna',
+            'language' => $data['language'] ?? 'slovensky',
+            'page_count' => $data['pages'] ?? 0,
         ]);
 
-        $book->genre()->associate($data['genre']);
-        $authors = explode(';',$data['authors']);
+        $book->genre()->associate($data['genre'] ?? '1');
+        $authors = explode(';',$data['authors'] ?? '');
         foreach($authors as $author){
+            if(empty($author)) continue;
             $authorName = explode(' ',$author);
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
-            if(Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->exists())
-                $author = Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->first();
+            if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
+                $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->attach($author);
 
         }
 
-        $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
+        $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
         $book->photos()->create([
@@ -104,7 +107,7 @@ class ProductController extends Controller
         ]);
 
         foreach(request()->file('images') as $image){
-            $imageName = "gen_".$data['title'] . "_" . Str::random(8) . '.'.$image->extension();
+            $imageName = "gen_".$data['title'] . "_" . Str::random(15) . '.'.$image->extension();
             $image->storeAs('res/knihy/', $imageName,'uploads');
             $book->photos()->create([
                 'filename' => $imageName,
@@ -118,14 +121,14 @@ class ProductController extends Controller
     private function update($data, $id){
         $validate = request()->validate([
             'title' => ['required', 'max:255'],
-            'isbn' => ['required', 'max:13','min:10','regex:/^[0-9]+$/'],
+            'isbn' => ['nullable', 'max:13','min:10','regex:/^[0-9]+$/'],
             'description' => ['required', 'max:2048'],
-            'price' => ['required', 'numeric'],
-            'type' => ['required'],
-            'genre' => ['required'],
-            'language' => ['required'],
-            'authors' => ['required', 'regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
-            'pages' => ['required', 'numeric'],
+            'price' => ['nullable', 'numeric'],
+            'type' => [],
+            'genre' => [],
+            'language' => [],
+            'authors' => ['nullable', 'regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
+            'pages' => ['nullable', 'numeric'],
             'cover' => 'mimes:jpeg,jpg,png',
             'images.*' => 'mimes:jpeg,jpg,png'
         ]);
@@ -133,12 +136,12 @@ class ProductController extends Controller
         $book = Book::findorFail($id);
         $book->update([
             'title' => $data['title'],
-            'isbn' => $data['isbn'],
+            'isbn' => $data['isbn'] ?? $book->isbn,
             'description' => $data['description'],
-            'price' => $data['price'],
-            'type' => $data['type'],
-            'language' => $data['language'],
-            'page_count' => $data['pages'],
+            'price' => $data['price'] ?? $book->price,
+            'type' => $data['type'] ?? $book->type,
+            'language' => $data['language'] ?? $book->language,
+            'page_count' => $data['pages'] ?? $book->page_count,
         ]);
 
         $book->genre()->associate($data['genre']);
@@ -146,12 +149,12 @@ class ProductController extends Controller
         $authors = explode(';',$data['authors']);
         $book->authors()->detach();
         foreach($authors as $author){
+            if(empty($author)) continue;
             $authorName = explode(' ',$author);
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
-
-            if(Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->exists())
-                $author = Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->first();
+            if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
+                $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->attach($author);
@@ -160,7 +163,7 @@ class ProductController extends Controller
         if(request()->file('cover') != null){
             $book->photos()->first()->delete();
 
-            $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
+            $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
             request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
             $book->photos()->create([

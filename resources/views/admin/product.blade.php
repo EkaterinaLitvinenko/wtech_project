@@ -32,11 +32,11 @@
                 </div>
                 <div class="form-group col-12">
                     <label for="adm-product-author" re>Autor:</label>
-                    <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... " required>
+                    <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... ">
                 </div>
                 <div class="form-group col-12">
                   <label for="adm-product-author" re>ISBN:</label>
-                  <input type="text" class="form-control" id="adm-product-isbn" name="isbn" placeholder="9788082071552" required>
+                  <input type="text" class="form-control" id="adm-product-isbn" name="isbn" placeholder="9788082071552">
                 </div>
                 <div class="form-group col-12">
                     <label for="adm-product-description">Popis*:</label>
@@ -45,7 +45,7 @@
                 <div class="form-group col-12">
                     <label for="adm-product-price" >Cena:</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="adm-product-price" name="price" placeholder="19.99" min="0.1" step="0.01" required>
+                        <input type="number" class="form-control" id="adm-product-price" name="price" placeholder="19.99" min="0.1" step="0.01">
                         <div class="input-group-append">
                             <span class="input-group-text">&euro;</span>
                         </div>
@@ -54,7 +54,7 @@
                  <fieldset class="form-group col-xl-6 col-sm-12">
                     <legend for="type">Typ:</legend>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" required>
+                      <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana">
                       <label class="form-check-label" for="brozovana">Brožovaná väzba</label>
                     </div>
                     <div class="form-check">
@@ -73,7 +73,7 @@
                   <fieldset class="col-xl-6 col-sm-12">
                     <legend for="languages">Jazyky:</legend>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" required>
+                      <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky">
                       <label class="form-check-label" for="slovensky">Slovenský</label>
                     </div>
                     <div class="form-check">
@@ -83,7 +83,7 @@
                   </fieldset>
                 <div class="form-group col-xl-6 col-sm-12">
                     <label for="adm-product-genre">Žáner:</label>
-                    <select class="form-control" id="adm-product-genre" name="genre" required>
+                    <select class="form-control" id="adm-product-genre" name="genre">
                         <option selected disabled value="">---</option>
                         @foreach($genres as $genre)
                           <option value="{{$genre->id}}">{{$genre->name}}</option>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="form-group col-xl-6 col-sm-12">
                     <label for="productPages">Počet strán:</label>
-                    <input type="number" class="form-control" id="productPages" name="pages" placeholder="199" min="0" required>
+                    <input type="number" class="form-control" id="productPages" name="pages" placeholder="199" min="0">
                 </div>
 
                 <label for="productCover" class="col-sm-4 col-form-label">Pridať obálku*:</label>

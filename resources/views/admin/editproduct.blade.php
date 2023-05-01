@@ -34,11 +34,11 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="adm-product-author" re>Autor:</label>
-                        <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... " value="{{ $authors }}" required>
+                        <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... " value="{{ $authors }}" >
                     </div>
                     <div class="form-group col-12">
                     <label for="adm-product-author" re>ISBN:</label>
-                    <input type="text" class="form-control" id="adm-product-isbn" name="isbn" placeholder="9788082071552" value="{{ $book->isbn }}" required>
+                    <input type="text" class="form-control" id="adm-product-isbn" name="isbn" placeholder="9788082071552" value="{{ $book->isbn }}" >
                     </div>
                     <div class="form-group col-12">
                         <label for="adm-product-description">Popis*:</label>
@@ -47,7 +47,7 @@
                     <div class="form-group col-12">
                         <label for="adm-product-price" >Cena:</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="adm-product-price" name="price" placeholder="19.99" min="0.1" step="0.01" value="{{ $book->price }}" required>
+                            <input type="number" class="form-control" id="adm-product-price" name="price" placeholder="19.99" min="0.0" step="0.01" value="{{ $book->price }}" >
                             <div class="input-group-append">
                                 <span class="input-group-text">&euro;</span>
                             </div>
@@ -57,9 +57,9 @@
                         <legend for="type">Typ:</legend>
                         <div class="form-check">
                             @if($book->type == 'brozovana')
-                                <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" checked required>
+                                <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" checked >
                             @else
-                                <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" required>
+                                <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" >
                             @endif
                             <label class="form-check-label" for="brozovana">Brožovaná väzba</label>
                         </div>
@@ -92,9 +92,9 @@
                         <legend for="languages">Jazyky:</legend>
                         <div class="form-check">
                             @if($book->language == 'slovensky')
-                                <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" checked required>
+                                <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" checked >
                             @else
-                                <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" required>
+                                <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" >
                             @endif
                             <label class="form-check-label" for="slovensky">Slovenský</label>
                         </div>
@@ -109,7 +109,7 @@
                     </fieldset>
                     <div class="form-group col-xl-6 col-sm-12">
                         <label for="adm-product-genre">Žáner:</label>
-                        <select class="form-control" id="adm-product-genre" name="genre" required>
+                        <select class="form-control" id="adm-product-genre" name="genre" >
                             <option selected disabled value="">---</option>
                             @foreach($genres as $genre)
                                 @if($book->genre == $genre)
@@ -122,7 +122,7 @@
                     </div>
                     <div class="form-group col-xl-6 col-sm-12">
                         <label for="productPages">Počet strán:</label>
-                        <input type="number" class="form-control" id="productPages" name="pages" placeholder="199" min="0" value="{{ $book->page_count }}" required>
+                        <input type="number" class="form-control" id="productPages" name="pages" placeholder="199" min="0" value="{{ $book->page_count }}" >
                     </div>
 
                     <label for="productCover" class="col-sm-4 col-form-label">Pridať obálku*:</label>
