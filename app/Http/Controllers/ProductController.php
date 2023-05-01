@@ -18,7 +18,7 @@ class ProductController extends Controller
     }
     public function showCreateForm()
     {
-        return view('admin.product',['genres' => Genre::all()]);
+        return view('admin.editproduct',['genres' => Genre::all()]);
     }
 
     public function showEditForm($id)
@@ -26,9 +26,9 @@ class ProductController extends Controller
         $book = Book::findorFail($id);
         $authors = '';
         foreach ($book->authors as $author) {
-            $authors = $authors . $author->first_name . ' ' . $author->last_name . ', ';
+            $authors = $authors . $author->first_name . ' ' . $author->last_name . '; ';
         }
-        $authors = rtrim($authors,', ');
+        $authors = rtrim($authors,'; ');
 
         $filenames = [];
         $photosF = $book->photos->where('is_cover',false);
@@ -87,15 +87,15 @@ class ProductController extends Controller
             $authorName = explode(' ',$author);
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
-            if(Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->exists())
-                $author = Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->first();
+            if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
+                $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->attach($author);
 
         }
 
-        $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
+        $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
         $book->photos()->create([
@@ -104,7 +104,7 @@ class ProductController extends Controller
         ]);
 
         foreach(request()->file('images') as $image){
-            $imageName = "gen_".$data['title'] . "_" . Str::random(8) . '.'.$image->extension();
+            $imageName = "gen_".$data['title'] . "_" . Str::random(15) . '.'.$image->extension();
             $image->storeAs('res/knihy/', $imageName,'uploads');
             $book->photos()->create([
                 'filename' => $imageName,
@@ -150,8 +150,8 @@ class ProductController extends Controller
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
 
-            if(Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->exists())
-                $author = Author::where('first_name','ILIKE','%'.$authorName.'%')->where('last_name','ILIKE','%'.$last.'%')->first();
+            if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
+                $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->attach($author);
@@ -160,7 +160,7 @@ class ProductController extends Controller
         if(request()->file('cover') != null){
             $book->photos()->first()->delete();
 
-            $coverName = "gen_" . $data['title'] . "_" . Str::random(8) . '.'.request()->file('cover')->extension();
+            $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
             request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
             $book->photos()->create([
