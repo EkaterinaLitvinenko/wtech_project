@@ -1,7 +1,12 @@
 @extends('layouts.adminLayout')
 
 @section('head-content')
+@isset($book)
 <title>Upraviť produkt</title>
+@endisset
+@empty($book)
+<title>Pridať produkt</title>
+@endempty
 <link rel="stylesheet" href="{{asset('./styles/adm_product.css')}}">
 @endsection
 
@@ -14,7 +19,7 @@
             @isset($book)
             <h3 class="mb-3">Upraviť produkt</h3>
             @endisset
-            @empty($record)
+            @empty($book)
             <h3 class="mb-3">Pridať produkt</h3>
             @endempty
 
