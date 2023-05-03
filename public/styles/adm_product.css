@@ -118,4 +118,8 @@ legend, label {
     width: 15px;
     height: 15px;
 }
-
+#adm-product-description~p{
+    font-size: small;
+    text-align: end;
+    color:#555;
+}

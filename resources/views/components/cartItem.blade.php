@@ -17,7 +17,7 @@
                 min="1"
                 value="{{$book->book->pivot->quantity}}"
                 id="book-{{$book->book->id}}"
-                onchange="updateAmount('{{URL::to('/')}}',{{$book->book->pivot->cart_id}},{{$book->book->id}},this.value)"
+                onchange="updateAmount('{{URL::to('/')}}',{{$book->book->id}},this.value)"
                 >
             <div class="input-group-prepend">
                 <button class="btn" title="pridať produkt">+</button>

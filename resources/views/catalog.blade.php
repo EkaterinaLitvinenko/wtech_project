@@ -109,16 +109,16 @@
             <nav id="order-by">
                     <ul>
                       <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'novinky', 'page_title' => $page_title]) }}">Novinky</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'novinky']) }}">Novinky</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'bestsellers', 'page_title' => $page_title]) }}">Bestsellery</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'bestsellers']) }}">Bestsellery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'low-to-high', 'page_title' => $page_title]) }}">Najlacnejšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'low-to-high']) }}">Najlacnejšie</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'high-to-low', 'page_title' => $page_title]) }}">Najdrahšie</a>
+                        <a class="nav-link" href="{{ route('catalog', ['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => 'high-to-low']) }}">Najdrahšie</a>
                       </li>
                     </ul>
             </nav>
@@ -137,7 +137,7 @@
             <!--paging-->
             @if(!empty($books))
             <nav class="d-flex justify-content-center">
-                {!! $booksQ->appends(['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort, 'page_title' => $page_title])->links() !!}
+                {!! $booksQ->appends(['type' => $type, 'q' => $q, 'genre' => $genre, 'lang' => $lang, 'pages' => $pages, 'sort' => $sort])->links() !!}
             </nav>
             @endif
 

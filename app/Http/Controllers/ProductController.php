@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Genre;
 use App\Models\Author;
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -186,7 +188,9 @@ class ProductController extends Controller
         }
 
         if(request()->file('cover') != null){
-            $book->photos()->first()->delete();
+            $cover= $book->photos()->where('is_cover',true)->first();
+            Storage::disk('uploads')->delete('res/knihy/'.$cover->filename);
+            $cover->delete();
 
             $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
             request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
@@ -214,15 +218,24 @@ class ProductController extends Controller
                 Storage::disk('uploads')->delete('res/knihy/'.$image);
             }
         }
-
+        $book->updated_at = Carbon::now("Europe/Budapest")->toDateTimeString();
         $book->save();
         return redirect('/admin/list');
     }
 
     private function delete($id){
         $book = Book::findorFail($id);
+        $authors = $book->authors;
         $book->authors()->detach();
+        foreach($authors as $author){
+            if($author->books()->count() == 0)
+                $author->delete();
+        }
+        foreach($book->photos as $photo){
+            Storage::disk('uploads')->delete('res/knihy/'.$photo->filename);
+        }
         $book->photos()->delete();
+
         $book->delete();
         return redirect('/admin/list');
     }

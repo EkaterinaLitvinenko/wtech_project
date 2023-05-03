@@ -1,58 +1,23 @@
-const dropzone = document.getElementById("dropzone");
-const fileInput = document.getElementById("file-input");
-const previewArea = document.getElementById("preview-container");
-
+checkboxes = document.querySelectorAll("input[name^=delete]");
+Array.from(checkboxes).forEach((element)=>{
+    element.addEventListener('change', (e)=>{
+        if(e.target.checked && checkboxes.length == document.querySelectorAll("input[name^=delete]:checked").length)
+            e.target.checked = false;
+    })
+})
 const dialogClose = document.getElementById("dialog-close");
+if(dialogClose)
+  dialogClose.addEventListener("click", () => {
+    const dialog = document.getElementById("dialog");
+    dialog.classList.add("hide");
+  });
 
-dialogClose.addEventListener("click", () => {
-  const dialog = document.getElementById("dialog");
-  dialog.classList.add("hide");
+const textArea = document.getElementById("adm-product-description");
+
+textArea.addEventListener("input", () => {
+  if (textArea.value.length > 2048) {
+    textArea.value = textArea.value.substring(0, 2048);
+  }
+  const textAreaLength = document.getElementById("adm-product-description-length");
+  textAreaLength.innerText = textArea.value.length;
 });
-
-fileInput.addEventListener("change", handleFileSelect);
-dropzone.addEventListener("dragover", handleDragOver);
-dropzone.addEventListener("dragleave", handleDragLeave);
-dropzone.addEventListener("drop", handleFileSelect);
-
-function handleFileSelect(evt) {
-  evt.preventDefault();
-
-  let files;
-
-  if (evt.type === "change") {
-    files = evt.target.files;
-  } else if (evt.type === "drop") {
-    files = evt.dataTransfer.files;
-  }
-
-  for (let i = 0, f; (f = files[i]); i++) {
-    if (!f.type.match("image.*")) {
-      continue;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = (function (theFile) {
-      return function (e) {
-        const img = document.createElement("img");
-        img.setAttribute("class", "img-thumbnail");
-        img.setAttribute("src", e.target.result);
-        img.setAttribute("alt", theFile.name);
-
-        previewArea.appendChild(img);
-      };
-    })(f);
-
-    reader.readAsDataURL(f);
-  }
-}
-
-function handleDragOver(evt) {
-  evt.preventDefault();
-  dropzone.classList.add("dragover");
-}
-
-function handleDragLeave(evt) {
-  evt.preventDefault();
-  dropzone.classList.remove("dragover");
-}

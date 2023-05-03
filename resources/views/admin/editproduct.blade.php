@@ -54,6 +54,7 @@
                     <div class="form-group col-12">
                         <label for="adm-product-description">Popis*:</label>
                         <textarea class="form-control" id="adm-product-description" name="description" placeholder="Text" required>{{ $book->description ?? '' }}</textarea>
+                        <p><span id="adm-product-description-length">0</span>/2048</p>
                     </div>
                     <div class="form-group col-12">
                         <label for="adm-product-price" >Cena:</label>
@@ -109,14 +110,14 @@
                     </div>
 
                     <label for="productCover" class="col-sm-4 col-form-label">Pridať obálku*:</label>
-                    <input id="productCover" class="form-control" type="file" name='cover' accept="image/png, image/jpeg">
+                    <input id="productCover" class="form-control" type="file" name='cover' accept="image/png, image/jpeg" @required(empty($book))>
                     @isset($book)
                     <div class="col-12 text-center">
                         <img src="{{ asset('res/knihy/' . $cover) }}" class="edit-cover" alt="Obálka knihy: {{$book->title}}">
                     </div>
                     @endisset
                     <label for="productImage" class="col-sm-4 col-form-label">Pridať obrázky*:</label>
-                    <input id="productImage" class="form-control" type="file" name='images[]' accept="image/png, image/jpeg" multiple>
+                    <input id="productImage" class="form-control" type="file" name='images[]' accept="image/png, image/jpeg" multiple @required(empty($book))>
                     @isset($book)
                     <div class="col-12 text-center">
                         @foreach($filenames as $photo)

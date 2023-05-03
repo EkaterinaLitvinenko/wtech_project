@@ -30,6 +30,7 @@ Route::get("/kniha/{id}", [CatalogController::class, 'show']);
 Route::get('/cart', [CartController::class,'show']);
 Route::post('/cart/handle',[CartController::class,'handle']);
 Route::post('/cart/add',[CartController::class,'addProduct']);
+Route::put('/cart/change/{id}/to/{value}', [CartController::class,'update']);
 
 Route::get('/order/delivery',[OrderController::class,'showDelivery']);
 Route::get('/order/payment',[OrderController::class,'showPayment']);

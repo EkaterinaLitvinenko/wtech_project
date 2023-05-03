@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\CartController;
+use App\Models\Cart;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+
+
 
 class LoginController extends Controller
 {
@@ -33,9 +37,11 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-
-        $request->session()->forget('cart_id');
         $request->authenticate();
+
+        //$request->session()->forget('cart_id');
+        CartController::mergeCarts(auth()->user());
+        
         $request->session()->regenerate();
 
         return redirect('/');

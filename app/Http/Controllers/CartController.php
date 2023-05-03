@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Models\Book;
@@ -26,17 +27,34 @@ class CartController extends Controller
         return $cart;
     }
 
-    public function update(Request $request,int $c_id, int $id,int $value){
-        Cart::find($c_id)->books()->find($id)->pivot->update(["quantity"=>$value]);
-        return ['ok'];
+    public static function mergeCarts($user){
+        $cart = Cart::find(session('cart_id'));
+        $user_cart = $user->cart()->firstOrCreate();
+        foreach ($cart->books as $book){
+            if($user_cart->books()->where('book_id',$book->id)->exists()){
+                $prevAmount= $user_cart->books()->find($book->id)->pivot->quantity;
+                $user_cart->books()->updateExistingPivot($book->id,[
+                    'quantity'=>$book->pivot->quantity+$prevAmount,
+                    'updated_at'=>Carbon::now("Europe/Budapest")->toDateTimeString(),
+                ]);
+
+                $book->pivot->delete();
+            }else{
+                $book->pivot->update(['cart_id'=>$user_cart->id,'updated_at'=>Carbon::now("Europe/Budapest")->toDateTimeString()]);
+            }
+        }
+        $user_cart->books()->syncWithoutDetaching($cart->books);
+        $cart->delete();
+        session(['cart_id'=> $user_cart->id]);
     }
 
-    private function delete(Request $request,int $c_id, int $id){
-        Cart::find($c_id)->books->detach($id);
-        return ['ok'];
+    public function update(Request $request,int $id,int $value){
+        Cart::find(session('cart_id'))->books()->find($id)->pivot->update(["quantity"=>$value,'updated_at'=>Carbon::now("Europe/Budapest")->toDateTimeString()]);
+        return ['success'=>true];
     }
+
     public function show(Request $request){
-        $cart =  CartController::getCart()->books;
+        $cart =  CartController::getCart()->books->sortBy('title');
         $cart_books = [];
 
         foreach($cart as $book){
@@ -75,7 +93,8 @@ class CartController extends Controller
         if($cart->books()->where('book_id',$bookId)->exists()){
             $prevAmount= $cart->books()->find($bookId)->pivot->quantity;
             $cart->books()->updateExistingPivot($bookId,[
-                'quantity'=>$amount+$prevAmount
+                'quantity'=>$amount+$prevAmount,
+                'updated_at'=>Carbon::now("Europe/Budapest")->toDateTimeString()
             ]);
         }else{
             $cart->books()->attach(Book::find($bookId),['quantity'=>$amount]);

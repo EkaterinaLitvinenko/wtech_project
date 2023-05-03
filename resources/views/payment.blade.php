@@ -29,7 +29,7 @@
     <article>
         <h1>Spôsob doručenia</h1>
         <p>@switch($orderDelivery->delivery)
-            @case('osobne')
+            @case('osobny')
             Osobny odber na predajni
                 @break
             @case('postou')

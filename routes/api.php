@@ -18,7 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::put('/cart/{c_id}/change/{id}/to/{value}', [CartController::class,'update']);
-
-Route::delete('/cart/{c_id}/delete/{id}', [CartController::class,'delete']);
