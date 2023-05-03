@@ -44,10 +44,6 @@ class CatalogController extends Controller {
         if($genre) {
             $genres = explode(",", $genre);
             $books = $books->whereIn('genre_id', $genres);
-
-            if (strpos($genre, ',') === false) {
-                $page_title = "Žáner " . $genre;
-            }
         }
 
         //filtrovanie podla jazyka
@@ -77,7 +73,7 @@ class CatalogController extends Controller {
             $books->orderBy('price', "desc");
         } elseif ($sort === 'low-to-high') {
             $books->orderBy('price');
-        } elseif ($sort === 'novinky') {
+        } else {
             $books->orderBy('created_at');
         }
 

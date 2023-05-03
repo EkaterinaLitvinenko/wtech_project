@@ -5,16 +5,32 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Genre;
 use App\Models\Author;
-use App\Models\Photo;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use SebastianBergmann\Environment\Console;
 
 class ProductController extends Controller
 {
     public function index(){
-        return view('admin.productlist');
+        $books = Book::all();
+
+        $books_transform = [];
+        foreach($books as $book){
+            $author_str = '';
+            foreach ($book->authors as $author) {
+                $author_str = $author_str . $author->first_name . ' ' . $author->last_name . ', ';
+            }
+            $author_str=rtrim($author_str,', ');
+            $image = config('constants.IMAGE_DIR') . $book->photos->where('is_cover', true)->first()->filename;
+
+            array_push($books_transform, (object)[
+                "book" => $book,
+                "authors" => $author_str,
+                "image" => $image,
+            ]);
+        }
+        //dd($books_transform);
+        return view('admin.productlist', ['books' => $books_transform]);
     }
     public function showCreateForm()
     {

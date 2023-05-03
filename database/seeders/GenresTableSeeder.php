@@ -23,8 +23,8 @@ class GenresTableSeeder extends Seeder
             ['name' => 'PreDeti', 'color' => '#B3F4FF'],
             ['name' => 'Romantický', 'color' => '#FF91B2'],
             ['name' => 'Sci-fi', 'color' => '#90A9FF'],
-            ['name' => 'TrilerAHoror', 'color' => '#ADADAD'],
-            ['name' => 'YoungAdult', 'color' => '#B2D19B'],
+            ['name' => 'Triler A Horor', 'color' => '#ADADAD'],
+            ['name' => 'Young Adult', 'color' => '#B2D19B'],
         ]);
     }
 }
