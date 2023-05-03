@@ -203,6 +203,10 @@
                 ". . d d";
     }
 
+    .to-cart {
+        justify-self: end;
+    }
+
     .do-kosika {
          justify-self: end;
     }
