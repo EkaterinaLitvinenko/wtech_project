@@ -3,22 +3,36 @@
     margin: auto;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+#back-btn {
+    padding: 5px 20px;
+    background-color: transparent;
+    text-align: center;
+    margin: 20px 0;
 }
 
-a {
-    text-decoration: none;
+#back-btn:hover {
+    color: rgb(128, 187, 255);
 }
 
-.btn {
-    margin: 30px auto;
+#back-btn::before {
+    content: '\f060';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .btn:hover {
     color: #fff;
     background-color: rgb(95, 95, 95);
+}
+
+#btn-save {
+    margin: 20px 0;
+}
+
+#btn-save:hover {
+    background-color: #82B45C;
 }
 
 legend, label {

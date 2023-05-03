@@ -12,7 +12,19 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        $books = Book::all();
+        $books = Book::query();
+
+        $q = request("q");
+        if ($q) {
+            $books = $books->whereHas('authors', function ($query) use ($q) {
+                $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
+                ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%']);
+            })
+            ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
+            ->distinct();
+        }
+
+        $books = $books->paginate(6);
 
         $books_transform = [];
         foreach($books as $book){
@@ -29,8 +41,8 @@ class ProductController extends Controller
                 "image" => $image,
             ]);
         }
-        //dd($books_transform);
-        return view('admin.productlist', ['books' => $books_transform]);
+
+        return view('admin.productlist', ['booksQ' => $books, 'books' => $books_transform, 'q' => $q]);
     }
     public function showCreateForm()
     {

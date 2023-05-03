@@ -79,7 +79,7 @@
 }
 
 .edit-btn > span:hover {
-    background-color: #82B45C;
+    background-color: rgb(128, 187, 255);;
 }
 
 #add-btn {
@@ -89,8 +89,7 @@
 
 #add-btn:hover {
     text-align: center;
-    color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+    color: rgb(255, 255, 255);
 }
 
 #add-btn::before {

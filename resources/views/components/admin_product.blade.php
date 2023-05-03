@@ -7,7 +7,7 @@
     <p class="book-genre">{{$book->book->genre->name}}</p>
     <p class="book-price">{{$book->book->price}}</p>
     <div class="action-btn">
-        <a href="#" class="edit-btn"><span class="fa-solid fa-pen-to-square"></span></a>
+        <a href="/admin/edit/{{$book->book->id}}" class="edit-btn"><span class="fa-solid fa-pen-to-square"></span></a>
         <button
             class="btn cart-delete"
             title="odstranit z košika"

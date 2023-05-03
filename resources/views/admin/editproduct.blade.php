@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row justify-content-center">
         <div class="col-sm-12 col-lg-6">
-            <a href="#" class="btn"><i class="fa-solid fa-chevron-left"></i> Späť do zoznamu</a>
+            <a href="/admin/list" class="btn" id="back-btn">Späť do zoznamu</a>
 
             @isset($book)
             <h3 class="mb-3">Upraviť produkt</h3>
@@ -129,7 +129,8 @@
 
                 <div class="d-flex justify-content-end">
                     <button type="submit"
-                            class="btn btn-secondary"
+                            id="btn-save"
+                            class="btn"
                             name='action'
                             title="odstranit z košika"
                             @isset($book)
