@@ -64,17 +64,31 @@ class LoginController extends Controller
 
     public function adminCheck(Request $request)
     {
+
+         $request->validate([
+            'email' => ['required', 'string', 'email', function ($attribute, $value, $fail) {
+                if (!User::where('email', $value)->exists()) {
+                    return $fail(__('E-mail je nesprávny'));
+                }
+            }],
+
+            'password' => ['required', 'string', function ($attribute, $value, $fail) use ($request) {
+                if (!Auth::attempt(['email' => $request->email, 'password' => $value], true)) {
+                    return $fail(__('Heslo je nesprávne'));
+                }
+            },],
+        ]);
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             if (Auth::user()->role === 'admin') {
                 return redirect('/admin/list');
+            } else {
+                Auth::logout();
+                return redirect()->back()->withErrors(['email' => 'Nemáte oprávnenie prihlásiť sa do administrátorského rozhrania.']);
             }
         }
-
-        return redirect('/admin/login')->withErrors([
-            'email' => 'Invalid credentials.',
-        ]);
     }
 
 

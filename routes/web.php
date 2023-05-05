@@ -39,10 +39,11 @@ Route::post('/order/handle',[OrderController::class,'handle']);
 Route::get('/admin/login', [LoginController::class, 'adminIndex'])->name('admin.login');
 Route::post('/admin/login', [LoginController::class, 'adminCheck'])->name('admin.login');
 
-Route::get('/admin/list',[ProductController::class,'index']);
-Route::get('/admin/add',[ProductController::class,'showCreateForm']);
-Route::post('/admin/handle',[ProductController::class,'handle']);
-Route::post('/admin/edit/handle',[ProductController::class,'handle']);
-Route::get('/admin/edit/{id}',[ProductController::class,'showEditForm']);
-
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/list', [ProductController::class, 'index']);
+    Route::get('/admin/add', [ProductController::class, 'showCreateForm']);
+    Route::post('/admin/handle', [ProductController::class, 'handle']);
+    Route::post('/admin/edit/handle', [ProductController::class, 'handle']);
+    Route::get('/admin/edit/{id}', [ProductController::class, 'showEditForm']);
+});
 require __DIR__.'/auth.php';
