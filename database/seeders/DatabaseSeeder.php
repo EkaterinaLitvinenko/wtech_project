@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
             AuthorsTableSeeder::class,
             BooksTableSeeder::class,
             AuthorsBooksSeeder::class,
-            PhotoSeeder::class
-        
+            PhotoSeeder::class,
+            AdminUserSeeder::class
+
         ]);
         //\App\Models\User::factory(10)->create();
 

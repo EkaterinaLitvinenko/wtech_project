@@ -8,7 +8,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\OrderController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +36,8 @@ Route::get('/order/payment',[OrderController::class,'showPayment']);
 Route::get('/order/{id}/completed',[OrderController::class,'showComplete']);
 Route::post('/order/handle',[OrderController::class,'handle']);
 
+Route::get('/admin/login', [LoginController::class, 'adminIndex'])->name('admin.login');
+Route::post('/admin/login', [LoginController::class, 'adminCheck'])->name('admin.login');
 
 Route::get('/admin/list',[ProductController::class,'index']);
 Route::get('/admin/add',[ProductController::class,'showCreateForm']);

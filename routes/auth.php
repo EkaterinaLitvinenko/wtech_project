@@ -8,6 +8,9 @@ Route::middleware('guest')->group(function () {
   Route::get('/login', [LoginController::class, 'index'])->name('login');
   Route::post('/login', [LoginController::class, 'check'])->name('login');
 
+  Route::get('/admin/login', [LoginController::class, 'adminIndex'])->name('admin.login');
+  Route::post('/admin/login', [LoginController::class, 'adminCheck'])->name('admin.login');
+
   Route::get('/register', [RegistrationController::class, 'index'])->name('register');
   Route::post('/register', [RegistrationController::class, 'register'])->name('register');
 });
