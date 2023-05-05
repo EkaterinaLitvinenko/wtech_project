@@ -20,6 +20,11 @@ class LoginController extends Controller
         return view('login');
     }
 
+     public function adminIndex()
+    {
+        return view('admin.login');
+    }
+
     public function check(LoginRequest $request)
     {
         $request->validate([
@@ -39,27 +44,55 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         $request->authenticate();
 
+        if ($request->session()->has('cart_id')) {
+            $cart_id = $request->session()->get('cart_id');
+            $cart = Cart::find($cart_id);
+        } else {
+            $cart = new Cart();
+            $cart->save();
+            $cart_id = $cart->id;
+            $request->session()->put('cart_id', $cart_id);
+        }
+
         //$request->session()->forget('cart_id');
         CartController::mergeCarts(auth()->user());
-        
+
         $request->session()->regenerate();
 
         return redirect('/');
+    }
+
+    public function adminCheck(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            if (Auth::user()->role === 'admin') {
+                return redirect('/admin/list');
+            }
+        }
+
+        return redirect('/admin/login')->withErrors([
+            'email' => 'Invalid credentials.',
+        ]);
     }
 
 
     public function logout(Request $request)
     {
         Log::info('LoginController@logout');
+        $role = Auth::user()->role;
         Auth::guard('web')->logout();
 
-        $request->session()->forget('cart_id');
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        if ($role == 'admin') {
+            return redirect('admin/login');
+        } else if ($role == 'user'){
+            $request->session()->forget('cart_id');
+            return redirect('/');
+        }
     }
-
 
 }
