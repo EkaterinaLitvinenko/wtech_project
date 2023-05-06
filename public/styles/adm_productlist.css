@@ -119,7 +119,46 @@
     }
 }
 
-@media (max-width: 440px) {
+
+@media (max-width: 768px) {
+    .product-container hgroup h3 {
+        margin-bottom: 15px;
+    }
+  
+    .pagination li {
+      display: none;
+    }
+  
+    .pagination li:first-child,
+    .pagination li:last-child,
+    .pagination li.disabled,
+    .pagination li.active,
+    .pagination li.active + li
+     {
+      display: list-item;
+    }
+  
+  }
+
+
+@media (max-width: 500px) {
+
+  .pagination li.disabled,
+  .pagination li.active + li {
+    display: none;
+  }
+}
+@media (max-width: 700px){
+    #search-form {
+        height: 120px;
+        top: 20px;
+        transform: translateY(40px);
+    }
+}
+
+
+
+@media (max-width: 480px) {
     .book-cover {
         display: none;
     }
@@ -155,6 +194,10 @@
         padding: 0;
     }
 
+    #search-form {
+        height: 65px;
+        top: 20px;
+        transform: translateY(40px);
+    }
+
 }
-
-
