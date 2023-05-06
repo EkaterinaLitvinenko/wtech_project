@@ -33,7 +33,7 @@
                       <div class="input-group-prepend">
                           <a href="#" id="search-go-back" class="input-group-text"><span class="fa-solid fa-arrow-left" ></span></a>
                       </div>
-                      <input class="form-control" type="search" placeholder="Zadajte titul alebo autora..." aria-label="Search" id="search-input" name="q">
+                      <input class="form-control" type="search" placeholder="Zadajte titul, autora, ISBN..." aria-label="Search" id="search-input" name="q">
                       <div class="input-group-append">
                           <button class="btn btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass" title="search button"></span></button>
                       </div>

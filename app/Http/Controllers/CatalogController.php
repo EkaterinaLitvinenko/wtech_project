@@ -79,14 +79,19 @@ class CatalogController extends Controller {
 
         $q = request("q");
         if ($q) {
-            $books = $books->whereHas('authors', function ($query) use ($q) {
-                $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
-                ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%']);
-            })
-            ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
-            ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($q) . '%'])
-            ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($q) . '%'])
-            ->distinct();
+            $splitedQuery = array_filter(explode(' ', $q));
+            foreach($splitedQuery as $search) {
+                $books = $books->where(function ($query) use ($search) {
+                    $query->whereHas('authors', function ($query) use ($search) {
+                        $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($search) . '%'])
+                            ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($search) . '%']);
+                    })
+                        ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($search) . '%'])
+                        ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($search) . '%'])
+                        ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($search) . '%']);
+                });
+            };
+            $books = $books->distinct();
 
             $page_title = 'Výsledky pre "' . $q . '"' ;
         }
