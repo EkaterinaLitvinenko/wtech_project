@@ -58,7 +58,6 @@ class ProductController extends Controller
         foreach ($book->authors as $author) {
             $authors = $authors . $author->first_name . ' ' . $author->last_name . '; ';
         }
-        $authors = rtrim($authors,'; ');
 
         $filenames = [];
         $photosF = $book->photos->where('is_cover',false);
@@ -121,8 +120,7 @@ class ProductController extends Controller
                 $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
-            $book->authors()->attach($author);
-
+            $book->authors()->sync([$author->id],false);
         }
 
         $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
@@ -185,12 +183,13 @@ class ProductController extends Controller
                 $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
-            $book->authors()->attach($author);
+            $book->authors()->sync([$author->id],false);
         }
         foreach($oldAuthors as $author){
             if($author->books()->count() == 0)
                 $author->delete();
         }
+
 
         if(request()->file('cover') != null){
             $cover= $book->photos()->where('is_cover',true)->first();
