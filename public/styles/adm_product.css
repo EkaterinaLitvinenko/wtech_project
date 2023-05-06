@@ -130,6 +130,7 @@ legend, label {
     position: absolute;
     z-index: 1;
     max-height: 300px;
+    width: 100%;
     overflow-y: scroll;
 }
 
