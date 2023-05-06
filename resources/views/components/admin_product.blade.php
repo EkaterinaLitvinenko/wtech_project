@@ -9,11 +9,12 @@
     <div class="action-btn">
         <a href="/admin/edit/{{$book->book->id}}" class="edit-btn"><span class="fa-solid fa-pen-to-square"></span></a>
         <button
+            type="button"
             class="btn cart-delete"
             title="odstranit z košika"
-            name="action"
-            value="delete,{{$book->book->id}}"
-            ><span class="fa-solid fa-trash"></span></button>
+            value="{{$book->book->id}}"
+            onclick="openModal(this)"
+        ><span class="fa-solid fa-trash"></span></button>
     </div>
 </article>
 
