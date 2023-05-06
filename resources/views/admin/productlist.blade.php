@@ -26,6 +26,7 @@
 
     <section>
         <form action="/admin/handle/" method="POST">
+        @csrf
         @if(empty($books))
         <p id="no-result">Neboli nájdené žiadne výsledky.</p>
         @else

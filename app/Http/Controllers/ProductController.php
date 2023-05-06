@@ -48,7 +48,7 @@ class ProductController extends Controller
     }
     public function showCreateForm()
     {
-        return view('admin.editproduct',['genres' => Genre::all()]);
+        return view('admin.editproduct',['genres' => Genre::all(), 'authorsAll' => Author::all()->sortBy('last_name')]);
     }
 
     public function showEditForm($id)
@@ -67,7 +67,7 @@ class ProductController extends Controller
         }
         $cover = $book->photos->where('is_cover', true)->first()->filename;
 
-        return view('admin.editproduct',['book' => $book, 'authors' => $authors, "filenames" => $filenames, 'cover' => $cover, 'genres' => Genre::all()]);
+        return view('admin.editproduct',['book' => $book, 'authors' => $authors, "filenames" => $filenames, 'cover' => $cover, 'genres' => Genre::all(), 'authorsAll' => Author::all()->sortBy('last_name')]);
     }
 
     public function handle(Request $request){
@@ -112,9 +112,9 @@ class ProductController extends Controller
         ]);
 
         $book->genre()->associate($data['genre']);
-        $authors = explode(';',$data['authors']);
+        $authors = array_filter(explode(';',$data['authors']));
         foreach($authors as $author){
-            $authorName = explode(' ',$author);
+            $authorName = array_filter(explode(' ',$author));
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
             if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
@@ -173,10 +173,11 @@ class ProductController extends Controller
 
         $book->genre()->associate($data['genre']);
 
-        $authors = explode(';',$data['authors']);
+        $authors = array_filter(explode(';',$data['authors']));
+        $oldAuthors = $book->authors()->get();
         $book->authors()->detach();
         foreach($authors as $author){
-            $authorName = explode(' ',$author);
+            $authorName = array_filter(explode(' ',$author));
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
 
@@ -185,6 +186,10 @@ class ProductController extends Controller
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->attach($author);
+        }
+        foreach($oldAuthors as $author){
+            if($author->books()->count() == 0)
+                $author->delete();
         }
 
         if(request()->file('cover') != null){
