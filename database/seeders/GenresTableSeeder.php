@@ -20,7 +20,7 @@ class GenresTableSeeder extends Seeder
             ['name' => 'Fantasy', 'color' => '#BFAFFF'],
             ['name' => 'Historický', 'color' => '#CFAD92'],
             ['name' => 'Humorný', 'color' => '#FFE08F'],
-            ['name' => 'PreDeti', 'color' => '#B3F4FF'],
+            ['name' => 'Pre Deti', 'color' => '#B3F4FF'],
             ['name' => 'Romantický', 'color' => '#FF91B2'],
             ['name' => 'Sci-fi', 'color' => '#90A9FF'],
             ['name' => 'Triler A Horor', 'color' => '#ADADAD'],

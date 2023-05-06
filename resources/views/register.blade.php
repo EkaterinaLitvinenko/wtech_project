@@ -2,8 +2,8 @@
 
 @section("head-content")
     <link rel="stylesheet" href="{{ asset('styles/register.css')}}">
-    <title>Registrácia</title>      
-    <script src="{{ asset('js/password_input.js')}}" defer></script>  
+    <title>Registrácia</title>
+    <script src="{{ asset('js/password_input.js')}}" defer></script>
 @endsection
 
 
@@ -14,7 +14,7 @@
           <a href="{{ asset('login')}}">Prihlásenie</a>
           <p>Registrácia</p>
         </nav>
-            
+
         <div class="register-container">
             <h1>Registrácia</h1>
         <form action="{{ route('register')}}" method="POST" id="register-form container">
@@ -33,17 +33,20 @@
                           <input class="form-control" type="text" name="last_name" placeholder="Zadajte priezvisko..." required>
                       </div>
                     </div>
-                    <div class="form-group password-container">
-                      <label for="heslo">Heslo</label>
-                      <input class="form-control" type="password" name="password" for="password" id="passwordInput" placeholder="Zadajte heslo..." required>
-                      <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
-                  </div>
+                   <div class="form-group password-container">
+                        <label for="heslo">Heslo</label>
+                        <input class="form-control" type="password" name="password" for="password" id="passwordInput" placeholder="Zadajte heslo..." required>
+                        <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
+                        @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <div class="form-group agreement-row">
                       <div>
                           <input type="checkbox" id="terms" name="terms" required>
                           <label for="terms">Súhlasím s obchodnými podmienkami</label>
                       </div>
-                      <div class> 
+                      <div class>
                           <input type="checkbox" id="consent" name="consent" required>
                           <label for="consent">Súhlasím so spracovaním osobných údajov</label>
                       </div>

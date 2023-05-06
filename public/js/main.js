@@ -7,7 +7,7 @@ document.getElementById('profile').onclick = (e) => {
     e.preventDefault()
     document.getElementById('profile').nextElementSibling.classList.toggle('show')      
 }
-
+if(document.getElementById('search-go-back'))
 document.getElementById('search-go-back').onclick = document.getElementById('open-search-sm').onclick = (e) => {
     e.preventDefault()
     document.getElementById('search-form').classList.toggle('show')
