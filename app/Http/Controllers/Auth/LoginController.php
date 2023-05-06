@@ -30,13 +30,13 @@ class LoginController extends Controller
         $request->validate([
             'email' => ['required', 'string', 'email', function ($attribute, $value, $fail) {
                 if (!User::where('email', $value)->exists()) {
-                    return $fail(__('E-mail nie je zaregistrovaný'));
+                    return $fail(__('E-mail alebo heslo je nesprávne'));
                 }
             }],
 
             'password' => ['required', 'string', function ($attribute, $value, $fail) use ($request) {
                 if (!Auth::attempt(['email' => $request->email, 'password' => $value], true)) {
-                    return $fail(__('Heslo je nesprávne'));
+                    return $fail(__('E-mail alebo heslo je nesprávne'));
                 }
             },],
         ]);

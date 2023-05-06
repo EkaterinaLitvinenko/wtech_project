@@ -105,6 +105,17 @@ class ProductController extends Controller
             'cover' => 'required|mimes:jpeg,jpg,png,JPG,PNG,JPEG',
             'images' => 'required',
             'images.*' => 'mimes:jpeg,jpg,png,JPG,PNG,JPEG'
+        ],[
+            'authors.regex' => 'Zadajte autora vo formáte: Meno Priezvisko; Meno Priezvisko; ...',
+            'images.required' => 'Vyberte aspoň jednu fotku',
+            'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'isbn.regex' => 'ISBN musí obsahovať len čísla',
+            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
+            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
+            'title.max' => 'Názov môže obsahovať najviac 255 znakov',
+
         ]);
 
         $book = Book::create([
@@ -163,6 +174,16 @@ class ProductController extends Controller
             'pages' => ['required', 'numeric'],
             'cover' => 'mimes:jpeg,jpg,png',
             'images.*' => 'mimes:jpeg,jpg,png'
+        ],[
+            'authors.regex' => 'Zadajte autora vo formáte: Meno Priezvisko; Meno Priezvisko; ...',
+            'images.required' => 'Vyberte aspoň jednu fotku',
+            'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'isbn.regex' => 'ISBN musí obsahovať len čísla',
+            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
+            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
+            'title.max' => 'Názov môže obsahovať najviac 255 znakov',
         ]);
 
         $book = Book::findorFail($id);

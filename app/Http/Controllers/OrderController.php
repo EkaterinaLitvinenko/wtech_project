@@ -43,7 +43,13 @@ class OrderController extends Controller
                     'email'=>['email', 'max:255'],
                     'phone'=> ['regex:/^[\+0]{1}[\d ]{7,}$/u'],
                     'postal-code' => ['max:6', 'regex:/([0-9]){3}(\s)?[0-9]{2}/u']
-                ]);
+                ],
+                [
+                    'email' => 'Zadajte platný e-mail',
+                    'phone.regex' => 'Zadajte platné telefónne číslo',
+                    'postal-code' => 'Zadajte platné PSČ',
+                ]
+            );
                 session(["order_delivery"=> (object)[
                     "first_name" => $request->input('first-name'),
                     "last_name" => $request->input('last-name'),

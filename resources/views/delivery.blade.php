@@ -28,11 +28,14 @@
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input class="form-control" type="text" name="email" required>
+                    <input class="form-control" type="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefónne číslo</label>
                     <input class="form-control" type="text" name="phone" required>
+                    @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </fieldset>
             <fieldset>
@@ -45,6 +48,9 @@
                     <div class="col col-4">
                         <label for="postal-code">PSČ</label>
                         <input class="form-control" type="text" name="postal-code" required>
+                        @error('postal-code')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-row">

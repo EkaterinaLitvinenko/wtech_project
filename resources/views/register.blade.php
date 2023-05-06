@@ -22,6 +22,9 @@
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input class="form-control" type="text" name="email" placeholder="Zadajte e-mail..." required>
+                        @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-row">
                       <div class="form-group col">

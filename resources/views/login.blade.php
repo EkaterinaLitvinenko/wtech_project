@@ -20,22 +20,17 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Zadajte e-mail..." required>
-                    @error('email')
-                        <div class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
-                        </div>
-                    @enderror
+                    <input class="form-control" type="email" name="email" placeholder="Zadajte e-mail..." required>
                 </div>
                 <div class="form-group password-container">
                     <label for="heslo">Heslo</label>
-                    <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" id="passwordInput" placeholder="Zadajte heslo..." required>
+                    <input class="form-control @error('email') is-invalid @enderror @error('password') is-invalid @enderror" type="password" name="password" id="passwordInput" placeholder="Zadajte heslo..." required>
                     <span class="far fa-eye-slash" id="show-password" onclick="showPassword(passwordInput)"></span>
-                    @error('password')
+                    @if ($errors->any())
                         <div class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
+                            <strong>{{ $errors->first() }}</strong>
                         </div>
-                    @enderror
+                    @endif
                 </div>
                 <div class="btn-center">
                     <input class="form-submit btn" type="submit" value="Prihlásiť sa">
