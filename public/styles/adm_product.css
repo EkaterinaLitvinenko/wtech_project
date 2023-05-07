@@ -123,3 +123,36 @@ legend, label {
     text-align: end;
     color:#555;
 }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    max-height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.dropdown-content button,
+.dropdown-content input {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content button.hide{
+    display: none;
+}
+
+.dropdown-content input {
+    border-bottom: 1px solid black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

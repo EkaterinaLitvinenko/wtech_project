@@ -21,3 +21,27 @@ textArea.addEventListener("input", () => {
   const textAreaLength = document.getElementById("adm-product-description-length");
   textAreaLength.innerText = textArea.value.length;
 });
+
+
+const selectValue = (button)=>{
+  const select = document.getElementById("adm-product-author");
+  select.value = select.value.substring(0, select.value.lastIndexOf(';') > -1 ? select.value.lastIndexOf(';')+2  : 0);
+  select.value += button.innerText + '; ';
+  select.focus();
+}
+
+
+
+const search = document.getElementById("adm-product-author")
+search.addEventListener("input", () => {
+  search_string = search.value.toLowerCase().split(';');
+  search_string = search_string[search_string.length-1].trim();
+  console.log(search_string);
+  Array.from(document.querySelectorAll(".dropdown-content button")).forEach((element) => {
+    if (element.innerText.toLowerCase().includes(search_string.toLowerCase())) {
+      element.classList.remove("hide");
+    } else {
+      element.classList.add("hide");
+    }
+  });
+})

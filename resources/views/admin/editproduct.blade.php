@@ -44,11 +44,19 @@
                         <input type="text" class="form-control" id="adm-product-name" name="title" placeholder="Názov knihy" value="{{ $book->title ?? '' }}" required>
                     </div>
                     <div class="form-group col-12">
-                        <label for="adm-product-author" re>Autor:</label>
-                        <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... " value="{{ $authors ?? '' }}" required>
+                        <label for="adm-product-author" re>Autor*:</label>
+                        <div class="dropdown">
+                            <input type="text" class="form-control" id="adm-product-author" name="authors" placeholder="J.R.R. Tolkien; Ján Smrek;... " value="{{ $authors ?? '' }}" required autocomplete="off"/>
+                            <div class="dropdown-content" id="adm-product-author-dropdown">
+                                @foreach($authorsAll as $author)
+                                    <button type="button" onclick="selectValue(this)">{{$author->first_name}} {{$author->last_name}}</button>
+                                @endforeach
+                            </div>
+
+                        </div>
                     </div>
                     <div class="form-group col-12">
-                    <label for="adm-product-author" re>ISBN:</label>
+                    <label for="adm-product-author" re>ISBN*:</label>
                     <input type="text" class="form-control" id="adm-product-isbn" name="isbn" placeholder="9788082071552" value="{{ $book->isbn ?? '' }}" required>
                     </div>
                     <div class="form-group col-12">
@@ -57,7 +65,7 @@
                         <p><span id="adm-product-description-length">0</span>/2048</p>
                     </div>
                     <div class="form-group col-12">
-                        <label for="adm-product-price" >Cena:</label>
+                        <label for="adm-product-price" >Cena*:</label>
                         <div class="input-group">
                             <input type="number" class="form-control" id="adm-product-price" name="price" placeholder="19.99" min="0.1" step="0.01" value="{{ $book->price ?? '' }}" required>
                             <div class="input-group-append">
@@ -66,7 +74,7 @@
                         </div>
                     </div>
                     <fieldset class="form-group col-xl-6 col-sm-12">
-                        <legend for="type">Typ:</legend>
+                        <legend for="type">Typ*:</legend>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="type" value="brozovana" id="brozovana" required @checked($book->type ?? '' == 'brozovana')>
                             <label class="form-check-label" for="brozovana">Brožovaná väzba</label>
@@ -85,7 +93,7 @@
                         </div>
                     </fieldset>
                     <fieldset class="col-xl-6 col-sm-12">
-                        <legend for="languages">Jazyky:</legend>
+                        <legend for="languages">Jazyky*:</legend>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="language" value="slovensky" id="slovensky" @checked($book->language ?? ''== 'slovensky') required>
                             <label class="form-check-label" for="slovensky">Slovenský</label>
@@ -96,7 +104,7 @@
                         </div>
                     </fieldset>
                     <div class="form-group col-xl-6 col-sm-12">
-                        <label for="adm-product-genre">Žáner:</label>
+                        <label for="adm-product-genre">Žáner*:</label>
                         <select class="form-control" id="adm-product-genre" name="genre" required>
                             <option selected disabled value="">---</option>
                             @foreach($genres as $genre)
@@ -105,7 +113,7 @@
                         </select>
                     </div>
                     <div class="form-group col-xl-6 col-sm-12">
-                        <label for="productPages">Počet strán:</label>
+                        <label for="productPages">Počet strán*:</label>
                         <input type="number" class="form-control" id="productPages" name="pages" placeholder="199" min="0" value="{{ $book->page_count ?? ''}}" required>
                     </div>
 
@@ -151,7 +159,4 @@
 
 @section('scripts-content')
     <script src="{{asset('js//dragndrop.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection

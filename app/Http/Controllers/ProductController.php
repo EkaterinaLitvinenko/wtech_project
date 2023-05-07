@@ -18,12 +18,19 @@ class ProductController extends Controller
 
         $q = request("q");
         if ($q) {
-            $books = $books->whereHas('authors', function ($query) use ($q) {
-                $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($q) . '%'])
-                ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($q) . '%']);
-            })
-            ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($q) . '%'])
-            ->distinct();
+            $splitedQuery = array_filter(explode(' ', $q));
+            foreach($splitedQuery as $search) {
+                $books = $books->where(function ($query) use ($search) {
+                    $query->whereHas('authors', function ($query) use ($search) {
+                        $query->whereRaw('LOWER(authors.first_name) LIKE ?', ['%' . strtolower($search) . '%'])
+                            ->orWhereRaw('LOWER(authors.last_name) LIKE ?', ['%' . strtolower($search) . '%']);
+                    })
+                        ->orWhereRaw('LOWER(books.title) LIKE ?', ['%' . strtolower($search) . '%'])
+                        ->orWhereRaw('LOWER(books.isbn) LIKE ?', ['%' . strtolower($search) . '%'])
+                        ->orWhereRaw('LOWER(books.description) LIKE ?', ['%' . strtolower($search) . '%']);
+                });
+            };
+            $books = $books->distinct();
         }
 
         $books = $books->paginate(6);
@@ -48,7 +55,7 @@ class ProductController extends Controller
     }
     public function showCreateForm()
     {
-        return view('admin.editproduct',['genres' => Genre::all()]);
+        return view('admin.editproduct',['genres' => Genre::all(), 'authorsAll' => Author::all()->sortBy('last_name')]);
     }
 
     public function showEditForm($id)
@@ -58,7 +65,6 @@ class ProductController extends Controller
         foreach ($book->authors as $author) {
             $authors = $authors . $author->first_name . ' ' . $author->last_name . '; ';
         }
-        $authors = rtrim($authors,'; ');
 
         $filenames = [];
         $photosF = $book->photos->where('is_cover',false);
@@ -67,7 +73,7 @@ class ProductController extends Controller
         }
         $cover = $book->photos->where('is_cover', true)->first()->filename;
 
-        return view('admin.editproduct',['book' => $book, 'authors' => $authors, "filenames" => $filenames, 'cover' => $cover, 'genres' => Genre::all()]);
+        return view('admin.editproduct',['book' => $book, 'authors' => $authors, "filenames" => $filenames, 'cover' => $cover, 'genres' => Genre::all(), 'authorsAll' => Author::all()->sortBy('last_name')]);
     }
 
     public function handle(Request $request){
@@ -99,6 +105,17 @@ class ProductController extends Controller
             'cover' => 'required|mimes:jpeg,jpg,png,JPG,PNG,JPEG',
             'images' => 'required',
             'images.*' => 'mimes:jpeg,jpg,png,JPG,PNG,JPEG'
+        ],[
+            'authors.regex' => 'Zadajte autora vo formáte: Meno Priezvisko; Meno Priezvisko; ...',
+            'images.required' => 'Vyberte aspoň jednu fotku',
+            'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'isbn.regex' => 'ISBN musí obsahovať len čísla',
+            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
+            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
+            'title.max' => 'Názov môže obsahovať najviac 255 znakov',
+
         ]);
 
         $book = Book::create([
@@ -112,17 +129,16 @@ class ProductController extends Controller
         ]);
 
         $book->genre()->associate($data['genre']);
-        $authors = explode(';',$data['authors']);
+        $authors = array_filter(explode(';',$data['authors']));
         foreach($authors as $author){
-            $authorName = explode(' ',$author);
+            $authorName = array_filter(explode(' ',$author));
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
             if(Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->exists())
                 $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
-            $book->authors()->attach($author);
-
+            $book->authors()->sync([$author->id],false);
         }
 
         $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
@@ -158,6 +174,16 @@ class ProductController extends Controller
             'pages' => ['required', 'numeric'],
             'cover' => 'mimes:jpeg,jpg,png',
             'images.*' => 'mimes:jpeg,jpg,png'
+        ],[
+            'authors.regex' => 'Zadajte autora vo formáte: Meno Priezvisko; Meno Priezvisko; ...',
+            'images.required' => 'Vyberte aspoň jednu fotku',
+            'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
+            'isbn.regex' => 'ISBN musí obsahovať len čísla',
+            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
+            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
+            'title.max' => 'Názov môže obsahovať najviac 255 znakov',
         ]);
 
         $book = Book::findorFail($id);
@@ -173,10 +199,11 @@ class ProductController extends Controller
 
         $book->genre()->associate($data['genre']);
 
-        $authors = explode(';',$data['authors']);
+        $authors = array_filter(explode(';',$data['authors']));
+        $oldAuthors = $book->authors()->get();
         $book->authors()->detach();
         foreach($authors as $author){
-            $authorName = explode(' ',$author);
+            $authorName = array_filter(explode(' ',$author));
             $last = array_pop($authorName);
             $authorName = trim(implode(' ',$authorName)," \t\n\r\0\x0B");
 
@@ -184,8 +211,13 @@ class ProductController extends Controller
                 $author = Author::where('first_name','ILIKE',$authorName)->where('last_name','ILIKE',$last)->first();
             else
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
-            $book->authors()->attach($author);
+            $book->authors()->sync([$author->id],false);
         }
+        foreach($oldAuthors as $author){
+            if($author->books()->count() == 0)
+                $author->delete();
+        }
+
 
         if(request()->file('cover') != null){
             $cover= $book->photos()->where('is_cover',true)->first();

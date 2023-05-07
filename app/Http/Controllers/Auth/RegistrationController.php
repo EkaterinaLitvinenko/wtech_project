@@ -30,7 +30,8 @@ class RegistrationController extends Controller
         'terms' => ['required', 'accepted'],
         'consent' => ['required', 'accepted'],
         ],
-        [ 'password.min' => 'Heslo musí mať aspoň 8 znakov',]);
+        [   'email.unique' => 'Užívateľ s týmto e-mailom už existuje',
+            'password.min' => 'Heslo musí mať aspoň 8 znakov',]);
 
         $user = User::create([
             'first_name' => $request->first_name,
