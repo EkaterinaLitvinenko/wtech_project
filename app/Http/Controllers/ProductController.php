@@ -100,7 +100,19 @@ class ProductController extends Controller
             'type' => ['required'],
             'genre' => ['required'],
             'language' => ['required'],
-            'authors' => ['required', 'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/'],
+            'authors' => ['required', 
+                    'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/',
+                    function ($attribute, $value, $fail) {
+                        $authors = array_filter(explode(';', $value));
+                        foreach($authors as $author) {
+                            $authorNames = array_filter(explode(' ',$author));
+                            $lastName = array_pop($authorNames);
+                            $firstName = trim(implode(' ',$authorNames)," \t\n\r\0\x0B");
+                            if (strlen($firstName) > 255 || strlen($lastName) > 255) {
+                                $fail('Priliš dlhé meno alebo priezvisko autora');
+                            }
+                        }
+                    }],
             'pages' => ['required', 'numeric'],
             'cover' => 'required|mimes:jpeg,jpg,png,JPG,PNG,JPEG',
             'images' => 'required',
@@ -173,7 +185,19 @@ class ProductController extends Controller
             'type' => ['required'],
             'genre' => ['required'],
             'language' => ['required'],
-            'authors' => ['required', 'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/'],
+            'authors' => ['required', 
+            'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/',
+            function ($attribute, $value, $fail) {
+                $authors = array_filter(explode(';', $value));
+                foreach($authors as $author) {
+                    $authorNames = array_filter(explode(' ',$author));
+                    $lastName = array_pop($authorNames);
+                    $firstName = trim(implode(' ',$authorNames)," \t\n\r\0\x0B");
+                    if (strlen($firstName) > 255 || strlen($lastName) > 255) {
+                        $fail('Priliš dlhé meno alebo priezvisko autora');
+                    }
+                }
+            }],
             'pages' => ['required', 'numeric'],
             'cover' => 'mimes:jpeg,jpg,png',
             'images.*' => 'mimes:jpeg,jpg,png'
