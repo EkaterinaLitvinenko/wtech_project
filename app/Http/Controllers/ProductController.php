@@ -140,8 +140,8 @@ class ProductController extends Controller
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->sync([$author->id],false);
         }
-
-        $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
+        $bookName = implode('_',explode(' ',$data['title']));
+        $coverName = "gen_" . $bookName . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
         $book->photos()->create([
@@ -149,8 +149,11 @@ class ProductController extends Controller
             'is_cover' => true
         ]);
 
+
+        $bookkName = implode('_',explode(' ',$data['title']));
+
         foreach(request()->file('images') as $image){
-            $imageName = "gen_".$data['title'] . "_" . Str::random(15) . '.'.$image->extension();
+            $imageName = "gen_".$bookkName . "_" . Str::random(15) . '.'.$image->extension();
             $image->storeAs('res/knihy/', $imageName,'uploads');
             $book->photos()->create([
                 'filename' => $imageName,
@@ -218,13 +221,14 @@ class ProductController extends Controller
                 $author->delete();
         }
 
+        $bookName = implode('_',explode(' ',$data['title']));
+
 
         if(request()->file('cover') != null){
             $cover= $book->photos()->where('is_cover',true)->first();
             Storage::disk('uploads')->delete('res/knihy/'.$cover->filename);
             $cover->delete();
-
-            $coverName = "gen_" . $data['title'] . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
+            $coverName = "gen_" . $bookName . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
             request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
             $book->photos()->create([
@@ -235,7 +239,7 @@ class ProductController extends Controller
 
         if(request()->file('images') != null){
             foreach(request()->file('images') as $image){
-                $imageName = "gen_".$data['title'] . "_" . Str::random(15) . '.'.$image->extension();
+                $imageName = "gen_".$bookName. "_" . Str::random(15) . '.'.$image->extension();
                     $image->storeAs('res/knihy/', $imageName,'uploads');
                     $book->photos()->create([
                         'filename' => $imageName,
@@ -243,7 +247,6 @@ class ProductController extends Controller
                     ]);
             }
         }
-
         if(!empty($data['deleteImgs'])){
             foreach($data['deleteImgs'] as $image){
                 $book->photos()->where('filename',$image)->delete();

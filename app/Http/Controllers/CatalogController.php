@@ -74,7 +74,7 @@ class CatalogController extends Controller {
         } elseif ($sort === 'low-to-high') {
             $books->orderBy('price');
         } else {
-            $books->orderBy('created_at');
+            $books->orderBy('created_at', "desc");
         }
 
         $q = request("q");
