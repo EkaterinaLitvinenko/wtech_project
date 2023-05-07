@@ -94,13 +94,13 @@ class ProductController extends Controller
     private function create($data){
         $validate = request()->validate([
             'title' => ['required', 'max:255'],
-            'isbn' => ['required', 'max:13','min:10','regex:/^[0-9]+$/'],
+            'isbn' => ['required', 'max:13','min:10','regex:/^(?:[0-9]{10}|[0-9]{13})$/'],
             'description' => ['required', 'max:2048'],
             'price' => ['required', 'numeric'],
             'type' => ['required'],
             'genre' => ['required'],
             'language' => ['required'],
-            'authors' => ['required', 'regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
+            'authors' => ['required', 'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/'],
             'pages' => ['required', 'numeric'],
             'cover' => 'required|mimes:jpeg,jpg,png,JPG,PNG,JPEG',
             'images' => 'required',
@@ -110,9 +110,9 @@ class ProductController extends Controller
             'images.required' => 'Vyberte aspoň jednu fotku',
             'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
             'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
-            'isbn.regex' => 'ISBN musí obsahovať len čísla',
-            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
-            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'isbn.regex' => 'ISBN musí obsahovať len 10 alebo 13 čísel',
+            'isbn.min' => 'ISBN musí obsahovať 10 alebo 13 čísel',
+            'isbn.max' => 'ISBN môže obsahovať 10 alebo 13 čisel',
             'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
             'title.max' => 'Názov môže obsahovať najviac 255 znakov',
 
@@ -128,6 +128,9 @@ class ProductController extends Controller
             'page_count' => $data['pages'],
         ]);
 
+
+        $bookName = substr(implode('_',explode(' ',$data['title'])),0,50);
+
         $book->genre()->associate($data['genre']);
         $authors = array_filter(explode(';',$data['authors']));
         foreach($authors as $author){
@@ -140,7 +143,6 @@ class ProductController extends Controller
                 $author = Author::create(['first_name' => $authorName, 'last_name' => $last]);
             $book->authors()->sync([$author->id],false);
         }
-        $bookName = implode('_',explode(' ',$data['title']));
         $coverName = "gen_" . $bookName . "_" . Str::random(15) . '.'.request()->file('cover')->extension();
         request()->file('cover')->storeAs('res/knihy/', $coverName,'uploads');
 
@@ -150,10 +152,8 @@ class ProductController extends Controller
         ]);
 
 
-        $bookkName = implode('_',explode(' ',$data['title']));
-
         foreach(request()->file('images') as $image){
-            $imageName = "gen_".$bookkName . "_" . Str::random(15) . '.'.$image->extension();
+            $imageName = "gen_".$bookName . "_" . Str::random(15) . '.'.$image->extension();
             $image->storeAs('res/knihy/', $imageName,'uploads');
             $book->photos()->create([
                 'filename' => $imageName,
@@ -167,13 +167,13 @@ class ProductController extends Controller
     private function update($data, $id){
         $validate = request()->validate([
             'title' => ['required', 'max:255'],
-            'isbn' => ['required', 'max:13','min:10','regex:/^[0-9]+$/'],
+            'isbn' => ['required', 'max:13','min:10','regex:/^(?:[0-9]{10}|[0-9]{13})$/'],
             'description' => ['required', 'max:2048'],
             'price' => ['required', 'numeric'],
             'type' => ['required'],
             'genre' => ['required'],
             'language' => ['required'],
-            'authors' => ['required', 'regex:/^ *\S+(?: +\S+ *)+(?:; *\S+ +\S+ *)*$/'],
+            'authors' => ['required', 'regex:/^;* *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+(?:;(?: *[^\s;]{1,255}(?: +[^\s;]{1,255} *)+)*)* *$/'],
             'pages' => ['required', 'numeric'],
             'cover' => 'mimes:jpeg,jpg,png',
             'images.*' => 'mimes:jpeg,jpg,png'
@@ -182,9 +182,9 @@ class ProductController extends Controller
             'images.required' => 'Vyberte aspoň jednu fotku',
             'images.*.mimes' => 'Fotky musia byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
             'cover.mimes' => 'Obal musí byť vo formáte: jpeg, jpg, png, JPG, PNG, JPEG',
-            'isbn.regex' => 'ISBN musí obsahovať len čísla',
-            'isbn.min' => 'ISBN musí obsahovať aspoň 10 čísel',
-            'isbn.max' => 'ISBN môže obsahovať najviac 13 čísel',
+            'isbn.regex' => 'ISBN musí obsahovať len 10 alebo 13 čísel',
+            'isbn.min' => 'ISBN musí obsahovať 10 alebo 13 čísel',
+            'isbn.max' => 'ISBN môže obsahovať 10 alebo 13 čisel',
             'description.max' => 'Popis môže obsahovať najviac 2048 znakov',
             'title.max' => 'Názov môže obsahovať najviac 255 znakov',
         ]);
@@ -221,7 +221,7 @@ class ProductController extends Controller
                 $author->delete();
         }
 
-        $bookName = implode('_',explode(' ',$data['title']));
+        $bookName = substr(implode('_',explode(' ',$data['title'])),0,50);
 
 
         if(request()->file('cover') != null){

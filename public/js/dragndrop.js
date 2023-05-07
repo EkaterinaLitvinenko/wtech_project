@@ -26,7 +26,7 @@ textArea.addEventListener("input", () => {
 const selectValue = (button)=>{
   const select = document.getElementById("adm-product-author");
   select.value = select.value.substring(0, select.value.lastIndexOf(';') > -1 ? select.value.lastIndexOf(';')+2  : 0);
-  select.value += button.innerText + '; ';
+  select.value += ' '+button.innerText + ';';
   select.focus();
 }
 
